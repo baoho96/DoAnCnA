@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using System.Data.SqlClient;
 namespace QuanLyPhongKham
 {
     public partial class DonThuoc : DevExpress.XtraEditors.XtraForm
@@ -16,6 +16,9 @@ namespace QuanLyPhongKham
         connection connection = new connection();
         function function = new function();
         BacSi bacSi;
+        SqlDataAdapter da;
+        BindingSource bindingSource = new BindingSource();
+        int ID_MSKB;
         public DonThuoc()
         {
             InitializeComponent();
@@ -27,8 +30,24 @@ namespace QuanLyPhongKham
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
 
             load_DonThuoc_comB_donvitinh();
-
+            Load_DonThuoc();
             GanGiaTri();
+        }
+        private void Load_DonThuoc()
+        {
+            ID_MSKB = BacSi.ID_MSKB;
+            string query = @"select T.TenThuoc,DST.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
+                                " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc "+
+                                            " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc "+
+                                " where DT.MaSoKhamBenh = "+ID_MSKB;
+            connection.connect();
+            da = new SqlDataAdapter(query, connection.con);
+            DataSet ds = new DataSet();
+            ds.Clear();
+            da.Fill(ds, "DanhSachThuoc");
+            bindingSource.DataSource = ds.Tables["DanhSachThuoc"];
+            gridC_danhsachDonThuoc.DataSource = bindingSource;
+            connection.disconnect();
         }
         private void GanGiaTri()
         {
@@ -67,7 +86,10 @@ namespace QuanLyPhongKham
 
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
-           áđas
+            if (function.checkNull(panelControl1)==true)
+            {
+                string insert = @"";
+            }
         }
     }
 }

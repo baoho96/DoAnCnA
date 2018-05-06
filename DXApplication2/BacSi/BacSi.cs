@@ -37,7 +37,7 @@ namespace QuanLyPhongKham
         public static string GioiTinh_BenhNhan { get; set; }
         public static string DiaChi_BenhNhan { get; set; }
         public static string BacSiKham_BenhNhan { get; set; }
-
+        public static int ID_MSKB { get; set; }
 
         public BacSi()
         {
@@ -64,7 +64,7 @@ namespace QuanLyPhongKham
             string thang = DateTime.Now.Month.ToString("d2");
             string nam = DateTime.Now.Year.ToString();
             quyentruycap = DangNhap.quyentruycap;
-             string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
+            string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
                                                     " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem," +
                                                     " HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, " +
                                                     "HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh" +
@@ -111,6 +111,7 @@ namespace QuanLyPhongKham
             dtP_NgayTaiKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NgayTaiKham").ToString();
             txt_TienKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TienKham").ToString();
 
+            ID_MSKB =int.Parse( BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
             Ho_BenhNhan = txt_ho.Text;
             Ten_BenhNhan = txt_ten.Text;            
             NamSinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NamSinh").ToString();

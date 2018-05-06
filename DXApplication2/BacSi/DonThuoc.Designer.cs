@@ -34,7 +34,6 @@
             this.btn_CapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_Luu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ThemThuoc = new DevExpress.XtraEditors.SimpleButton();
             this.label11 = new System.Windows.Forms.Label();
             this.comB_DonViTinh = new System.Windows.Forms.ComboBox();
@@ -94,6 +93,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
+            this.clDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridC_danhsachDonThuoc)).BeginInit();
@@ -116,7 +116,6 @@
             this.panelControl1.Controls.Add(this.btn_CapNhat);
             this.panelControl1.Controls.Add(this.txt_GhiChu);
             this.panelControl1.Controls.Add(this.label6);
-            this.panelControl1.Controls.Add(this.btn_Luu);
             this.panelControl1.Controls.Add(this.btn_ThemThuoc);
             this.panelControl1.Controls.Add(this.label11);
             this.panelControl1.Controls.Add(this.comB_DonViTinh);
@@ -138,7 +137,7 @@
             // 
             this.btn_Xoa.Location = new System.Drawing.Point(914, 62);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_Xoa.Size = new System.Drawing.Size(75, 36);
             this.btn_Xoa.TabIndex = 12;
             this.btn_Xoa.Text = "Xóa";
             // 
@@ -146,7 +145,7 @@
             // 
             this.btn_CapNhat.Location = new System.Drawing.Point(914, 13);
             this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(75, 23);
+            this.btn_CapNhat.Size = new System.Drawing.Size(75, 39);
             this.btn_CapNhat.TabIndex = 12;
             this.btn_CapNhat.Text = "Cập nhật";
             // 
@@ -168,19 +167,11 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Ghi chú";
             // 
-            // btn_Luu
-            // 
-            this.btn_Luu.Location = new System.Drawing.Point(821, 13);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(75, 23);
-            this.btn_Luu.TabIndex = 12;
-            this.btn_Luu.Text = "Lưu";
-            // 
             // btn_ThemThuoc
             // 
-            this.btn_ThemThuoc.Location = new System.Drawing.Point(534, 36);
+            this.btn_ThemThuoc.Location = new System.Drawing.Point(775, 13);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
-            this.btn_ThemThuoc.Size = new System.Drawing.Size(75, 23);
+            this.btn_ThemThuoc.Size = new System.Drawing.Size(75, 39);
             this.btn_ThemThuoc.TabIndex = 12;
             this.btn_ThemThuoc.Text = "Thêm";
             this.btn_ThemThuoc.Click += new System.EventHandler(this.btn_ThemThuoc_Click);
@@ -230,6 +221,7 @@
             this.clTenThuoc,
             this.clSoLuong,
             this.clDonViTinh,
+            this.clDonGia,
             this.clCachDung});
             this.gridView1_DonThuoc.GridControl = this.gridC_danhsachDonThuoc;
             this.gridView1_DonThuoc.Name = "gridView1_DonThuoc";
@@ -270,7 +262,7 @@
             this.clCachDung.FieldName = "CachDung";
             this.clCachDung.Name = "clCachDung";
             this.clCachDung.Visible = true;
-            this.clCachDung.VisibleIndex = 3;
+            this.clCachDung.VisibleIndex = 4;
             this.clCachDung.Width = 288;
             // 
             // label10
@@ -723,6 +715,14 @@
             // 
             this.thuocTableAdapter.ClearBeforeFill = true;
             // 
+            // clDonGia
+            // 
+            this.clDonGia.Caption = "Đơn giá";
+            this.clDonGia.FieldName = "DonGia";
+            this.clDonGia.Name = "clDonGia";
+            this.clDonGia.Visible = true;
+            this.clDonGia.VisibleIndex = 3;
+            // 
             // DonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,7 +805,6 @@
         private System.Windows.Forms.TextBox txt_ChuanDoan;
         private System.Windows.Forms.TextBox txt_BacSiKham;
         private System.Windows.Forms.Label label19;
-        private DevExpress.XtraEditors.SimpleButton btn_Luu;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1_DonThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn clTenThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuong;
@@ -826,5 +825,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCachDung;
         private DevExpress.XtraGrid.Columns.GridColumn colHinhAnh;
         private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn clDonGia;
     }
 }
