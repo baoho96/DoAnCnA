@@ -33,10 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -772,22 +768,12 @@
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
             gridLevelNode2.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode4.RelationName = "FK_DanhSachThuoc_DonThuoc";
-            gridLevelNode5.RelationName = "FK_HoaDon_DonThuoc";
-            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode4,
-            gridLevelNode5});
-            gridLevelNode3.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode6.RelationName = "FK_HoaDon_HoSoKhamBenh";
-            gridLevelNode2.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode6});
             gridLevelNode2.RelationName = "FK_HoSoKhamBenh_BenhNhan";
-            gridLevelNode7.LevelTemplate = this.cardView1_HoSoTaiKham;
-            gridLevelNode7.RelationName = "FK_BenhNhan_HoSoTaiKham";
+            gridLevelNode3.LevelTemplate = this.cardView1_HoSoTaiKham;
+            gridLevelNode3.RelationName = "FK_BenhNhan_HoSoTaiKham";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode2,
-            gridLevelNode7});
+            gridLevelNode3});
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 143);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
@@ -1124,7 +1110,7 @@
             this.colLiDoKham.Name = "colLiDoKham";
             this.colLiDoKham.Visible = true;
             this.colLiDoKham.VisibleIndex = 10;
-            this.colLiDoKham.Width = 149;
+            this.colLiDoKham.Width = 157;
             // 
             // colNgayGioKham
             // 
@@ -1142,7 +1128,7 @@
             this.colKiemTraKham.Name = "colKiemTraKham";
             this.colKiemTraKham.Visible = true;
             this.colKiemTraKham.VisibleIndex = 12;
-            this.colKiemTraKham.Width = 37;
+            this.colKiemTraKham.Width = 28;
             // 
             // colChuanDoan
             // 
@@ -1193,7 +1179,7 @@
             this.clKiemTraTaiKham.Name = "clKiemTraTaiKham";
             this.clKiemTraTaiKham.Visible = true;
             this.clKiemTraTaiKham.VisibleIndex = 11;
-            this.clKiemTraTaiKham.Width = 38;
+            this.clKiemTraTaiKham.Width = 39;
             // 
             // repositoryItemTextEdit1
             // 

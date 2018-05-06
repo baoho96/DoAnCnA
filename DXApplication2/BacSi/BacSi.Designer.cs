@@ -88,6 +88,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -97,6 +98,7 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -224,7 +226,8 @@
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Size = new System.Drawing.Size(1010, 337);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.TabIndex = 0;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay});
+            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay,
+            this.gridView1});
             // 
             // BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay
             // 
@@ -253,6 +256,7 @@
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GridControl = this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.Name = "BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay";
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsBehavior.Editable = false;
+            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsFind.AlwaysVisible = true;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsView.ShowGroupPanel = false;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick);
@@ -660,6 +664,11 @@
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay;
+            this.gridView1.Name = "gridView1";
+            // 
             // BacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,6 +694,7 @@
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -750,5 +760,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCheckTaiKham;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_DangXuat;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

@@ -18,6 +18,7 @@ namespace QuanLyPhongKham
         BacSi bacSi;
         SqlDataAdapter da;
         BindingSource bindingSource = new BindingSource();
+        int SoLanClick_ThemThuoc;
         int ID_MSKB;
         public DonThuoc()
         {
@@ -29,14 +30,15 @@ namespace QuanLyPhongKham
             // TODO: This line of code loads data into the 'phongKhamDataSet.Thuoc' table. You can move, or remove it, as needed.
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
 
-            load_DonThuoc_comB_donvitinh();
+            
             Load_DonThuoc();
             GanGiaTri();
+            
         }
         private void Load_DonThuoc()
         {
             ID_MSKB = BacSi.ID_MSKB;
-            string query = @"select T.TenThuoc,DST.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
+            string query = @"select T.TenThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
                                 " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc "+
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc "+
                                 " where DT.MaSoKhamBenh = "+ID_MSKB;
@@ -48,6 +50,14 @@ namespace QuanLyPhongKham
             bindingSource.DataSource = ds.Tables["DanhSachThuoc"];
             gridC_danhsachDonThuoc.DataSource = bindingSource;
             connection.disconnect();
+        }
+        private void refresh_DonThuoc()
+        {
+            function.ClearControl(panelControl1);
+            
+            //gridC_danhsachDonThuoc.Refresh();
+            //gridView1_DonThuoc.RefreshData();
+            Load_DonThuoc();
         }
         private void GanGiaTri()
         {
@@ -61,13 +71,7 @@ namespace QuanLyPhongKham
             txt_GhiChuKham.Text = BacSi.GhiChu_BenhNhan;
             txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
         }
-        private void load_DonThuoc_comB_donvitinh()
-        {
-            comB_DonViTinh.Items.Add("Viên");
-            comB_DonViTinh.Items.Add("Vĩ");
-            comB_DonViTinh.Items.Add("Hộp");
-            comB_DonViTinh.Items.Add("Thùng");
-        }
+        
 
         private void gridView1_DonThuoc_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
@@ -86,10 +90,37 @@ namespace QuanLyPhongKham
 
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
+            
             if (function.checkNull(panelControl1)==true)
             {
-                string insert = @"";
+                int ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
+                connection.connect();
+
+                string insert_DT = @"begin if not exists(select MaSoKhamBenh from DonThuoc where MaSoKhamBenh = "+ ID_MSKB+")" +
+                                    " begin insert into DonThuoc(MaSoKhamBenh) values("+ID_MSKB+")"+
+                                    "end end";//sử dụng lệnh IF NOT EXISTS để kiểm tra trong Đơn thuốc có MaSoKhamBenh đó hay chưa, nếu chưa thì Insert, không thi bỏ qua
+                connection.insert(insert_DT);
+
+                string get_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
+                DataTable dataTable = connection.SQL(get_MSDT);
+                int ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
+
+                string insert_DST = @"insert into DanhSachThuoc(MaSoDonThuoc,MaSoThuoc,SoLuong,CachDung) values" +
+                " (" + ID_MSDT + "," + ID_Thuoc + "," + txt_SoLuong.Text + ",N'" + txt_CachDung.Text + "')";
+                connection.insert(insert_DST);//Insert vào Danh Sách Thuốc từ MSDT vừa tạo, ID_Thuoc từ Cột trong ComboBoxEdit
+
+                connection.disconnect();
+                refresh_DonThuoc();
             }
+        }
+
+        private void gridView1_DonThuoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            txt_TenThuoc.Text = gridView1_DonThuoc.GetFocusedRowCellValue("TenThuoc").ToString();
+            txt_SoLuong.Text = gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString();
+            txt_CachDung.Text = gridView1_DonThuoc.GetFocusedRowCellValue("CachDung").ToString();
+
+
         }
     }
 }

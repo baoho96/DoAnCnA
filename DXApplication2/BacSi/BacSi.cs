@@ -88,6 +88,7 @@ namespace QuanLyPhongKham
             {
                 function.Notice("Bạn nên chọn bệnh nhân trước!", 1);
             }
+            
             else
             {
                 XetNghiem_BenhNhan = txt_xetnghiem.Text;
@@ -118,8 +119,10 @@ namespace QuanLyPhongKham
             GioiTinh_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
             DiaChi_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
             BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
+                       
 
             connection.connect();
+                        
 
             string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
             cmd = new SqlCommand(layhinhanh, connection.con);

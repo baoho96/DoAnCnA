@@ -234,8 +234,9 @@ namespace QuanLyPhongKham
 
                     connection.disconnect();
                     this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
-                    this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
+                    hoSoTaiKhamTableAdapter1.Fill(phongKhamDataSet.HoSoTaiKham);
                     this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+                    this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
                     load_TiepNhanBenhNhan_comB_GioiTinh();
                     hinhanh = null;
                     result = new DialogResult();
@@ -313,7 +314,7 @@ namespace QuanLyPhongKham
             if (function.checkNull(panelControl6) == true)//kiểm tra các thành phần có rỗng hay không
             {
                 connection.connect();
-                string ID = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+                string ID_MSKB = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString();
 
                
                 //if (pictureBox1_BenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
@@ -345,7 +346,7 @@ namespace QuanLyPhongKham
 
                 string query1= @"update HoSoKhamBenh set LiDoKham = N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "'," +
                 "NgayGioKham ='" + TiepNhanBenhNhan_dtP_NgayKham.Text + "'" +
-                " where MaSoBenhNhan =" + ID;
+                " where MaSoKhamBenh =" + ID_MSKB;
                 connection.sql(query1);
                 connection.disconnect();
                 refresh_TiepNhanBenhNhan();
