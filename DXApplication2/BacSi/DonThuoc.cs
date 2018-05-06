@@ -67,7 +67,7 @@ namespace QuanLyPhongKham
 
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
-            function.KoNhapKiTu(sender, e);
+           áđas
         }
     }
 }
