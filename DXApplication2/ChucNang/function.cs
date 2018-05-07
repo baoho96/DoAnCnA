@@ -101,7 +101,7 @@ namespace QuanLyPhongKham
                         comboBox.Items.Clear();
                     }
                 }
-
+                
                 if (control is CheckBox)
                 {
                     CheckBox checkBox = (CheckBox)control;

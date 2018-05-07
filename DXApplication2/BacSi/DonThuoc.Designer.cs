@@ -33,10 +33,9 @@
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ThemThuoc = new DevExpress.XtraEditors.SimpleButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtP_NgayKeDon = new System.Windows.Forms.DateTimePicker();
             this.gridC_danhsachDonThuoc = new DevExpress.XtraGrid.GridControl();
             this.gridView1_DonThuoc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clMaSoThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,6 +61,8 @@
             this.colCachDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenLoaiThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtP_NgayKeDon = new System.Windows.Forms.DateTimePicker();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -142,34 +143,18 @@
             this.btn_CapNhat.Size = new System.Drawing.Size(75, 39);
             this.btn_CapNhat.TabIndex = 12;
             this.btn_CapNhat.Text = "Cập nhật";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // btn_ThemThuoc
             // 
+            this.btn_ThemThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemThuoc.Appearance.Options.UseFont = true;
             this.btn_ThemThuoc.Location = new System.Drawing.Point(688, 18);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
             this.btn_ThemThuoc.Size = new System.Drawing.Size(75, 39);
             this.btn_ThemThuoc.TabIndex = 12;
             this.btn_ThemThuoc.Text = "Thêm";
             this.btn_ThemThuoc.Click += new System.EventHandler(this.btn_ThemThuoc_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(2, 13);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Ngày kê đơn";
-            // 
-            // dtP_NgayKeDon
-            // 
-            this.dtP_NgayKeDon.CustomFormat = "dd/MM/yyyy";
-            this.dtP_NgayKeDon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtP_NgayKeDon.Location = new System.Drawing.Point(84, 10);
-            this.dtP_NgayKeDon.Name = "dtP_NgayKeDon";
-            this.dtP_NgayKeDon.Size = new System.Drawing.Size(97, 21);
-            this.dtP_NgayKeDon.TabIndex = 10;
             // 
             // gridC_danhsachDonThuoc
             // 
@@ -185,6 +170,7 @@
             // gridView1_DonThuoc
             // 
             this.gridView1_DonThuoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.clMaSoThuoc,
             this.clTenThuoc,
             this.clSoLuong,
             this.clDonViTinh,
@@ -198,6 +184,12 @@
             this.gridView1_DonThuoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_DonThuoc_RowClick);
             this.gridView1_DonThuoc.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_DonThuoc_CustomDrawRowIndicator);
             this.gridView1_DonThuoc.RowCountChanged += new System.EventHandler(this.gridView1_DonThuoc_RowCountChanged);
+            // 
+            // clMaSoThuoc
+            // 
+            this.clMaSoThuoc.Caption = "MST";
+            this.clMaSoThuoc.FieldName = "MaSoThuoc";
+            this.clMaSoThuoc.Name = "clMaSoThuoc";
             // 
             // clTenThuoc
             // 
@@ -411,6 +403,25 @@
             this.colTenLoaiThuoc.Name = "colTenLoaiThuoc";
             this.colTenLoaiThuoc.Visible = true;
             this.colTenLoaiThuoc.VisibleIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(2, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Ngày kê đơn";
+            // 
+            // dtP_NgayKeDon
+            // 
+            this.dtP_NgayKeDon.CustomFormat = "dd/MM/yyyy";
+            this.dtP_NgayKeDon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtP_NgayKeDon.Location = new System.Drawing.Point(84, 10);
+            this.dtP_NgayKeDon.Name = "dtP_NgayKeDon";
+            this.dtP_NgayKeDon.Size = new System.Drawing.Size(97, 21);
+            this.dtP_NgayKeDon.TabIndex = 10;
             // 
             // txt_GhiChu
             // 
@@ -817,5 +828,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHinhAnh;
         private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn clDonGia;
+        private DevExpress.XtraGrid.Columns.GridColumn clMaSoThuoc;
     }
 }

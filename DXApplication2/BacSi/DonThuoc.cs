@@ -20,6 +20,8 @@ namespace QuanLyPhongKham
         BindingSource bindingSource = new BindingSource();
         int SoLanClick_ThemThuoc;
         int ID_MSKB;
+        int ID_Thuoc_RowClick;
+        bool RowClick = false;
         public DonThuoc()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace QuanLyPhongKham
         private void Load_DonThuoc()
         {
             ID_MSKB = BacSi.ID_MSKB;
-            string query = @"select T.TenThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
+            string query = @"select T.TenThuoc,T.MaSoThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
                                 " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc "+
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc "+
                                 " where DT.MaSoKhamBenh = "+ID_MSKB;
@@ -58,6 +60,7 @@ namespace QuanLyPhongKham
             //gridC_danhsachDonThuoc.Refresh();
             //gridView1_DonThuoc.RefreshData();
             Load_DonThuoc();
+            RowClick = false;
         }
         private void GanGiaTri()
         {
@@ -90,10 +93,18 @@ namespace QuanLyPhongKham
 
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
-            
+            int ID_Thuoc;
             if (function.checkNull(panelControl1)==true)
             {
-                int ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
+                if(RowClick == true)
+                {
+                    ID_Thuoc = ID_Thuoc_RowClick;
+                }
+                else
+                {
+                    ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
+                }
+                
                 connection.connect();
 
                 string insert_DT = @"begin if not exists(select MaSoKhamBenh from DonThuoc where MaSoKhamBenh = "+ ID_MSKB+")" +
@@ -116,11 +127,17 @@ namespace QuanLyPhongKham
 
         private void gridView1_DonThuoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            RowClick = true;
             txt_TenThuoc.Text = gridView1_DonThuoc.GetFocusedRowCellValue("TenThuoc").ToString();
             txt_SoLuong.Text = gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString();
             txt_CachDung.Text = gridView1_DonThuoc.GetFocusedRowCellValue("CachDung").ToString();
+            ID_Thuoc_RowClick = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy ID thuốc khi click vào Row trong gridview
+           
+        }
 
-
+        private void btn_CapNhat_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
