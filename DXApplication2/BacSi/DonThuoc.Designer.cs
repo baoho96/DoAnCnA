@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.mtxt_TienThuoc = new System.Windows.Forms.MaskedTextBox();
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ThemThuoc = new DevExpress.XtraEditors.SimpleButton();
@@ -90,10 +91,10 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
+            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridC_danhsachDonThuoc)).BeginInit();
@@ -119,6 +120,7 @@
             this.panelControl1.Controls.Add(this.label10);
             this.panelControl1.Controls.Add(this.txt_CachDung);
             this.panelControl1.Controls.Add(this.label14);
+            this.panelControl1.Controls.Add(this.label20);
             this.panelControl1.Controls.Add(this.txt_SoLuong);
             this.panelControl1.Controls.Add(this.label13);
             this.panelControl1.Controls.Add(this.label12);
@@ -128,6 +130,16 @@
             this.panelControl1.Size = new System.Drawing.Size(1008, 421);
             this.panelControl1.TabIndex = 0;
             // 
+            // mtxt_TienThuoc
+            // 
+            this.mtxt_TienThuoc.Location = new System.Drawing.Point(630, 10);
+            this.mtxt_TienThuoc.Mask = "000 000 000";
+            this.mtxt_TienThuoc.Name = "mtxt_TienThuoc";
+            this.mtxt_TienThuoc.PromptChar = ' ';
+            this.mtxt_TienThuoc.ReadOnly = true;
+            this.mtxt_TienThuoc.Size = new System.Drawing.Size(152, 21);
+            this.mtxt_TienThuoc.TabIndex = 15;
+            // 
             // btn_Xoa
             // 
             this.btn_Xoa.Location = new System.Drawing.Point(921, 20);
@@ -135,6 +147,7 @@
             this.btn_Xoa.Size = new System.Drawing.Size(75, 36);
             this.btn_Xoa.TabIndex = 12;
             this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_CapNhat
             // 
@@ -663,12 +676,12 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.mtxt_TienThuoc);
             this.panelControl4.Controls.Add(this.simpleButton4);
             this.panelControl4.Controls.Add(this.simpleButton6);
             this.panelControl4.Controls.Add(this.txt_GhiChu);
             this.panelControl4.Controls.Add(this.label11);
             this.panelControl4.Controls.Add(this.label6);
-            this.panelControl4.Controls.Add(this.textBox10);
             this.panelControl4.Controls.Add(this.dtP_NgayKeDon);
             this.panelControl4.Controls.Add(this.label17);
             this.panelControl4.Controls.Add(this.label16);
@@ -694,14 +707,6 @@
             this.simpleButton6.TabIndex = 12;
             this.simpleButton6.Text = "Thoát";
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(631, 10);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(151, 21);
-            this.textBox10.TabIndex = 1;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -725,6 +730,16 @@
             // thuocTableAdapter
             // 
             this.thuocTableAdapter.ClearBeforeFill = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label20.Location = new System.Drawing.Point(524, 40);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(31, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Viên";
             // 
             // DonThuoc
             // 
@@ -797,7 +812,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txt_Ten;
@@ -829,5 +843,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn clDonGia;
         private DevExpress.XtraGrid.Columns.GridColumn clMaSoThuoc;
+        private System.Windows.Forms.MaskedTextBox mtxt_TienThuoc;
+        private System.Windows.Forms.Label label20;
     }
 }

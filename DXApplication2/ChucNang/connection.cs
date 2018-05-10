@@ -54,7 +54,7 @@ namespace QuanLyPhongKham
             cmd.CommandText = query;
             cmd.ExecuteNonQuery();
         }
-        public void sql(string query)
+        public void sql(string query)//update
         {
             cmd = new SqlCommand();
             cmd.Connection = con;

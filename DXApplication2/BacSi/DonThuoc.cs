@@ -18,10 +18,12 @@ namespace QuanLyPhongKham
         BacSi bacSi;
         SqlDataAdapter da;
         BindingSource bindingSource = new BindingSource();
-        int SoLanClick_ThemThuoc;
+        int ID_MSDT;
         int ID_MSKB;
         int ID_Thuoc_RowClick;
+        
         bool RowClick = false;
+        
         public DonThuoc()
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace QuanLyPhongKham
         private void refresh_DonThuoc()
         {
             function.ClearControl(panelControl1);
-            
+            txt_TenThuoc.Text = "";
             //gridC_danhsachDonThuoc.Refresh();
             //gridView1_DonThuoc.RefreshData();
             Load_DonThuoc();
@@ -94,11 +96,13 @@ namespace QuanLyPhongKham
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
             int ID_Thuoc;
+            
             if (function.checkNull(panelControl1)==true)
             {
                 if(RowClick == true)
                 {
-                    ID_Thuoc = ID_Thuoc_RowClick;
+                    ID_Thuoc = ID_Thuoc_RowClick;//gán ID thuốc cho ID rowlick
+                    function.Notice("Nếu bạn muốn Cập nhật thuốc vui lòng chọn thuốc và nhấn nút 'Cập Nhật'",1);
                 }
                 else
                 {
@@ -114,10 +118,11 @@ namespace QuanLyPhongKham
 
                 string get_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
                 DataTable dataTable = connection.SQL(get_MSDT);
-                int ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
+                ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
 
-                string insert_DST = @"insert into DanhSachThuoc(MaSoDonThuoc,MaSoThuoc,SoLuong,CachDung) values" +
-                " (" + ID_MSDT + "," + ID_Thuoc + "," + txt_SoLuong.Text + ",N'" + txt_CachDung.Text + "')";
+                string insert_DST = @"Begin if not exists(select MaSoThuoc from DanhSachThuoc where MaSoThuoc ="+ ID_Thuoc+" and MaSoDonThuoc = "+ID_MSDT+")"+
+                                    " begin insert into DanhSachThuoc(MaSoDonThuoc,MaSoThuoc,SoLuong,CachDung) values" +
+                " (" + ID_MSDT + "," + ID_Thuoc + "," + txt_SoLuong.Text + ",N'" + txt_CachDung.Text + "') end end";
                 connection.insert(insert_DST);//Insert vào Danh Sách Thuốc từ MSDT vừa tạo, ID_Thuoc từ Cột trong ComboBoxEdit
 
                 connection.disconnect();
@@ -137,7 +142,24 @@ namespace QuanLyPhongKham
 
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
-            
+            int ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
+            string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
+                                        " SoLuong = " + txt_SoLuong.Text + "," +
+                                        " CachDung = N'" + txt_CachDung.Text + "'" +
+                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick ;
+            connection.connect();
+            connection.sql(update_DonThuoc);
+            connection.disconnect();
+            refresh_DonThuoc();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            string Xoa_DanhSachThuoc = @"delete from DanhSachThuoc where MaSoThuoc = "+ID_Thuoc_RowClick;
+            connection.connect();
+            connection.delete(Xoa_DanhSachThuoc);
+            connection.disconnect();
+            refresh_DonThuoc();
         }
     }
 }
