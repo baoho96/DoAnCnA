@@ -94,8 +94,11 @@ namespace QuanLyPhongKham
                 XetNghiem_BenhNhan = txt_xetnghiem.Text;
                 ChuanDoan_BenhNhan = txt_chuandoan.Text;
                 GhiChu_BenhNhan = txt_GhiChu.Text;
+
+                
                 DonThuoc donThuoc = new DonThuoc();
                 donThuoc.Show();
+                this.Hide();
             }
             
         }
@@ -160,6 +163,12 @@ namespace QuanLyPhongKham
         private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
         {
             function.KoNhapKiTu(sender, e);
+        }
+
+        private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
         }
     }
 }

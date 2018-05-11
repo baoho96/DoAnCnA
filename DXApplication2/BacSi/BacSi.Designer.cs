@@ -63,13 +63,12 @@
             this.colSoDienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCheckTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.pictureBox1_BenhNhan = new System.Windows.Forms.PictureBox();
             this.btn_HoanTat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_TaoDonThuoc = new DevExpress.XtraEditors.SimpleButton();
             this.dtP_NgayTaiKham = new System.Windows.Forms.DateTimePicker();
-            this.txt_TienThuoc = new System.Windows.Forms.TextBox();
-            this.txt_TienKham = new System.Windows.Forms.TextBox();
             this.txt_xetnghiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
@@ -88,17 +87,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txt_TienKham = new System.Windows.Forms.MaskedTextBox();
+            this.txtTienThuoc = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -416,14 +416,19 @@
             this.colCheckTaiKham.VisibleIndex = 9;
             this.colCheckTaiKham.Width = 42;
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay;
+            this.gridView1.Name = "gridView1";
+            // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.txtTienThuoc);
+            this.panelControl2.Controls.Add(this.txt_TienKham);
             this.panelControl2.Controls.Add(this.pictureBox1_BenhNhan);
             this.panelControl2.Controls.Add(this.btn_HoanTat);
             this.panelControl2.Controls.Add(this.btn_TaoDonThuoc);
             this.panelControl2.Controls.Add(this.dtP_NgayTaiKham);
-            this.panelControl2.Controls.Add(this.txt_TienThuoc);
-            this.panelControl2.Controls.Add(this.txt_TienKham);
             this.panelControl2.Controls.Add(this.txt_xetnghiem);
             this.panelControl2.Controls.Add(this.label9);
             this.panelControl2.Controls.Add(this.txt_GhiChu);
@@ -489,22 +494,6 @@
             this.dtP_NgayTaiKham.Name = "dtP_NgayTaiKham";
             this.dtP_NgayTaiKham.Size = new System.Drawing.Size(99, 21);
             this.dtP_NgayTaiKham.TabIndex = 2;
-            // 
-            // txt_TienThuoc
-            // 
-            this.txt_TienThuoc.Location = new System.Drawing.Point(580, 85);
-            this.txt_TienThuoc.Name = "txt_TienThuoc";
-            this.txt_TienThuoc.ReadOnly = true;
-            this.txt_TienThuoc.Size = new System.Drawing.Size(116, 21);
-            this.txt_TienThuoc.TabIndex = 1;
-            // 
-            // txt_TienKham
-            // 
-            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
-            this.txt_TienKham.Name = "txt_TienKham";
-            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
-            this.txt_TienKham.TabIndex = 1;
-            this.txt_TienKham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TienKham_KeyPress);
             // 
             // txt_xetnghiem
             // 
@@ -664,10 +653,24 @@
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
             // 
-            // gridView1
+            // txt_TienKham
             // 
-            this.gridView1.GridControl = this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay;
-            this.gridView1.Name = "gridView1";
+            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
+            this.txt_TienKham.Mask = "000 000 000";
+            this.txt_TienKham.Name = "txt_TienKham";
+            this.txt_TienKham.PromptChar = ' ';
+            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
+            this.txt_TienKham.TabIndex = 25;
+            // 
+            // txtTienThuoc
+            // 
+            this.txtTienThuoc.Location = new System.Drawing.Point(580, 85);
+            this.txtTienThuoc.Mask = "000 000 000 000 000";
+            this.txtTienThuoc.Name = "txtTienThuoc";
+            this.txtTienThuoc.PromptChar = ' ';
+            this.txtTienThuoc.ReadOnly = true;
+            this.txtTienThuoc.Size = new System.Drawing.Size(116, 21);
+            this.txtTienThuoc.TabIndex = 25;
             // 
             // BacSi
             // 
@@ -683,18 +686,19 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BacSi_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,7 +720,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_HoanTat;
         private DevExpress.XtraEditors.SimpleButton btn_TaoDonThuoc;
         private System.Windows.Forms.DateTimePicker dtP_NgayTaiKham;
-        private System.Windows.Forms.TextBox txt_TienKham;
         private System.Windows.Forms.TextBox txt_xetnghiem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_GhiChu;
@@ -728,7 +731,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_TienThuoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -761,5 +763,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_DangXuat;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.MaskedTextBox txtTienThuoc;
+        private System.Windows.Forms.MaskedTextBox txt_TienKham;
     }
 }

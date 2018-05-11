@@ -18,8 +18,19 @@ namespace QuanLyPhongKham
         BacSi bacSi;
         SqlDataAdapter da;
         BindingSource bindingSource = new BindingSource();
-        int ID_MSDT;
-        int ID_MSKB;
+
+        #region Các thuộc tính được tạo với static để sử dụng chung với các form khác
+        public static int ID_MSDT { get; set; }
+        public static string Ho { get; set; }
+        public static string Ten { get; set; }
+        public static string NamSinh { get; set; }
+        public static string DiaChi { get; set; }
+        public static string ChuanDoan { get; set; }
+        public static string GhiChu { get; set; }
+        public static string NgayKeDon { get; set; }
+        public static string TienThuoc { get; set; }
+        public static int ID_MSKB { get; set; }
+        #endregion
         int ID_Thuoc_RowClick;
         
         bool RowClick = false;
@@ -53,6 +64,22 @@ namespace QuanLyPhongKham
             da.Fill(ds, "DanhSachThuoc");
             bindingSource.DataSource = ds.Tables["DanhSachThuoc"];
             gridC_danhsachDonThuoc.DataSource = bindingSource;
+            if(ID_MSDT==0)//Kiểm tra Mã số đơn thuốc của biến toàn cục có rỗng hay không, nếu rỗng thì sẽ lấy MSĐT
+                //vì khi Thêm Thuốc sẽ tạo mã số đơn thuốc mới duy nhất cho 1 mã số khám bệnh (MSKB)
+            {
+                string get_MSDT = @"begin if exists(select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB + ")" +
+                                    "begin select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB +
+                                    " end end";
+                DataTable dataTable = connection.SQL(get_MSDT);
+                if (dataTable.Rows.Count > 0)//kiểm tra mã số đơn thuốc(MSĐT) trong csdl có hay không
+                {
+                    ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
+                }
+                else//nếu không có thì sẽ không gán vào biến toàn cục, nghĩa là Bệnh nhân mới nên chưa tạo Đơn thuốc
+                { }
+            }
+
+            TinhTienThuoc();
             connection.disconnect();
         }
         private void refresh_DonThuoc()
@@ -64,15 +91,15 @@ namespace QuanLyPhongKham
             Load_DonThuoc();
             RowClick = false;
         }
-        private void GanGiaTri()
+        private void GanGiaTri()//lấy giá trị từ form Bác Sĩ gán vào các textBox trong Đơn Thuốc
         {
-            txt_Ho.Text = BacSi.Ho_BenhNhan;
-            txt_Ten.Text = BacSi.Ten_BenhNhan;
-            txt_NamSinh.Text = BacSi.NamSinh_BenhNhan;
+            Ho=txt_Ho.Text = BacSi.Ho_BenhNhan;
+            Ten=txt_Ten.Text = BacSi.Ten_BenhNhan;
+            NamSinh=txt_NamSinh.Text = BacSi.NamSinh_BenhNhan;
             txt_GioiTinh.Text = BacSi.GioiTinh_BenhNhan;
-            txt_DiaChi.Text = BacSi.DiaChi_BenhNhan;
+            DiaChi=txt_DiaChi.Text = BacSi.DiaChi_BenhNhan;
             txt_XetNghiem.Text = BacSi.XetNghiem_BenhNhan;
-            txt_ChuanDoan.Text = BacSi.ChuanDoan_BenhNhan;
+            ChuanDoan=txt_ChuanDoan.Text = BacSi.ChuanDoan_BenhNhan;
             txt_GhiChuKham.Text = BacSi.GhiChu_BenhNhan;
             txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
         }
@@ -115,10 +142,17 @@ namespace QuanLyPhongKham
                                     " begin insert into DonThuoc(MaSoKhamBenh) values("+ID_MSKB+")"+
                                     "end end";//sử dụng lệnh IF NOT EXISTS để kiểm tra trong Đơn thuốc có MaSoKhamBenh đó hay chưa, nếu chưa thì Insert, không thi bỏ qua
                 connection.insert(insert_DT);
+                if(ID_MSDT==0)
+                {
+                    string get_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
+                    DataTable dataTable = connection.SQL(get_MSDT);
+                    ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
+                }
+                else
+                {
 
-                string get_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
-                DataTable dataTable = connection.SQL(get_MSDT);
-                ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());//Lấy mã số Đơn thuốc mới vừa tạo ra
+                }
+                
 
                 string insert_DST = @"Begin if not exists(select MaSoThuoc from DanhSachThuoc where MaSoThuoc ="+ ID_Thuoc+" and MaSoDonThuoc = "+ID_MSDT+")"+
                                     " begin insert into DanhSachThuoc(MaSoDonThuoc,MaSoThuoc,SoLuong,CachDung) values" +
@@ -146,7 +180,7 @@ namespace QuanLyPhongKham
             string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
                                         " SoLuong = " + txt_SoLuong.Text + "," +
                                         " CachDung = N'" + txt_CachDung.Text + "'" +
-                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick ;
+                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick ;//Cập nhật thuốc ngay tại con trỏ chuột đã bấm
             connection.connect();
             connection.sql(update_DonThuoc);
             connection.disconnect();
@@ -155,11 +189,47 @@ namespace QuanLyPhongKham
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string Xoa_DanhSachThuoc = @"delete from DanhSachThuoc where MaSoThuoc = "+ID_Thuoc_RowClick;
+            string Xoa_DanhSachThuoc = @"delete from DanhSachThuoc where MaSoThuoc = "+ID_Thuoc_RowClick;//xóa thuốc ngay tại con trỏ chuột đã bấm
             connection.connect();
             connection.delete(Xoa_DanhSachThuoc);
             connection.disconnect();
             refresh_DonThuoc();
+        }
+
+        private void btn_XemDonThuoc_Click(object sender, EventArgs e)
+        {
+            NgayKeDon = dtP_NgayKeDon.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
+            GhiChu = txt_GhiChu.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
+            TienThuoc =mtxt_TienThuoc.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
+            
+            printDonThuoc printDonThuoc = new printDonThuoc();//show form Xem đơn thuốc
+            
+            printDonThuoc.Show();
+            this.Hide();//form Đơn thuốc ẩn
+        }
+
+        private void btn_HoanThanh_Click(object sender, EventArgs e)
+        {
+            if(function.checkNull(panelControl4)==true)
+            {
+                
+            }
+        }
+
+        private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
+        {
+            string query = @"select sum(T.DonGia * DST.SoLuong)" +//tính tổng của Đơn giá * Số Lượng nhập vào
+                                " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
+                                            " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
+                                " where DT.MaSoKhamBenh = " + ID_MSKB;
+            DataTable dataTable = connection.SQL(query);
+            mtxt_TienThuoc.Text = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
+        }
+
+        private void DonThuoc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bacSi = new BacSi();
+            bacSi.Show();
         }
     }
 }

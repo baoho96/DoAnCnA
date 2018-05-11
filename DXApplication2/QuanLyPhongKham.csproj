@@ -62,19 +62,40 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.2.UI, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Docs.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Spreadsheet.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Extensions, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -82,6 +103,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -112,10 +137,10 @@
       <DependentUpon>DonThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\connection.cs" />
-    <Compile Include="DangKi.cs">
+    <Compile Include="Login\DangKi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKi.Designer.cs">
+    <Compile Include="Login\DangKi.Designer.cs">
       <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
     <Compile Include="DuocSi\DuocSi.cs">
@@ -125,10 +150,10 @@
       <DependentUpon>DuocSi.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\function.cs" />
-    <Compile Include="HoSoTaiKham.cs">
+    <Compile Include="Nhan Vien\HoSoTaiKham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoSoTaiKham.Designer.cs">
+    <Compile Include="Nhan Vien\HoSoTaiKham.Designer.cs">
       <DependentUpon>HoSoTaiKham.cs</DependentUpon>
     </Compile>
     <Compile Include="Nhan Vien\NhanVienThuNgan.cs">
@@ -137,10 +162,10 @@
     <Compile Include="Nhan Vien\NhanVienThuNgan.Designer.cs">
       <DependentUpon>NhanVienThuNgan.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Login\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Login\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Nhan Vien\NhanVien.cs">
@@ -157,6 +182,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BacSi\printDonThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BacSi\printDonThuoc.Designer.cs">
+      <DependentUpon>printDonThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\ThemLoaiThuoc.cs">
@@ -171,13 +202,22 @@
     <Compile Include="Nhan Vien\ThemCho.Designer.cs">
       <DependentUpon>ThemCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="BacSi\reportDonThuoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BacSi\reportDonThuoc.Designer.cs">
+      <DependentUpon>reportDonThuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BacSi\BacSi.resx">
       <DependentUpon>BacSi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="BacSi\reportDonThuoc.resx">
+      <DependentUpon>reportDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BacSi\DonThuoc.resx">
@@ -186,7 +226,7 @@
     <EmbeddedResource Include="DuocSi\DuocSi.resx">
       <DependentUpon>DuocSi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoSoTaiKham.resx">
+    <EmbeddedResource Include="Nhan Vien\HoSoTaiKham.resx">
       <DependentUpon>HoSoTaiKham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\NhanVienThuNgan.resx">
@@ -194,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BacSi\printDonThuoc.resx">
+      <DependentUpon>printDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

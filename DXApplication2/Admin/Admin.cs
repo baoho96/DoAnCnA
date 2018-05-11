@@ -61,7 +61,9 @@ namespace QuanLyPhongKham
         private void barButtonItem1_BacSi_ItemClick(object sender, ItemClickEventArgs e)
         {           
             BacSi bacSi = new BacSi();
-            bacSi.ShowDialog();
+            
+            bacSi.Show();
+            this.Hide();
         }
 
         private void barButtonItem2_DuocSi_ItemClick(object sender, ItemClickEventArgs e)
