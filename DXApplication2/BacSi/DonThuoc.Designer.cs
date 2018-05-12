@@ -92,7 +92,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btn_HoanThanh = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Thoat = new DevExpress.XtraEditors.SimpleButton();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
@@ -129,14 +129,14 @@
             this.panelControl1.Controls.Add(this.txt_TenThuoc);
             this.panelControl1.Location = new System.Drawing.Point(0, 173);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1008, 421);
+            this.panelControl1.Size = new System.Drawing.Size(866, 318);
             this.panelControl1.TabIndex = 0;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(894, 67);
+            this.simpleButton1.Location = new System.Drawing.Point(733, 64);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(102, 36);
             this.simpleButton1.TabIndex = 12;
@@ -147,7 +147,7 @@
             // 
             this.btn_Xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_Xoa.Appearance.Options.UseFont = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(901, 19);
+            this.btn_Xoa.Location = new System.Drawing.Point(740, 16);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(75, 36);
             this.btn_Xoa.TabIndex = 12;
@@ -158,7 +158,7 @@
             // 
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_CapNhat.Appearance.Options.UseFont = true;
-            this.btn_CapNhat.Location = new System.Drawing.Point(791, 64);
+            this.btn_CapNhat.Location = new System.Drawing.Point(630, 61);
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.Size = new System.Drawing.Size(75, 39);
             this.btn_CapNhat.TabIndex = 12;
@@ -169,7 +169,7 @@
             // 
             this.btn_ThemThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_ThemThuoc.Appearance.Options.UseFont = true;
-            this.btn_ThemThuoc.Location = new System.Drawing.Point(791, 17);
+            this.btn_ThemThuoc.Location = new System.Drawing.Point(630, 14);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
             this.btn_ThemThuoc.Size = new System.Drawing.Size(75, 39);
             this.btn_ThemThuoc.TabIndex = 12;
@@ -179,10 +179,10 @@
             // gridC_danhsachDonThuoc
             // 
             this.gridC_danhsachDonThuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridC_danhsachDonThuoc.Location = new System.Drawing.Point(2, 115);
+            this.gridC_danhsachDonThuoc.Location = new System.Drawing.Point(2, 118);
             this.gridC_danhsachDonThuoc.MainView = this.gridView1_DonThuoc;
             this.gridC_danhsachDonThuoc.Name = "gridC_danhsachDonThuoc";
-            this.gridC_danhsachDonThuoc.Size = new System.Drawing.Size(1004, 304);
+            this.gridC_danhsachDonThuoc.Size = new System.Drawing.Size(862, 198);
             this.gridC_danhsachDonThuoc.TabIndex = 9;
             this.gridC_danhsachDonThuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_DonThuoc});
@@ -223,6 +223,8 @@
             // clSoLuong
             // 
             this.clSoLuong.Caption = "Số lượng";
+            this.clSoLuong.DisplayFormat.FormatString = "# ###";
+            this.clSoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clSoLuong.FieldName = "SoLuong";
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.Visible = true;
@@ -241,6 +243,8 @@
             // clDonGia
             // 
             this.clDonGia.Caption = "Đơn giá";
+            this.clDonGia.DisplayFormat.FormatString = "# ###";
+            this.clDonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clDonGia.FieldName = "DonGia";
             this.clDonGia.Name = "clDonGia";
             this.clDonGia.Visible = true;
@@ -436,14 +440,14 @@
             // 
             // mtxt_TienThuoc
             // 
-            this.mtxt_TienThuoc.Location = new System.Drawing.Point(630, 10);
-            this.mtxt_TienThuoc.Mask = "000 000 000 000 000";
+            this.mtxt_TienThuoc.Location = new System.Drawing.Point(527, 10);
+            this.mtxt_TienThuoc.Mask = "000 000 000 ";
             this.mtxt_TienThuoc.Name = "mtxt_TienThuoc";
             this.mtxt_TienThuoc.PromptChar = ' ';
             this.mtxt_TienThuoc.ReadOnly = true;
-            this.mtxt_TienThuoc.Size = new System.Drawing.Size(152, 21);
+            this.mtxt_TienThuoc.Size = new System.Drawing.Size(90, 21);
             this.mtxt_TienThuoc.TabIndex = 15;
-            this.mtxt_TienThuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtxt_TienThuoc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label11
             // 
@@ -469,7 +473,7 @@
             this.txt_GhiChu.Location = new System.Drawing.Point(303, 10);
             this.txt_GhiChu.Multiline = true;
             this.txt_GhiChu.Name = "txt_GhiChu";
-            this.txt_GhiChu.Size = new System.Drawing.Size(250, 34);
+            this.txt_GhiChu.Size = new System.Drawing.Size(146, 34);
             this.txt_GhiChu.TabIndex = 7;
             // 
             // label6
@@ -497,7 +501,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(447, 165);
+            this.panelControl2.Size = new System.Drawing.Size(405, 165);
             this.panelControl2.TabIndex = 1;
             // 
             // txt_GioiTinh
@@ -567,17 +571,17 @@
             // 
             // txt_Ten
             // 
-            this.txt_Ten.Location = new System.Drawing.Point(329, 27);
+            this.txt_Ten.Location = new System.Drawing.Point(312, 27);
             this.txt_Ten.Name = "txt_Ten";
             this.txt_Ten.ReadOnly = true;
-            this.txt_Ten.Size = new System.Drawing.Size(56, 21);
+            this.txt_Ten.Size = new System.Drawing.Size(73, 21);
             this.txt_Ten.TabIndex = 1;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(298, 30);
+            this.label18.Location = new System.Drawing.Point(278, 30);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(28, 13);
             this.label18.TabIndex = 0;
@@ -612,9 +616,9 @@
             this.panelControl3.Controls.Add(this.label7);
             this.panelControl3.Controls.Add(this.txt_XetNghiem);
             this.panelControl3.Controls.Add(this.label8);
-            this.panelControl3.Location = new System.Drawing.Point(455, 2);
+            this.panelControl3.Location = new System.Drawing.Point(413, 4);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(553, 165);
+            this.panelControl3.Size = new System.Drawing.Size(453, 165);
             this.panelControl3.TabIndex = 2;
             // 
             // txt_ChuanDoan
@@ -622,7 +626,7 @@
             this.txt_ChuanDoan.Location = new System.Drawing.Point(108, 67);
             this.txt_ChuanDoan.Name = "txt_ChuanDoan";
             this.txt_ChuanDoan.ReadOnly = true;
-            this.txt_ChuanDoan.Size = new System.Drawing.Size(413, 21);
+            this.txt_ChuanDoan.Size = new System.Drawing.Size(325, 21);
             this.txt_ChuanDoan.TabIndex = 9;
             // 
             // txt_BacSiKham
@@ -670,7 +674,7 @@
             this.txt_GhiChuKham.Multiline = true;
             this.txt_GhiChuKham.Name = "txt_GhiChuKham";
             this.txt_GhiChuKham.ReadOnly = true;
-            this.txt_GhiChuKham.Size = new System.Drawing.Size(413, 34);
+            this.txt_GhiChuKham.Size = new System.Drawing.Size(325, 34);
             this.txt_GhiChuKham.TabIndex = 8;
             // 
             // label7
@@ -689,7 +693,7 @@
             this.txt_XetNghiem.Multiline = true;
             this.txt_XetNghiem.Name = "txt_XetNghiem";
             this.txt_XetNghiem.ReadOnly = true;
-            this.txt_XetNghiem.Size = new System.Drawing.Size(413, 34);
+            this.txt_XetNghiem.Size = new System.Drawing.Size(325, 34);
             this.txt_XetNghiem.TabIndex = 9;
             // 
             // label8
@@ -706,7 +710,7 @@
             // 
             this.panelControl4.Controls.Add(this.mtxt_TienThuoc);
             this.panelControl4.Controls.Add(this.btn_HoanThanh);
-            this.panelControl4.Controls.Add(this.simpleButton6);
+            this.panelControl4.Controls.Add(this.btn_Thoat);
             this.panelControl4.Controls.Add(this.txt_GhiChu);
             this.panelControl4.Controls.Add(this.label11);
             this.panelControl4.Controls.Add(this.label6);
@@ -714,37 +718,38 @@
             this.panelControl4.Controls.Add(this.label17);
             this.panelControl4.Controls.Add(this.label16);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl4.Location = new System.Drawing.Point(0, 600);
+            this.panelControl4.Location = new System.Drawing.Point(0, 496);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1008, 61);
+            this.panelControl4.Size = new System.Drawing.Size(870, 61);
             this.panelControl4.TabIndex = 3;
             // 
             // btn_HoanThanh
             // 
             this.btn_HoanThanh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_HoanThanh.Appearance.Options.UseFont = true;
-            this.btn_HoanThanh.Location = new System.Drawing.Point(836, 16);
+            this.btn_HoanThanh.Location = new System.Drawing.Point(658, 16);
             this.btn_HoanThanh.Name = "btn_HoanThanh";
             this.btn_HoanThanh.Size = new System.Drawing.Size(76, 33);
             this.btn_HoanThanh.TabIndex = 14;
             this.btn_HoanThanh.Text = "Hoàn thành";
             this.btn_HoanThanh.Click += new System.EventHandler(this.btn_HoanThanh_Click);
             // 
-            // simpleButton6
+            // btn_Thoat
             // 
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Location = new System.Drawing.Point(928, 16);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 33);
-            this.simpleButton6.TabIndex = 12;
-            this.simpleButton6.Text = "Thoát";
+            this.btn_Thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Thoat.Appearance.Options.UseFont = true;
+            this.btn_Thoat.Location = new System.Drawing.Point(760, 16);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(75, 33);
+            this.btn_Thoat.TabIndex = 12;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(788, 13);
+            this.label17.Location = new System.Drawing.Point(623, 13);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 13);
             this.label17.TabIndex = 0;
@@ -754,7 +759,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(559, 13);
+            this.label16.Location = new System.Drawing.Point(456, 13);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 13);
             this.label16.TabIndex = 0;
@@ -768,7 +773,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 661);
+            this.ClientSize = new System.Drawing.Size(870, 557);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -777,7 +782,7 @@
             this.Name = "DonThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm đơn thuốc cho Bệnh nhân";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DonThuoc_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DonThuoc_FormClosed);
             this.Load += new System.EventHandler(this.DonThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -835,7 +840,7 @@
         private System.Windows.Forms.Label label14;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btn_HoanThanh;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_Thoat;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txt_Ten;

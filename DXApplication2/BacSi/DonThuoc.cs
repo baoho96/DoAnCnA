@@ -29,6 +29,7 @@ namespace QuanLyPhongKham
         public static string GhiChu { get; set; }
         public static string NgayKeDon { get; set; }
         public static string TienThuoc { get; set; }
+        public static string BacSiKham { get; set; }
         public static int ID_MSKB { get; set; }
         #endregion
         int ID_Thuoc_RowClick;
@@ -53,6 +54,7 @@ namespace QuanLyPhongKham
         private void Load_DonThuoc()
         {
             ID_MSKB = BacSi.ID_MSKB;
+            
             string query = @"select T.TenThuoc,T.MaSoThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
                                 " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc "+
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc "+
@@ -203,17 +205,30 @@ namespace QuanLyPhongKham
             TienThuoc =mtxt_TienThuoc.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
             
             printDonThuoc printDonThuoc = new printDonThuoc();//show form Xem đơn thuốc
-            
-            printDonThuoc.Show();
-            this.Hide();//form Đơn thuốc ẩn
+
+            printDonThuoc.ShowDialog();            
         }
 
-        private void btn_HoanThanh_Click(object sender, EventArgs e)
+        private void btn_HoanThanh_Click(object sender, EventArgs e)//nút Hoàn thành
         {
             if(function.checkNull(panelControl4)==true)
             {
+                string query = @"update DonThuoc set " +
+                                " NgayKeDon = N'" + dtP_NgayKeDon.Text + "'," +
+                                " GhiChu = N'" + txt_GhiChu.Text + "'," +
+                                " TongTienThuoc = h.TongTien "  +//gán 1 biến tạm cho TongTienThuoc
+                                " from ( select sum(T.DonGia * DST.SoLuong) as TongTien " +//tính sum của DonGia * SoLuong
+                                "           from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " + //hàm tính sum bình thường giống hàm Tính Tiền Thuốc
+                                "           left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc where DT.MaSoKhamBenh =  " + ID_MSKB + ") h"+ //gán biến h 
+                                " join DonThuoc DT on DT.MaSoKhamBenh =" + ID_MSKB;
+                connection.connect();
+                connection.sql(query);
+                connection.disconnect();
+                ID_MSDT = 0;
+                this.Close();
                 
             }
+
         }
 
         private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
@@ -226,10 +241,16 @@ namespace QuanLyPhongKham
             mtxt_TienThuoc.Text = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
         }
 
-        private void DonThuoc_FormClosing(object sender, FormClosingEventArgs e)
+        private void DonThuoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bacSi = new BacSi();
-            bacSi.Show();
+            ID_MSDT = 0;
+            
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            ID_MSDT = 0;
+            this.Close();
         }
     }
 }

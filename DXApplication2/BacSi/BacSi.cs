@@ -25,6 +25,7 @@ namespace QuanLyPhongKham
         BindingSource bindingSource = new BindingSource();
         SqlCommand cmd;
         DangNhap dangNhap = new DangNhap();
+        DonThuoc donThuoc = new DonThuoc();
         function function = new function();
         int quyentruycap;
 
@@ -38,7 +39,7 @@ namespace QuanLyPhongKham
         public static string DiaChi_BenhNhan { get; set; }
         public static string BacSiKham_BenhNhan { get; set; }
         public static int ID_MSKB { get; set; }
-
+        public static string TienThuoc { get; set; }
         public BacSi()
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace QuanLyPhongKham
             string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
                                                     " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem," +
                                                     " HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, " +
-                                                    "HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh" +
+                                                    "HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, HSKB.KiemTraTaiKham" +
                                 " FROM            HoSoKhamBenh HSKB LEFT JOIN" +
                                                     " BenhNhan BN ON BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
                                                     " left join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
@@ -80,8 +81,21 @@ namespace QuanLyPhongKham
             bindingSource.DataSource = ds.Tables["HoSoKhamBenh"];
             BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.DataSource = bindingSource;            
             connection.disconnect();
+
+            txtTienThuoc.Text = TienThuoc;
         }
         
+        private void load_TienThuoc()
+        {
+            string query = @"select DT.TongTienThuoc "+
+                            " from DonThuoc DT Left Join HoSoKhamBenh HSKB on DT.MaSoKhamBenh = HSKB.MaSoKhamBenh"+
+                            " where HSKB.MaSoKhamBenh ="+ ID_MSKB;
+            //connection.connect();
+            DataTable dt = connection.SQL(query);
+            txtTienThuoc.Text = dt.Rows[0][0].ToString();
+            //connection.disconnect();
+        }
+
         private void btn_TaoDonThuoc_Click(object sender, EventArgs e)
         {
             if(txt_ho.Text=="" &&txt_ten.Text=="")
@@ -98,7 +112,7 @@ namespace QuanLyPhongKham
                 
                 DonThuoc donThuoc = new DonThuoc();
                 donThuoc.Show();
-                this.Hide();
+                
             }
             
         }
@@ -125,7 +139,7 @@ namespace QuanLyPhongKham
                        
 
             connection.connect();
-                        
+            load_TienThuoc();
 
             string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
             cmd = new SqlCommand(layhinhanh, connection.con);
@@ -165,10 +179,9 @@ namespace QuanLyPhongKham
             function.KoNhapKiTu(sender, e);
         }
 
-        private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
+        private void BacSi_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Admin admin = new Admin();
-            admin.Show();
+
         }
     }
 }

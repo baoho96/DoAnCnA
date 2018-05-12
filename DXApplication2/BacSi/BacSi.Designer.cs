@@ -65,6 +65,8 @@
             this.colCheckTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txtTienThuoc = new System.Windows.Forms.MaskedTextBox();
+            this.txt_TienKham = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1_BenhNhan = new System.Windows.Forms.PictureBox();
             this.btn_HoanTat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_TaoDonThuoc = new DevExpress.XtraEditors.SimpleButton();
@@ -87,8 +89,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
-            this.txt_TienKham = new System.Windows.Forms.MaskedTextBox();
-            this.txtTienThuoc = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -410,7 +410,7 @@
             // colCheckTaiKham
             // 
             this.colCheckTaiKham.Caption = "Tái khám";
-            this.colCheckTaiKham.FieldName = "CheckTaiKham";
+            this.colCheckTaiKham.FieldName = "KiemTraTaiKham";
             this.colCheckTaiKham.Name = "colCheckTaiKham";
             this.colCheckTaiKham.Visible = true;
             this.colCheckTaiKham.VisibleIndex = 9;
@@ -450,6 +450,25 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1014, 156);
             this.panelControl2.TabIndex = 5;
+            // 
+            // txtTienThuoc
+            // 
+            this.txtTienThuoc.Location = new System.Drawing.Point(580, 85);
+            this.txtTienThuoc.Mask = "000 000 000 000 000";
+            this.txtTienThuoc.Name = "txtTienThuoc";
+            this.txtTienThuoc.PromptChar = ' ';
+            this.txtTienThuoc.ReadOnly = true;
+            this.txtTienThuoc.Size = new System.Drawing.Size(116, 21);
+            this.txtTienThuoc.TabIndex = 25;
+            // 
+            // txt_TienKham
+            // 
+            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
+            this.txt_TienKham.Mask = "000 000 000";
+            this.txt_TienKham.Name = "txt_TienKham";
+            this.txt_TienKham.PromptChar = ' ';
+            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
+            this.txt_TienKham.TabIndex = 25;
             // 
             // pictureBox1_BenhNhan
             // 
@@ -653,25 +672,6 @@
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
             // 
-            // txt_TienKham
-            // 
-            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
-            this.txt_TienKham.Mask = "000 000 000";
-            this.txt_TienKham.Name = "txt_TienKham";
-            this.txt_TienKham.PromptChar = ' ';
-            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
-            this.txt_TienKham.TabIndex = 25;
-            // 
-            // txtTienThuoc
-            // 
-            this.txtTienThuoc.Location = new System.Drawing.Point(580, 85);
-            this.txtTienThuoc.Mask = "000 000 000 000 000";
-            this.txtTienThuoc.Name = "txtTienThuoc";
-            this.txtTienThuoc.PromptChar = ' ';
-            this.txtTienThuoc.ReadOnly = true;
-            this.txtTienThuoc.Size = new System.Drawing.Size(116, 21);
-            this.txtTienThuoc.TabIndex = 25;
-            // 
             // BacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,12 +681,13 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
+            this.HtmlText = "Bác Sĩ khám bệnh";
             this.MaximizeBox = false;
             this.Name = "BacSi";
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BacSi_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BacSi_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);

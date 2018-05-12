@@ -49,8 +49,8 @@ namespace QuanLyPhongKham
 
         private void printDonThuoc_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DonThuoc donThuoc = new DonThuoc();
-            donThuoc.Show();
+            //DonThuoc donThuoc = new DonThuoc();
+            //donThuoc.Show();
         }
     }
 }
