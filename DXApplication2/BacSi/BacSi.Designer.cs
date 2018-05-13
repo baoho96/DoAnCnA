@@ -66,7 +66,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtTienThuoc = new System.Windows.Forms.MaskedTextBox();
-            this.txt_TienKham = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1_BenhNhan = new System.Windows.Forms.PictureBox();
             this.btn_HoanTat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_TaoDonThuoc = new DevExpress.XtraEditors.SimpleButton();
@@ -89,6 +88,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
+            this.txt_TienKham = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -423,8 +423,8 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.txtTienThuoc);
             this.panelControl2.Controls.Add(this.txt_TienKham);
+            this.panelControl2.Controls.Add(this.txtTienThuoc);
             this.panelControl2.Controls.Add(this.pictureBox1_BenhNhan);
             this.panelControl2.Controls.Add(this.btn_HoanTat);
             this.panelControl2.Controls.Add(this.btn_TaoDonThuoc);
@@ -461,15 +461,6 @@
             this.txtTienThuoc.Size = new System.Drawing.Size(116, 21);
             this.txtTienThuoc.TabIndex = 25;
             // 
-            // txt_TienKham
-            // 
-            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
-            this.txt_TienKham.Mask = "000 000 000";
-            this.txt_TienKham.Name = "txt_TienKham";
-            this.txt_TienKham.PromptChar = ' ';
-            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
-            this.txt_TienKham.TabIndex = 25;
-            // 
             // pictureBox1_BenhNhan
             // 
             this.pictureBox1_BenhNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -487,9 +478,9 @@
             // 
             this.btn_HoanTat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_HoanTat.Appearance.Options.UseFont = true;
-            this.btn_HoanTat.Location = new System.Drawing.Point(899, 114);
+            this.btn_HoanTat.Location = new System.Drawing.Point(892, 112);
             this.btn_HoanTat.Name = "btn_HoanTat";
-            this.btn_HoanTat.Size = new System.Drawing.Size(87, 30);
+            this.btn_HoanTat.Size = new System.Drawing.Size(87, 34);
             this.btn_HoanTat.TabIndex = 3;
             this.btn_HoanTat.Text = "Hoàn Tất";
             this.btn_HoanTat.Click += new System.EventHandler(this.btn_HoanTat_Click);
@@ -498,7 +489,7 @@
             // 
             this.btn_TaoDonThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_TaoDonThuoc.Appearance.Options.UseFont = true;
-            this.btn_TaoDonThuoc.Location = new System.Drawing.Point(662, 112);
+            this.btn_TaoDonThuoc.Location = new System.Drawing.Point(644, 112);
             this.btn_TaoDonThuoc.Name = "btn_TaoDonThuoc";
             this.btn_TaoDonThuoc.Size = new System.Drawing.Size(87, 34);
             this.btn_TaoDonThuoc.TabIndex = 3;
@@ -672,6 +663,14 @@
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
             // 
+            // txt_TienKham
+            // 
+            this.txt_TienKham.Location = new System.Drawing.Point(580, 58);
+            this.txt_TienKham.Name = "txt_TienKham";
+            this.txt_TienKham.Size = new System.Drawing.Size(116, 21);
+            this.txt_TienKham.TabIndex = 26;
+            this.txt_TienKham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TienKham_KeyPress);
+            // 
             // BacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,6 +764,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_DangXuat;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.MaskedTextBox txtTienThuoc;
-        private System.Windows.Forms.MaskedTextBox txt_TienKham;
+        private System.Windows.Forms.TextBox txt_TienKham;
     }
 }

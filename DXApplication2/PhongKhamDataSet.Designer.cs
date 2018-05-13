@@ -56,8 +56,6 @@ namespace QuanLyPhongKham {
         
         private global::System.Data.DataRelation relationFK_HoaDon_NhanVien;
         
-        private global::System.Data.DataRelation relationFK_HoSoKhamBenh_NhanVien;
-        
         private global::System.Data.DataRelation relationFK_Thuoc_LoaiThuoc;
         
         private global::System.Data.DataRelation relationFK_HoSoKhamBenh_BenhNhan;
@@ -65,6 +63,8 @@ namespace QuanLyPhongKham {
         private global::System.Data.DataRelation relationFK_HoSoKhamBenh_HoSoTaiKham;
         
         private global::System.Data.DataRelation relationFK_BenhNhan_HoSoTaiKham;
+        
+        private global::System.Data.DataRelation relationFK_HoSoTaiKham_BenhNhan;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -438,11 +438,11 @@ namespace QuanLyPhongKham {
             this.relationFK_HoaDon_DonThuoc = this.Relations["FK_HoaDon_DonThuoc"];
             this.relationFK_HoaDon_HoSoKhamBenh = this.Relations["FK_HoaDon_HoSoKhamBenh"];
             this.relationFK_HoaDon_NhanVien = this.Relations["FK_HoaDon_NhanVien"];
-            this.relationFK_HoSoKhamBenh_NhanVien = this.Relations["FK_HoSoKhamBenh_NhanVien"];
             this.relationFK_Thuoc_LoaiThuoc = this.Relations["FK_Thuoc_LoaiThuoc"];
             this.relationFK_HoSoKhamBenh_BenhNhan = this.Relations["FK_HoSoKhamBenh_BenhNhan"];
             this.relationFK_HoSoKhamBenh_HoSoTaiKham = this.Relations["FK_HoSoKhamBenh_HoSoTaiKham"];
             this.relationFK_BenhNhan_HoSoTaiKham = this.Relations["FK_BenhNhan_HoSoTaiKham"];
+            this.relationFK_HoSoTaiKham_BenhNhan = this.Relations["FK_HoSoTaiKham_BenhNhan"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -497,10 +497,6 @@ namespace QuanLyPhongKham {
                         this.tableNhanVien.MaSoNhanVienColumn}, new global::System.Data.DataColumn[] {
                         this.tableHoaDon.MaNguoiLapColumn}, false);
             this.Relations.Add(this.relationFK_HoaDon_NhanVien);
-            this.relationFK_HoSoKhamBenh_NhanVien = new global::System.Data.DataRelation("FK_HoSoKhamBenh_NhanVien", new global::System.Data.DataColumn[] {
-                        this.tableNhanVien.MaSoNhanVienColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHoSoKhamBenh.MaSoBacSiColumn}, false);
-            this.Relations.Add(this.relationFK_HoSoKhamBenh_NhanVien);
             this.relationFK_Thuoc_LoaiThuoc = new global::System.Data.DataRelation("FK_Thuoc_LoaiThuoc", new global::System.Data.DataColumn[] {
                         this.tableLoaiThuoc.MaSoLoaiThuocColumn}, new global::System.Data.DataColumn[] {
                         this.tableThuoc.MaSoLoaiThuocColumn}, false);
@@ -517,6 +513,10 @@ namespace QuanLyPhongKham {
                         this.tableBenhNhan.MaSoBenhNhanColumn}, new global::System.Data.DataColumn[] {
                         this.tableHoSoTaiKham.MaSoBenhNhanColumn}, false);
             this.Relations.Add(this.relationFK_BenhNhan_HoSoTaiKham);
+            this.relationFK_HoSoTaiKham_BenhNhan = new global::System.Data.DataRelation("FK_HoSoTaiKham_BenhNhan", new global::System.Data.DataColumn[] {
+                        this.tableHoSoKhamBenh.MaSoBenhNhanColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHoSoTaiKham.MaSoBenhNhanColumn}, false);
+            this.Relations.Add(this.relationFK_HoSoTaiKham_BenhNhan);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2075,8 +2075,6 @@ namespace QuanLyPhongKham {
             
             private global::System.Data.DataColumn columnNgayGioKham;
             
-            private global::System.Data.DataColumn columnMaSoBacSi;
-            
             private global::System.Data.DataColumn columnXetNghiem;
             
             private global::System.Data.DataColumn columnChuanDoan;
@@ -2110,6 +2108,10 @@ namespace QuanLyPhongKham {
             private global::System.Data.DataColumn columnMaSoTaiKham;
             
             private global::System.Data.DataColumn columnKiemTraTaiKham;
+            
+            private global::System.Data.DataColumn columnTienKham1;
+            
+            private global::System.Data.DataColumn columnTenNhanVien;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -2165,14 +2167,6 @@ namespace QuanLyPhongKham {
             public global::System.Data.DataColumn NgayGioKhamColumn {
                 get {
                     return this.columnNgayGioKham;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn MaSoBacSiColumn {
-                get {
-                    return this.columnMaSoBacSi;
                 }
             }
             
@@ -2314,6 +2308,22 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TienKham1Column {
+                get {
+                    return this.columnTienKham1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TenNhanVienColumn {
+                get {
+                    return this.columnTenNhanVien;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2352,7 +2362,6 @@ namespace QuanLyPhongKham {
             public HoSoKhamBenhRow AddHoSoKhamBenhRow(
                         BenhNhanRow parentBenhNhanRowByFK_HoSoKhamBenh_BenhNhan, 
                         string NgayGioKham, 
-                        NhanVienRow parentNhanVienRowByFK_HoSoKhamBenh_NhanVien, 
                         string XetNghiem, 
                         string ChuanDoan, 
                         int TienKham, 
@@ -2369,13 +2378,14 @@ namespace QuanLyPhongKham {
                         string HinhAnh, 
                         int CanNang, 
                         int MaSoTaiKham, 
-                        bool KiemTraTaiKham) {
+                        bool KiemTraTaiKham, 
+                        long TienKham1, 
+                        string TenNhanVien) {
                 HoSoKhamBenhRow rowHoSoKhamBenhRow = ((HoSoKhamBenhRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         NgayGioKham,
-                        null,
                         XetNghiem,
                         ChuanDoan,
                         TienKham,
@@ -2392,12 +2402,11 @@ namespace QuanLyPhongKham {
                         HinhAnh,
                         CanNang,
                         MaSoTaiKham,
-                        KiemTraTaiKham};
+                        KiemTraTaiKham,
+                        TienKham1,
+                        TenNhanVien};
                 if ((parentBenhNhanRowByFK_HoSoKhamBenh_BenhNhan != null)) {
                     columnValuesArray[1] = parentBenhNhanRowByFK_HoSoKhamBenh_BenhNhan[0];
-                }
-                if ((parentNhanVienRowByFK_HoSoKhamBenh_NhanVien != null)) {
-                    columnValuesArray[3] = parentNhanVienRowByFK_HoSoKhamBenh_NhanVien[0];
                 }
                 rowHoSoKhamBenhRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHoSoKhamBenhRow);
@@ -2431,7 +2440,6 @@ namespace QuanLyPhongKham {
                 this.columnMaSoKhamBenh = base.Columns["MaSoKhamBenh"];
                 this.columnMaSoBenhNhan = base.Columns["MaSoBenhNhan"];
                 this.columnNgayGioKham = base.Columns["NgayGioKham"];
-                this.columnMaSoBacSi = base.Columns["MaSoBacSi"];
                 this.columnXetNghiem = base.Columns["XetNghiem"];
                 this.columnChuanDoan = base.Columns["ChuanDoan"];
                 this.columnTienKham = base.Columns["TienKham"];
@@ -2449,6 +2457,8 @@ namespace QuanLyPhongKham {
                 this.columnCanNang = base.Columns["CanNang"];
                 this.columnMaSoTaiKham = base.Columns["MaSoTaiKham"];
                 this.columnKiemTraTaiKham = base.Columns["KiemTraTaiKham"];
+                this.columnTienKham1 = base.Columns["TienKham1"];
+                this.columnTenNhanVien = base.Columns["TenNhanVien"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2460,8 +2470,6 @@ namespace QuanLyPhongKham {
                 base.Columns.Add(this.columnMaSoBenhNhan);
                 this.columnNgayGioKham = new global::System.Data.DataColumn("NgayGioKham", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgayGioKham);
-                this.columnMaSoBacSi = new global::System.Data.DataColumn("MaSoBacSi", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaSoBacSi);
                 this.columnXetNghiem = new global::System.Data.DataColumn("XetNghiem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnXetNghiem);
                 this.columnChuanDoan = new global::System.Data.DataColumn("ChuanDoan", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2496,6 +2504,10 @@ namespace QuanLyPhongKham {
                 base.Columns.Add(this.columnMaSoTaiKham);
                 this.columnKiemTraTaiKham = new global::System.Data.DataColumn("KiemTraTaiKham", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKiemTraTaiKham);
+                this.columnTienKham1 = new global::System.Data.DataColumn("TienKham1", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTienKham1);
+                this.columnTenNhanVien = new global::System.Data.DataColumn("TenNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenNhanVien);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaSoKhamBenh}, true));
                 this.columnMaSoKhamBenh.AutoIncrement = true;
@@ -2514,6 +2526,8 @@ namespace QuanLyPhongKham {
                 this.columnLiDoKham.MaxLength = 2147483647;
                 this.columnDiaChi.MaxLength = 2147483647;
                 this.columnHinhAnh.MaxLength = 2147483647;
+                this.columnTienKham1.Caption = "TienKham";
+                this.columnTenNhanVien.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5317,22 +5331,6 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int MaSoBacSi {
-                get {
-                    try {
-                        return ((int)(this[this.tableHoSoKhamBenh.MaSoBacSiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaSoBacSi\' in table \'HoSoKhamBenh\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHoSoKhamBenh.MaSoBacSiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string XetNghiem {
                 get {
                     try {
@@ -5605,12 +5603,33 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NhanVienRow NhanVienRow {
+            public long TienKham1 {
                 get {
-                    return ((NhanVienRow)(this.GetParentRow(this.Table.ParentRelations["FK_HoSoKhamBenh_NhanVien"])));
+                    try {
+                        return ((long)(this[this.tableHoSoKhamBenh.TienKham1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TienKham1\' in table \'HoSoKhamBenh\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HoSoKhamBenh_NhanVien"]);
+                    this[this.tableHoSoKhamBenh.TienKham1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string TenNhanVien {
+                get {
+                    try {
+                        return ((string)(this[this.tableHoSoKhamBenh.TenNhanVienColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenNhanVien\' in table \'HoSoKhamBenh\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHoSoKhamBenh.TenNhanVienColumn] = value;
                 }
             }
             
@@ -5647,18 +5666,6 @@ namespace QuanLyPhongKham {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNgayGioKhamNull() {
                 this[this.tableHoSoKhamBenh.NgayGioKhamColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMaSoBacSiNull() {
-                return this.IsNull(this.tableHoSoKhamBenh.MaSoBacSiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMaSoBacSiNull() {
-                this[this.tableHoSoKhamBenh.MaSoBacSiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5867,6 +5874,30 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTienKham1Null() {
+                return this.IsNull(this.tableHoSoKhamBenh.TienKham1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTienKham1Null() {
+                this[this.tableHoSoKhamBenh.TienKham1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTenNhanVienNull() {
+                return this.IsNull(this.tableHoSoKhamBenh.TenNhanVienColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTenNhanVienNull() {
+                this[this.tableHoSoKhamBenh.TenNhanVienColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DonThuocRow[] GetDonThuocRows() {
                 if ((this.Table.ChildRelations["FK_DonThuoc_HoSoKhamBenh"] == null)) {
                     return new DonThuocRow[0];
@@ -5895,6 +5926,17 @@ namespace QuanLyPhongKham {
                 }
                 else {
                     return ((HoSoTaiKhamRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoKhamBenh_HoSoTaiKham"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HoSoTaiKhamRow[] GetHoSoTaiKhamRowsByFK_HoSoTaiKham_BenhNhan() {
+                if ((this.Table.ChildRelations["FK_HoSoTaiKham_BenhNhan"] == null)) {
+                    return new HoSoTaiKhamRow[0];
+                }
+                else {
+                    return ((HoSoTaiKhamRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoTaiKham_BenhNhan"])));
                 }
             }
         }
@@ -6361,17 +6403,6 @@ namespace QuanLyPhongKham {
                 }
                 else {
                     return ((HoaDonRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoaDon_NhanVien"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoKhamBenhRow[] GetHoSoKhamBenhRows() {
-                if ((this.Table.ChildRelations["FK_HoSoKhamBenh_NhanVien"] == null)) {
-                    return new HoSoKhamBenhRow[0];
-                }
-                else {
-                    return ((HoSoKhamBenhRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoKhamBenh_NhanVien"])));
                 }
             }
         }
@@ -6918,6 +6949,17 @@ namespace QuanLyPhongKham {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_BenhNhan_HoSoTaiKham"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HoSoKhamBenhRow HoSoKhamBenhRowByFK_HoSoTaiKham_BenhNhan {
+                get {
+                    return ((HoSoKhamBenhRow)(this.GetParentRow(this.Table.ParentRelations["FK_HoSoTaiKham_BenhNhan"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HoSoTaiKham_BenhNhan"]);
                 }
             }
             
@@ -8609,10 +8651,8 @@ SELECT MaHoaDon, NgayGioLap, MaNguoiLap, MaSoKhamBenh, MaSoDonThuoc, TongTien, K
             tableMapping.ColumnMappings.Add("MaSoKhamBenh", "MaSoKhamBenh");
             tableMapping.ColumnMappings.Add("MaSoBenhNhan", "MaSoBenhNhan");
             tableMapping.ColumnMappings.Add("NgayGioKham", "NgayGioKham");
-            tableMapping.ColumnMappings.Add("MaSoBacSi", "MaSoBacSi");
             tableMapping.ColumnMappings.Add("XetNghiem", "XetNghiem");
             tableMapping.ColumnMappings.Add("ChuanDoan", "ChuanDoan");
-            tableMapping.ColumnMappings.Add("TienKham", "TienKham");
             tableMapping.ColumnMappings.Add("NgayTaiKham", "NgayTaiKham");
             tableMapping.ColumnMappings.Add("GhiChu", "GhiChu");
             tableMapping.ColumnMappings.Add("KiemTraKham", "KiemTraKham");
@@ -8627,6 +8667,8 @@ SELECT MaHoaDon, NgayGioLap, MaNguoiLap, MaSoKhamBenh, MaSoDonThuoc, TongTien, K
             tableMapping.ColumnMappings.Add("CanNang", "CanNang");
             tableMapping.ColumnMappings.Add("MaSoTaiKham", "MaSoTaiKham");
             tableMapping.ColumnMappings.Add("KiemTraTaiKham", "KiemTraTaiKham");
+            tableMapping.ColumnMappings.Add("TienKham", "TienKham1");
+            tableMapping.ColumnMappings.Add("TenNhanVien", "TenNhanVien");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -8644,11 +8686,12 @@ SELECT MaHoaDon, NgayGioLap, MaNguoiLap, MaSoKhamBenh, MaSoDonThuoc, TongTien, K
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT DISTINCT 
-                         HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, 
-                         HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, BN.CanNang, HSTK.MaSoTaiKham, HSKB.KiemTraTaiKham
+                         HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, 
+                         HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, BN.CanNang, HSTK.MaSoTaiKham, HSKB.KiemTraTaiKham,NV.TenNhanVien
 FROM            HoSoKhamBenh AS HSKB LEFT OUTER JOIN
                          BenhNhan AS BN ON BN.MaSoBenhNhan = HSKB.MaSoBenhNhan LEFT OUTER JOIN
-                         HoSoTaiKham AS HSTK ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh";
+                         HoSoTaiKham AS HSTK ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh
+                        LEFT OUTER JOIN NhanVien AS NV on HSKB.MaSoBacSi = NV.MaSoNhanVien";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10643,21 +10686,21 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(PhongKhamDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._nhanVienTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.NhanVien.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._nhanVienTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._loaiThuocTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.LoaiThuoc.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._loaiThuocTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._nhanVienTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.NhanVien.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._nhanVienTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10698,19 +10741,19 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(PhongKhamDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._nhanVienTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.NhanVien.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._nhanVienTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._loaiThuocTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.LoaiThuoc.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._loaiThuocTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._nhanVienTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.NhanVien.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._nhanVienTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10772,19 +10815,19 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._loaiThuocTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.LoaiThuoc.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._loaiThuocTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._nhanVienTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.NhanVien.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._nhanVienTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._loaiThuocTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.LoaiThuoc.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._loaiThuocTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

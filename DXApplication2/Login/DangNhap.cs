@@ -24,23 +24,32 @@ namespace QuanLyPhongKham
         private SqlDataAdapter da;
         function function = new function();
         connection connection = new connection();        
-        public static int quyentruycap { get; set; }
-        
-        //public int _quyentruycap { get { return quyentruycap; } set { quyentruycap = value; } }
+        int quyentruycap { get; set; }
+        public static string TenBacSi { get; set; }
+        public static int MaSoBacSi { get; set; }
+
         public void btn_DangNhap_Click(object sender, EventArgs e)
         {
 
             var passMD5 = function.toMD5(txt_matkhau.Text);
-            string query = "select taikhoan,matkhau,quyentruycap from NhanVien where taikhoan ='"+ txt_taikhoan.Text+
+            string query = "select TenNhanVien,MaSoNhanVien,QuyenTruyCap from NhanVien where taikhoan ='" + txt_taikhoan.Text +
                 "'and matkhau = '"+ passMD5 + "'";
             connection.connect();
             cmd = new SqlCommand(query, connection.con);
             da = new SqlDataAdapter(cmd);
-            admin ad = new admin();
+            
             DataTable dt = new DataTable();
             da.Fill(dt);
-            
-            if(dt!=null)
+            if (dt.Rows.Count == 0)
+            {
+                function.Notice("Sai Mật khẩu hoặc tên Đăng nhập. Vui lòng nhập lại", 0);
+            }
+            else
+            {
+                TenBacSi = dt.Rows[0][0].ToString();
+                MaSoBacSi = int.Parse(dt.Rows[0][1].ToString());
+            }
+            if (dt!=null)
             {
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -81,9 +90,12 @@ namespace QuanLyPhongKham
                         this.Visible = false;
                     }
                 }
+                
             }
+            
             connection.disconnect();
         }
+        
 
         
 

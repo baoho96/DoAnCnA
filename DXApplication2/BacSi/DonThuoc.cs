@@ -103,7 +103,7 @@ namespace QuanLyPhongKham
             txt_XetNghiem.Text = BacSi.XetNghiem_BenhNhan;
             ChuanDoan=txt_ChuanDoan.Text = BacSi.ChuanDoan_BenhNhan;
             txt_GhiChuKham.Text = BacSi.GhiChu_BenhNhan;
-            txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
+            BacSiKham= txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
         }
         
 

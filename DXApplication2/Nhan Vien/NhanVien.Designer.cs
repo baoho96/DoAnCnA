@@ -192,6 +192,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.NhanVien_tabP_TiepNhanBenhNhan = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.TiepNhanBenhNhan_btn_ThemCho = new DevExpress.XtraEditors.SimpleButton();
             this.TiepNhanBenhNhan_btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
@@ -719,6 +720,7 @@
             // clTenBacSi
             // 
             this.clTenBacSi.Caption = "Tên Bác Sĩ";
+            this.clTenBacSi.FieldName = "TenNhanVien";
             this.clTenBacSi.Name = "clTenBacSi";
             this.clTenBacSi.Visible = true;
             this.clTenBacSi.VisibleIndex = 3;
@@ -1713,6 +1715,7 @@
             // 
             // panelControl6
             // 
+            this.panelControl6.Controls.Add(this.dateTimePicker1);
             this.panelControl6.Controls.Add(this.label11);
             this.panelControl6.Controls.Add(this.TiepNhanBenhNhan_btn_ThemCho);
             this.panelControl6.Controls.Add(this.TiepNhanBenhNhan_btn_Xoa);
@@ -1728,6 +1731,16 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1008, 372);
             this.panelControl6.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker1.Location = new System.Drawing.Point(505, 55);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker1.TabIndex = 11;
             // 
             // label11
             // 
@@ -2311,5 +2324,6 @@
         private System.Windows.Forms.DateTimePicker TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

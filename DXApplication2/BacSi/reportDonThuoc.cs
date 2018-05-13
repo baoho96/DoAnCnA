@@ -33,6 +33,7 @@ namespace QuanLyPhongKham
             lbNgayKeDon.Text = DonThuoc.NgayKeDon;
             lbTienThuoc.Text = DonThuoc.TienThuoc;
             lbBacSi.Text = DonThuoc.BacSiKham;
+            
         }
     }
 }

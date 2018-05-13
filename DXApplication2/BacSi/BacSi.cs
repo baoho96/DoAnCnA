@@ -39,6 +39,7 @@ namespace QuanLyPhongKham
         public static string DiaChi_BenhNhan { get; set; }
         public static string BacSiKham_BenhNhan { get; set; }
         public static int ID_MSKB { get; set; }
+        public static int ID_MSBN { get; set; }
         public static string TienThuoc { get; set; }
         public BacSi()
         {
@@ -64,7 +65,7 @@ namespace QuanLyPhongKham
             string ngay = DateTime.Now.Day.ToString("d2");
             string thang = DateTime.Now.Month.ToString("d2");
             string nam = DateTime.Now.Year.ToString();
-            quyentruycap = DangNhap.quyentruycap;
+            //quyentruycap = DangNhap.quyentruycap;
             string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
                                                     " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem," +
                                                     " HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, " +
@@ -82,9 +83,21 @@ namespace QuanLyPhongKham
             BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.DataSource = bindingSource;            
             connection.disconnect();
 
-            txtTienThuoc.Text = TienThuoc;
+            GanGiaTri();
         }
-        
+
+        private void Refresh_BacSi()
+        {
+            function.ClearControl(panelControl2);
+            Load_HoSoKhamBenh();
+
+        }
+
+        private void GanGiaTri()
+        {
+            txtTienThuoc.Text = TienThuoc;
+            BacSiKham_BenhNhan = DangNhap.TenBacSi;
+        }
         private void load_TienThuoc()
         {
             string query = @"select DT.TongTienThuoc "+
@@ -92,7 +105,10 @@ namespace QuanLyPhongKham
                             " where HSKB.MaSoKhamBenh ="+ ID_MSKB;
             //connection.connect();
             DataTable dt = connection.SQL(query);
-            txtTienThuoc.Text = dt.Rows[0][0].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                txtTienThuoc.Text = dt.Rows[0][0].ToString();
+            }
             //connection.disconnect();
         }
 
@@ -119,7 +135,7 @@ namespace QuanLyPhongKham
 
         private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick(object sender, RowClickEventArgs e)
         {
-            string ID = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+            ID_MSBN = int.Parse(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
             //txt_TenBacSi.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
             txt_ho.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ho").ToString();
             txt_ten.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ten").ToString();
@@ -135,13 +151,13 @@ namespace QuanLyPhongKham
             NamSinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NamSinh").ToString();
             GioiTinh_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
             DiaChi_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
-            BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
+            //BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
                        
 
             connection.connect();
             load_TienThuoc();
 
-            string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
+            string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID_MSBN;
             cmd = new SqlCommand(layhinhanh, connection.con);
             SqlDataReader dr = cmd.ExecuteReader();
             while(dr.Read())
@@ -169,19 +185,32 @@ namespace QuanLyPhongKham
 
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
-
-        }
-
-        
-
-        private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            function.KoNhapKiTu(sender, e);
-        }
+            if (function.checkNull(panelControl2) == true)
+            {
+                string query = @"update HoSoKhamBenh set " +
+                                " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
+                                " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
+                                " GhiChu = N'" + txt_GhiChu.Text + "'," +
+                                " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
+                                " TienKham  = " + txt_TienKham.Text + "," +
+                                " KiemTraKham = 1" + "," +
+                                " MaSoBacSi = " + DangNhap.MaSoBacSi +
+                                " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB;
+                connection.connect();
+                connection.sql(query);
+                connection.disconnect();
+                Refresh_BacSi();
+            }
+        }        
 
         private void BacSi_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
         }
     }
 }
