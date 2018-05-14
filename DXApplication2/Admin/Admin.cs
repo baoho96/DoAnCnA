@@ -775,9 +775,9 @@ namespace QuanLyPhongKham
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
+            //this.Close();
+            //DangNhap dangNhap = new DangNhap();
+            //dangNhap.Show();
         }
     }
 }

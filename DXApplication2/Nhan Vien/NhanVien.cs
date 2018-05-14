@@ -713,9 +713,9 @@ namespace QuanLyPhongKham
 
         private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
+            //this.Close();
+            //DangNhap dangNhap = new DangNhap();
+            //dangNhap.Show();
         }
     }
 

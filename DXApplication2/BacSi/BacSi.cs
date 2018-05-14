@@ -203,15 +203,9 @@ namespace QuanLyPhongKham
                 connection.disconnect();
                 Refresh_BacSi();
             }
-        }        
+        }       
 
-        private void BacSi_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
-            BacSiKham_BenhNhan = "";
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
-        }
+       
 
         private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -241,6 +235,13 @@ namespace QuanLyPhongKham
             dangNhap = new DangNhap();
             dangNhap.Show();
                 
+        }
+
+        private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
+            //DangNhap dangNhap = new DangNhap();
+            //dangNhap.Close();
         }
     }
 }

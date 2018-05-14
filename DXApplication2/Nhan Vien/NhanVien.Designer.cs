@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -363,19 +363,19 @@
             // 
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode9.RelationName = "FK_DanhSachThuoc_DonThuoc";
-            gridLevelNode10.RelationName = "FK_HoaDon_DonThuoc";
-            gridLevelNode8.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode9,
-            gridLevelNode10});
-            gridLevelNode8.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode11.RelationName = "FK_HoaDon_HoSoKhamBenh";
-            gridLevelNode12.LevelTemplate = this.gridView1_HoSoTaiKham;
-            gridLevelNode12.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode4.RelationName = "FK_DanhSachThuoc_DonThuoc";
+            gridLevelNode5.RelationName = "FK_HoaDon_DonThuoc";
+            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode4,
+            gridLevelNode5});
+            gridLevelNode3.RelationName = "FK_DonThuoc_HoSoKhamBenh";
+            gridLevelNode6.RelationName = "FK_HoaDon_HoSoKhamBenh";
+            gridLevelNode7.LevelTemplate = this.gridView1_HoSoTaiKham;
+            gridLevelNode7.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode8,
-            gridLevelNode11,
-            gridLevelNode12});
+            gridLevelNode3,
+            gridLevelNode6,
+            gridLevelNode7});
             this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 46);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
@@ -807,13 +807,13 @@
             // 
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode1.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_BenhNhan";
-            gridLevelNode2.LevelTemplate = this.cardView1_BenhNhan_HSTK;
-            gridLevelNode2.RelationName = "FK_BenhNhan_HoSoTaiKham";
+            gridLevelNode8.LevelTemplate = this.cardView1_DanhsachbenhNhan;
+            gridLevelNode8.RelationName = "FK_HoSoKhamBenh_BenhNhan";
+            gridLevelNode9.LevelTemplate = this.cardView1_BenhNhan_HSTK;
+            gridLevelNode9.RelationName = "FK_BenhNhan_HoSoTaiKham";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode8,
+            gridLevelNode9});
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 143);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";

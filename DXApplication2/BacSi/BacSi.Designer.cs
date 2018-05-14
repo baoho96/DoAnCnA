@@ -692,7 +692,8 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BacSi_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BacSi_FormClosing);
+            
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
