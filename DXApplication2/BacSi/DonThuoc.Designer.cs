@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonThuoc));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
@@ -136,20 +137,22 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(733, 64);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(102, 36);
             this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Xem Đơn Thuốc";
+            this.simpleButton1.Text = "Đơn Thuốc";
             this.simpleButton1.Click += new System.EventHandler(this.btn_XemDonThuoc_Click);
             // 
             // btn_Xoa
             // 
             this.btn_Xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_Xoa.Appearance.Options.UseFont = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(740, 16);
+            this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
+            this.btn_Xoa.Location = new System.Drawing.Point(733, 16);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(75, 36);
+            this.btn_Xoa.Size = new System.Drawing.Size(102, 36);
             this.btn_Xoa.TabIndex = 12;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -158,9 +161,10 @@
             // 
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_CapNhat.Appearance.Options.UseFont = true;
+            this.btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.ImageOptions.Image")));
             this.btn_CapNhat.Location = new System.Drawing.Point(630, 61);
             this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(75, 39);
+            this.btn_CapNhat.Size = new System.Drawing.Size(97, 39);
             this.btn_CapNhat.TabIndex = 12;
             this.btn_CapNhat.Text = "Cập nhật";
             this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
@@ -169,9 +173,10 @@
             // 
             this.btn_ThemThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_ThemThuoc.Appearance.Options.UseFont = true;
+            this.btn_ThemThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThemThuoc.ImageOptions.Image")));
             this.btn_ThemThuoc.Location = new System.Drawing.Point(630, 14);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
-            this.btn_ThemThuoc.Size = new System.Drawing.Size(75, 39);
+            this.btn_ThemThuoc.Size = new System.Drawing.Size(97, 39);
             this.btn_ThemThuoc.TabIndex = 12;
             this.btn_ThemThuoc.Text = "Thêm";
             this.btn_ThemThuoc.Click += new System.EventHandler(this.btn_ThemThuoc_Click);

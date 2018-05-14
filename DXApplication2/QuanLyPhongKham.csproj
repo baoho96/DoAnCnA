@@ -208,6 +208,12 @@
     <Compile Include="BacSi\reportDonThuoc.Designer.cs">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="BacSi\XemHoSoBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BacSi\XemHoSoBenhNhan.Designer.cs">
+      <DependentUpon>XemHoSoBenhNhan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\ThemCho.resx">
       <DependentUpon>ThemCho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BacSi\XemHoSoBenhNhan.resx">
+      <DependentUpon>XemHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

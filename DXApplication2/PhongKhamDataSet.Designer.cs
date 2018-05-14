@@ -8686,12 +8686,12 @@ SELECT MaHoaDon, NgayGioLap, MaNguoiLap, MaSoKhamBenh, MaSoDonThuoc, TongTien, K
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT DISTINCT 
-                         HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, 
-                         HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, BN.CanNang, HSTK.MaSoTaiKham, HSKB.KiemTraTaiKham,NV.TenNhanVien
+                         HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.NgayTaiKham, HSKB.GhiChu, HSKB.KiemTraKham, 
+                         HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, BN.CanNang, HSTK.MaSoTaiKham, HSKB.KiemTraTaiKham, NV.TenNhanVien, HSKB.TienKham
 FROM            HoSoKhamBenh AS HSKB LEFT OUTER JOIN
                          BenhNhan AS BN ON BN.MaSoBenhNhan = HSKB.MaSoBenhNhan LEFT OUTER JOIN
-                         HoSoTaiKham AS HSTK ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh
-                        LEFT OUTER JOIN NhanVien AS NV on HSKB.MaSoBacSi = NV.MaSoNhanVien";
+                         HoSoTaiKham AS HSTK ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh LEFT OUTER JOIN
+                         NhanVien AS NV ON HSKB.MaSoBacSi = NV.MaSoNhanVien";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

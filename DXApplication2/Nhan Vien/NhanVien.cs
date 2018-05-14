@@ -30,29 +30,31 @@ namespace QuanLyPhongKham
         function function = new function();
         connection connection = new connection();
         ThemCho themCho;
+        public static int ID_MSKB_DoubleClick { get; set; }
+
         public NhanVien()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            
+
             // TODO: This line of code loads data into the 'phongKhamDataSet.BenhNhan' table. You can move, or remove it, as needed.
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
-            
+
             this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);//Load Hồ Sơ Khám Bệnh cho tab Tìm kiếm bệnh nhân khám bệnh
             // TODO: This line of code loads data into the 'phongKhamDataSet.HoSoKhamBenh' table. You can move, or remove it, as needed.
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
 
             hoSoTaiKhamTableAdapter1.Fill(phongKhamDataSet.HoSoTaiKham);//Load Hồ sơ tái khám ở tab Tìm kiếm bệnh nhân khám bênh
 
-            
+
 
             load_TiepNhanBenhNhan_comB_GioiTinh();
-            
+
             load_DanhSachBenhNhan_comB_GioiTinh();
 
             filterColumn_TiepNhaBenhNhan();
@@ -66,7 +68,7 @@ namespace QuanLyPhongKham
 
         private void filterColumn_TiepNhaBenhNhan()
         {
-            
+
             //string ngay = DateTime.Now.ToString("dd/MM/yyyy");
             string ngay = DateTime.Now.Day.ToString("d2");
             string thang = DateTime.Now.Month.ToString("d2");
@@ -75,7 +77,7 @@ namespace QuanLyPhongKham
             //ViewColumnFilterInfo viewColumnFilter = new ViewColumnFilterInfo(view.Columns["NgayGioKham"], 
             //    new ColumnFilterInfo("[NgayGioKham] = '26/04/2018'",""));            
             //view.ActiveFilter.Add(viewColumnFilter);
-            gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '"+ngay+"/"+thang+"/"+nam+"') And [KiemTraKham] Is Null";
+            gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '" + ngay + "/" + thang + "/" + nam + "') And [KiemTraKham] Is Null";
             //gridView1_TimKiemBenhNhan.ActiveFilterString = "Contains([NgayTaiKham], '" + ngay + "/" + thang + "/" + nam + "')";
 
 
@@ -109,7 +111,7 @@ namespace QuanLyPhongKham
             TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Refresh();
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             load_TiepNhanBenhNhan_comB_GioiTinh();
-            
+
             hinhanh = null;
             result = new DialogResult();
         }
@@ -179,16 +181,16 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string KiemTraTonTai = @"select Ho, Ten,NamSinh,CheckDaKham from BenhNhan"+
-                    " where Ho like N'"+TiepNhanBenhNhan_txt_Ho.Text+"%' and Ten like N'"+TiepNhanBenhNhan_txt_Ten.Text+
-                    "' and NamSinh = '"+ TiepNhanBenhNhan_dtP_namsinh.Text+"'";
+                string KiemTraTonTai = @"select Ho, Ten,NamSinh,CheckDaKham from BenhNhan" +
+                    " where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text +
+                    "' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
                 cmd = new SqlCommand(KiemTraTonTai, connection.con);
                 da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt.Rows.Count >0 && dt.Rows[0][3].ToString()!="NULL")
-                {      
-                    if(MessageBox.Show("Bạn đã trùng tên và bạn có muốn Thêm bệnh nhân vào hàng chờ khám??!", "Thông Báo Nhập",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.OK)
+                if (dt.Rows.Count > 0 && dt.Rows[0][3].ToString() != "NULL")
+                {
+                    if (MessageBox.Show("Bạn đã trùng tên và bạn có muốn Thêm bệnh nhân vào hàng chờ khám??!", "Thông Báo Nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         int ID_BenhNhan;
                         int CheckKham = 1;
@@ -197,7 +199,7 @@ namespace QuanLyPhongKham
                         DataTable dt1 = connection.SQL(layMSBN);
                         ID_BenhNhan = int.Parse(dt1.Rows[0][0].ToString());
 
-                        if(TiepNhanBenhNhan_txt_LiDoKham.Text != "")
+                        if (TiepNhanBenhNhan_txt_LiDoKham.Text != "")
                         {
                             string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
                             + ID_BenhNhan + ","
@@ -209,11 +211,11 @@ namespace QuanLyPhongKham
                             connection.insert(query1);
                             refresh_TiepNhanBenhNhan();
                         }
-                        else { MessageBox.Show("Vui lòng nhập lý do khám và Nhấn vào nút 'Thêm chờ'","Thông báo"); }
-                        
+                        else { MessageBox.Show("Vui lòng nhập lý do khám và Nhấn vào nút 'Thêm chờ'", "Thông báo"); }
+
                     }
-                    
-                    
+
+
                 }
 
                 else
@@ -227,8 +229,8 @@ namespace QuanLyPhongKham
                    + TiepNhanBenhNhan_txt_SDT.Text + ","
                    + "N'" + TiepNhanBenhNhan_comB_GioiTinh.Text + "',"
                    + "N'" + hinhanh + "',"
-                   + TiepNhanBenhNhan_txt_CanNang.Text+","
-                   + "N'"+ TiepNhanBenhNhan_txt_TenNguoiThan.Text+"'"
+                   + TiepNhanBenhNhan_txt_CanNang.Text + ","
+                   + "N'" + TiepNhanBenhNhan_txt_TenNguoiThan.Text + "'"
                    + ")";
                     connection.insert(query);
 
@@ -240,7 +242,7 @@ namespace QuanLyPhongKham
                     load_TiepNhanBenhNhan_comB_GioiTinh();
                     hinhanh = null;
                     result = new DialogResult();
-                    MessageBox.Show("Nhập Thành công! Vui lòng nhập Lí do khám và nhấn nút 'Thêm chờ'!","Thông Báo Nhập");
+                    MessageBox.Show("Nhập Thành công! Vui lòng nhập Lí do khám và nhấn nút 'Thêm chờ'!", "Thông Báo Nhập");
                 }
                 dt.Dispose();
 
@@ -316,7 +318,7 @@ namespace QuanLyPhongKham
                 connection.connect();
                 string ID_MSKB = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString();
 
-               
+
                 //if (pictureBox1_BenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
                 //{
                 //    if (result == DialogResult.OK)
@@ -344,7 +346,7 @@ namespace QuanLyPhongKham
                 //" where MaSoBenhNhan =" + ID;
                 //connection.sql(query);
 
-                string query1= @"update HoSoKhamBenh set LiDoKham = N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "'," +
+                string query1 = @"update HoSoKhamBenh set LiDoKham = N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "'," +
                 "NgayGioKham ='" + TiepNhanBenhNhan_dtP_NgayKham.Text + "'" +
                 " where MaSoKhamBenh =" + ID_MSKB;
                 connection.sql(query1);
@@ -382,7 +384,7 @@ namespace QuanLyPhongKham
 
             string query1 = @"update BenhNhan set CheckDaKham = " + CheckKham + " where MaSoBenhNhan = " + ID_BenhNhan;
             connection.insert(query1);
-            
+
             connection.disconnect();
             refresh_TiepNhanBenhNhan();
         }
@@ -395,7 +397,7 @@ namespace QuanLyPhongKham
             if (NhanVien_tabP_DanhSachBenhNhan.Focus() == true)
             {
                 function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân???", result, DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
-                
+
             }
             if (NhanVien_tabP_DanhSachBenhNhanTaiKham.Focus() == true)
             {
@@ -472,11 +474,11 @@ namespace QuanLyPhongKham
                 "NamSinh ='" + DanhSachBenhNhan_dtP_NamSinh.Text + "'," +
                 "DiaChi = N'" + DanhSachBenhNhan_txt_DiaChi.Text + "'," +
                 "HinhAnh = N'" + hinhanh + "'," +
-                "TenNguoiThan = N'"+ DanhSachBenhNhan_txt_TenNguoiThan.Text +"',"+
-                "CanNang = "+ DanhSachBenhNhan_txt_CanNang.Text+
+                "TenNguoiThan = N'" + DanhSachBenhNhan_txt_TenNguoiThan.Text + "'," +
+                "CanNang = " + DanhSachBenhNhan_txt_CanNang.Text +
                 " where MaSoBenhNhan =" + ID;
                 connection.sql(query);
-                
+
                 connection.disconnect();
                 refresh_DanhSachBenhNhan();
 
@@ -485,7 +487,7 @@ namespace QuanLyPhongKham
         private void DanhSachBenhNhan_btn_ThemCho_Click(object sender, EventArgs e)
         {
             connection.connect();
-            int ID_BenhNhan =int.Parse( gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
+            int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
             int CheckKham = 1;
             //string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
             //                + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
@@ -496,17 +498,17 @@ namespace QuanLyPhongKham
             themCho = new ThemCho();
             themCho.ShowDialog();
 
-             ngaykham= themCho.ngaykham;
-             lidokham= themCho.lidokham ;
+            ngaykham = themCho.ngaykham;
+            lidokham = themCho.lidokham;
 
 
-            
+
             string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
                 + ID_BenhNhan + ","
                 + "N'" + lidokham + "',"
                 + "'" + ngaykham + "')";
             connection.insert(query);
-            
+
             refresh_DanhSachBenhNhan();
             connection.disconnect();
         }
@@ -616,15 +618,15 @@ namespace QuanLyPhongKham
             gridView1_TimKiemBenhNhan.ClearGrouping();
             //colNgayTaiKham1.GroupIndex = -1;
             colNgayGioKham1.GroupIndex = 1;
-            
+
             if (TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked)
             {
                 gridView1_TimKiemBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Text;
             }
-            else if(TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked)
+            else if (TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked)
             {
-                
-                gridView1_TimKiemBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() +"/"+ TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
+
+                gridView1_TimKiemBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() + "/" + TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
             }
         }
         private void TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click(object sender, EventArgs e)
@@ -638,7 +640,7 @@ namespace QuanLyPhongKham
             }
             else if (TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked)
             {
-                
+
                 gridView1_TimKiemBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Month.ToString() + "/" + TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Year.ToString();
             }
         }
@@ -675,7 +677,7 @@ namespace QuanLyPhongKham
                 + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
                 + " LiDoKham = N'" + LiDoKham + "' AND "
                 + " NgayGioKham = '" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "' AND "
-                + " KiemTraTaiKham = " + KiemTraTaiKham ;            
+                + " KiemTraTaiKham = " + KiemTraTaiKham;
             DataTable dataTable = connection.SQL(LayID_MSKB_New);
             int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
 
@@ -689,8 +691,8 @@ namespace QuanLyPhongKham
             connection.disconnect();
             refresh_TimKiemBenhNhan();
         }
-        public static int ID_MSKB_DoubleClick { get; set; }
-        
+
+
         private void gridView1_HoSoTaiKham_DoubleClick(object sender, EventArgs e)
         {
             ID_MSKB_DoubleClick = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoTaiKham").ToString());
@@ -698,8 +700,23 @@ namespace QuanLyPhongKham
             hoSoTaiKham.Show();
         }
 
+
+
         #endregion
 
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
+        }
 
+        private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
+        }
     }
+
 }

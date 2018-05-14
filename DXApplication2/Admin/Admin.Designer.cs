@@ -40,7 +40,7 @@
             this.barButtonItem4_ThuNgan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2_NhapFile = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_DangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -208,9 +208,9 @@
             this.barButtonItem4_ThuNgan,
             this.barButtonItem5,
             this.barButtonItem1_XuatFile,
-            this.barButtonItem2_NhapFile});
+            this.btn_DangXuat});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 28;
+            this.ribbonControl.MaxItemId = 29;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -294,14 +294,15 @@
             this.barButtonItem1_XuatFile.Name = "barButtonItem1_XuatFile";
             this.barButtonItem1_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatFile_ItemClick);
             // 
-            // barButtonItem2_NhapFile
+            // btn_DangXuat
             // 
-            this.barButtonItem2_NhapFile.Caption = "Nhập file";
-            this.barButtonItem2_NhapFile.Id = 27;
-            this.barButtonItem2_NhapFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_NhapFile.ImageOptions.Image")));
-            this.barButtonItem2_NhapFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_NhapFile.ImageOptions.LargeImage")));
-            this.barButtonItem2_NhapFile.Name = "barButtonItem2_NhapFile";
-            this.barButtonItem2_NhapFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_NhapFile_ItemClick);
+            this.btn_DangXuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_DangXuat.Caption = "Đăng Xuất";
+            this.btn_DangXuat.Id = 28;
+            this.btn_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DangXuat.ImageOptions.Image")));
+            this.btn_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DangXuat.ImageOptions.LargeImage")));
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DangXuat_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -341,13 +342,13 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1_XuatFile);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem2_NhapFile);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "File excel";
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
+            this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 568);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
@@ -1441,6 +1442,7 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -1612,8 +1614,8 @@
         private System.Windows.Forms.PictureBox pictureBox1_VatDung;
         private DevExpress.XtraGrid.Columns.GridColumn colHinhAnh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2_NhapFile;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.DataAccess.Excel.ExcelDataSource excelDataSource1;
+        private DevExpress.XtraBars.BarButtonItem btn_DangXuat;
     }
 }

@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,13 +75,15 @@
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2_XuatFile = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_DangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1_HoSoTaiKham_BenhNhan = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaSoKhamBenh2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaSoBenhNhan5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cardView1_DanhsachbenhNhan = new DevExpress.XtraGrid.Views.Card.CardView();
             this.clMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,7 +96,7 @@
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan = new DevExpress.XtraGrid.GridControl();
             this.benhNhanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.cardView1_BenhNhan_HSTK = new DevExpress.XtraGrid.Views.Card.CardView();
             this.cl_MaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cl_MaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView4_DanhSachBenhNhan = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -192,7 +198,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.NhanVien_tabP_TiepNhanBenhNhan = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.TiepNhanBenhNhan_btn_ThemCho = new DevExpress.XtraEditors.SimpleButton();
             this.TiepNhanBenhNhan_btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
@@ -232,11 +237,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham_BenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_DanhsachbenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benhNhanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_BenhNhan_HSTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4_DanhSachBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
@@ -285,7 +290,7 @@
             this.gridView1_HoSoTaiKham.OptionsBehavior.Editable = false;
             this.gridView1_HoSoTaiKham.OptionsFind.AlwaysVisible = true;
             this.gridView1_HoSoTaiKham.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridView1_HoSoTaiKham.ViewCaption = "Lịch sử Bệnh Án Tái Khám";
+            this.gridView1_HoSoTaiKham.ViewCaption = "Lịch sử Bệnh Án Tái Khám của Hồ Sơ";
             this.gridView1_HoSoTaiKham.DoubleClick += new System.EventHandler(this.gridView1_HoSoTaiKham_DoubleClick);
             // 
             // clHSTKMaSoTaiKham
@@ -358,10 +363,19 @@
             // 
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode1.LevelTemplate = this.gridView1_HoSoTaiKham;
-            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode9.RelationName = "FK_DanhSachThuoc_DonThuoc";
+            gridLevelNode10.RelationName = "FK_HoaDon_DonThuoc";
+            gridLevelNode8.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode9,
+            gridLevelNode10});
+            gridLevelNode8.RelationName = "FK_DonThuoc_HoSoKhamBenh";
+            gridLevelNode11.RelationName = "FK_HoaDon_HoSoKhamBenh";
+            gridLevelNode12.LevelTemplate = this.gridView1_HoSoTaiKham;
+            gridLevelNode12.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode8,
+            gridLevelNode11,
+            gridLevelNode12});
             this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 46);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
@@ -370,7 +384,7 @@
             this.gridControl1_TimKiemBenhNhan.TabIndex = 6;
             this.gridControl1_TimKiemBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_TimKiemBenhNhan,
-            this.cardView1,
+            this.gridView1_HoSoTaiKham_BenhNhan,
             this.gridView1_HoSoTaiKham});
             // 
             // hoSoKhamBenhBindingSource
@@ -479,7 +493,7 @@
             // colTienKham1
             // 
             this.colTienKham1.Caption = "Tiền Khám";
-            this.colTienKham1.FieldName = "TienKham";
+            this.colTienKham1.FieldName = "TienKham1";
             this.colTienKham1.Name = "colTienKham1";
             this.colTienKham1.Visible = true;
             this.colTienKham1.VisibleIndex = 10;
@@ -579,9 +593,10 @@
             this.ribbonControl.ExpandCollapseItem,
             this.bsiRecordsCount,
             this.bbiRefresh,
-            this.barButtonItem2_XuatFile});
+            this.barButtonItem2_XuatFile,
+            this.btn_DangXuat});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 24;
+            this.ribbonControl.MaxItemId = 25;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -608,12 +623,22 @@
             // 
             // barButtonItem2_XuatFile
             // 
-            this.barButtonItem2_XuatFile.Caption = "Xuất file";
+            this.barButtonItem2_XuatFile.Caption = "Xuất file Excel";
             this.barButtonItem2_XuatFile.Id = 23;
             this.barButtonItem2_XuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_XuatFile.ImageOptions.Image")));
             this.barButtonItem2_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_XuatFile.ImageOptions.LargeImage")));
             this.barButtonItem2_XuatFile.Name = "barButtonItem2_XuatFile";
             this.barButtonItem2_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_XuatFile_ItemClick);
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_DangXuat.Caption = "Đăng Xuất";
+            this.btn_DangXuat.Id = 24;
+            this.btn_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DangXuat.ImageOptions.Image")));
+            this.btn_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DangXuat.ImageOptions.LargeImage")));
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DangXuat_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -643,35 +668,48 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
+            this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1014, 31);
             // 
-            // cardView1
+            // gridView1_HoSoTaiKham_BenhNhan
             // 
-            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn2});
-            this.cardView1.FocusedCardTopFieldIndex = 0;
-            this.cardView1.GridControl = this.gridControl1_TimKiemBenhNhan;
-            this.cardView1.Name = "cardView1";
+            this.gridView1_HoSoTaiKham_BenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaSoTaiKham,
+            this.colMaSoKhamBenh2,
+            this.colMaSoBenhNhan5});
+            this.gridView1_HoSoTaiKham_BenhNhan.GridControl = this.gridControl1_TimKiemBenhNhan;
+            this.gridView1_HoSoTaiKham_BenhNhan.Name = "gridView1_HoSoTaiKham_BenhNhan";
+            this.gridView1_HoSoTaiKham_BenhNhan.OptionsBehavior.Editable = false;
+            this.gridView1_HoSoTaiKham_BenhNhan.OptionsFind.AlwaysVisible = true;
+            this.gridView1_HoSoTaiKham_BenhNhan.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridView1_HoSoTaiKham_BenhNhan.ViewCaption = "Lịch sử tái khám của Bệnh nhân";
             // 
-            // gridColumn3
+            // colMaSoTaiKham
             // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.FieldName = "ChuanDoan";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
+            this.colMaSoTaiKham.Caption = "Mã Số Tái Khám (MSKB mới)";
+            this.colMaSoTaiKham.FieldName = "MaSoTaiKham";
+            this.colMaSoTaiKham.Name = "colMaSoTaiKham";
+            this.colMaSoTaiKham.Visible = true;
+            this.colMaSoTaiKham.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // colMaSoKhamBenh2
             // 
-            this.gridColumn2.Caption = "Xet nghiem";
-            this.gridColumn2.FieldName = "XetNghiem";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.colMaSoKhamBenh2.Caption = "Mã Số Khám Bệnh cũ";
+            this.colMaSoKhamBenh2.FieldName = "MaSoKhamBenh";
+            this.colMaSoKhamBenh2.Name = "colMaSoKhamBenh2";
+            this.colMaSoKhamBenh2.Visible = true;
+            this.colMaSoKhamBenh2.VisibleIndex = 1;
+            // 
+            // colMaSoBenhNhan5
+            // 
+            this.colMaSoBenhNhan5.Caption = "Mã Số Bệnh Nhân";
+            this.colMaSoBenhNhan5.FieldName = "MaSoBenhNhan";
+            this.colMaSoBenhNhan5.Name = "colMaSoBenhNhan5";
+            this.colMaSoBenhNhan5.Visible = true;
+            this.colMaSoBenhNhan5.VisibleIndex = 2;
             // 
             // cardView1_DanhsachbenhNhan
             // 
@@ -752,7 +790,7 @@
             // clTienKham
             // 
             this.clTienKham.Caption = "Tiền khám";
-            this.clTienKham.FieldName = "TienKham";
+            this.clTienKham.FieldName = "TienKham1";
             this.clTienKham.Name = "clTienKham";
             this.clTienKham.Visible = true;
             this.clTienKham.VisibleIndex = 7;
@@ -769,13 +807,13 @@
             // 
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode2.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_BenhNhan";
-            gridLevelNode3.LevelTemplate = this.cardView1_HoSoTaiKham;
-            gridLevelNode3.RelationName = "FK_BenhNhan_HoSoTaiKham";
+            gridLevelNode1.LevelTemplate = this.cardView1_DanhsachbenhNhan;
+            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_BenhNhan";
+            gridLevelNode2.LevelTemplate = this.cardView1_BenhNhan_HSTK;
+            gridLevelNode2.RelationName = "FK_BenhNhan_HoSoTaiKham";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2,
-            gridLevelNode3});
+            gridLevelNode1,
+            gridLevelNode2});
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 143);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
@@ -784,7 +822,7 @@
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Size = new System.Drawing.Size(1008, 354);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.TabIndex = 0;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView1_HoSoTaiKham,
+            this.cardView1_BenhNhan_HSTK,
             this.gridView4_DanhSachBenhNhan,
             this.gridView2,
             this.cardView1_DanhsachbenhNhan});
@@ -794,23 +832,22 @@
             this.benhNhanBindingSource.DataMember = "BenhNhan";
             this.benhNhanBindingSource.DataSource = this.phongKhamDataSet;
             // 
-            // cardView1_HoSoTaiKham
+            // cardView1_BenhNhan_HSTK
             // 
-            this.cardView1_HoSoTaiKham.CardCaptionFormat = "Tái Khám";
-            this.cardView1_HoSoTaiKham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.cardView1_BenhNhan_HSTK.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.cl_MaSoTaiKham,
             this.cl_MaSoKhamBenh});
-            this.cardView1_HoSoTaiKham.FocusedCardTopFieldIndex = 0;
-            this.cardView1_HoSoTaiKham.GridControl = this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan;
-            this.cardView1_HoSoTaiKham.Name = "cardView1_HoSoTaiKham";
-            this.cardView1_HoSoTaiKham.OptionsBehavior.Editable = false;
-            this.cardView1_HoSoTaiKham.OptionsFind.AlwaysVisible = true;
-            this.cardView1_HoSoTaiKham.ViewCaption = "Hồ Sơ Tái Khám";
+            this.cardView1_BenhNhan_HSTK.FocusedCardTopFieldIndex = 0;
+            this.cardView1_BenhNhan_HSTK.GridControl = this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan;
+            this.cardView1_BenhNhan_HSTK.Name = "cardView1_BenhNhan_HSTK";
+            this.cardView1_BenhNhan_HSTK.OptionsBehavior.Editable = false;
+            this.cardView1_BenhNhan_HSTK.OptionsFind.AlwaysVisible = true;
+            this.cardView1_BenhNhan_HSTK.ViewCaption = "Hồ Sơ Tái Khám";
             // 
             // cl_MaSoTaiKham
             // 
             this.cl_MaSoTaiKham.Caption = "Mã Số Tái Khám (MSKB mới)";
-            this.cl_MaSoTaiKham.FieldName = "MaSoTaiKham";
+            this.cl_MaSoTaiKham.FieldName = "MaSoKhamBenh";
             this.cl_MaSoTaiKham.Name = "cl_MaSoTaiKham";
             this.cl_MaSoTaiKham.Visible = true;
             this.cl_MaSoTaiKham.VisibleIndex = 0;
@@ -1015,6 +1052,7 @@
             this.gridView1_TiepNhanBenhNhan.Name = "gridView1_TiepNhanBenhNhan";
             this.gridView1_TiepNhanBenhNhan.OptionsBehavior.Editable = false;
             this.gridView1_TiepNhanBenhNhan.OptionsBehavior.ReadOnly = true;
+            this.gridView1_TiepNhanBenhNhan.OptionsDetail.EnableMasterViewMode = false;
             this.gridView1_TiepNhanBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView1_TiepNhanBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView1_TiepNhanBenhNhan.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -1715,7 +1753,6 @@
             // 
             // panelControl6
             // 
-            this.panelControl6.Controls.Add(this.dateTimePicker1);
             this.panelControl6.Controls.Add(this.label11);
             this.panelControl6.Controls.Add(this.TiepNhanBenhNhan_btn_ThemCho);
             this.panelControl6.Controls.Add(this.TiepNhanBenhNhan_btn_Xoa);
@@ -1731,16 +1768,6 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1008, 372);
             this.panelControl6.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(505, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker1.TabIndex = 11;
             // 
             // label11
             // 
@@ -2080,6 +2107,7 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVien_FormClosing);
             this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).EndInit();
@@ -2087,11 +2115,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimKiemBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham_BenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_DanhsachbenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.benhNhanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_BenhNhan_HSTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4_DanhSachBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
@@ -2301,10 +2329,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private PhongKhamDataSetTableAdapters.HoSoTaiKhamTableAdapter hoSoTaiKhamTableAdapter1;
-        private DevExpress.XtraGrid.Views.Card.CardView cardView1_HoSoTaiKham;
         private DevExpress.XtraGrid.Views.Card.CardView cardView2_TiepNhanBenhNhan;
-        private DevExpress.XtraGrid.Columns.GridColumn cl_MaSoTaiKham;
-        private DevExpress.XtraGrid.Columns.GridColumn cl_MaSoKhamBenh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1_HoSoTaiKham;
         private DevExpress.XtraGrid.Columns.GridColumn clHSTKMaSoTaiKham;
         private DevExpress.XtraGrid.Columns.GridColumn clHSTKMaSoKhamBenh;
@@ -2316,14 +2341,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn clHSTKTienKham;
         private DevExpress.XtraGrid.Columns.GridColumn clHSTKGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn clHSTKKiemTraKham;
-        private DevExpress.XtraGrid.Views.Card.CardView cardView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn clKiemTraTaiKham;
         private DevExpress.XtraGrid.Columns.GridColumn cl_KiemTraTaiKham;
         private System.Windows.Forms.DateTimePicker TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1_HoSoTaiKham_BenhNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaSoTaiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaSoKhamBenh2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaSoBenhNhan5;
+        private DevExpress.XtraGrid.Views.Card.CardView cardView1_BenhNhan_HSTK;
+        private DevExpress.XtraGrid.Columns.GridColumn cl_MaSoTaiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn cl_MaSoKhamBenh;
+        private DevExpress.XtraBars.BarButtonItem btn_DangXuat;
     }
 }

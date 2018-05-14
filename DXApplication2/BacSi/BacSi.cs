@@ -28,6 +28,7 @@ namespace QuanLyPhongKham
         DonThuoc donThuoc = new DonThuoc();
         function function = new function();
         int quyentruycap;
+        public static bool RowClick = false;
 
         public static string Ho_BenhNhan { get; set; }
         public static string Ten_BenhNhan { get; set; }
@@ -90,7 +91,7 @@ namespace QuanLyPhongKham
         {
             function.ClearControl(panelControl2);
             Load_HoSoKhamBenh();
-
+            RowClick = false;
         }
 
         private void GanGiaTri()
@@ -114,7 +115,7 @@ namespace QuanLyPhongKham
 
         private void btn_TaoDonThuoc_Click(object sender, EventArgs e)
         {
-            if(txt_ho.Text=="" &&txt_ten.Text=="")
+            if(RowClick ==false)
             {
                 function.Notice("Bạn nên chọn bệnh nhân trước!", 1);
             }
@@ -128,13 +129,14 @@ namespace QuanLyPhongKham
                 
                 DonThuoc donThuoc = new DonThuoc();
                 donThuoc.Show();
-                
+                RowClick = false;
             }
             
         }
 
         private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick(object sender, RowClickEventArgs e)
         {
+            RowClick = true;
             ID_MSBN = int.Parse(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
             //txt_TenBacSi.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
             txt_ho.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ho").ToString();
@@ -205,12 +207,40 @@ namespace QuanLyPhongKham
 
         private void BacSi_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            this.Close();
+            BacSiKham_BenhNhan = "";
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
         }
 
         private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
         {
             function.KoNhapKiTu(sender, e);
+        }
+
+        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Refresh_BacSi();
+        }
+
+        private void bbtn_TaoDonThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            btn_TaoDonThuoc_Click(sender, e);
+        }
+
+        private void bbtn_HoSoKhamBenh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XemHoSoBenhNhan xemHoSoBenhNhan = new XemHoSoBenhNhan();
+            xemHoSoBenhNhan.ShowDialog();
+        }
+
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            BacSiKham_BenhNhan = "";
+            dangNhap = new DangNhap();
+            dangNhap.Show();
+                
         }
     }
 }

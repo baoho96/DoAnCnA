@@ -159,10 +159,8 @@ namespace QuanLyPhongKham
         }
         private void load_qlyThuoc_comB_donvitinh()//load ComboBox Đơn Vị Tính
         {
-            qlyThuoc_comB_donvitinh.Items.Add("Viên");
-            qlyThuoc_comB_donvitinh.Items.Add("Vĩ");
-            qlyThuoc_comB_donvitinh.Items.Add("Hộp");
-            qlyThuoc_comB_donvitinh.Items.Add("Thùng");
+            qlyThuoc_comB_donvitinh.Items.Add("/Viên");
+            qlyThuoc_comB_donvitinh.Items.Add("/Vĩ");
         }
 
         private void pictureBox1_Thuoc_DoubleClick(object sender, EventArgs e)//sự kiện khi nhấp double vào Picture Box
@@ -764,9 +762,22 @@ namespace QuanLyPhongKham
             refresh_qlyVatDung();
         }
 
+
+
         #endregion
 
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
+        }
 
-
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
+        }
     }
 }
