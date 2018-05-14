@@ -106,7 +106,7 @@ namespace QuanLyPhongKham
                             " where HSKB.MaSoKhamBenh ="+ ID_MSKB;
             //connection.connect();
             DataTable dt = connection.SQL(query);
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)//tồn tại
             {
                 txtTienThuoc.Text = dt.Rows[0][0].ToString();
             }

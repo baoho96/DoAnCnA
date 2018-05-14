@@ -664,32 +664,43 @@ namespace QuanLyPhongKham
             string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             int KiemTraTaiKham = 1;
 
-            //insert vào Hồ sơ khám bệnh 
-            string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
+            string Check_ID_MSKB_OLD_CoTonTai = @"select MaSoKhamBenh from HoSoTaiKham where MaSoKhamBenh =" +ID_MSKB_old;
+            DataTable dataTable0 = connection.SQL(Check_ID_MSKB_OLD_CoTonTai);
+            //int ID_MSKB_OLD_CoTonTai = int.Parse(dataTable0.Rows[0][0].ToString());
+            if(dataTable0.Rows.Count>=1)//kiểm tra tồn tại của cột trong sql
+            {
+                function.Notice("Hồ Sơ số " + ID_MSKB_old + " đã có Tái khám!", 0);
+            }
+            else
+            {
+                string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
                 + ID_BenhNhan + ","
                 + "N'" + LiDoKham + "',"
                 + "'" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "',"
                 + KiemTraTaiKham + ")";
-            connection.insert(Insert_HSKB);
+                connection.insert(Insert_HSKB);
 
-            //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
-            string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
-                + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
-                + " LiDoKham = N'" + LiDoKham + "' AND "
-                + " NgayGioKham = '" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "' AND "
-                + " KiemTraTaiKham = " + KiemTraTaiKham;
-            DataTable dataTable = connection.SQL(LayID_MSKB_New);
-            int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
+                //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
+                string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
+                    + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
+                    + " LiDoKham = N'" + LiDoKham + "' AND "
+                    + " NgayGioKham = '" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "' AND "
+                    + " KiemTraTaiKham = " + KiemTraTaiKham;
+                DataTable dataTable = connection.SQL(LayID_MSKB_New);
+                int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
 
-            //insert vào hồ sơ tái khám
-            string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
-                + ID_MSKB_New + ","
-                + ID_MSKB_old + ","
-                + ID_BenhNhan + ")";
-            connection.insert(Insert_HSTK);
+                //insert vào hồ sơ tái khám
+                string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
+                    + ID_MSKB_New + ","
+                    + ID_MSKB_old + ","
+                    + ID_BenhNhan + ")";
+                connection.insert(Insert_HSTK);
 
-            connection.disconnect();
-            refresh_TimKiemBenhNhan();
+                connection.disconnect();
+                refresh_TimKiemBenhNhan();
+            }
+            //insert vào Hồ sơ khám bệnh 
+            
         }
 
 

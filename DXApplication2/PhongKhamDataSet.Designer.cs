@@ -62,10 +62,6 @@ namespace QuanLyPhongKham {
         
         private global::System.Data.DataRelation relationFK_HoSoKhamBenh_HoSoTaiKham;
         
-        private global::System.Data.DataRelation relationFK_BenhNhan_HoSoTaiKham;
-        
-        private global::System.Data.DataRelation relationFK_HoSoTaiKham_BenhNhan;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -441,8 +437,6 @@ namespace QuanLyPhongKham {
             this.relationFK_Thuoc_LoaiThuoc = this.Relations["FK_Thuoc_LoaiThuoc"];
             this.relationFK_HoSoKhamBenh_BenhNhan = this.Relations["FK_HoSoKhamBenh_BenhNhan"];
             this.relationFK_HoSoKhamBenh_HoSoTaiKham = this.Relations["FK_HoSoKhamBenh_HoSoTaiKham"];
-            this.relationFK_BenhNhan_HoSoTaiKham = this.Relations["FK_BenhNhan_HoSoTaiKham"];
-            this.relationFK_HoSoTaiKham_BenhNhan = this.Relations["FK_HoSoTaiKham_BenhNhan"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,14 +503,6 @@ namespace QuanLyPhongKham {
                         this.tableHoSoKhamBenh.MaSoKhamBenhColumn}, new global::System.Data.DataColumn[] {
                         this.tableHoSoTaiKham.MaSoKhamBenhColumn}, false);
             this.Relations.Add(this.relationFK_HoSoKhamBenh_HoSoTaiKham);
-            this.relationFK_BenhNhan_HoSoTaiKham = new global::System.Data.DataRelation("FK_BenhNhan_HoSoTaiKham", new global::System.Data.DataColumn[] {
-                        this.tableBenhNhan.MaSoBenhNhanColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHoSoTaiKham.MaSoBenhNhanColumn}, false);
-            this.Relations.Add(this.relationFK_BenhNhan_HoSoTaiKham);
-            this.relationFK_HoSoTaiKham_BenhNhan = new global::System.Data.DataRelation("FK_HoSoTaiKham_BenhNhan", new global::System.Data.DataColumn[] {
-                        this.tableHoSoKhamBenh.MaSoBenhNhanColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHoSoTaiKham.MaSoBenhNhanColumn}, false);
-            this.Relations.Add(this.relationFK_HoSoTaiKham_BenhNhan);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4214,17 +4200,14 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoTaiKhamRow AddHoSoTaiKhamRow(HoSoKhamBenhRow parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham, BenhNhanRow parentBenhNhanRowByFK_BenhNhan_HoSoTaiKham) {
+            public HoSoTaiKhamRow AddHoSoTaiKhamRow(HoSoKhamBenhRow parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham, int MaSoBenhNhan) {
                 HoSoTaiKhamRow rowHoSoTaiKhamRow = ((HoSoTaiKhamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null};
+                        MaSoBenhNhan};
                 if ((parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham != null)) {
                     columnValuesArray[1] = parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham[0];
-                }
-                if ((parentBenhNhanRowByFK_BenhNhan_HoSoTaiKham != null)) {
-                    columnValuesArray[2] = parentBenhNhanRowByFK_BenhNhan_HoSoTaiKham[0];
                 }
                 rowHoSoTaiKhamRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHoSoTaiKhamRow);
@@ -4716,17 +4699,6 @@ namespace QuanLyPhongKham {
                 }
                 else {
                     return ((HoSoKhamBenhRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoKhamBenh_BenhNhan"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoTaiKhamRow[] GetHoSoTaiKhamRows() {
-                if ((this.Table.ChildRelations["FK_BenhNhan_HoSoTaiKham"] == null)) {
-                    return new HoSoTaiKhamRow[0];
-                }
-                else {
-                    return ((HoSoTaiKhamRow[])(base.GetChildRows(this.Table.ChildRelations["FK_BenhNhan_HoSoTaiKham"])));
                 }
             }
         }
@@ -5928,17 +5900,6 @@ namespace QuanLyPhongKham {
                     return ((HoSoTaiKhamRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoKhamBenh_HoSoTaiKham"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoTaiKhamRow[] GetHoSoTaiKhamRowsByFK_HoSoTaiKham_BenhNhan() {
-                if ((this.Table.ChildRelations["FK_HoSoTaiKham_BenhNhan"] == null)) {
-                    return new HoSoTaiKhamRow[0];
-                }
-                else {
-                    return ((HoSoTaiKhamRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HoSoTaiKham_BenhNhan"])));
-                }
-            }
         }
         
         /// <summary>
@@ -6938,28 +6899,6 @@ namespace QuanLyPhongKham {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_HoSoKhamBenh_HoSoTaiKham"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BenhNhanRow BenhNhanRow {
-                get {
-                    return ((BenhNhanRow)(this.GetParentRow(this.Table.ParentRelations["FK_BenhNhan_HoSoTaiKham"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_BenhNhan_HoSoTaiKham"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoKhamBenhRow HoSoKhamBenhRowByFK_HoSoTaiKham_BenhNhan {
-                get {
-                    return ((HoSoKhamBenhRow)(this.GetParentRow(this.Table.ParentRelations["FK_HoSoTaiKham_BenhNhan"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HoSoTaiKham_BenhNhan"]);
                 }
             }
             

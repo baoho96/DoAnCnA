@@ -78,15 +78,15 @@ namespace QuanLyPhongKham
                     else if (dr["quyentruycap"].ToString() == "4")
                     {
                         quyentruycap = 4;
-                        DuocSi duocSi = new DuocSi();
-                        duocSi.Show();
+                        //DuocSi duocSi = new DuocSi();
+                        //duocSi.Show();
                         this.Visible = false;
                     }
                     else if (dr["quyentruycap"].ToString() == "5")
                     {
                         quyentruycap = 5;
-                        NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
-                        nhanVienThuNgan.Show();
+                        //NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
+                        //nhanVienThuNgan.Show();
                         this.Visible = false;
                     }
                 }
