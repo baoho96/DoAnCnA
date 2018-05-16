@@ -138,9 +138,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(733, 64);
+            this.simpleButton1.Location = new System.Drawing.Point(733, 61);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(102, 36);
+            this.simpleButton1.Size = new System.Drawing.Size(102, 39);
             this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Đơn Thuốc";
             this.simpleButton1.Click += new System.EventHandler(this.btn_XemDonThuoc_Click);

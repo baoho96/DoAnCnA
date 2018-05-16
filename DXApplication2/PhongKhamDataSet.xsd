@@ -501,13 +501,13 @@ FROM            Thuoc AS T LEFT OUTER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HoSoTaiKhamTableAdapter" GeneratorDataComponentClassName="HoSoTaiKhamTableAdapter" Name="HoSoTaiKham" UserDataComponentName="HoSoTaiKhamTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="PhongKhamConnectionString (Settings)" DbObjectName="PhongKham.dbo.HoSoTaiKham" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PhongKhamConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        HSTK.MaSoTaiKham, HSTK.MaSoKhamBenh, HSTK.MaSoBenhNhan
+                    <CommandText>SELECT        HSTK.MaSoTaiKham, HSTK.MaSoKhamBenh, HSKB.NgayGioKham, HSKB.NgayTaiKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.GhiChu, HSKB.LiDoKham, NV.TenNhanVien
 FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
                          HoSoKhamBenh AS HSKB ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh LEFT OUTER JOIN
-                         BenhNhan AS BN ON HSTK.MaSoBenhNhan = BN.MaSoBenhNhan</CommandText>
+                         NhanVien AS NV ON HSKB.MaSoBacSi = NV.MaSoNhanVien</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -516,7 +516,14 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
             <Mappings>
               <Mapping SourceColumn="MaSoTaiKham" DataSetColumn="MaSoTaiKham" />
               <Mapping SourceColumn="MaSoKhamBenh" DataSetColumn="MaSoKhamBenh" />
-              <Mapping SourceColumn="MaSoBenhNhan" DataSetColumn="MaSoBenhNhan" />
+              <Mapping SourceColumn="NgayGioKham" DataSetColumn="NgayGioKham" />
+              <Mapping SourceColumn="NgayTaiKham" DataSetColumn="NgayTaiKham" />
+              <Mapping SourceColumn="XetNghiem" DataSetColumn="XetNghiem" />
+              <Mapping SourceColumn="ChuanDoan" DataSetColumn="ChuanDoan" />
+              <Mapping SourceColumn="TienKham" DataSetColumn="TienKham" />
+              <Mapping SourceColumn="GhiChu" DataSetColumn="GhiChu" />
+              <Mapping SourceColumn="LiDoKham" DataSetColumn="LiDoKham" />
+              <Mapping SourceColumn="TenNhanVien" DataSetColumn="TenNhanVien" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -873,7 +880,56 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
             <xs:sequence>
               <xs:element name="MaSoTaiKham" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaSoTaiKham" msprop:Generator_ColumnPropNameInRow="MaSoTaiKham" msprop:Generator_ColumnPropNameInTable="MaSoTaiKhamColumn" msprop:Generator_UserColumnName="MaSoTaiKham" type="xs:int" />
               <xs:element name="MaSoKhamBenh" msprop:Generator_ColumnVarNameInTable="columnMaSoKhamBenh" msprop:Generator_ColumnPropNameInRow="MaSoKhamBenh" msprop:Generator_ColumnPropNameInTable="MaSoKhamBenhColumn" msprop:Generator_UserColumnName="MaSoKhamBenh" type="xs:int" minOccurs="0" />
-              <xs:element name="MaSoBenhNhan" msprop:Generator_ColumnVarNameInTable="columnMaSoBenhNhan" msprop:Generator_ColumnPropNameInRow="MaSoBenhNhan" msprop:Generator_ColumnPropNameInTable="MaSoBenhNhanColumn" msprop:Generator_UserColumnName="MaSoBenhNhan" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayGioKham" msprop:Generator_ColumnVarNameInTable="columnNgayGioKham" msprop:Generator_ColumnPropNameInRow="NgayGioKham" msprop:Generator_ColumnPropNameInTable="NgayGioKhamColumn" msprop:Generator_UserColumnName="NgayGioKham" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NgayTaiKham" msprop:Generator_ColumnVarNameInTable="columnNgayTaiKham" msprop:Generator_ColumnPropNameInRow="NgayTaiKham" msprop:Generator_ColumnPropNameInTable="NgayTaiKhamColumn" msprop:Generator_UserColumnName="NgayTaiKham" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XetNghiem" msprop:Generator_ColumnVarNameInTable="columnXetNghiem" msprop:Generator_ColumnPropNameInRow="XetNghiem" msprop:Generator_ColumnPropNameInTable="XetNghiemColumn" msprop:Generator_UserColumnName="XetNghiem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChuanDoan" msprop:Generator_ColumnVarNameInTable="columnChuanDoan" msprop:Generator_ColumnPropNameInRow="ChuanDoan" msprop:Generator_ColumnPropNameInTable="ChuanDoanColumn" msprop:Generator_UserColumnName="ChuanDoan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TienKham" msprop:Generator_ColumnVarNameInTable="columnTienKham" msprop:Generator_ColumnPropNameInRow="TienKham" msprop:Generator_ColumnPropNameInTable="TienKhamColumn" msprop:Generator_UserColumnName="TienKham" type="xs:long" minOccurs="0" />
+              <xs:element name="GhiChu" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LiDoKham" msprop:Generator_ColumnVarNameInTable="columnLiDoKham" msprop:Generator_ColumnPropNameInRow="LiDoKham" msprop:Generator_ColumnPropNameInTable="LiDoKhamColumn" msprop:Generator_UserColumnName="LiDoKham" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenNhanVien" msprop:Generator_ColumnVarNameInTable="columnTenNhanVien" msprop:Generator_ColumnPropNameInRow="TenNhanVien" msprop:Generator_ColumnPropNameInTable="TenNhanVienColumn" msprop:Generator_UserColumnName="TenNhanVien" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -914,10 +970,6 @@ FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
     <xs:unique name="VatDungKey1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:VatDung" />
       <xs:field xpath="mstns:MaSoVatDung" />
-    </xs:unique>
-    <xs:unique name="HoSoTaiKham_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:HoSoTaiKham" />
-      <xs:field xpath="mstns:MaSoTaiKham" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
