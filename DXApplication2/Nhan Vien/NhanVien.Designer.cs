@@ -29,14 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKMaSoBenhNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKNgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKNgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKTenBacSi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKLiDoKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKTienKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHSTKKiemTraKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1_TimKiemBenhNhan = new DevExpress.XtraGrid.GridControl();
             this.hoSoKhamBenhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phongKhamDataSet = new QuanLyPhongKham.PhongKhamDataSet();
@@ -103,6 +116,44 @@
             this.cl_MaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cl_MaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cardView1_TimBenhNhan = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1_TimBenhNhan = new DevExpress.XtraGrid.GridControl();
+            this.gridView1_TimBenhNhan = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTimBenhNhan_NgayKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTimBenhNhan_NgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.hoSoKhamBenhTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
             this.benhNhanTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.BenhNhanTableAdapter();
             this.colMaSoBenhNhan2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -203,21 +254,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.hoSoTaiKhamTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoTaiKhamTableAdapter();
-            this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKMaSoBenhNhan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKNgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKNgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKTenBacSi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKLiDoKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKTienKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clHSTKKiemTraKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtra_TimBenhNhan = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.label32 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham = new System.Windows.Forms.CheckBox();
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham = new System.Windows.Forms.CheckBox();
@@ -230,46 +269,8 @@
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham = new DevExpress.XtraEditors.SimpleButton();
             this.TimKiemBenhNhanKhamBenh_dtP_NgayKham = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.label32 = new System.Windows.Forms.Label();
-            this.gridControl1_TimBenhNhan = new DevExpress.XtraGrid.GridControl();
-            this.cardView1_TimBenhNhan = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1_TimBenhNhan = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTimBenhNhan_NgayKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTimBenhNhan_NgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.hoSoTaiKhamTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoTaiKhamTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoSoKhamBenhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet)).BeginInit();
@@ -284,6 +285,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_BenhNhan_HSTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_TimBenhNhan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimBenhNhan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimBenhNhan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
@@ -302,37 +307,144 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
             this.xtra_TimBenhNhan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimBenhNhan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_TimBenhNhan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimBenhNhan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cardView1_HoSoTaiKham
+            // 
+            this.cardView1_HoSoTaiKham.CardCaptionFormat = "Tái khám";
+            this.cardView1_HoSoTaiKham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.clHSTKMaSoTaiKham,
+            this.clHSTKMaSoKhamBenh,
+            this.clHSTKMaSoBenhNhan,
+            this.clHSTKNgayGioKham,
+            this.clHSTKNgayTaiKham,
+            this.clHSTKTenBacSi,
+            this.clHSTKLiDoKham,
+            this.clHSTKXetNghiem,
+            this.clHSTKChuanDoan,
+            this.clHSTKTienKham,
+            this.clHSTKGhiChu,
+            this.clHSTKKiemTraKham});
+            this.cardView1_HoSoTaiKham.FocusedCardTopFieldIndex = 0;
+            this.cardView1_HoSoTaiKham.GridControl = this.gridControl1_TimKiemBenhNhan;
+            this.cardView1_HoSoTaiKham.Name = "cardView1_HoSoTaiKham";
+            this.cardView1_HoSoTaiKham.OptionsBehavior.Editable = false;
+            this.cardView1_HoSoTaiKham.ViewCaption = "Lịch sử Bệnh Án Tái Khám của Hồ Sơ";
+            // 
+            // clHSTKMaSoTaiKham
+            // 
+            this.clHSTKMaSoTaiKham.Caption = "Mã Số Tái Khám (MSKB mới)";
+            this.clHSTKMaSoTaiKham.FieldName = "MaSoTaiKham";
+            this.clHSTKMaSoTaiKham.Name = "clHSTKMaSoTaiKham";
+            this.clHSTKMaSoTaiKham.Visible = true;
+            this.clHSTKMaSoTaiKham.VisibleIndex = 0;
+            // 
+            // clHSTKMaSoKhamBenh
+            // 
+            this.clHSTKMaSoKhamBenh.Caption = "Mã Số Khám Bệnh cũ";
+            this.clHSTKMaSoKhamBenh.FieldName = "MaSoKhamBenh";
+            this.clHSTKMaSoKhamBenh.Name = "clHSTKMaSoKhamBenh";
+            // 
+            // clHSTKMaSoBenhNhan
+            // 
+            this.clHSTKMaSoBenhNhan.Caption = "Mã Số Bệnh Nhân";
+            this.clHSTKMaSoBenhNhan.FieldName = "MaSoBenhNhan";
+            this.clHSTKMaSoBenhNhan.Name = "clHSTKMaSoBenhNhan";
+            // 
+            // clHSTKNgayGioKham
+            // 
+            this.clHSTKNgayGioKham.Caption = "Ngày Giờ Khám";
+            this.clHSTKNgayGioKham.FieldName = "NgayGioKham";
+            this.clHSTKNgayGioKham.Name = "clHSTKNgayGioKham";
+            this.clHSTKNgayGioKham.Visible = true;
+            this.clHSTKNgayGioKham.VisibleIndex = 1;
+            // 
+            // clHSTKNgayTaiKham
+            // 
+            this.clHSTKNgayTaiKham.Caption = "Ngày Tái Khám";
+            this.clHSTKNgayTaiKham.FieldName = "NgayTaiKham";
+            this.clHSTKNgayTaiKham.Name = "clHSTKNgayTaiKham";
+            this.clHSTKNgayTaiKham.Visible = true;
+            this.clHSTKNgayTaiKham.VisibleIndex = 2;
+            // 
+            // clHSTKTenBacSi
+            // 
+            this.clHSTKTenBacSi.Caption = "Tên Bác Sĩ";
+            this.clHSTKTenBacSi.FieldName = "TenNhanVien";
+            this.clHSTKTenBacSi.Name = "clHSTKTenBacSi";
+            this.clHSTKTenBacSi.Visible = true;
+            this.clHSTKTenBacSi.VisibleIndex = 3;
+            // 
+            // clHSTKLiDoKham
+            // 
+            this.clHSTKLiDoKham.Caption = "Lí Do Khám";
+            this.clHSTKLiDoKham.FieldName = "LiDoKham";
+            this.clHSTKLiDoKham.Name = "clHSTKLiDoKham";
+            this.clHSTKLiDoKham.Visible = true;
+            this.clHSTKLiDoKham.VisibleIndex = 4;
+            // 
+            // clHSTKXetNghiem
+            // 
+            this.clHSTKXetNghiem.Caption = "Xét Nghiệm";
+            this.clHSTKXetNghiem.FieldName = "XetNghiem";
+            this.clHSTKXetNghiem.Name = "clHSTKXetNghiem";
+            this.clHSTKXetNghiem.Visible = true;
+            this.clHSTKXetNghiem.VisibleIndex = 5;
+            // 
+            // clHSTKChuanDoan
+            // 
+            this.clHSTKChuanDoan.Caption = "Chuẩn Đoán";
+            this.clHSTKChuanDoan.FieldName = "ChuanDoan";
+            this.clHSTKChuanDoan.Name = "clHSTKChuanDoan";
+            this.clHSTKChuanDoan.Visible = true;
+            this.clHSTKChuanDoan.VisibleIndex = 6;
+            // 
+            // clHSTKTienKham
+            // 
+            this.clHSTKTienKham.Caption = "Tiền Khám";
+            this.clHSTKTienKham.FieldName = "TienKham";
+            this.clHSTKTienKham.Name = "clHSTKTienKham";
+            this.clHSTKTienKham.Visible = true;
+            this.clHSTKTienKham.VisibleIndex = 7;
+            // 
+            // clHSTKGhiChu
+            // 
+            this.clHSTKGhiChu.Caption = "Ghi Chú";
+            this.clHSTKGhiChu.FieldName = "GhiChu";
+            this.clHSTKGhiChu.Name = "clHSTKGhiChu";
+            this.clHSTKGhiChu.Visible = true;
+            this.clHSTKGhiChu.VisibleIndex = 8;
+            // 
+            // clHSTKKiemTraKham
+            // 
+            this.clHSTKKiemTraKham.Caption = "Check";
+            this.clHSTKKiemTraKham.FieldName = "KiemTraKham";
+            this.clHSTKKiemTraKham.Name = "clHSTKKiemTraKham";
             // 
             // gridControl1_TimKiemBenhNhan
             // 
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode2.RelationName = "FK_DanhSachThuoc_DonThuoc";
-            gridLevelNode3.RelationName = "FK_HoaDon_DonThuoc";
-            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2,
-            gridLevelNode3});
-            gridLevelNode1.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode4.RelationName = "FK_HoaDon_HoSoKhamBenh";
-            gridLevelNode5.LevelTemplate = this.cardView1_HoSoTaiKham;
-            gridLevelNode5.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode9.RelationName = "FK_DanhSachThuoc_DonThuoc";
+            gridLevelNode10.RelationName = "FK_HoaDon_DonThuoc";
+            gridLevelNode8.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode9,
+            gridLevelNode10});
+            gridLevelNode8.RelationName = "FK_DonThuoc_HoSoKhamBenh";
+            gridLevelNode11.RelationName = "FK_HoaDon_HoSoKhamBenh";
+            gridLevelNode12.LevelTemplate = this.cardView1_HoSoTaiKham;
+            gridLevelNode12.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode4,
-            gridLevelNode5});
+            gridLevelNode8,
+            gridLevelNode11,
+            gridLevelNode12});
             this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 46);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
@@ -383,6 +495,7 @@
             this.gridView1_TimKiemBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView1_TimKiemBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView1_TimKiemBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1_TimKiemBenhNhan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_TimKiemBenhNhan_RowClick);
             this.gridView1_TimKiemBenhNhan.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_TimKiemBenhNhan_RowCellClick);
             this.gridView1_TimKiemBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_TimKiemBenhNhan_CustomDrawRowIndicator);
             this.gridView1_TimKiemBenhNhan.RowCountChanged += new System.EventHandler(this.gridView1_TimKiemBenhNhan_RowCountChanged);
@@ -764,10 +877,10 @@
             // 
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode6.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode6.RelationName = "FK_HoSoKhamBenh_BenhNhan";
+            gridLevelNode1.LevelTemplate = this.cardView1_DanhsachbenhNhan;
+            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_BenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode6});
+            gridLevelNode1});
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 143);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
@@ -808,7 +921,6 @@
             this.gridView4_DanhSachBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView4_DanhSachBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView4_DanhSachBenhNhan.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4_DanhSachBenhNhan.OptionsView.ShowGroupPanel = false;
             this.gridView4_DanhSachBenhNhan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView4_DanhSachBenhNhan_RowClick);
             this.gridView4_DanhSachBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView4_DanhSachBenhNhan_CustomDrawRowIndicator);
             this.gridView4_DanhSachBenhNhan.RowCountChanged += new System.EventHandler(this.gridView4_DanhSachBenhNhan_RowCountChanged);
@@ -956,6 +1068,360 @@
             this.gridView2.GridControl = this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan;
             this.gridView2.Name = "gridView2";
             // 
+            // cardView1_TimBenhNhan
+            // 
+            this.cardView1_TimBenhNhan.CardCaptionFormat = "Tái khám";
+            this.cardView1_TimBenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13});
+            this.cardView1_TimBenhNhan.FocusedCardTopFieldIndex = 0;
+            this.cardView1_TimBenhNhan.GridControl = this.gridControl1_TimBenhNhan;
+            this.cardView1_TimBenhNhan.Name = "cardView1_TimBenhNhan";
+            this.cardView1_TimBenhNhan.OptionsBehavior.Editable = false;
+            this.cardView1_TimBenhNhan.ViewCaption = "Lịch sử Bệnh Án Tái Khám của Hồ Sơ";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Mã Số Tái Khám (MSKB mới)";
+            this.gridColumn2.FieldName = "MaSoTaiKham";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mã Số Khám Bệnh cũ";
+            this.gridColumn3.FieldName = "MaSoKhamBenh";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Mã Số Bệnh Nhân";
+            this.gridColumn4.FieldName = "MaSoBenhNhan";
+            this.gridColumn4.Name = "gridColumn4";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Ngày Giờ Khám";
+            this.gridColumn5.FieldName = "NgayGioKham";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Ngày Tái Khám";
+            this.gridColumn6.FieldName = "NgayTaiKham";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Tên Bác Sĩ";
+            this.gridColumn7.FieldName = "TenNhanVien";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 3;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Lí Do Khám";
+            this.gridColumn8.FieldName = "LiDoKham";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 4;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Xét Nghiệm";
+            this.gridColumn9.FieldName = "XetNghiem";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Chuẩn Đoán";
+            this.gridColumn10.FieldName = "ChuanDoan";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 6;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Tiền Khám";
+            this.gridColumn11.FieldName = "TienKham";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 7;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Ghi Chú";
+            this.gridColumn12.FieldName = "GhiChu";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 8;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Check";
+            this.gridColumn13.FieldName = "KiemTraKham";
+            this.gridColumn13.Name = "gridColumn13";
+            // 
+            // gridControl1_TimBenhNhan
+            // 
+            this.gridControl1_TimBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
+            this.gridControl1_TimBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            gridLevelNode2.LevelTemplate = this.cardView1_TimBenhNhan;
+            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            this.gridControl1_TimBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gridControl1_TimBenhNhan.Location = new System.Drawing.Point(2, 24);
+            this.gridControl1_TimBenhNhan.MainView = this.gridView1_TimBenhNhan;
+            this.gridControl1_TimBenhNhan.MenuManager = this.ribbonControl;
+            this.gridControl1_TimBenhNhan.Name = "gridControl1_TimBenhNhan";
+            this.gridControl1_TimBenhNhan.Size = new System.Drawing.Size(1004, 378);
+            this.gridControl1_TimBenhNhan.TabIndex = 6;
+            this.gridControl1_TimBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1_TimBenhNhan,
+            this.gridView4,
+            this.cardView1_TimBenhNhan});
+            // 
+            // gridView1_TimBenhNhan
+            // 
+            this.gridView1_TimBenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.clTimBenhNhan_NgayKham,
+            this.clTimBenhNhan_NgayTaiKham,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn23,
+            this.gridColumn24,
+            this.gridColumn25,
+            this.gridColumn26,
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31,
+            this.gridColumn32});
+            this.gridView1_TimBenhNhan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.gridView1_TimBenhNhan.GridControl = this.gridControl1_TimBenhNhan;
+            this.gridView1_TimBenhNhan.Name = "gridView1_TimBenhNhan";
+            this.gridView1_TimBenhNhan.OptionsBehavior.Editable = false;
+            this.gridView1_TimBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
+            this.gridView1_TimBenhNhan.OptionsFind.AlwaysVisible = true;
+            this.gridView1_TimBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1_TimBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_TimBenhNhan_CustomDrawRowIndicator);
+            this.gridView1_TimBenhNhan.RowCountChanged += new System.EventHandler(this.gridView1_TimBenhNhan_RowCountChanged);
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "MSKB";
+            this.gridColumn14.FieldName = "MaSoKhamBenh";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 0;
+            this.gridColumn14.Width = 40;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "MSBN";
+            this.gridColumn15.FieldName = "MaSoBenhNhan";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 1;
+            this.gridColumn15.Width = 34;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "MSBS";
+            this.gridColumn16.FieldName = "MaSoBacSi";
+            this.gridColumn16.Name = "gridColumn16";
+            // 
+            // clTimBenhNhan_NgayKham
+            // 
+            this.clTimBenhNhan_NgayKham.Caption = "Ngày giờ khám";
+            this.clTimBenhNhan_NgayKham.FieldName = "NgayGioKham";
+            this.clTimBenhNhan_NgayKham.Name = "clTimBenhNhan_NgayKham";
+            this.clTimBenhNhan_NgayKham.Visible = true;
+            this.clTimBenhNhan_NgayKham.VisibleIndex = 2;
+            this.clTimBenhNhan_NgayKham.Width = 60;
+            // 
+            // clTimBenhNhan_NgayTaiKham
+            // 
+            this.clTimBenhNhan_NgayTaiKham.Caption = "Ngày tái khám";
+            this.clTimBenhNhan_NgayTaiKham.FieldName = "NgayTaiKham";
+            this.clTimBenhNhan_NgayTaiKham.Name = "clTimBenhNhan_NgayTaiKham";
+            this.clTimBenhNhan_NgayTaiKham.Visible = true;
+            this.clTimBenhNhan_NgayTaiKham.VisibleIndex = 3;
+            this.clTimBenhNhan_NgayTaiKham.Width = 60;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Xét nghiệm";
+            this.gridColumn19.FieldName = "XetNghiem";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 7;
+            this.gridColumn19.Width = 48;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Chuẩn đoán";
+            this.gridColumn20.FieldName = "ChuanDoan";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 8;
+            this.gridColumn20.Width = 63;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Tiền Khám";
+            this.gridColumn21.FieldName = "TienKham1";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 9;
+            this.gridColumn21.Width = 62;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "Ghi Chú";
+            this.gridColumn22.FieldName = "GhiChu";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 10;
+            this.gridColumn22.Width = 138;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "Họ";
+            this.gridColumn23.FieldName = "Ho";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 4;
+            this.gridColumn23.Width = 50;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Tên";
+            this.gridColumn24.FieldName = "Ten";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 5;
+            this.gridColumn24.Width = 49;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "Giới tính";
+            this.gridColumn25.FieldName = "GioiTinh";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Width = 47;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "Năm sinh";
+            this.gridColumn26.FieldName = "NamSinh";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Width = 55;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Lí do khám";
+            this.gridColumn27.FieldName = "LiDoKham";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Width = 53;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "Địa chỉ";
+            this.gridColumn28.FieldName = "DiaChi";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Width = 42;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "SĐT";
+            this.gridColumn29.FieldName = "SoDienThoai";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 6;
+            this.gridColumn29.Width = 52;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "Hình Ảnh";
+            this.gridColumn30.FieldName = "HinhAnh";
+            this.gridColumn30.Name = "gridColumn30";
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "Check Khám";
+            this.gridColumn31.FieldName = "KiemTraKham";
+            this.gridColumn31.Name = "gridColumn31";
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "Tái khám";
+            this.gridColumn32.FieldName = "KiemTraTaiKham";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 11;
+            this.gridColumn32.Width = 36;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn33,
+            this.gridColumn34,
+            this.gridColumn35});
+            this.gridView4.GridControl = this.gridControl1_TimBenhNhan;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsFind.AlwaysVisible = true;
+            this.gridView4.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridView4.ViewCaption = "Lịch sử tái khám của Bệnh nhân";
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "Mã Số Tái Khám (MSKB mới)";
+            this.gridColumn33.FieldName = "MaSoTaiKham";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 0;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "Mã Số Khám Bệnh cũ";
+            this.gridColumn34.FieldName = "MaSoKhamBenh";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 1;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "Mã Số Bệnh Nhân";
+            this.gridColumn35.FieldName = "MaSoBenhNhan";
+            this.gridColumn35.Name = "gridColumn35";
+            this.gridColumn35.Visible = true;
+            this.gridColumn35.VisibleIndex = 2;
+            // 
             // hoSoKhamBenhTableAdapter
             // 
             this.hoSoKhamBenhTableAdapter.ClearBeforeFill = true;
@@ -1081,6 +1547,7 @@
             // 
             // TimKiemBenhNhanKham_btn_ThemChoTaiKham
             // 
+            this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = false;
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TimKiemBenhNhanKham_btn_ThemChoTaiKham.ImageOptions.Image")));
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Location = new System.Drawing.Point(890, 5);
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Name = "TimKiemBenhNhanKham_btn_ThemChoTaiKham";
@@ -1134,6 +1601,7 @@
             this.panelControl4.Controls.Add(this.label20);
             this.panelControl4.Controls.Add(this.label21);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl4.Enabled = false;
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1008, 137);
@@ -1396,7 +1864,7 @@
             this.colGhiChu,
             this.colMaSoBacSi,
             this.clKiemTraTaiKham});
-            this.gridView1_TiepNhanBenhNhan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.gridView1_TiepNhanBenhNhan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gridView1_TiepNhanBenhNhan.GridControl = this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham;
             this.gridView1_TiepNhanBenhNhan.Name = "gridView1_TiepNhanBenhNhan";
             this.gridView1_TiepNhanBenhNhan.OptionsBehavior.Editable = false;
@@ -1405,6 +1873,7 @@
             this.gridView1_TiepNhanBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView1_TiepNhanBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView1_TiepNhanBenhNhan.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1_TiepNhanBenhNhan.OptionsSelection.EnableAppearanceHideSelection = false;
             this.gridView1_TiepNhanBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView1_TiepNhanBenhNhan.OptionsView.ShowGroupPanel = false;
             this.gridView1_TiepNhanBenhNhan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_TiepNhanBenhNhan_RowClick);
@@ -1616,6 +2085,7 @@
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(this.label1);
+            this.panelControl2.Enabled = false;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1008, 183);
@@ -1711,7 +2181,7 @@
             this.TiepNhanBenhNhan_txt_TenNguoiThan.Location = new System.Drawing.Point(591, 29);
             this.TiepNhanBenhNhan_txt_TenNguoiThan.MaxLength = 50;
             this.TiepNhanBenhNhan_txt_TenNguoiThan.Name = "TiepNhanBenhNhan_txt_TenNguoiThan";
-            this.TiepNhanBenhNhan_txt_TenNguoiThan.Size = new System.Drawing.Size(141, 21);
+            this.TiepNhanBenhNhan_txt_TenNguoiThan.Size = new System.Drawing.Size(152, 21);
             this.TiepNhanBenhNhan_txt_TenNguoiThan.TabIndex = 8;
             // 
             // label22
@@ -1780,7 +2250,7 @@
             // TiepNhanBenhNhan_btn_TaoMoi
             // 
             this.TiepNhanBenhNhan_btn_TaoMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TiepNhanBenhNhan_btn_TaoMoi.ImageOptions.Image")));
-            this.TiepNhanBenhNhan_btn_TaoMoi.Location = new System.Drawing.Point(757, 10);
+            this.TiepNhanBenhNhan_btn_TaoMoi.Location = new System.Drawing.Point(757, 29);
             this.TiepNhanBenhNhan_btn_TaoMoi.Name = "TiepNhanBenhNhan_btn_TaoMoi";
             this.TiepNhanBenhNhan_btn_TaoMoi.Size = new System.Drawing.Size(75, 36);
             this.TiepNhanBenhNhan_btn_TaoMoi.TabIndex = 3;
@@ -1883,122 +2353,6 @@
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham,
             this.xtra_TimBenhNhan});
             // 
-            // hoSoTaiKhamTableAdapter1
-            // 
-            this.hoSoTaiKhamTableAdapter1.ClearBeforeFill = true;
-            // 
-            // cardView1_HoSoTaiKham
-            // 
-            this.cardView1_HoSoTaiKham.CardCaptionFormat = "Tái khám";
-            this.cardView1_HoSoTaiKham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clHSTKMaSoTaiKham,
-            this.clHSTKMaSoKhamBenh,
-            this.clHSTKMaSoBenhNhan,
-            this.clHSTKNgayGioKham,
-            this.clHSTKNgayTaiKham,
-            this.clHSTKTenBacSi,
-            this.clHSTKLiDoKham,
-            this.clHSTKXetNghiem,
-            this.clHSTKChuanDoan,
-            this.clHSTKTienKham,
-            this.clHSTKGhiChu,
-            this.clHSTKKiemTraKham});
-            this.cardView1_HoSoTaiKham.FocusedCardTopFieldIndex = 0;
-            this.cardView1_HoSoTaiKham.GridControl = this.gridControl1_TimKiemBenhNhan;
-            this.cardView1_HoSoTaiKham.Name = "cardView1_HoSoTaiKham";
-            this.cardView1_HoSoTaiKham.OptionsBehavior.Editable = false;
-            this.cardView1_HoSoTaiKham.ViewCaption = "Lịch sử Bệnh Án Tái Khám của Hồ Sơ";
-            // 
-            // clHSTKMaSoTaiKham
-            // 
-            this.clHSTKMaSoTaiKham.Caption = "Mã Số Tái Khám (MSKB mới)";
-            this.clHSTKMaSoTaiKham.FieldName = "MaSoTaiKham";
-            this.clHSTKMaSoTaiKham.Name = "clHSTKMaSoTaiKham";
-            this.clHSTKMaSoTaiKham.Visible = true;
-            this.clHSTKMaSoTaiKham.VisibleIndex = 0;
-            // 
-            // clHSTKMaSoKhamBenh
-            // 
-            this.clHSTKMaSoKhamBenh.Caption = "Mã Số Khám Bệnh cũ";
-            this.clHSTKMaSoKhamBenh.FieldName = "MaSoKhamBenh";
-            this.clHSTKMaSoKhamBenh.Name = "clHSTKMaSoKhamBenh";
-            // 
-            // clHSTKMaSoBenhNhan
-            // 
-            this.clHSTKMaSoBenhNhan.Caption = "Mã Số Bệnh Nhân";
-            this.clHSTKMaSoBenhNhan.FieldName = "MaSoBenhNhan";
-            this.clHSTKMaSoBenhNhan.Name = "clHSTKMaSoBenhNhan";
-            // 
-            // clHSTKNgayGioKham
-            // 
-            this.clHSTKNgayGioKham.Caption = "Ngày Giờ Khám";
-            this.clHSTKNgayGioKham.FieldName = "NgayGioKham";
-            this.clHSTKNgayGioKham.Name = "clHSTKNgayGioKham";
-            this.clHSTKNgayGioKham.Visible = true;
-            this.clHSTKNgayGioKham.VisibleIndex = 1;
-            // 
-            // clHSTKNgayTaiKham
-            // 
-            this.clHSTKNgayTaiKham.Caption = "Ngày Tái Khám";
-            this.clHSTKNgayTaiKham.FieldName = "NgayTaiKham";
-            this.clHSTKNgayTaiKham.Name = "clHSTKNgayTaiKham";
-            this.clHSTKNgayTaiKham.Visible = true;
-            this.clHSTKNgayTaiKham.VisibleIndex = 2;
-            // 
-            // clHSTKTenBacSi
-            // 
-            this.clHSTKTenBacSi.Caption = "Tên Bác Sĩ";
-            this.clHSTKTenBacSi.FieldName = "TenNhanVien";
-            this.clHSTKTenBacSi.Name = "clHSTKTenBacSi";
-            this.clHSTKTenBacSi.Visible = true;
-            this.clHSTKTenBacSi.VisibleIndex = 3;
-            // 
-            // clHSTKLiDoKham
-            // 
-            this.clHSTKLiDoKham.Caption = "Lí Do Khám";
-            this.clHSTKLiDoKham.FieldName = "LiDoKham";
-            this.clHSTKLiDoKham.Name = "clHSTKLiDoKham";
-            this.clHSTKLiDoKham.Visible = true;
-            this.clHSTKLiDoKham.VisibleIndex = 4;
-            // 
-            // clHSTKXetNghiem
-            // 
-            this.clHSTKXetNghiem.Caption = "Xét Nghiệm";
-            this.clHSTKXetNghiem.FieldName = "XetNghiem";
-            this.clHSTKXetNghiem.Name = "clHSTKXetNghiem";
-            this.clHSTKXetNghiem.Visible = true;
-            this.clHSTKXetNghiem.VisibleIndex = 5;
-            // 
-            // clHSTKChuanDoan
-            // 
-            this.clHSTKChuanDoan.Caption = "Chuẩn Đoán";
-            this.clHSTKChuanDoan.FieldName = "ChuanDoan";
-            this.clHSTKChuanDoan.Name = "clHSTKChuanDoan";
-            this.clHSTKChuanDoan.Visible = true;
-            this.clHSTKChuanDoan.VisibleIndex = 6;
-            // 
-            // clHSTKTienKham
-            // 
-            this.clHSTKTienKham.Caption = "Tiền Khám";
-            this.clHSTKTienKham.FieldName = "TienKham";
-            this.clHSTKTienKham.Name = "clHSTKTienKham";
-            this.clHSTKTienKham.Visible = true;
-            this.clHSTKTienKham.VisibleIndex = 7;
-            // 
-            // clHSTKGhiChu
-            // 
-            this.clHSTKGhiChu.Caption = "Ghi Chú";
-            this.clHSTKGhiChu.FieldName = "GhiChu";
-            this.clHSTKGhiChu.Name = "clHSTKGhiChu";
-            this.clHSTKGhiChu.Visible = true;
-            this.clHSTKGhiChu.VisibleIndex = 8;
-            // 
-            // clHSTKKiemTraKham
-            // 
-            this.clHSTKKiemTraKham.Caption = "Check";
-            this.clHSTKKiemTraKham.FieldName = "KiemTraKham";
-            this.clHSTKKiemTraKham.Name = "clHSTKKiemTraKham";
-            // 
             // xtra_TimBenhNhan
             // 
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl6);
@@ -2007,6 +2361,27 @@
             this.xtra_TimBenhNhan.Name = "xtra_TimBenhNhan";
             this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1008, 497);
             this.xtra_TimBenhNhan.Text = "Tìm Kiếm Bệnh Nhân";
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.Controls.Add(this.label32);
+            this.panelControl6.Controls.Add(this.gridControl1_TimBenhNhan);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl6.Location = new System.Drawing.Point(0, 93);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(1008, 404);
+            this.panelControl6.TabIndex = 8;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label32.Location = new System.Drawing.Point(2, 2);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(243, 19);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "Danh Sách Hồ Sơ Khám Bệnh";
             // 
             // panelControl1
             // 
@@ -2130,380 +2505,9 @@
             this.label15.TabIndex = 8;
             this.label15.Text = "Thông tin Ngày khám";
             // 
-            // panelControl6
+            // hoSoTaiKhamTableAdapter1
             // 
-            this.panelControl6.Controls.Add(this.label32);
-            this.panelControl6.Controls.Add(this.gridControl1_TimBenhNhan);
-            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 93);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1008, 404);
-            this.panelControl6.TabIndex = 8;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label32.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label32.Location = new System.Drawing.Point(2, 2);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(243, 19);
-            this.label32.TabIndex = 9;
-            this.label32.Text = "Danh Sách Hồ Sơ Khám Bệnh";
-            // 
-            // gridControl1_TimBenhNhan
-            // 
-            this.gridControl1_TimBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
-            this.gridControl1_TimBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode7.LevelTemplate = this.cardView1_TimBenhNhan;
-            gridLevelNode7.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
-            this.gridControl1_TimBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode7});
-            this.gridControl1_TimBenhNhan.Location = new System.Drawing.Point(2, 24);
-            this.gridControl1_TimBenhNhan.MainView = this.gridView1_TimBenhNhan;
-            this.gridControl1_TimBenhNhan.MenuManager = this.ribbonControl;
-            this.gridControl1_TimBenhNhan.Name = "gridControl1_TimBenhNhan";
-            this.gridControl1_TimBenhNhan.Size = new System.Drawing.Size(1004, 378);
-            this.gridControl1_TimBenhNhan.TabIndex = 6;
-            this.gridControl1_TimBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView1_TimBenhNhan,
-            this.gridView1_TimBenhNhan,
-            this.gridView4});
-            // 
-            // cardView1_TimBenhNhan
-            // 
-            this.cardView1_TimBenhNhan.CardCaptionFormat = "Tái khám";
-            this.cardView1_TimBenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13});
-            this.cardView1_TimBenhNhan.FocusedCardTopFieldIndex = 0;
-            this.cardView1_TimBenhNhan.GridControl = this.gridControl1_TimBenhNhan;
-            this.cardView1_TimBenhNhan.Name = "cardView1_TimBenhNhan";
-            this.cardView1_TimBenhNhan.OptionsBehavior.Editable = false;
-            this.cardView1_TimBenhNhan.ViewCaption = "Lịch sử Bệnh Án Tái Khám của Hồ Sơ";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Mã Số Tái Khám (MSKB mới)";
-            this.gridColumn2.FieldName = "MaSoTaiKham";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Mã Số Khám Bệnh cũ";
-            this.gridColumn3.FieldName = "MaSoKhamBenh";
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Mã Số Bệnh Nhân";
-            this.gridColumn4.FieldName = "MaSoBenhNhan";
-            this.gridColumn4.Name = "gridColumn4";
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Ngày Giờ Khám";
-            this.gridColumn5.FieldName = "NgayGioKham";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Ngày Tái Khám";
-            this.gridColumn6.FieldName = "NgayTaiKham";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Tên Bác Sĩ";
-            this.gridColumn7.FieldName = "TenNhanVien";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Lí Do Khám";
-            this.gridColumn8.FieldName = "LiDoKham";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Xét Nghiệm";
-            this.gridColumn9.FieldName = "XetNghiem";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 5;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Chuẩn Đoán";
-            this.gridColumn10.FieldName = "ChuanDoan";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 6;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Tiền Khám";
-            this.gridColumn11.FieldName = "TienKham";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 7;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Ghi Chú";
-            this.gridColumn12.FieldName = "GhiChu";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 8;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Check";
-            this.gridColumn13.FieldName = "KiemTraKham";
-            this.gridColumn13.Name = "gridColumn13";
-            // 
-            // gridView1_TimBenhNhan
-            // 
-            this.gridView1_TimBenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.clTimBenhNhan_NgayKham,
-            this.clTimBenhNhan_NgayTaiKham,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23,
-            this.gridColumn24,
-            this.gridColumn25,
-            this.gridColumn26,
-            this.gridColumn27,
-            this.gridColumn28,
-            this.gridColumn29,
-            this.gridColumn30,
-            this.gridColumn31,
-            this.gridColumn32});
-            this.gridView1_TimBenhNhan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.gridView1_TimBenhNhan.GridControl = this.gridControl1_TimBenhNhan;
-            this.gridView1_TimBenhNhan.Name = "gridView1_TimBenhNhan";
-            this.gridView1_TimBenhNhan.OptionsBehavior.Editable = false;
-            this.gridView1_TimBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
-            this.gridView1_TimBenhNhan.OptionsFind.AlwaysVisible = true;
-            this.gridView1_TimBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
-            this.gridView1_TimBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_TimBenhNhan_CustomDrawRowIndicator);
-            this.gridView1_TimBenhNhan.RowCountChanged += new System.EventHandler(this.gridView1_TimBenhNhan_RowCountChanged);
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "MSKB";
-            this.gridColumn14.FieldName = "MaSoKhamBenh";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 0;
-            this.gridColumn14.Width = 40;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "MSBN";
-            this.gridColumn15.FieldName = "MaSoBenhNhan";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 1;
-            this.gridColumn15.Width = 34;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "MSBS";
-            this.gridColumn16.FieldName = "MaSoBacSi";
-            this.gridColumn16.Name = "gridColumn16";
-            // 
-            // clTimBenhNhan_NgayKham
-            // 
-            this.clTimBenhNhan_NgayKham.Caption = "Ngày giờ khám";
-            this.clTimBenhNhan_NgayKham.FieldName = "NgayGioKham";
-            this.clTimBenhNhan_NgayKham.Name = "clTimBenhNhan_NgayKham";
-            this.clTimBenhNhan_NgayKham.Visible = true;
-            this.clTimBenhNhan_NgayKham.VisibleIndex = 2;
-            this.clTimBenhNhan_NgayKham.Width = 60;
-            // 
-            // clTimBenhNhan_NgayTaiKham
-            // 
-            this.clTimBenhNhan_NgayTaiKham.Caption = "Ngày tái khám";
-            this.clTimBenhNhan_NgayTaiKham.FieldName = "NgayTaiKham";
-            this.clTimBenhNhan_NgayTaiKham.Name = "clTimBenhNhan_NgayTaiKham";
-            this.clTimBenhNhan_NgayTaiKham.Visible = true;
-            this.clTimBenhNhan_NgayTaiKham.VisibleIndex = 3;
-            this.clTimBenhNhan_NgayTaiKham.Width = 60;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Xét nghiệm";
-            this.gridColumn19.FieldName = "XetNghiem";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 7;
-            this.gridColumn19.Width = 48;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "Chuẩn đoán";
-            this.gridColumn20.FieldName = "ChuanDoan";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 8;
-            this.gridColumn20.Width = 63;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "Tiền Khám";
-            this.gridColumn21.FieldName = "TienKham1";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 9;
-            this.gridColumn21.Width = 62;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "Ghi Chú";
-            this.gridColumn22.FieldName = "GhiChu";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 10;
-            this.gridColumn22.Width = 138;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "Họ";
-            this.gridColumn23.FieldName = "Ho";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 4;
-            this.gridColumn23.Width = 50;
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.Caption = "Tên";
-            this.gridColumn24.FieldName = "Ten";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 5;
-            this.gridColumn24.Width = 49;
-            // 
-            // gridColumn25
-            // 
-            this.gridColumn25.Caption = "Giới tính";
-            this.gridColumn25.FieldName = "GioiTinh";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.Width = 47;
-            // 
-            // gridColumn26
-            // 
-            this.gridColumn26.Caption = "Năm sinh";
-            this.gridColumn26.FieldName = "NamSinh";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.Width = 55;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Caption = "Lí do khám";
-            this.gridColumn27.FieldName = "LiDoKham";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Width = 53;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "Địa chỉ";
-            this.gridColumn28.FieldName = "DiaChi";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Width = 42;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.Caption = "SĐT";
-            this.gridColumn29.FieldName = "SoDienThoai";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 6;
-            this.gridColumn29.Width = 52;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "Hình Ảnh";
-            this.gridColumn30.FieldName = "HinhAnh";
-            this.gridColumn30.Name = "gridColumn30";
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.Caption = "Check Khám";
-            this.gridColumn31.FieldName = "KiemTraKham";
-            this.gridColumn31.Name = "gridColumn31";
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.Caption = "Tái khám";
-            this.gridColumn32.FieldName = "KiemTraTaiKham";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 11;
-            this.gridColumn32.Width = 36;
-            // 
-            // gridView4
-            // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn33,
-            this.gridColumn34,
-            this.gridColumn35});
-            this.gridView4.GridControl = this.gridControl1_TimBenhNhan;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsBehavior.Editable = false;
-            this.gridView4.OptionsFind.AlwaysVisible = true;
-            this.gridView4.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridView4.ViewCaption = "Lịch sử tái khám của Bệnh nhân";
-            // 
-            // gridColumn33
-            // 
-            this.gridColumn33.Caption = "Mã Số Tái Khám (MSKB mới)";
-            this.gridColumn33.FieldName = "MaSoTaiKham";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 0;
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.Caption = "Mã Số Khám Bệnh cũ";
-            this.gridColumn34.FieldName = "MaSoKhamBenh";
-            this.gridColumn34.Name = "gridColumn34";
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 1;
-            // 
-            // gridColumn35
-            // 
-            this.gridColumn35.Caption = "Mã Số Bệnh Nhân";
-            this.gridColumn35.FieldName = "MaSoBenhNhan";
-            this.gridColumn35.Name = "gridColumn35";
-            this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 2;
+            this.hoSoTaiKhamTableAdapter1.ClearBeforeFill = true;
             // 
             // NhanVien
             // 
@@ -2521,6 +2525,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVien_FormClosing);
             this.Load += new System.EventHandler(this.NhanVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoSoKhamBenhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongKhamDataSet)).EndInit();
@@ -2535,6 +2540,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_BenhNhan_HSTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1_TimBenhNhan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimBenhNhan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimBenhNhan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
@@ -2556,21 +2565,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_BenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).EndInit();
             this.xtra_TimBenhNhan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimBenhNhan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1_TimBenhNhan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimBenhNhan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

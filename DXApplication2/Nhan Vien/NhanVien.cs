@@ -30,6 +30,9 @@ namespace QuanLyPhongKham
         function function = new function();
         connection connection = new connection();
         ThemCho themCho;
+
+        bool Rowfocus = false;//Kiểm tra khi chọn row
+
         public static int ID_MSKB_DoubleClick { get; set; }
 
         public NhanVien()
@@ -41,7 +44,7 @@ namespace QuanLyPhongKham
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-
+            
             // TODO: This line of code loads data into the 'phongKhamDataSet.BenhNhan' table. You can move, or remove it, as needed.
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
 
@@ -58,20 +61,26 @@ namespace QuanLyPhongKham
             load_DanhSachBenhNhan_comB_GioiTinh();
 
             filterColumn_TiepNhanBenhNhan();
+
+            gridView1_TiepNhanBenhNhan.UnselectRow(-1);
+            gridView1_TimBenhNhan.UnselectRow(-1);
+            gridView4_DanhSachBenhNhan.UnselectRow(-1);
+            gridView1_TimKiemBenhNhan.UnselectRow(-1);
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             refresh_TiepNhanBenhNhan();
             refresh_DanhSachBenhNhan();
             refresh_TimKiemBenhNhan();
-            gridView1_TimBenhNhan.ClearGrouping();
+            gridView1_TimBenhNhan.ClearGrouping();            
+            gridView4_DanhSachBenhNhan.ClearGrouping();
+            gridView1_TimKiemBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân tái khám
+
         }
         #region tab Tiếp nhận bệnh nhân
 
         private void filterColumn_TiepNhanBenhNhan()
-        {
-
-            //string ngay = DateTime.Now.ToString("dd/MM/yyyy");
+        {            //string ngay = DateTime.Now.ToString("dd/MM/yyyy");
             string ngay = DateTime.Now.Day.ToString("d2");
             string thang = DateTime.Now.Month.ToString("d2");
             string nam = DateTime.Now.Year.ToString();            
@@ -275,10 +284,10 @@ namespace QuanLyPhongKham
         //}
         private void gridView1_TiepNhanBenhNhan_RowClick(object sender, RowClickEventArgs e)
         {
-            //string ID = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+            panelControl2.Enabled = true;
             TiepNhanBenhNhan_txt_LiDoKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             TiepNhanBenhNhan_dtP_NgayKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
-
+            //string ID = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
             //TiepNhanBenhNhan_txt_Ho.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["Ho"]).ToString();
             //TiepNhanBenhNhan_txt_Ten.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["Ten"]).ToString();
             //TiepNhanBenhNhan_dtP_namsinh.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["NamSinh"]).ToString();
@@ -417,7 +426,7 @@ namespace QuanLyPhongKham
 
         #endregion
 
-        #region Danh sách bệnh nhân
+        #region Tiếp nhận bệnh nhân cũ
         private void refresh_DanhSachBenhNhan()
         {
             function.ClearControl(panelControl4);
@@ -540,45 +549,55 @@ namespace QuanLyPhongKham
 
         private void gridView4_DanhSachBenhNhan_RowClick(object sender, RowClickEventArgs e)
         {
-            string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
-            DanhSachBenhNhan_txt_Ho.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["Ho"]).ToString();
-            DanhSachBenhNhan_txt_Ten.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["Ten"]).ToString();
-            DanhSachBenhNhan_dtP_NamSinh.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["NamSinh"]).ToString();
-            DanhSachBenhNhan_comB_GioiTinh.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["GioiTinh"]).ToString();
-            DanhSachBenhNhan_txt_SDT.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["SoDienThoai"]).ToString();
-            DanhSachBenhNhan_txt_DiaChi.Text = gridView4_DanhSachBenhNhan.GetRowCellValue(gridView4_DanhSachBenhNhan.FocusedRowHandle, gridView4_DanhSachBenhNhan.Columns["DiaChi"]).ToString();
-            DanhSachBenhNhan_txt_CanNang.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("CanNang").ToString();
-            DanhSachBenhNhan_txt_TenNguoiThan.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("TenNguoiThan").ToString();
-            connection.connect();
-
-            string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
-            cmd = new SqlCommand(layhinhanh, connection.con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            panelControl4.Enabled = true;
+            object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
+            if(ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
             {
-                if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
+                string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+                DanhSachBenhNhan_txt_Ho.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("Ho").ToString();
+                DanhSachBenhNhan_txt_Ten.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("Ten").ToString();
+                DanhSachBenhNhan_dtP_NamSinh.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("NamSinh").ToString();
+                DanhSachBenhNhan_comB_GioiTinh.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("GioiTinh").ToString();
+                DanhSachBenhNhan_txt_SDT.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("SoDienThoai").ToString();
+                DanhSachBenhNhan_txt_DiaChi.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("DiaChi").ToString();
+                DanhSachBenhNhan_txt_CanNang.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("CanNang").ToString();
+                DanhSachBenhNhan_txt_TenNguoiThan.Text = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("TenNguoiThan").ToString();
+
+                connection.connect();
+                string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
+                cmd = new SqlCommand(layhinhanh, connection.con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    if (File.Exists(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                    if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
                     {
-                        //có thì sẽ load hình ảnh vào pictureBox
-                        pictureBox1_DanhSachBenhNhan.Image = new Bitmap(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString());
+                        if (File.Exists(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                        {
+                            //có thì sẽ load hình ảnh vào pictureBox
+                            pictureBox1_DanhSachBenhNhan.Image = new Bitmap(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString());
+                        }
+                        else
+                        {
+                            //không thì hiện thông báo
+                            function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                        }
                     }
                     else
                     {
-                        //không thì hiện thông báo
-                        function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                        //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
+                        pictureBox1_DanhSachBenhNhan.Image = null;
+                        continue;
                     }
                 }
-                else
-                {
-                    //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
-                    pictureBox1_DanhSachBenhNhan.Image = null;
-                    continue;
-                }
-            }
-            dr.Close();
+                dr.Close();
 
-            connection.disconnect();
+                connection.disconnect();
+            }
+            else
+            {
+                //function.Notice("Bạn nên chọn cụ thể hơn!", 0);
+            }
+            
         }
 
         private void gridView4_DanhSachBenhNhan_RowCountChanged(object sender, EventArgs e)
@@ -612,7 +631,7 @@ namespace QuanLyPhongKham
         }
         #endregion
 
-        #region Tìm kiếm bệnh nhân khám bệnh
+        #region Tiếp Nhận bệnh nhân tái khám
         private void refresh_TimKiemBenhNhan()
         {
             function.ClearControl(panelControl3);
@@ -636,6 +655,10 @@ namespace QuanLyPhongKham
             {
                 gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() + "/" + TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
             }
+        }
+        private void gridView1_TimKiemBenhNhan_RowClick(object sender, RowClickEventArgs e)
+        {
+            TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = true;
         }
         private void TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click(object sender, EventArgs e)
         {
@@ -669,66 +692,59 @@ namespace QuanLyPhongKham
             //lấy thông tin khi click chuột vào gridview
             //int ID_BenhNhan = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
             //int ID_MSKB_old = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
-            object ID_BenhNhan = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
-            object ID_MSKB_old = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh");
-            if (ID_BenhNhan != null && ID_BenhNhan != DBNull.Value)
-            {
-                
-            }
-            else
-            {
-
-            }
-            string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
+            //string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             int KiemTraTaiKham = 1;
-
-            string Check_ID_MSKB_OLD_CoTonTai = @"select MaSoKhamBenh from HoSoTaiKham where MaSoKhamBenh =" +ID_MSKB_old;
-            DataTable dataTable0 = connection.SQL(Check_ID_MSKB_OLD_CoTonTai);
-            //int ID_MSKB_OLD_CoTonTai = int.Parse(dataTable0.Rows[0][0].ToString());
-            if(dataTable0.Rows.Count>=1)//kiểm tra tồn tại của cột trong sql
+            //tạo object và gán cho cột khi row click để kiểm tra khi sử dụng chức năng group column
+            object ID_BenhNhan_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
+            object ID_MSKB_old_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh");
+            object LiDoKham_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham");
+            //sử dụng if để kiểm tra rỗng. Nếu không rỗng thì tiếp tục chức năng
+            if ((ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)|| (ID_BenhNhan_CheckNull == null && ID_MSKB_old_CheckNull == DBNull.Value)|| (LiDoKham_CheckNull == null && LiDoKham_CheckNull == DBNull.Value))
             {
-                function.Notice("Hồ Sơ số " + ID_MSKB_old + " đã có Tái khám!", 0);
+                int ID_BenhNhan = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
+                int ID_MSKB_old = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
+                string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
+                string Check_ID_MSKB_OLD_CoTonTai = @"select MaSoKhamBenh from HoSoTaiKham where MaSoKhamBenh =" + ID_MSKB_old;
+                DataTable dataTable0 = connection.SQL(Check_ID_MSKB_OLD_CoTonTai);
+                //int ID_MSKB_OLD_CoTonTai = int.Parse(dataTable0.Rows[0][0].ToString());
+                if (dataTable0.Rows.Count >= 1)//kiểm tra tồn tại của cột trong sql
+                {
+                    function.Notice("Hồ Sơ số " + ID_MSKB_old + " đã có Tái khám!", 0);
+                }
+                else
+                {
+                    string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
+                    + ID_BenhNhan + ","
+                    + "N'" + LiDoKham + "',"
+                    + "'" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "',"
+                    + KiemTraTaiKham + ")";
+                    connection.insert(Insert_HSKB);
+
+                    //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
+                    string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
+                        + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
+                        + " LiDoKham = N'" + LiDoKham + "' AND "
+                        + " NgayGioKham = '" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "' AND "
+                        + " KiemTraTaiKham = " + KiemTraTaiKham;
+                    DataTable dataTable = connection.SQL(LayID_MSKB_New);
+                    int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
+
+                    //insert vào hồ sơ tái khám
+                    string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
+                        + ID_MSKB_New + ","
+                        + ID_MSKB_old + ","
+                        + ID_BenhNhan + ")";
+                    connection.insert(Insert_HSTK);
+
+                    connection.disconnect();
+                    refresh_TimKiemBenhNhan();
+                }
+                //insert vào Hồ sơ khám bệnh
             }
             else
             {
-                string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
-                + ID_BenhNhan + ","
-                + "N'" + LiDoKham + "',"
-                + "'" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "',"
-                + KiemTraTaiKham + ")";
-                connection.insert(Insert_HSKB);
-
-                //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
-                string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
-                    + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
-                    + " LiDoKham = N'" + LiDoKham + "' AND "
-                    + " NgayGioKham = '" + TimKiemBenhNhanKhamBenh_dtP_ThoiGianKham.Text + "' AND "
-                    + " KiemTraTaiKham = " + KiemTraTaiKham;
-                DataTable dataTable = connection.SQL(LayID_MSKB_New);
-                int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
-
-                //insert vào hồ sơ tái khám
-                string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
-                    + ID_MSKB_New + ","
-                    + ID_MSKB_old + ","
-                    + ID_BenhNhan + ")";
-                connection.insert(Insert_HSTK);
-
-                connection.disconnect();
-                refresh_TimKiemBenhNhan();
+                function.Notice("Bạn nên chọn cụ thể hơn", 0);                
             }
-            //insert vào Hồ sơ khám bệnh 
-            
-        }
-
-        private void GridView1_TimKiemBenhNhan_RowClick1(object sender, RowClickEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void GridView1_TimKiemBenhNhan_RowClick(object sender, RowClickEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void gridView1_HoSoTaiKham_DoubleClick(object sender, EventArgs e)
@@ -755,7 +771,7 @@ namespace QuanLyPhongKham
             //DangNhap dangNhap = new DangNhap();
             //dangNhap.Show();
         }
-
+        #region Tìm kiếm bệnh nhân khám
         private void gridView1_TimBenhNhan_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
             function.CustomDrawRowIndicator(sender, e);
@@ -765,6 +781,8 @@ namespace QuanLyPhongKham
         {
             function.RowCountChanged(sender, e);
         }
+        #endregion
+
     }
 
 }
