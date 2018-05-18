@@ -21,7 +21,7 @@ namespace QuanLyPhongKham
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new NhanVien());
+            Application.Run(new DangNhap());
             
         }
     }

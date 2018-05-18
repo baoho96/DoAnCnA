@@ -50,6 +50,7 @@ namespace QuanLyPhongKham
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
             load_qlyThuoc_comB_loaithuoc();
             load_qlyThuoc_comB_donvitinh();
+            load_qlyThuoc_comB_donvitinhnhonhat();
         }
         #region Ribbon Admin
         public void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)//nút refresh toàn form
@@ -131,12 +132,19 @@ namespace QuanLyPhongKham
         {
             function.RowCountChanged(sender, e);
         }
-
+        public void refresh_ComboBoxLoaiThuoc()//hàm refresh ComboBoxLoaiThuoc
+        {
+            qlyThuoc_comB_loaithuoc.SelectedIndex = 0;
+            qlyThuoc_comB_loaithuoc.Text = "";
+            qlyThuoc_comB_loaithuoc.Items.Clear();
+            load_qlyThuoc_comB_loaithuoc();            
+        }
         public void refresh_qlyThuoc()//hàm refresh tab QlyThuoc
         {
             function.ClearControl(panelControl1);
             load_qlyThuoc_comB_loaithuoc();
             load_qlyThuoc_comB_donvitinh();
+            load_qlyThuoc_comB_donvitinhnhonhat();
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
             hinhanh = null;
             result = new DialogResult();
@@ -157,12 +165,23 @@ namespace QuanLyPhongKham
             dr.Close();
             connection.disconnect();
         }
-        private void load_qlyThuoc_comB_donvitinh()//load ComboBox Đơn Vị Tính
+        private void load_qlyThuoc_comB_donvitinh()//load ComboBox Đơn Vị Tính Lớn nhất
         {
-            qlyThuoc_comB_donvitinh.Items.Add("/Viên");
-            qlyThuoc_comB_donvitinh.Items.Add("/Vĩ");
+            qlyThuoc_comB_donvitinh.Items.Add("Thùng");
+            qlyThuoc_comB_donvitinh.Items.Add("Hộp");
+            qlyThuoc_comB_donvitinh.Items.Add("Lon");
+            
         }
+        private void load_qlyThuoc_comB_donvitinhnhonhat()//load ComboBox Đơn Vị Tính Lớn nhất
+        {
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Viên");
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Vĩ");
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Tuýp");
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Chai");
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Lọ");
+            qlyThuoc_comB_donvitinhnhonhat.Items.Add("Bình");
 
+        }
         private void pictureBox1_Thuoc_DoubleClick(object sender, EventArgs e)//sự kiện khi nhấp double vào Picture Box
         {
             open = new OpenFileDialog();
@@ -187,7 +206,14 @@ namespace QuanLyPhongKham
         {
             function.KoNhapKiTu(sender, e);
         }
-
+        private void qlyThuoc_txt_DonGiaNhoNhat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
+        private void qlyThuoc_txt_SoLuongNhoNhat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
         private void qlyThuoc_comB_loaithuoc_SelectedIndexChanged(object sender, EventArgs e)//Lấy mã loại thuốc khi chọn ComboBox Loại Thuốc
         {
             var tenloaithuoc = qlyThuoc_comB_loaithuoc.SelectedItem;
@@ -199,56 +225,63 @@ namespace QuanLyPhongKham
 
         private void gridView1_thuoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)//Sự kiện khi chọn vào hàng trong gridview
         {
-
-            string ID = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString();
-            qlyThuoc_txt_tenthuoc.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["TenThuoc"]).ToString();
-            qlyThuoc_txt_SoLuong.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["SoLuong"]).ToString();
-            qlyThuoc_txt_DonGia.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["DonGia"]).ToString();
-            qlyThuoc_txt_cachdung.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["CachDung"]).ToString();
-            qlyThuoc_dtP_ngaytao.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["NgayNhap"]).ToString();
-            var MaSoLoaiThuoc = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["MaSoLoaiThuoc"]).ToString();
-            qlyThuoc_comB_donvitinh.Text = gridView1_thuoc.GetRowCellValue(gridView1_thuoc.FocusedRowHandle, gridView1_thuoc.Columns["DonViTinh"]).ToString();
-
-
-            connection.connect();
-            string laytenloaithuoc = @"select tenloaithuoc  from loaithuoc where masoloaithuoc = " + MaSoLoaiThuoc;
-            if(MaSoLoaiThuoc!="")
+            object ID_Thuoc_CheckNull = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc");
+            if (ID_Thuoc_CheckNull != null && ID_Thuoc_CheckNull != DBNull.Value)
             {
-                DataTable dt = connection.SQL(laytenloaithuoc);
-                qlyThuoc_comB_loaithuoc.Text = dt.Rows[0][0].ToString();
-            }
-            else {
-                qlyThuoc_comB_loaithuoc.Text="";
-            }
-
-            string layhinhanh = @"select hinhanh from thuoc where MaSoThuoc = " + ID;
-            cmd = new SqlCommand(layhinhanh, connection.con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                if(dr["hinhanh"].ToString()!="")//kiểm tra đường dẫn hình ảnh từ SQL
+                panelControl1.Enabled = true;
+                string ID = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString();
+                qlyThuoc_txt_tenthuoc.Text = gridView1_thuoc.GetFocusedRowCellValue("TenThuoc").ToString();
+                qlyThuoc_txt_SoLuong.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuong").ToString();
+                qlyThuoc_txt_DonGia.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGia").ToString();
+                qlyThuoc_txt_cachdung.Text = gridView1_thuoc.GetFocusedRowCellValue("CachDung").ToString();
+                qlyThuoc_dtP_ngaytao.Text = gridView1_thuoc.GetFocusedRowCellValue("NgayNhap").ToString();
+                var MaSoLoaiThuoc = gridView1_thuoc.GetFocusedRowCellValue("MaSoLoaiThuoc").ToString();
+                qlyThuoc_comB_donvitinh.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinh").ToString();
+                qlyThuoc_comB_donvitinhnhonhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinhNhoNhat").ToString();
+                qlyThuoc_txt_SoLuongNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuongNhoNhat").ToString();
+                qlyThuoc_txt_DonGiaNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGiaNhoNhat").ToString();
+                connection.connect();
+                string laytenloaithuoc = @"select tenloaithuoc  from loaithuoc where masoloaithuoc = " + MaSoLoaiThuoc;
+                if (MaSoLoaiThuoc != "")
                 {
-                    if(File.Exists(Application.StartupPath + @"\Hinh\Thuoc\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
-                    {
-                        //có thì sẽ load hình ảnh vào pictureBox
-                        pictureBox1_Thuoc.Image = new Bitmap(Application.StartupPath + @"\Hinh\Thuoc\" + dr["hinhanh"].ToString());
-                    }
-                    else
-                    {
-                        //không thì hiện thông báo
-                        function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
-                    }
+                    DataTable dt = connection.SQL(laytenloaithuoc);
+                    qlyThuoc_comB_loaithuoc.Text = dt.Rows[0][0].ToString();
                 }
                 else
                 {
-                    //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
-                    pictureBox1_Thuoc.Image = null;
-                    continue;
+                    qlyThuoc_comB_loaithuoc.Text = "";
                 }
+
+                string layhinhanh = @"select hinhanh from thuoc where MaSoThuoc = " + ID;
+                cmd = new SqlCommand(layhinhanh, connection.con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
+                    {
+                        if (File.Exists(Application.StartupPath + @"\Hinh\Thuoc\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                        {
+                            //có thì sẽ load hình ảnh vào pictureBox
+                            pictureBox1_Thuoc.Image = new Bitmap(Application.StartupPath + @"\Hinh\Thuoc\" + dr["hinhanh"].ToString());
+                        }
+                        else
+                        {
+                            //không thì hiện thông báo
+                            function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                            pictureBox1_Thuoc.Image = null;
+                        }
+                    }
+                    else
+                    {
+                        //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
+                        pictureBox1_Thuoc.Image = null;
+                        continue;
+                    }
+                }
+                dr.Close();
+                connection.disconnect();
             }
-            dr.Close();
-           
-            connection.disconnect();
+            
         }
         
         private void qlyThuoc_btn_themloaithuoc_Click(object sender, EventArgs e)//chuyển sang form thêm loại thuốc
@@ -259,7 +292,7 @@ namespace QuanLyPhongKham
 
         private void qlyThuoc_btn_taomoi_Click(object sender, EventArgs e)//sự kiện nút Tạo mới
         {
-            
+
             if (function.checkNull(panelControl1) == true)
             {
                 connection.connect();
@@ -267,7 +300,7 @@ namespace QuanLyPhongKham
                 string checktenthuoc = @"select top 1 tenthuoc from thuoc where tenthuoc = N'" + qlyThuoc_txt_tenthuoc.Text + "'";
                 cmd = new SqlCommand(checktenthuoc, connection.con);
                 SqlDataReader dr = cmd.ExecuteReader();
-                
+
                 //hinhanh = null;
                 if (pictureBox1_Thuoc.Image != null)//kiểm tra picturebox có rỗng hay không
                 {
@@ -278,7 +311,7 @@ namespace QuanLyPhongKham
                         string linkHinhAnh = open.FileName;
                         File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
                     }
-                    else { }                    
+                    else { }
                 }
                 else { }
 
@@ -289,7 +322,7 @@ namespace QuanLyPhongKham
                 else
                 {
                     dr.Close();
-                    string query = @"insert into thuoc(masoloaithuoc,tenthuoc,soluong,dongia,donvitinh,ngaynhap,cachdung,hinhanh) values ("
+                    string query = @"insert into thuoc(masoloaithuoc,tenthuoc,soluong,dongia,donvitinh,ngaynhap,cachdung,hinhanh,DonViTinhNhoNhat,SoLuongNhoNhat,DonGiaNhoNhat) values ("
                         + ID_Loaithuoc + ",N'"
                         + qlyThuoc_txt_tenthuoc.Text + "',"
                         + qlyThuoc_txt_SoLuong.Text + ","
@@ -297,18 +330,22 @@ namespace QuanLyPhongKham
                         + qlyThuoc_comB_donvitinh.Text + "','"
                         + qlyThuoc_dtP_ngaytao.Text + "',N'"
                         + qlyThuoc_txt_cachdung.Text + "',N'"
-                        + hinhanh+"')";
+                        + hinhanh + "',N'"
+                        + qlyThuoc_comB_donvitinhnhonhat.Text + "',"
+                        + qlyThuoc_txt_SoLuongNhoNhat.Text + ","
+                        + qlyThuoc_txt_DonGiaNhoNhat.Text + ")";
                     connection.insert(query);
                     connection.disconnect();
                     refresh_qlyThuoc();
                 }
+
             }
-            
         }
 
         private void qlyThuoc_btn_xoa_Click(object sender, EventArgs e)//sự kiện nút xóa
         {
-            try
+            object ID_Thuoc_CheckNull = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc");
+            if (ID_Thuoc_CheckNull != null && ID_Thuoc_CheckNull != DBNull.Value)
             {
                 string ID = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString();
 
@@ -317,54 +354,60 @@ namespace QuanLyPhongKham
                 connection.delete(query);
                 connection.disconnect();
                 refresh_qlyThuoc();
+
             }
-            catch (Exception ex)
-            { throw ex; }
         }
       
         private void qlyThuoc_btn_capnhat_Click(object sender, EventArgs e)//sự kiện nút cập nhật
         {
-            if (function.checkNull(panelControl1) == true)//kiểm tra các thành phần có rỗng hay không
+            object ID_Thuoc_CheckNull = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc");
+            if (ID_Thuoc_CheckNull != null && ID_Thuoc_CheckNull != DBNull.Value)
             {
-                connection.connect();
-                int ID = int.Parse(gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString());
+                if (function.checkNull(panelControl1) == true)//kiểm tra các thành phần có rỗng hay không
+                {
+                    connection.connect();
+                    int ID = int.Parse(gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString());
 
-                var tenloaithuoc = qlyThuoc_comB_loaithuoc.SelectedItem;
-                string laymasoloaithuoc = @"select masoloaithuoc from loaithuoc where tenloaithuoc = N'" + tenloaithuoc + "'";
-                DataTable dt = connection.SQL(laymasoloaithuoc);
-                ID_Loaithuoc = int.Parse(dt.Rows[0][0].ToString());
+                    var tenloaithuoc = qlyThuoc_comB_loaithuoc.SelectedItem;
+                    string laymasoloaithuoc = @"select masoloaithuoc from loaithuoc where tenloaithuoc = N'" + tenloaithuoc + "'";
+                    DataTable dt = connection.SQL(laymasoloaithuoc);
+                    ID_Loaithuoc = int.Parse(dt.Rows[0][0].ToString());
 
-                
-                if (pictureBox1_Thuoc.Image != null)//kiểm tra picturebox có rỗng hay không
-                {                    
-                    if (result == DialogResult.OK)
+
+                    if (pictureBox1_Thuoc.Image != null)//kiểm tra picturebox có rỗng hay không
                     {
-                        string previewPath = Application.StartupPath + @"\Hinh\Thuoc\" + hinhanh;
-                        string linkHinhAnh = open.FileName;
-                        File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        if (result == DialogResult.OK)
+                        {
+                            string previewPath = Application.StartupPath + @"\Hinh\Thuoc\" + hinhanh;
+                            string linkHinhAnh = open.FileName;
+                            File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        }
+                        else
+                        {
+                            string layhinhanh = @"select hinhanh from thuoc where MaSoThuoc = " + ID;
+                            DataTable dt1 = connection.SQL(layhinhanh);
+                            hinhanh = dt1.Rows[0][0].ToString();
+                        }
                     }
-                    else
-                    {
-                        string layhinhanh = @"select hinhanh from thuoc where MaSoThuoc = " + ID;
-                        DataTable dt1 = connection.SQL(layhinhanh);
-                        hinhanh = dt1.Rows[0][0].ToString();
-                    }
+                    else { }
+
+                    string query = @"update Thuoc set TenThuoc = N'" + qlyThuoc_txt_tenthuoc.Text +
+                    "', CachDung = N'" + qlyThuoc_txt_cachdung.Text + "'," +
+                    "SoLuong =" + qlyThuoc_txt_SoLuong.Text + "," +
+                    "DonGia =" + qlyThuoc_txt_DonGia.Text + "," +
+                    "NgayNhap ='" + qlyThuoc_dtP_ngaytao.Text + "'," +
+                    "MaSoLoaiThuoc =" + ID_Loaithuoc + "," +
+                    "DonViTinh=N'" + qlyThuoc_comB_donvitinh.Text + "'," +
+                    "HinhAnh = N'" + hinhanh + "'," +
+                    " DonViTinhNhoNhat = N'" + qlyThuoc_comB_donvitinhnhonhat.Text + "'," +
+                    " SoLuongNhoNhat = " + qlyThuoc_txt_SoLuongNhoNhat.Text + "," +
+                    " DonGiaNhoNhat = " + qlyThuoc_txt_DonGiaNhoNhat.Text +
+                    " where MaSoThuoc =" + ID;
+                    connection.sql(query);
+                    connection.disconnect();
+                    refresh_qlyThuoc();
                 }
-                else { }
-
-                string query = @"update Thuoc set TenThuoc = N'" + qlyThuoc_txt_tenthuoc.Text +
-                "', CachDung = N'" + qlyThuoc_txt_cachdung.Text + "'," +
-                "SoLuong =" + qlyThuoc_txt_SoLuong.Text + "," +
-                "DonGia =" + qlyThuoc_txt_DonGia.Text + "," +
-                "NgayNhap ='" + qlyThuoc_dtP_ngaytao.Text + "'," +
-                "MaSoLoaiThuoc =" + ID_Loaithuoc + "," +
-                "DonViTinh=N'" + qlyThuoc_comB_donvitinh.Text + "'," +
-                "HinhAnh = N'"+hinhanh+"'"+
-                " where MaSoThuoc =" + ID;
-                connection.sql(query);
-                connection.disconnect();
-                refresh_qlyThuoc();
-            }                  
+            }
         }
         #endregion
 
@@ -403,6 +446,10 @@ namespace QuanLyPhongKham
             load_qlyNhanVien_comB_QuyenTruyCap();
             hinhanh = null;
             result = new DialogResult();
+        }
+        private void qlyNhanvien_txt_Luong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
         }
         private void gridView1_NhanVien_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
@@ -452,7 +499,7 @@ namespace QuanLyPhongKham
         }
         private void qlyNhanvien_btn_taomoi_Click(object sender, EventArgs e)
         {
-            if(function.checkNull(panelControl3_NhanVien)==true)
+            if (function.checkNull(panelControl3_NhanVien) == true)
             {
                 connection.connect();
 
@@ -472,127 +519,141 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string query = @"insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh) values"
-                    +"(N'"+ qlyNhanvien_txt_hoten.Text  +"',"
-                    + "'"+  qlyNhanvien_dtP_ngaysinh.Text   +"',"
-                    + "N'"+ qlyNhanvien_comB_vitri.Text +"',"
-                    + "N'"+ qlyNhanvien_txt_diachi.Text +"',"
-                    + qlyNhanvien_txt_sdt.Text +","
+                string query = @"insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh,Luong) values"
+                    + "(N'" + qlyNhanvien_txt_hoten.Text + "',"
+                    + "'" + qlyNhanvien_dtP_ngaysinh.Text + "',"
+                    + "N'" + qlyNhanvien_comB_vitri.Text + "',"
+                    + "N'" + qlyNhanvien_txt_diachi.Text + "',"
+                    + qlyNhanvien_txt_sdt.Text + ","
                     + quyentruycap + ","
-                    + "N'"+ qlyNhanvien_txt_taikhoan.Text + "',"
-                    + "'"+ matkhau + "',"
-                    + "'"+ qlyNhanvien_dtP_ngaytao.Text + "',"
-                    + "N'"+ qlyNhanvien_comB_gioitinh.Text+"',"
-                    + "N'"+ hinhanh + "')";
+                    + "N'" + qlyNhanvien_txt_taikhoan.Text + "',"
+                    + "'" + matkhau + "',"
+                    + "'" + qlyNhanvien_dtP_ngaytao.Text + "',"
+                    + "N'" + qlyNhanvien_comB_gioitinh.Text + "',"
+                    + "N'" + hinhanh + "',"
+                    + qlyNhanvien_txt_Luong.Text + ")";
                 connection.insert(query);
                 connection.disconnect();
                 refresh_qlyNhanVien();
             }
+            
         }
 
         private void gridView1_NhanVien_RowClick(object sender, RowClickEventArgs e)
         {
-            string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
-            qlyNhanvien_txt_hoten.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["TenNhanVien"]).ToString();
-            qlyNhanvien_comB_gioitinh.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["GioiTinh"]).ToString();
-            qlyNhanvien_txt_sdt.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["SoDienThoai"]).ToString();
-            qlyNhanvien_comB_vitri.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["ViTri"]).ToString();
-            qlyNhanvien_dtP_ngaysinh.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["NgaySinh"]).ToString();
-            qlyNhanvien_txt_diachi.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["DiaChi"]).ToString();
-            qlyNhanvien_dtP_ngaytao.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["NgayTao"]).ToString();
-            qlyNhanvien_txt_taikhoan.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["TaiKhoan"]).ToString();
-            qlyNhanvien_txt_matkhau.Text =function.toMD5( gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["MatKhau"]).ToString());
-            qlyNhanvien_comB_QuyenTruyCap.Text = gridView1_NhanVien.GetRowCellValue(gridView1_NhanVien.FocusedRowHandle, gridView1_NhanVien.Columns["QuyenTruyCap"]).ToString();
-
-            connection.connect();
-
-            string layhinhanh = @"select hinhanh from NhanVien where MaSoNhanVien = " + ID;
-            cmd = new SqlCommand(layhinhanh, connection.con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            object ID_NhanVien_CheckNull = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien");
+            if (ID_NhanVien_CheckNull != null && ID_NhanVien_CheckNull != DBNull.Value)
             {
-                if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
+                panelControl3_NhanVien.Enabled = true;
+                string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
+                qlyNhanvien_txt_hoten.Text = gridView1_NhanVien.GetFocusedRowCellValue("TenNhanVien").ToString();
+                qlyNhanvien_comB_gioitinh.Text = gridView1_NhanVien.GetFocusedRowCellValue("GioiTinh").ToString();
+                qlyNhanvien_txt_sdt.Text = gridView1_NhanVien.GetFocusedRowCellValue("SoDienThoai").ToString();
+                qlyNhanvien_comB_vitri.Text = gridView1_NhanVien.GetFocusedRowCellValue("ViTri").ToString();
+                qlyNhanvien_dtP_ngaysinh.Text = gridView1_NhanVien.GetFocusedRowCellValue("NgaySinh").ToString();
+                qlyNhanvien_txt_diachi.Text = gridView1_NhanVien.GetFocusedRowCellValue("DiaChi").ToString();
+                qlyNhanvien_dtP_ngaytao.Text = gridView1_NhanVien.GetFocusedRowCellValue("NgayTao").ToString();
+                qlyNhanvien_txt_taikhoan.Text = gridView1_NhanVien.GetFocusedRowCellValue("TaiKhoan").ToString();
+                qlyNhanvien_txt_matkhau.Text = function.toMD5(gridView1_NhanVien.GetFocusedRowCellValue("MatKhau").ToString());
+                qlyNhanvien_comB_QuyenTruyCap.Text = gridView1_NhanVien.GetFocusedRowCellValue("QuyenTruyCap").ToString();
+
+                connection.connect();
+
+                string layhinhanh = @"select hinhanh from NhanVien where MaSoNhanVien = " + ID;
+                cmd = new SqlCommand(layhinhanh, connection.con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    if (File.Exists(Application.StartupPath + @"\Hinh\NhanVien\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                    if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
                     {
-                        //có thì sẽ load hình ảnh vào pictureBox
-                        pictureBox1_NhanVien.Image = new Bitmap(Application.StartupPath + @"\Hinh\NhanVien\" + dr["hinhanh"].ToString());
+                        if (File.Exists(Application.StartupPath + @"\Hinh\NhanVien\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                        {
+                            //có thì sẽ load hình ảnh vào pictureBox
+                            pictureBox1_NhanVien.Image = new Bitmap(Application.StartupPath + @"\Hinh\NhanVien\" + dr["hinhanh"].ToString());
+                        }
+                        else
+                        {
+                            //không thì hiện thông báo
+                            function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                            pictureBox1_NhanVien.Image = null;
+                        }
                     }
                     else
                     {
-                        //không thì hiện thông báo
-                        function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                        //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
+                        pictureBox1_NhanVien.Image = null;
+                        continue;
                     }
                 }
-                else
-                {
-                    //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
-                    pictureBox1_NhanVien.Image = null;
-                    continue;
-                }
-            }
-            dr.Close();
+                dr.Close();
 
-            connection.disconnect();
+                connection.disconnect();
+            }
         }
 
         private void qlyNhanvien_btn_capnhat_Click(object sender, EventArgs e)
         {
-            if (function.checkNull(panelControl3_NhanVien) == true)//kiểm tra các thành phần có rỗng hay không
+            object ID_NhanVien_CheckNull = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien");
+            if (ID_NhanVien_CheckNull != null && ID_NhanVien_CheckNull != DBNull.Value)
             {
-                connection.connect();
-                string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
-
-                var matkhau = function.toMD5(qlyNhanvien_txt_matkhau.Text);
-
-
-                if (pictureBox1_NhanVien.Image != null)//kiểm tra picturebox có rỗng hay không
+                if (function.checkNull(panelControl3_NhanVien) == true)//kiểm tra các thành phần có rỗng hay không
                 {
-                    if (result == DialogResult.OK)
+                    connection.connect();
+                    string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
+
+                    var matkhau = function.toMD5(qlyNhanvien_txt_matkhau.Text);
+
+
+                    if (pictureBox1_NhanVien.Image != null)//kiểm tra picturebox có rỗng hay không
                     {
-                        string previewPath = Application.StartupPath + @"\Hinh\NhanVien\" + hinhanh;
-                        string linkHinhAnh = open.FileName;
-                        File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        if (result == DialogResult.OK)
+                        {
+                            string previewPath = Application.StartupPath + @"\Hinh\NhanVien\" + hinhanh;
+                            string linkHinhAnh = open.FileName;
+                            File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        }
+                        else
+                        {
+                            string layhinhanh = @"select hinhanh from NhanVien where MaSoNhanVien = " + ID;
+                            DataTable dt1 = connection.SQL(layhinhanh);
+                            hinhanh = dt1.Rows[0][0].ToString();
+                        }
                     }
-                    else
-                    {
-                        string layhinhanh = @"select hinhanh from NhanVien where MaSoNhanVien = " + ID;
-                        DataTable dt1 = connection.SQL(layhinhanh);
-                        hinhanh = dt1.Rows[0][0].ToString();
-                    }
+                    else { }
+
+                    string query = @"update NhanVien set TenNhanVien = N'" + qlyNhanvien_txt_hoten.Text + "'," +
+                    "GioiTinh = N'" + qlyNhanvien_comB_gioitinh.Text + "'," +
+                    "SoDienThoai =" + qlyNhanvien_txt_sdt.Text + "," +
+                    "ViTri = N'" + qlyNhanvien_comB_vitri.Text + "'," +
+                    "NgaySinh ='" + qlyNhanvien_dtP_ngaysinh.Text + "'," +
+                    "DiaChi = N'" + qlyNhanvien_txt_diachi.Text + "'," +
+                    "NgayTao='" + qlyNhanvien_dtP_ngaytao.Text + "'," +
+                    "TaiKhoan = N'" + qlyNhanvien_txt_taikhoan.Text + "'," +
+                    "MatKhau = N'" + matkhau + "'," +
+                    "QuyenTruyCap =" + quyentruycap + "," +
+                    "HinhAnh = N'" + hinhanh + "'," +
+                    "Luong = " + qlyNhanvien_txt_Luong.Text +
+                    " where MaSoNhanVien =" + ID;
+                    connection.sql(query);
+                    connection.disconnect();
+                    refresh_qlyNhanVien();
                 }
-                else { }
-
-                string query = @"update NhanVien set TenNhanVien = N'" + qlyNhanvien_txt_hoten.Text + "',"+
-                "GioiTinh = N'" + qlyNhanvien_comB_gioitinh.Text + "'," +
-                "SoDienThoai =" + qlyNhanvien_txt_sdt.Text + "," +
-                "ViTri = N'" + qlyNhanvien_comB_vitri.Text + "'," +
-                "NgaySinh ='" + qlyNhanvien_dtP_ngaysinh.Text + "'," +
-                "DiaChi = N'" + qlyNhanvien_txt_diachi.Text + "'," +
-                "NgayTao='" + qlyNhanvien_dtP_ngaytao.Text + "'," +
-                "TaiKhoan = N'" + qlyNhanvien_txt_taikhoan.Text + "'," +
-                "MatKhau = N'" + matkhau + "'," +
-                "QuyenTruyCap =" + quyentruycap + ","+
-                "HinhAnh = N'" + hinhanh + "'"+
-                " where MaSoNhanVien =" + ID;
-                connection.sql(query);
-                connection.disconnect();
-                refresh_qlyNhanVien();
-
             }
         }
 
         private void qlyNhanvien_btn_xoa_Click(object sender, EventArgs e)
         {
+            object ID_NhanVien_CheckNull = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien");
+            if (ID_NhanVien_CheckNull != null && ID_NhanVien_CheckNull != DBNull.Value)
+            {
+                string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
 
-            string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
-
-            connection.connect();
-            string query = @"delete from NhanVien where MaSoNhanVien = " + ID;
-            connection.delete(query);
-            connection.disconnect();
-            refresh_qlyNhanVien();
-
+                connection.connect();
+                string query = @"delete from NhanVien where MaSoNhanVien = " + ID;
+                connection.delete(query);
+                connection.disconnect();
+                refresh_qlyNhanVien();
+            }
         }
         #endregion
 
@@ -644,42 +705,49 @@ namespace QuanLyPhongKham
 
         private void gridView1_VatDung_RowClick(object sender, RowClickEventArgs e)
         {
-            string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
-            qlyVatdung_txt_tenvatdung.Text = gridView1_VatDung.GetRowCellValue(gridView1_VatDung.FocusedRowHandle, gridView1_VatDung.Columns["TenVatDung"]).ToString();
-            qlyVatdung_txt_soluong.Text = gridView1_VatDung.GetRowCellValue(gridView1_VatDung.FocusedRowHandle, gridView1_VatDung.Columns["SoLuong"]).ToString();
-            qlyVatdung_txt_sonamsudung.Text = gridView1_VatDung.GetRowCellValue(gridView1_VatDung.FocusedRowHandle, gridView1_VatDung.Columns["SoNamSuDung"]).ToString();
-            qlyVatdung_dtP_ngaytao.Text = gridView1_VatDung.GetRowCellValue(gridView1_VatDung.FocusedRowHandle, gridView1_VatDung.Columns["NgayTao"]).ToString();
-
-            connection.connect();
-
-            string layhinhanh = @"select hinhanh from VatDung where MaSoVatDung = " + ID;
-            cmd = new SqlCommand(layhinhanh, connection.con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            object ID_VatDung_CheckNull = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung");
+            if(ID_VatDung_CheckNull !=null && ID_VatDung_CheckNull!= DBNull.Value)
             {
-                if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
+                panelControl5_VatDung.Enabled = true;
+                string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
+                qlyVatdung_txt_tenvatdung.Text = gridView1_VatDung.GetFocusedRowCellValue("TenVatDung").ToString();
+                qlyVatdung_txt_soluong.Text = gridView1_VatDung.GetFocusedRowCellValue("SoLuong").ToString();
+                qlyVatdung_txt_sonamsudung.Text = gridView1_VatDung.GetFocusedRowCellValue("SoNamSuDung").ToString();
+                qlyVatdung_dtP_ngaytao.Text = gridView1_VatDung.GetFocusedRowCellValue("NgayTao").ToString();
+
+                connection.connect();
+
+                string layhinhanh = @"select hinhanh from VatDung where MaSoVatDung = " + ID;
+                cmd = new SqlCommand(layhinhanh, connection.con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    if (File.Exists(Application.StartupPath + @"\Hinh\VatDung\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                    if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
                     {
-                        //có thì sẽ load hình ảnh vào pictureBox
-                        pictureBox1_VatDung.Image = new Bitmap(Application.StartupPath + @"\Hinh\VatDung\" + dr["hinhanh"].ToString());
+                        if (File.Exists(Application.StartupPath + @"\Hinh\VatDung\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                        {
+                            //có thì sẽ load hình ảnh vào pictureBox
+                            pictureBox1_VatDung.Image = new Bitmap(Application.StartupPath + @"\Hinh\VatDung\" + dr["hinhanh"].ToString());
+                        }
+                        else
+                        {
+                            //không thì hiện thông báo
+                            function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                            pictureBox1_VatDung.Image = null;
+                        }
                     }
                     else
                     {
-                        //không thì hiện thông báo
-                        function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                        //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
+                        pictureBox1_VatDung.Image = null;
+                        continue;
                     }
                 }
-                else
-                {
-                    //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
-                    pictureBox1_VatDung.Image = null;
-                    continue;
-                }
-            }
-            dr.Close();
+                dr.Close();
 
-            connection.disconnect();
+                connection.disconnect();
+            }
+            
         }
 
         private void qlyVatdung_btn_taomoi_Click(object sender, EventArgs e)
@@ -711,73 +779,90 @@ namespace QuanLyPhongKham
                 connection.disconnect();
                 refresh_qlyVatDung();
             }
+            
         }
 
         private void qlyVatdung_btn_capnhat_Click(object sender, EventArgs e)
         {
-            if (function.checkNull(panelControl5_VatDung) == true)//kiểm tra các thành phần có rỗng hay không
+            object ID_VatDung_CheckNull = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung");
+            if (ID_VatDung_CheckNull != null && ID_VatDung_CheckNull != DBNull.Value)
             {
-                connection.connect();
-                string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
-
-
-                if (pictureBox1_VatDung.Image != null)//kiểm tra picturebox có rỗng hay không
+                if (function.checkNull(panelControl5_VatDung) == true)//kiểm tra các thành phần có rỗng hay không
                 {
-                    if (result == DialogResult.OK)
+                    connection.connect();
+                    string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
+
+
+                    if (pictureBox1_VatDung.Image != null)//kiểm tra picturebox có rỗng hay không
                     {
-                        string previewPath = Application.StartupPath + @"\Hinh\VatDung\" + hinhanh;
-                        string linkHinhAnh = open.FileName;
-                        File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        if (result == DialogResult.OK)
+                        {
+                            string previewPath = Application.StartupPath + @"\Hinh\VatDung\" + hinhanh;
+                            string linkHinhAnh = open.FileName;
+                            File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        }
+                        else
+                        {
+                            string layhinhanh = @"select hinhanh from VatDung where MaSoVatDung = " + ID;
+                            DataTable dt1 = connection.SQL(layhinhanh);
+                            hinhanh = dt1.Rows[0][0].ToString();
+                        }
                     }
-                    else
-                    {
-                        string layhinhanh = @"select hinhanh from VatDung where MaSoVatDung = " + ID;
-                        DataTable dt1 = connection.SQL(layhinhanh);
-                        hinhanh = dt1.Rows[0][0].ToString();
-                    }
+                    else { }
+
+                    string query = @"update VatDung set TenVatDung = N'" + qlyVatdung_txt_tenvatdung.Text + "'," +
+                        "SoLuong =" + qlyVatdung_txt_soluong.Text + "," +
+                        "SoNamSuDung =" + qlyVatdung_txt_sonamsudung.Text + "," +
+                        "NgayTao =" + "'" + qlyVatdung_dtP_ngaytao.Text + "'," +
+                        "HinhAnh= N'" + hinhanh + "'" +
+                        " where MaSoVatDung =" + ID;
+                    connection.sql(query);
+                    connection.disconnect();
+                    refresh_qlyVatDung();
                 }
-                else { }
-
-                string query = @"update VatDung set TenVatDung = N'"+qlyVatdung_txt_tenvatdung.Text+"',"+
-                    "SoLuong =" + qlyVatdung_txt_soluong.Text + ","+
-                    "SoNamSuDung =" + qlyVatdung_txt_sonamsudung.Text + ","+
-                    "NgayTao =" + "'" + qlyVatdung_dtP_ngaytao.Text + "',"+
-                    "HinhAnh= N'" + hinhanh + "'"+                  
-                    " where MaSoVatDung =" + ID;
-                connection.sql(query);
-                connection.disconnect();
-                refresh_qlyVatDung();
-
             }
         }
 
         private void qlyVatdung_btn_xoa_Click(object sender, EventArgs e)
         {
-            string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
+            object ID_VatDung_CheckNull = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung");
+            if (ID_VatDung_CheckNull != null && ID_VatDung_CheckNull != DBNull.Value)
+            {
+                string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
 
-            connection.connect();
-            string query = @"delete from VatDung where MaSoVatDung = " + ID;
-            connection.delete(query);
-            connection.disconnect();
-            refresh_qlyVatDung();
+                connection.connect();
+                string query = @"delete from VatDung where MaSoVatDung = " + ID;
+                connection.delete(query);
+                connection.disconnect();
+                refresh_qlyVatDung();
+            }
         }
-
 
 
         #endregion
 
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            this.Hide();            
             DangNhap dangNhap = new DangNhap();
             dangNhap.Show();
+
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //this.Close();
-            //DangNhap dangNhap = new DangNhap();
-            //dangNhap.Show();
+            //if(MessageBox.Show("Bạn có muốn Đăng xuất?? 'Yes: Đăng xuất', 'No: Thoát ứng dụng'","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            //{
+            //    this.Close();
+            //    DangNhap dangNhap = new DangNhap();
+            //    dangNhap.Show();
+            //}
+            //else 
+            //{
+            //}
+            Application.Exit();
         }
+
+        
     }
 }

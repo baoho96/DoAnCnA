@@ -46,7 +46,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_CachDung = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.txt_SoLuong = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,12 +58,11 @@
             this.colTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDonViTinhNhoNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCachDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenLoaiThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.mtxt_TienThuoc = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtP_NgayKeDon = new System.Windows.Forms.DateTimePicker();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
@@ -94,8 +92,6 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btn_HoanThanh = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Thoat = new DevExpress.XtraEditors.SimpleButton();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -123,7 +119,6 @@
             this.panelControl1.Controls.Add(this.label10);
             this.panelControl1.Controls.Add(this.txt_CachDung);
             this.panelControl1.Controls.Add(this.label14);
-            this.panelControl1.Controls.Add(this.label20);
             this.panelControl1.Controls.Add(this.txt_SoLuong);
             this.panelControl1.Controls.Add(this.label13);
             this.panelControl1.Controls.Add(this.label12);
@@ -138,9 +133,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(733, 61);
+            this.simpleButton1.Location = new System.Drawing.Point(746, 61);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(102, 39);
+            this.simpleButton1.Size = new System.Drawing.Size(89, 39);
             this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Đơn Thuốc";
             this.simpleButton1.Click += new System.EventHandler(this.btn_XemDonThuoc_Click);
@@ -150,9 +145,9 @@
             this.btn_Xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
-            this.btn_Xoa.Location = new System.Drawing.Point(733, 16);
+            this.btn_Xoa.Location = new System.Drawing.Point(746, 16);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(102, 36);
+            this.btn_Xoa.Size = new System.Drawing.Size(89, 36);
             this.btn_Xoa.TabIndex = 12;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -162,11 +157,11 @@
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_CapNhat.Appearance.Options.UseFont = true;
             this.btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.ImageOptions.Image")));
-            this.btn_CapNhat.Location = new System.Drawing.Point(630, 61);
+            this.btn_CapNhat.Location = new System.Drawing.Point(595, 63);
             this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(97, 39);
+            this.btn_CapNhat.Size = new System.Drawing.Size(90, 39);
             this.btn_CapNhat.TabIndex = 12;
-            this.btn_CapNhat.Text = "Cập nhật";
+            this.btn_CapNhat.Text = "Điều Chỉnh";
             this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // btn_ThemThuoc
@@ -174,9 +169,9 @@
             this.btn_ThemThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_ThemThuoc.Appearance.Options.UseFont = true;
             this.btn_ThemThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThemThuoc.ImageOptions.Image")));
-            this.btn_ThemThuoc.Location = new System.Drawing.Point(630, 14);
+            this.btn_ThemThuoc.Location = new System.Drawing.Point(595, 16);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
-            this.btn_ThemThuoc.Size = new System.Drawing.Size(97, 39);
+            this.btn_ThemThuoc.Size = new System.Drawing.Size(90, 39);
             this.btn_ThemThuoc.TabIndex = 12;
             this.btn_ThemThuoc.Text = "Thêm";
             this.btn_ThemThuoc.Click += new System.EventHandler(this.btn_ThemThuoc_Click);
@@ -238,8 +233,8 @@
             // 
             // clDonViTinh
             // 
-            this.clDonViTinh.Caption = "Đơn vị tính";
-            this.clDonViTinh.FieldName = "DonViTinh";
+            this.clDonViTinh.Caption = "Đơn vị nhỏ nhất";
+            this.clDonViTinh.FieldName = "DonViTinhNhoNhat";
             this.clDonViTinh.Name = "clDonViTinh";
             this.clDonViTinh.Visible = true;
             this.clDonViTinh.VisibleIndex = 2;
@@ -252,8 +247,6 @@
             this.clDonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clDonGia.FieldName = "DonGia";
             this.clDonGia.Name = "clDonGia";
-            this.clDonGia.Visible = true;
-            this.clDonGia.VisibleIndex = 3;
             // 
             // clCachDung
             // 
@@ -261,7 +254,7 @@
             this.clCachDung.FieldName = "CachDung";
             this.clCachDung.Name = "clCachDung";
             this.clCachDung.Visible = true;
-            this.clCachDung.VisibleIndex = 4;
+            this.clCachDung.VisibleIndex = 3;
             this.clCachDung.Width = 288;
             // 
             // label10
@@ -280,7 +273,7 @@
             this.txt_CachDung.Location = new System.Drawing.Point(84, 64);
             this.txt_CachDung.Multiline = true;
             this.txt_CachDung.Name = "txt_CachDung";
-            this.txt_CachDung.Size = new System.Drawing.Size(435, 34);
+            this.txt_CachDung.Size = new System.Drawing.Size(323, 34);
             this.txt_CachDung.TabIndex = 1;
             // 
             // label14
@@ -293,21 +286,11 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Cách dùng";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(524, 40);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Viên";
-            // 
             // txt_SoLuong
             // 
-            this.txt_SoLuong.Location = new System.Drawing.Point(455, 36);
+            this.txt_SoLuong.Location = new System.Drawing.Point(368, 36);
             this.txt_SoLuong.Name = "txt_SoLuong";
-            this.txt_SoLuong.Size = new System.Drawing.Size(64, 21);
+            this.txt_SoLuong.Size = new System.Drawing.Size(39, 21);
             this.txt_SoLuong.TabIndex = 1;
             this.txt_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoLuong_KeyPress);
             // 
@@ -315,7 +298,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(393, 39);
+            this.label13.Location = new System.Drawing.Point(306, 39);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 0;
@@ -343,7 +326,7 @@
             this.txt_TenThuoc.Properties.PopupSizeable = false;
             this.txt_TenThuoc.Properties.PopupView = this.searchLookUpEdit1View;
             this.txt_TenThuoc.Properties.ValueMember = "TenThuoc";
-            this.txt_TenThuoc.Size = new System.Drawing.Size(290, 20);
+            this.txt_TenThuoc.Size = new System.Drawing.Size(213, 20);
             this.txt_TenThuoc.TabIndex = 14;
             // 
             // thuocBindingSource
@@ -364,7 +347,7 @@
             this.colTenThuoc,
             this.colSoLuong,
             this.colDonGia,
-            this.colDonViTinh,
+            this.colDonViTinhNhoNhat,
             this.colNgayNhap,
             this.colCachDung,
             this.colHinhAnh,
@@ -397,8 +380,8 @@
             // 
             // colSoLuong
             // 
-            this.colSoLuong.Caption = "Số Lượng";
-            this.colSoLuong.FieldName = "SoLuong";
+            this.colSoLuong.Caption = "Số Lượng nhỏ nhất";
+            this.colSoLuong.FieldName = "SoLuongNhoNhat";
             this.colSoLuong.Name = "colSoLuong";
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 2;
@@ -408,16 +391,14 @@
             this.colDonGia.Caption = "Đơn Giá";
             this.colDonGia.FieldName = "DonGia";
             this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Visible = true;
-            this.colDonGia.VisibleIndex = 3;
             // 
-            // colDonViTinh
+            // colDonViTinhNhoNhat
             // 
-            this.colDonViTinh.Caption = "Đơn Vị Tính";
-            this.colDonViTinh.FieldName = "DonViTinh";
-            this.colDonViTinh.Name = "colDonViTinh";
-            this.colDonViTinh.Visible = true;
-            this.colDonViTinh.VisibleIndex = 4;
+            this.colDonViTinhNhoNhat.Caption = "Đơn vị nhỏ nhất";
+            this.colDonViTinhNhoNhat.FieldName = "DonViTinhNhoNhat";
+            this.colDonViTinhNhoNhat.Name = "colDonViTinhNhoNhat";
+            this.colDonViTinhNhoNhat.Visible = true;
+            this.colDonViTinhNhoNhat.VisibleIndex = 3;
             // 
             // colNgayNhap
             // 
@@ -443,17 +424,6 @@
             this.colTenLoaiThuoc.Visible = true;
             this.colTenLoaiThuoc.VisibleIndex = 0;
             // 
-            // mtxt_TienThuoc
-            // 
-            this.mtxt_TienThuoc.Location = new System.Drawing.Point(527, 10);
-            this.mtxt_TienThuoc.Mask = "000 000 000 ";
-            this.mtxt_TienThuoc.Name = "mtxt_TienThuoc";
-            this.mtxt_TienThuoc.PromptChar = ' ';
-            this.mtxt_TienThuoc.ReadOnly = true;
-            this.mtxt_TienThuoc.Size = new System.Drawing.Size(90, 21);
-            this.mtxt_TienThuoc.TabIndex = 15;
-            this.mtxt_TienThuoc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -478,7 +448,7 @@
             this.txt_GhiChu.Location = new System.Drawing.Point(303, 10);
             this.txt_GhiChu.Multiline = true;
             this.txt_GhiChu.Name = "txt_GhiChu";
-            this.txt_GhiChu.Size = new System.Drawing.Size(146, 34);
+            this.txt_GhiChu.Size = new System.Drawing.Size(252, 34);
             this.txt_GhiChu.TabIndex = 7;
             // 
             // label6
@@ -713,15 +683,12 @@
             // 
             // panelControl4
             // 
-            this.panelControl4.Controls.Add(this.mtxt_TienThuoc);
             this.panelControl4.Controls.Add(this.btn_HoanThanh);
             this.panelControl4.Controls.Add(this.btn_Thoat);
             this.panelControl4.Controls.Add(this.txt_GhiChu);
             this.panelControl4.Controls.Add(this.label11);
             this.panelControl4.Controls.Add(this.label6);
             this.panelControl4.Controls.Add(this.dtP_NgayKeDon);
-            this.panelControl4.Controls.Add(this.label17);
-            this.panelControl4.Controls.Add(this.label16);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl4.Location = new System.Drawing.Point(0, 496);
             this.panelControl4.Name = "panelControl4";
@@ -732,9 +699,10 @@
             // 
             this.btn_HoanThanh.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_HoanThanh.Appearance.Options.UseFont = true;
-            this.btn_HoanThanh.Location = new System.Drawing.Point(658, 16);
+            this.btn_HoanThanh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoanThanh.ImageOptions.Image")));
+            this.btn_HoanThanh.Location = new System.Drawing.Point(643, 16);
             this.btn_HoanThanh.Name = "btn_HoanThanh";
-            this.btn_HoanThanh.Size = new System.Drawing.Size(76, 33);
+            this.btn_HoanThanh.Size = new System.Drawing.Size(91, 33);
             this.btn_HoanThanh.TabIndex = 14;
             this.btn_HoanThanh.Text = "Hoàn thành";
             this.btn_HoanThanh.Click += new System.EventHandler(this.btn_HoanThanh_Click);
@@ -743,32 +711,13 @@
             // 
             this.btn_Thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_Thoat.Appearance.Options.UseFont = true;
+            this.btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.ImageOptions.Image")));
             this.btn_Thoat.Location = new System.Drawing.Point(760, 16);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(75, 33);
             this.btn_Thoat.TabIndex = 12;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(623, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "VND";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(456, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Tiền thuốc";
             // 
             // thuocTableAdapter
             // 
@@ -846,8 +795,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btn_HoanThanh;
         private DevExpress.XtraEditors.SimpleButton btn_Thoat;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txt_Ten;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txt_GioiTinh;
@@ -870,15 +817,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuong;
         private DevExpress.XtraGrid.Columns.GridColumn colDonGia;
-        private DevExpress.XtraGrid.Columns.GridColumn colDonViTinh;
+        private DevExpress.XtraGrid.Columns.GridColumn colDonViTinhNhoNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayNhap;
         private DevExpress.XtraGrid.Columns.GridColumn colCachDung;
         private DevExpress.XtraGrid.Columns.GridColumn colHinhAnh;
         private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn clDonGia;
         private DevExpress.XtraGrid.Columns.GridColumn clMaSoThuoc;
-        private System.Windows.Forms.MaskedTextBox mtxt_TienThuoc;
-        private System.Windows.Forms.Label label20;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

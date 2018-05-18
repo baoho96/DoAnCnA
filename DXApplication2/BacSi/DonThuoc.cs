@@ -32,6 +32,7 @@ namespace QuanLyPhongKham
         public static string BacSiKham { get; set; }
         public static int ID_MSKB { get; set; }
         #endregion
+
         int ID_Thuoc_RowClick;
         
         bool RowClick = false;
@@ -55,7 +56,7 @@ namespace QuanLyPhongKham
         {
             ID_MSKB = BacSi.ID_MSKB;
             
-            string query = @"select T.TenThuoc,T.MaSoThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung"+
+            string query = @"select T.TenThuoc,T.MaSoThuoc,T.DonViTinhNhoNhat,T.DonGiaNhoNhat,DST.SoLuong,DST.CachDung"+
                                 " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc "+
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc "+
                                 " where DT.MaSoKhamBenh = "+ID_MSKB;
@@ -81,7 +82,7 @@ namespace QuanLyPhongKham
                 { }
             }
 
-            TinhTienThuoc();
+            //TinhTienThuoc();
             connection.disconnect();
         }
         private void refresh_DonThuoc()
@@ -105,6 +106,7 @@ namespace QuanLyPhongKham
             txt_GhiChuKham.Text = BacSi.GhiChu_BenhNhan;
             BacSiKham= txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
         }
+        
         
 
         private void gridView1_DonThuoc_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -202,7 +204,7 @@ namespace QuanLyPhongKham
         {
             NgayKeDon = dtP_NgayKeDon.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
             GhiChu = txt_GhiChu.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
-            TienThuoc =mtxt_TienThuoc.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
+            //TienThuoc =mtxt_TienThuoc.Text;//gán giá trị từ form Đơn Thuốc sang form Xem Đơn Thuốc
             
             printDonThuoc printDonThuoc = new printDonThuoc();//show form Xem đơn thuốc
 
@@ -217,7 +219,7 @@ namespace QuanLyPhongKham
                                 " NgayKeDon = N'" + dtP_NgayKeDon.Text + "'," +
                                 " GhiChu = N'" + txt_GhiChu.Text + "'," +
                                 " TongTienThuoc = h.TongTien "  +//gán 1 biến tạm cho TongTienThuoc
-                                " from ( select sum(T.DonGia * DST.SoLuong) as TongTien " +//tính sum của DonGia * SoLuong
+                                " from ( select sum(T.DonGiaNhoNhat * DST.SoLuong) as TongTien " +//tính sum của DonGia * SoLuong
                                 "           from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " + //hàm tính sum bình thường giống hàm Tính Tiền Thuốc
                                 "           left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc where DT.MaSoKhamBenh =  " + ID_MSKB + ") h"+ //gán biến h 
                                 " join DonThuoc DT on DT.MaSoKhamBenh =" + ID_MSKB;
@@ -231,15 +233,15 @@ namespace QuanLyPhongKham
 
         }
 
-        private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
-        {
-            string query = @"select sum(T.DonGia * DST.SoLuong)" +//tính tổng của Đơn giá * Số Lượng nhập vào
-                                " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
-                                            " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
-                                " where DT.MaSoKhamBenh = " + ID_MSKB;
-            DataTable dataTable = connection.SQL(query);
-            mtxt_TienThuoc.Text = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
-        }
+        //private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
+        //{
+        //    string query = @"select sum(T.DonGia * DST.SoLuong)" +//tính tổng của Đơn giá * Số Lượng nhập vào
+        //                        " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
+        //                                    " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
+        //                        " where DT.MaSoKhamBenh = " + ID_MSKB;
+        //    DataTable dataTable = connection.SQL(query);
+        //    mtxt_TienThuoc.Text = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
+        //}
 
         private void DonThuoc_FormClosed(object sender, FormClosedEventArgs e)
         {

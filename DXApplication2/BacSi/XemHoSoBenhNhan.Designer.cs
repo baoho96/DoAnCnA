@@ -64,10 +64,12 @@
             this.colMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaSoKhamBenh2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaSoBenhNhan5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham_BenhNhan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1_HoSoTaiKham
@@ -167,7 +169,8 @@
             this.gridControl1_TimKiemBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_TimKiemBenhNhan,
             this.gridView1_HoSoTaiKham_BenhNhan,
-            this.gridView1_HoSoTaiKham});
+            this.gridView1_HoSoTaiKham,
+            this.gridView1});
             // 
             // gridView1_TimKiemBenhNhan
             // 
@@ -392,6 +395,11 @@
             this.colMaSoBenhNhan5.Visible = true;
             this.colMaSoBenhNhan5.VisibleIndex = 2;
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1_TimKiemBenhNhan;
+            this.gridView1.Name = "gridView1";
+            // 
             // XemHoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +413,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_TimKiemBenhNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham_BenhNhan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,5 +456,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaSoTaiKham;
         private DevExpress.XtraGrid.Columns.GridColumn colMaSoKhamBenh2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaSoBenhNhan5;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

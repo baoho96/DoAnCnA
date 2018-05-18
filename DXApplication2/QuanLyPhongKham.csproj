@@ -117,7 +117,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin.cs" />
+    <Compile Include="KhoiTao.cs" />
     <Compile Include="Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>

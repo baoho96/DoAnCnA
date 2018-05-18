@@ -14,11 +14,27 @@ namespace QuanLyPhongKham
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
+        
         public DangNhap()
         {
             InitializeComponent();
+            
+
         }
-        //private SqlConnection con;
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            //KhoiTao.admin = new Admin();
+            //KhoiTao.nhanVien = new NhanVien();
+            //KhoiTao.bacSi = new BacSi();
+            //KhoiTao.duocSi = new DuocSi();
+            //KhoiTao.nhanVienThuNgan = new NhanVienThuNgan();
+            admin = new Admin();
+            nhanVien = new NhanVien();
+            bacSi= new BacSi();
+        }
+        Admin admin;
+        NhanVien nhanVien;
+        BacSi bacSi;
         private SqlCommand cmd;
         private SqlDataReader reader;
         private SqlDataAdapter da;
@@ -56,23 +72,25 @@ namespace QuanLyPhongKham
                     if(dr["quyentruycap"].ToString()=="1")
                     {
                         quyentruycap = 1;
-                        Admin admin = new Admin();
+                        //Admin admin= new Admin();
                         admin.Show();
-                        
+                        //KhoiTao.admin.Show();
                         this.Visible = false;
                     }
                     else if(dr["quyentruycap"].ToString()=="2")
                     {
                         quyentruycap = 2;
-                        NhanVien nhanVien = new NhanVien();
+                        //NhanVien nhanVien = new NhanVien();
                         nhanVien.Show();
+                        //KhoiTao.nhanVien.Show();
                         this.Visible=false;
                     }
                     else if (dr["quyentruycap"].ToString() == "3")
                     {
                         quyentruycap = 3;                        
-                        BacSi bacSi = new BacSi();
+                        //BacSi bacSi = new BacSi();
                         bacSi.Show();
+                        //KhoiTao.bacSi.Show();
                         this.Visible = false;
                     }
                     else if (dr["quyentruycap"].ToString() == "4")
@@ -101,7 +119,7 @@ namespace QuanLyPhongKham
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         

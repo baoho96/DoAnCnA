@@ -103,7 +103,7 @@ namespace QuanLyPhongKham
             {
                 if (fm is Admin)
                 {
-                    ((Admin)fm).refresh_qlyThuoc();
+                    ((Admin)fm).refresh_ComboBoxLoaiThuoc();
                     break;
                 }
             }

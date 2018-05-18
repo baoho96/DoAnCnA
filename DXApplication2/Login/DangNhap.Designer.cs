@@ -79,18 +79,18 @@
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.Location = new System.Drawing.Point(88, 208);
+            this.btn_DangNhap.Location = new System.Drawing.Point(88, 196);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(75, 23);
+            this.btn_DangNhap.Size = new System.Drawing.Size(75, 35);
             this.btn_DangNhap.TabIndex = 8;
             this.btn_DangNhap.Text = "Đăng Nhập";
             this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
             // 
             // btn_thoat
             // 
-            this.btn_thoat.Location = new System.Drawing.Point(179, 208);
+            this.btn_thoat.Location = new System.Drawing.Point(179, 196);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(75, 23);
+            this.btn_thoat.Size = new System.Drawing.Size(75, 35);
             this.btn_thoat.TabIndex = 8;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
@@ -129,7 +129,8 @@
             this.MaximizeBox = false;
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangNhap";
+            this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

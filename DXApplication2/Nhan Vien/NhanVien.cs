@@ -62,10 +62,7 @@ namespace QuanLyPhongKham
 
             filterColumn_TiepNhanBenhNhan();
 
-            gridView1_TiepNhanBenhNhan.UnselectRow(-1);
-            gridView1_TimBenhNhan.UnselectRow(-1);
-            gridView4_DanhSachBenhNhan.UnselectRow(-1);
-            gridView1_TimKiemBenhNhan.UnselectRow(-1);
+            
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -73,9 +70,13 @@ namespace QuanLyPhongKham
             refresh_DanhSachBenhNhan();
             refresh_TimKiemBenhNhan();
             gridView1_TimBenhNhan.ClearGrouping();            
-            gridView4_DanhSachBenhNhan.ClearGrouping();
+            gridView4_DanhSachBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân cũ
             gridView1_TimKiemBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân tái khám
 
+            gridView1_TiepNhanBenhNhan.UnselectRow(int.Parse(gridView1_TiepNhanBenhNhan.FocusedRowHandle.ToString()));            
+            gridView4_DanhSachBenhNhan.UnselectRow(int.Parse(gridView4_DanhSachBenhNhan.FocusedRowHandle.ToString()));
+            gridView1_TimKiemBenhNhan.ClearSelection();
+            gridView1_TimBenhNhan.ClearSelection();
         }
         #region tab Tiếp nhận bệnh nhân
 
@@ -414,11 +415,15 @@ namespace QuanLyPhongKham
             if (NhanVien_tabP_DanhSachBenhNhan.Focus() == true)
             {
                 function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân???", result, DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
-
             }
             if (NhanVien_tabP_DanhSachBenhNhanTaiKham.Focus() == true)
             {
-                function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân khám theo ngày???", result, gridControl1_TimKiemBenhNhan);
+                function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân tái khám???", result, gridControl1_TimKiemBenhNhan);
+
+            }
+            if (xtra_TimBenhNhan.Focus() == true)
+            {
+                function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân Được tìm theo ngày???", result, gridControl1_TimBenhNhan);
 
             }
         }
@@ -461,73 +466,83 @@ namespace QuanLyPhongKham
 
         private void DanhSachBenhNhan_btn_DieuChinh_Click(object sender, EventArgs e)
         {
-            if (function.checkNull(panelControl4) == true)//kiểm tra các thành phần có rỗng hay không
+            
+            object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
+            if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
             {
-                connection.connect();
-                string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
-
-
-                if (pictureBox1_DanhSachBenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
+                if (function.checkNull(panelControl4) == true)//kiểm tra các thành phần có rỗng hay không
                 {
-                    if (result == DialogResult.OK)
+                    connection.connect();
+                    string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+                
+                    if (pictureBox1_DanhSachBenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
                     {
-                        string previewPath = Application.StartupPath + @"\Hinh\BenhNhan\" + hinhanh;
-                        string linkHinhAnh = open.FileName;
-                        File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        if (result == DialogResult.OK)
+                        {
+                            string previewPath = Application.StartupPath + @"\Hinh\BenhNhan\" + hinhanh;
+                            string linkHinhAnh = open.FileName;
+                            File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
+                        }
+                        else
+                        {
+                            string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
+                            DataTable dt1 = connection.SQL(layhinhanh);
+                            hinhanh = dt1.Rows[0][0].ToString();
+                        }
                     }
-                    else
-                    {
-                        string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
-                        DataTable dt1 = connection.SQL(layhinhanh);
-                        hinhanh = dt1.Rows[0][0].ToString();
-                    }
+                    else { }
+
+                    string query = @"update BenhNhan set Ho = N'" + DanhSachBenhNhan_txt_Ho.Text + "'," +
+                    "Ten = N'" + DanhSachBenhNhan_txt_Ten.Text + "'," +
+                    "SoDienThoai =" + DanhSachBenhNhan_txt_SDT.Text + "," +
+                    "GioiTinh = N'" + DanhSachBenhNhan_comB_GioiTinh.Text + "'," +
+                    "NamSinh ='" + DanhSachBenhNhan_dtP_NamSinh.Text + "'," +
+                    "DiaChi = N'" + DanhSachBenhNhan_txt_DiaChi.Text + "'," +
+                    "HinhAnh = N'" + hinhanh + "'," +
+                    "TenNguoiThan = N'" + DanhSachBenhNhan_txt_TenNguoiThan.Text + "'," +
+                    "CanNang = " + DanhSachBenhNhan_txt_CanNang.Text +
+                    " where MaSoBenhNhan =" + ID;
+                    connection.sql(query);
+
+                    connection.disconnect();
+                    refresh_DanhSachBenhNhan();
                 }
-                else { }
-
-                string query = @"update BenhNhan set Ho = N'" + DanhSachBenhNhan_txt_Ho.Text + "'," +
-                "Ten = N'" + DanhSachBenhNhan_txt_Ten.Text + "'," +
-                "SoDienThoai =" + DanhSachBenhNhan_txt_SDT.Text + "," +
-                "GioiTinh = N'" + DanhSachBenhNhan_comB_GioiTinh.Text + "'," +
-                "NamSinh ='" + DanhSachBenhNhan_dtP_NamSinh.Text + "'," +
-                "DiaChi = N'" + DanhSachBenhNhan_txt_DiaChi.Text + "'," +
-                "HinhAnh = N'" + hinhanh + "'," +
-                "TenNguoiThan = N'" + DanhSachBenhNhan_txt_TenNguoiThan.Text + "'," +
-                "CanNang = " + DanhSachBenhNhan_txt_CanNang.Text +
-                " where MaSoBenhNhan =" + ID;
-                connection.sql(query);
-
-                connection.disconnect();
-                refresh_DanhSachBenhNhan();
-
             }
+            
         }
         private void DanhSachBenhNhan_btn_ThemCho_Click(object sender, EventArgs e)
         {
-            connection.connect();
-            int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-            int CheckKham = 1;
-            //string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
-            //                + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
-            //DataTable dt = connection.SQL(layMSBN);
-            //ID_BenhNhan = int.Parse(dt.Rows[0][0].ToString());
-            string ngaykham;
-            string lidokham;
-            themCho = new ThemCho();
-            themCho.ShowDialog();
+            
+            object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
+            if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
+            {
+                connection.connect();
+                int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
+                int CheckKham = 1;
+                //string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
+                //                + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
+                //DataTable dt = connection.SQL(layMSBN);
+                //ID_BenhNhan = int.Parse(dt.Rows[0][0].ToString());
+                string ngaykham;
+                string lidokham;
+                themCho = new ThemCho();
+                themCho.ShowDialog();
 
-            ngaykham = themCho.ngaykham;
-            lidokham = themCho.lidokham;
+                ngaykham = themCho.ngaykham;
+                lidokham = themCho.lidokham;
 
 
 
-            string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
-                + ID_BenhNhan + ","
-                + "N'" + lidokham + "',"
-                + "'" + ngaykham + "')";
-            connection.insert(query);
-
-            refresh_DanhSachBenhNhan();
-            connection.disconnect();
+                string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
+                    + ID_BenhNhan + ","
+                    + "N'" + lidokham + "',"
+                    + "'" + ngaykham + "')";
+                connection.insert(query);
+                connection.disconnect();
+                refresh_DanhSachBenhNhan();
+                
+            }
+            
         }
         //private void DanhSachBenhNhan_btn_TimKiem_Click(object sender, EventArgs e)
         //{
@@ -580,6 +595,7 @@ namespace QuanLyPhongKham
                         {
                             //không thì hiện thông báo
                             function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
+                            pictureBox1_DanhSachBenhNhan.Image = null;
                         }
                     }
                     else
@@ -621,13 +637,17 @@ namespace QuanLyPhongKham
 
         private void DanhSachBenhNhan_btn_Xoa_Click(object sender, EventArgs e)
         {
-            string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
+            object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
+            if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
+            {
+                string ID = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
 
-            connection.connect();
-            string query1 = @"delete from BenhNhan where MaSoBenhNhan = " + ID;
-            connection.delete(query1);
-            connection.disconnect();
-            refresh_DanhSachBenhNhan();
+                connection.connect();
+                string query1 = @"delete from BenhNhan where MaSoBenhNhan = " + ID;
+                connection.delete(query1);
+                connection.disconnect();
+                refresh_DanhSachBenhNhan();
+            }
         }
         #endregion
 
@@ -743,7 +763,7 @@ namespace QuanLyPhongKham
             }
             else
             {
-                function.Notice("Bạn nên chọn cụ thể hơn", 0);                
+                //function.Notice("Bạn nên chọn cụ thể hơn", 0);                
             }
         }
 
@@ -767,9 +787,7 @@ namespace QuanLyPhongKham
 
         private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //this.Close();
-            //DangNhap dangNhap = new DangNhap();
-            //dangNhap.Show();
+            Application.Exit();
         }
         #region Tìm kiếm bệnh nhân khám
         private void gridView1_TimBenhNhan_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
