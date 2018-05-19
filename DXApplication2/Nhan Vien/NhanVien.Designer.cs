@@ -1914,7 +1914,7 @@
             this.colMaSoKhamBenh.Name = "colMaSoKhamBenh";
             this.colMaSoKhamBenh.Visible = true;
             this.colMaSoKhamBenh.VisibleIndex = 0;
-            this.colMaSoKhamBenh.Width = 32;
+            this.colMaSoKhamBenh.Width = 31;
             // 
             // colMaSoBenhNhan
             // 
@@ -1923,7 +1923,7 @@
             this.colMaSoBenhNhan.Name = "colMaSoBenhNhan";
             this.colMaSoBenhNhan.Visible = true;
             this.colMaSoBenhNhan.VisibleIndex = 1;
-            this.colMaSoBenhNhan.Width = 29;
+            this.colMaSoBenhNhan.Width = 31;
             // 
             // colHo
             // 
@@ -1932,7 +1932,7 @@
             this.colHo.Name = "colHo";
             this.colHo.Visible = true;
             this.colHo.VisibleIndex = 2;
-            this.colHo.Width = 46;
+            this.colHo.Width = 50;
             // 
             // colTen
             // 
@@ -1941,7 +1941,7 @@
             this.colTen.Name = "colTen";
             this.colTen.Visible = true;
             this.colTen.VisibleIndex = 3;
-            this.colTen.Width = 34;
+            this.colTen.Width = 37;
             // 
             // colGioiTinh
             // 
@@ -1950,7 +1950,7 @@
             this.colGioiTinh.Name = "colGioiTinh";
             this.colGioiTinh.Visible = true;
             this.colGioiTinh.VisibleIndex = 6;
-            this.colGioiTinh.Width = 41;
+            this.colGioiTinh.Width = 45;
             // 
             // clCanNang
             // 
@@ -1959,7 +1959,7 @@
             this.clCanNang.Name = "clCanNang";
             this.clCanNang.Visible = true;
             this.clCanNang.VisibleIndex = 5;
-            this.clCanNang.Width = 50;
+            this.clCanNang.Width = 54;
             // 
             // colNamSinh
             // 
@@ -1968,7 +1968,7 @@
             this.colNamSinh.Name = "colNamSinh";
             this.colNamSinh.Visible = true;
             this.colNamSinh.VisibleIndex = 4;
-            this.colNamSinh.Width = 50;
+            this.colNamSinh.Width = 54;
             // 
             // colSoDienThoai
             // 
@@ -1977,7 +1977,7 @@
             this.colSoDienThoai.Name = "colSoDienThoai";
             this.colSoDienThoai.Visible = true;
             this.colSoDienThoai.VisibleIndex = 7;
-            this.colSoDienThoai.Width = 55;
+            this.colSoDienThoai.Width = 60;
             // 
             // colDiaChi
             // 
@@ -1986,7 +1986,7 @@
             this.colDiaChi.Name = "colDiaChi";
             this.colDiaChi.Visible = true;
             this.colDiaChi.VisibleIndex = 8;
-            this.colDiaChi.Width = 61;
+            this.colDiaChi.Width = 67;
             // 
             // colLiDoKham
             // 
@@ -1995,7 +1995,7 @@
             this.colLiDoKham.Name = "colLiDoKham";
             this.colLiDoKham.Visible = true;
             this.colLiDoKham.VisibleIndex = 9;
-            this.colLiDoKham.Width = 158;
+            this.colLiDoKham.Width = 174;
             // 
             // colNgayGioKham
             // 
@@ -2011,7 +2011,7 @@
             this.colKiemTraKham.Name = "colKiemTraKham";
             this.colKiemTraKham.Visible = true;
             this.colKiemTraKham.VisibleIndex = 11;
-            this.colKiemTraKham.Width = 35;
+            this.colKiemTraKham.Width = 47;
             // 
             // colChuanDoan
             // 
@@ -2062,7 +2062,7 @@
             this.clKiemTraTaiKham.Name = "clKiemTraTaiKham";
             this.clKiemTraTaiKham.Visible = true;
             this.clKiemTraTaiKham.VisibleIndex = 10;
-            this.clKiemTraTaiKham.Width = 39;
+            this.clKiemTraTaiKham.Width = 42;
             // 
             // repositoryItemTextEdit1
             // 
@@ -2112,7 +2112,6 @@
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(this.label1);
-            this.panelControl2.Enabled = false;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1008, 183);
@@ -2180,6 +2179,7 @@
             // 
             this.TiepNhanBenhNhan_btn_Xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.TiepNhanBenhNhan_btn_Xoa.Appearance.Options.UseFont = true;
+            this.TiepNhanBenhNhan_btn_Xoa.Enabled = false;
             this.TiepNhanBenhNhan_btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TiepNhanBenhNhan_btn_Xoa.ImageOptions.Image")));
             this.TiepNhanBenhNhan_btn_Xoa.Location = new System.Drawing.Point(925, 119);
             this.TiepNhanBenhNhan_btn_Xoa.Name = "TiepNhanBenhNhan_btn_Xoa";
@@ -2248,6 +2248,7 @@
             // 
             this.TiepNhanBenhNhan_btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.TiepNhanBenhNhan_btn_CapNhat.Appearance.Options.UseFont = true;
+            this.TiepNhanBenhNhan_btn_CapNhat.Enabled = false;
             this.TiepNhanBenhNhan_btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TiepNhanBenhNhan_btn_CapNhat.ImageOptions.Image")));
             this.TiepNhanBenhNhan_btn_CapNhat.Location = new System.Drawing.Point(825, 118);
             this.TiepNhanBenhNhan_btn_CapNhat.Name = "TiepNhanBenhNhan_btn_CapNhat";
@@ -2465,9 +2466,10 @@
             // 
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Appearance.Options.UseFont = true;
+            this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TimKiemBenhNhanKham_btn_TimKiemTaiKham.ImageOptions.Image")));
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Location = new System.Drawing.Point(328, 48);
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Name = "TimKiemBenhNhanKham_btn_TimKiemTaiKham";
-            this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Size = new System.Drawing.Size(75, 23);
+            this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Size = new System.Drawing.Size(75, 31);
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.TabIndex = 15;
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Text = "Tìm kiếm";
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click);
@@ -2530,9 +2532,10 @@
             // 
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Appearance.Options.UseFont = true;
+            this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TimKiemBenhNhanKham_btn_TimKiemNgayKham.ImageOptions.Image")));
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Location = new System.Drawing.Point(331, 46);
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Name = "TimKiemBenhNhanKham_btn_TimKiemNgayKham";
-            this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Size = new System.Drawing.Size(75, 23);
+            this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Size = new System.Drawing.Size(75, 33);
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.TabIndex = 15;
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Text = "Tìm kiếm";
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click);

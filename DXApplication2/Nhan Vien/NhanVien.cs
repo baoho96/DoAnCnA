@@ -285,7 +285,8 @@ namespace QuanLyPhongKham
         //}
         private void gridView1_TiepNhanBenhNhan_RowClick(object sender, RowClickEventArgs e)
         {
-            panelControl2.Enabled = true;
+            TiepNhanBenhNhan_btn_CapNhat.Enabled = true;
+            TiepNhanBenhNhan_btn_Xoa.Enabled = true;
             TiepNhanBenhNhan_txt_LiDoKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             TiepNhanBenhNhan_dtP_NgayKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
             //string ID = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
@@ -800,7 +801,6 @@ namespace QuanLyPhongKham
             function.RowCountChanged(sender, e);
         }
         #endregion
-
     }
 
 }
