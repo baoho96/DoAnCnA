@@ -28,43 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienThuNgan));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_ThanhToan = new DevExpress.XtraEditors.SimpleButton();
+            this.chBox_LayThuoc = new System.Windows.Forms.CheckBox();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.gridControl1_HoaDon = new DevExpress.XtraGrid.GridControl();
+            this.gridView1_HoaDon = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colHo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSBN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSKB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSHD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNamSinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKetQuaXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhiChuDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhiChuHSKB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTienThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTienKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBacSiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridControl
-            // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.Location = new System.Drawing.Point(0, 143);
-            this.gridControl.MainView = this.gridView;
-            this.gridControl.MenuManager = this.ribbonControl;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1014, 556);
-            this.gridControl.TabIndex = 2;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
-            // 
-            // gridView
-            // 
-            this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.GridControl = this.gridControl;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.Editable = false;
-            this.gridView.OptionsBehavior.ReadOnly = true;
             // 
             // ribbonControl
             // 
@@ -73,15 +80,14 @@
             this.ribbonControl.ExpandCollapseItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
-            this.bbiNew,
-            this.bbiEdit,
-            this.bbiDelete,
-            this.bbiRefresh});
+            this.bbiRefresh,
+            this.barButtonItem1_DangXuat});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 21;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
@@ -90,9 +96,11 @@
             // 
             // bbiPrintPreview
             // 
-            this.bbiPrintPreview.Caption = "Print Preview";
+            this.bbiPrintPreview.Caption = "In Danh Sách Bệnh nhân";
             this.bbiPrintPreview.Id = 14;
+            this.bbiPrintPreview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiPrintPreview.ImageOptions.Image")));
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
+            this.bbiPrintPreview.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiPrintPreview.ImageOptions.LargeImage")));
             this.bbiPrintPreview.Name = "bbiPrintPreview";
             this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
@@ -102,33 +110,22 @@
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
-            // bbiNew
-            // 
-            this.bbiNew.Caption = "New";
-            this.bbiNew.Id = 16;
-            this.bbiNew.ImageOptions.ImageUri.Uri = "New";
-            this.bbiNew.Name = "bbiNew";
-            // 
-            // bbiEdit
-            // 
-            this.bbiEdit.Caption = "Edit";
-            this.bbiEdit.Id = 17;
-            this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
-            this.bbiEdit.Name = "bbiEdit";
-            // 
-            // bbiDelete
-            // 
-            this.bbiDelete.Caption = "Delete";
-            this.bbiDelete.Id = 18;
-            this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
-            this.bbiDelete.Name = "bbiDelete";
-            // 
             // bbiRefresh
             // 
             this.bbiRefresh.Caption = "Refresh";
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
+            // barButtonItem1_DangXuat
+            // 
+            this.barButtonItem1_DangXuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem1_DangXuat.Caption = "Đăng xuất";
+            this.barButtonItem1_DangXuat.Id = 20;
+            this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
+            this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
+            this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
             // 
             // ribbonPage1
             // 
@@ -142,9 +139,6 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
@@ -161,18 +155,253 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
+            this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1_DangXuat);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1014, 31);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_ThanhToan);
+            this.panel1.Controls.Add(this.chBox_LayThuoc);
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(446, 64);
+            this.panel1.TabIndex = 4;
+            // 
+            // btn_ThanhToan
+            // 
+            this.btn_ThanhToan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_ThanhToan.Appearance.Options.UseFont = true;
+            this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
+            this.btn_ThanhToan.Location = new System.Drawing.Point(316, 11);
+            this.btn_ThanhToan.Name = "btn_ThanhToan";
+            this.btn_ThanhToan.Size = new System.Drawing.Size(95, 37);
+            this.btn_ThanhToan.TabIndex = 1;
+            this.btn_ThanhToan.Text = "Thanh Toán";
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
+            // 
+            // chBox_LayThuoc
+            // 
+            this.chBox_LayThuoc.AutoSize = true;
+            this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.chBox_LayThuoc.Location = new System.Drawing.Point(39, 22);
+            this.chBox_LayThuoc.Name = "chBox_LayThuoc";
+            this.chBox_LayThuoc.Size = new System.Drawing.Size(181, 17);
+            this.chBox_LayThuoc.TabIndex = 0;
+            this.chBox_LayThuoc.Text = "Bệnh nhân đồng ý lấy thuốc";
+            this.chBox_LayThuoc.UseVisualStyleBackColor = true;
+            // 
+            // documentViewer1
+            // 
+            this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.documentViewer1.IsMetric = false;
+            this.documentViewer1.Location = new System.Drawing.Point(452, 140);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(562, 522);
+            this.documentViewer1.TabIndex = 5;
+            // 
+            // gridControl1_HoaDon
+            // 
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 211);
+            this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
+            this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
+            this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
+            this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(446, 451);
+            this.gridControl1_HoaDon.TabIndex = 8;
+            this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1_HoaDon});
+            // 
+            // gridView1_HoaDon
+            // 
+            this.gridView1_HoaDon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colHo,
+            this.colTen,
+            this.colSDT,
+            this.colMSBN,
+            this.colMSKB,
+            this.colMSHD,
+            this.colMSDT,
+            this.colDiaChi,
+            this.colNamSinh,
+            this.colChuanDoan,
+            this.colXetNghiem,
+            this.colKetQuaXetNghiem,
+            this.colGhiChuDonThuoc,
+            this.colGhiChuHSKB,
+            this.colTienThuoc,
+            this.colTienKham,
+            this.collTongTien,
+            this.colNgayTaiKham,
+            this.colNgayKham,
+            this.colBacSiKham,
+            this.colKiemTraThanhToan});
+            this.gridView1_HoaDon.GridControl = this.gridControl1_HoaDon;
+            this.gridView1_HoaDon.Name = "gridView1_HoaDon";
+            this.gridView1_HoaDon.OptionsBehavior.Editable = false;
+            this.gridView1_HoaDon.OptionsFind.AlwaysVisible = true;
+            this.gridView1_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colKiemTraThanhToan, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1_HoaDon.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_HoaDon_RowClick);
+            this.gridView1_HoaDon.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_HoaDon_CustomDrawRowIndicator);
+            this.gridView1_HoaDon.RowCountChanged += new System.EventHandler(this.gridView1_HoaDon_RowCountChanged);
+            // 
+            // colHo
+            // 
+            this.colHo.Caption = "Họ";
+            this.colHo.FieldName = "Ho";
+            this.colHo.Name = "colHo";
+            this.colHo.Visible = true;
+            this.colHo.VisibleIndex = 0;
+            this.colHo.Width = 215;
+            // 
+            // colTen
+            // 
+            this.colTen.Caption = "Tên";
+            this.colTen.FieldName = "Ten";
+            this.colTen.Name = "colTen";
+            this.colTen.Visible = true;
+            this.colTen.VisibleIndex = 1;
+            this.colTen.Width = 143;
+            // 
+            // colSDT
+            // 
+            this.colSDT.Caption = "SĐT Người thân";
+            this.colSDT.FieldName = "SoDienThoai";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 2;
+            this.colSDT.Width = 214;
+            // 
+            // colMSBN
+            // 
+            this.colMSBN.Caption = "MSBN";
+            this.colMSBN.FieldName = "MaSoBenhNhan";
+            this.colMSBN.Name = "colMSBN";
+            // 
+            // colMSKB
+            // 
+            this.colMSKB.Caption = "MSKB";
+            this.colMSKB.FieldName = "MaSoKhamBenh";
+            this.colMSKB.Name = "colMSKB";
+            // 
+            // colMSHD
+            // 
+            this.colMSHD.Caption = "MSHĐ";
+            this.colMSHD.FieldName = "MaHoaDon";
+            this.colMSHD.Name = "colMSHD";
+            // 
+            // colMSDT
+            // 
+            this.colMSDT.Caption = "MSĐT";
+            this.colMSDT.FieldName = "MaSoDonThuoc";
+            this.colMSDT.Name = "colMSDT";
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.Caption = "Địa Chỉ";
+            this.colDiaChi.FieldName = "DiaChi";
+            this.colDiaChi.Name = "colDiaChi";
+            // 
+            // colNamSinh
+            // 
+            this.colNamSinh.Caption = "Năm Sinh";
+            this.colNamSinh.FieldName = "NamSinh";
+            this.colNamSinh.Name = "colNamSinh";
+            // 
+            // colChuanDoan
+            // 
+            this.colChuanDoan.Caption = "Chuẩn đoán";
+            this.colChuanDoan.FieldName = "ChuanDoan";
+            this.colChuanDoan.Name = "colChuanDoan";
+            // 
+            // colXetNghiem
+            // 
+            this.colXetNghiem.Caption = "Xét Nghiệm";
+            this.colXetNghiem.FieldName = "XetNghiem";
+            this.colXetNghiem.Name = "colXetNghiem";
+            // 
+            // colKetQuaXetNghiem
+            // 
+            this.colKetQuaXetNghiem.Caption = "Kết quả xét nghiệm";
+            this.colKetQuaXetNghiem.FieldName = "KetQuaXetNghiem";
+            this.colKetQuaXetNghiem.Name = "colKetQuaXetNghiem";
+            // 
+            // colGhiChuDonThuoc
+            // 
+            this.colGhiChuDonThuoc.Caption = "Ghi Chú ĐT";
+            this.colGhiChuDonThuoc.FieldName = "GhiChu";
+            this.colGhiChuDonThuoc.Name = "colGhiChuDonThuoc";
+            // 
+            // colGhiChuHSKB
+            // 
+            this.colGhiChuHSKB.Caption = "Ghi chú HSKB";
+            this.colGhiChuHSKB.FieldName = "GhiChu1";
+            this.colGhiChuHSKB.Name = "colGhiChuHSKB";
+            // 
+            // colTienThuoc
+            // 
+            this.colTienThuoc.Caption = "Tiền Thuốc";
+            this.colTienThuoc.FieldName = "TienThuoc";
+            this.colTienThuoc.Name = "colTienThuoc";
+            // 
+            // colTienKham
+            // 
+            this.colTienKham.Caption = "Tiền Khám";
+            this.colTienKham.FieldName = "TienKham";
+            this.colTienKham.Name = "colTienKham";
+            // 
+            // collTongTien
+            // 
+            this.collTongTien.Caption = "Tổng tiền";
+            this.collTongTien.FieldName = "TongTien";
+            this.collTongTien.Name = "collTongTien";
+            // 
+            // colNgayTaiKham
+            // 
+            this.colNgayTaiKham.Caption = "Ngày Tái Khám";
+            this.colNgayTaiKham.FieldName = "NgayTaiKham";
+            this.colNgayTaiKham.Name = "colNgayTaiKham";
+            // 
+            // colNgayKham
+            // 
+            this.colNgayKham.Caption = "Ngày Khám";
+            this.colNgayKham.FieldName = "NgayGioKham";
+            this.colNgayKham.Name = "colNgayKham";
+            // 
+            // colBacSiKham
+            // 
+            this.colBacSiKham.Caption = "Bác Sĩ";
+            this.colBacSiKham.FieldName = "TenNhanVien";
+            this.colBacSiKham.Name = "colBacSiKham";
+            // 
+            // colKiemTraThanhToan
+            // 
+            this.colKiemTraThanhToan.Caption = "Thanh toán";
+            this.colKiemTraThanhToan.FieldName = "KiemTraThanhToan";
+            this.colKiemTraThanhToan.Name = "colKiemTraThanhToan";
+            this.colKiemTraThanhToan.Visible = true;
+            this.colKiemTraThanhToan.VisibleIndex = 3;
+            this.colKiemTraThanhToan.Width = 120;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // NhanVienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 699);
+            this.Controls.Add(this.gridControl1_HoaDon);
+            this.Controls.Add(this.documentViewer1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
             this.HtmlText = "Nhân viên Thu Ngân";
             this.MaximizeBox = false;
@@ -180,18 +409,18 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -199,9 +428,35 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiNew;
-        private DevExpress.XtraBars.BarButtonItem bbiEdit;
-        private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton btn_ThanhToan;
+        private System.Windows.Forms.CheckBox chBox_LayThuoc;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_DangXuat;
+        private DevExpress.XtraGrid.GridControl gridControl1_HoaDon;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1_HoaDon;
+        private DevExpress.XtraGrid.Columns.GridColumn colHo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSKB;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn colNamSinh;
+        private DevExpress.XtraGrid.Columns.GridColumn colChuanDoan;
+        private DevExpress.XtraGrid.Columns.GridColumn colXetNghiem;
+        private DevExpress.XtraGrid.Columns.GridColumn colKetQuaXetNghiem;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChuDonThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChuHSKB;
+        private DevExpress.XtraGrid.Columns.GridColumn colTienThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn colTienKham;
+        private DevExpress.XtraGrid.Columns.GridColumn collTongTien;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSHD;
+        private DevExpress.XtraGrid.Columns.GridColumn colBacSiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSBN;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayTaiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraThanhToan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }

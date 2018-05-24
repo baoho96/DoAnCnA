@@ -72,6 +72,8 @@
             this.btn_HoanTat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_TaoDonThuoc = new DevExpress.XtraEditors.SimpleButton();
             this.dtP_NgayTaiKham = new System.Windows.Forms.DateTimePicker();
+            this.txt_KetQuaXetNghiem = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txt_xetnghiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
@@ -88,6 +90,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
+            this.barButtonItem1_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -110,9 +113,10 @@
             this.bbiRefresh,
             this.bbtn_TaoDonThuoc,
             this.bbtn_HoSoKhamBenh,
-            this.btn_DangXuat});
+            this.btn_DangXuat,
+            this.barButtonItem1_Xuatfile});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 23;
+            this.ribbonControl.MaxItemId = 24;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -185,6 +189,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbtn_TaoDonThuoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbtn_HoSoKhamBenh);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_Xuatfile);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Tasks";
@@ -203,9 +208,9 @@
             this.panelControl6.Controls.Add(this.label17);
             this.panelControl6.Controls.Add(this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 305);
+            this.panelControl6.Location = new System.Drawing.Point(0, 326);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1014, 363);
+            this.panelControl6.Size = new System.Drawing.Size(1014, 342);
             this.panelControl6.TabIndex = 6;
             // 
             // label17
@@ -222,11 +227,11 @@
             // BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay
             // 
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 24);
+            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 27);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MainView = this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MenuManager = this.ribbonControl;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Name = "BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay";
-            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Size = new System.Drawing.Size(1010, 337);
+            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Size = new System.Drawing.Size(1010, 313);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.TabIndex = 0;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay,
@@ -234,7 +239,6 @@
             // 
             // BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay
             // 
-            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.ActiveFilterString = "[KiemTraKham] Is Null";
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colTenBacSi,
             this.colMaSoKhamBenh,
@@ -265,6 +269,8 @@
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsFind.AlwaysVisible = true;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsView.ShowGroupPanel = false;
+            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colKiemTraKham, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick);
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_CustomDrawRowIndicator);
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.RowCountChanged += new System.EventHandler(this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowCountChanged);
@@ -444,6 +450,8 @@
             this.panelControl2.Controls.Add(this.btn_HoanTat);
             this.panelControl2.Controls.Add(this.btn_TaoDonThuoc);
             this.panelControl2.Controls.Add(this.dtP_NgayTaiKham);
+            this.panelControl2.Controls.Add(this.txt_KetQuaXetNghiem);
+            this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Controls.Add(this.txt_xetnghiem);
             this.panelControl2.Controls.Add(this.label9);
             this.panelControl2.Controls.Add(this.txt_GhiChu);
@@ -462,13 +470,13 @@
             this.panelControl2.Enabled = false;
             this.panelControl2.Location = new System.Drawing.Point(0, 143);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1014, 156);
+            this.panelControl2.Size = new System.Drawing.Size(1014, 177);
             this.panelControl2.TabIndex = 5;
             // 
             // btn_ChoKham
             // 
             this.btn_ChoKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChoKham.ImageOptions.Image")));
-            this.btn_ChoKham.Location = new System.Drawing.Point(869, 111);
+            this.btn_ChoKham.Location = new System.Drawing.Point(894, 116);
             this.btn_ChoKham.Name = "btn_ChoKham";
             this.btn_ChoKham.Size = new System.Drawing.Size(108, 39);
             this.btn_ChoKham.TabIndex = 27;
@@ -491,7 +499,7 @@
             this.pictureBox1_BenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1_BenhNhan.Location = new System.Drawing.Point(847, 2);
             this.pictureBox1_BenhNhan.Name = "pictureBox1_BenhNhan";
-            this.pictureBox1_BenhNhan.Size = new System.Drawing.Size(165, 82);
+            this.pictureBox1_BenhNhan.Size = new System.Drawing.Size(165, 103);
             this.pictureBox1_BenhNhan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1_BenhNhan.TabIndex = 24;
             this.pictureBox1_BenhNhan.TabStop = false;
@@ -501,7 +509,7 @@
             this.btn_HoanTat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_HoanTat.Appearance.Options.UseFont = true;
             this.btn_HoanTat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoanTat.ImageOptions.Image")));
-            this.btn_HoanTat.Location = new System.Drawing.Point(754, 111);
+            this.btn_HoanTat.Location = new System.Drawing.Point(754, 116);
             this.btn_HoanTat.Name = "btn_HoanTat";
             this.btn_HoanTat.Size = new System.Drawing.Size(87, 39);
             this.btn_HoanTat.TabIndex = 3;
@@ -529,11 +537,28 @@
             this.dtP_NgayTaiKham.Size = new System.Drawing.Size(99, 21);
             this.dtP_NgayTaiKham.TabIndex = 2;
             // 
+            // txt_KetQuaXetNghiem
+            // 
+            this.txt_KetQuaXetNghiem.Location = new System.Drawing.Point(130, 85);
+            this.txt_KetQuaXetNghiem.Name = "txt_KetQuaXetNghiem";
+            this.txt_KetQuaXetNghiem.Size = new System.Drawing.Size(356, 21);
+            this.txt_KetQuaXetNghiem.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(7, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Kết quả xét nghiệm";
+            // 
             // txt_xetnghiem
             // 
-            this.txt_xetnghiem.Location = new System.Drawing.Point(90, 58);
+            this.txt_xetnghiem.Location = new System.Drawing.Point(130, 58);
             this.txt_xetnghiem.Name = "txt_xetnghiem";
-            this.txt_xetnghiem.Size = new System.Drawing.Size(396, 21);
+            this.txt_xetnghiem.Size = new System.Drawing.Size(356, 21);
             this.txt_xetnghiem.TabIndex = 1;
             // 
             // label9
@@ -542,21 +567,21 @@
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(7, 61);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.Size = new System.Drawing.Size(118, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Xét nghiệm";
+            this.label9.Text = "Yêu cầu Xét nghiệm";
             // 
             // txt_GhiChu
             // 
-            this.txt_GhiChu.Location = new System.Drawing.Point(90, 112);
+            this.txt_GhiChu.Location = new System.Drawing.Point(90, 139);
             this.txt_GhiChu.Multiline = true;
             this.txt_GhiChu.Name = "txt_GhiChu";
-            this.txt_GhiChu.Size = new System.Drawing.Size(396, 38);
+            this.txt_GhiChu.Size = new System.Drawing.Size(396, 19);
             this.txt_GhiChu.TabIndex = 1;
             // 
             // txt_chuandoan
             // 
-            this.txt_chuandoan.Location = new System.Drawing.Point(90, 85);
+            this.txt_chuandoan.Location = new System.Drawing.Point(90, 112);
             this.txt_chuandoan.Name = "txt_chuandoan";
             this.txt_chuandoan.Size = new System.Drawing.Size(396, 21);
             this.txt_chuandoan.TabIndex = 1;
@@ -611,7 +636,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(7, 88);
+            this.label4.Location = new System.Drawing.Point(7, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 0;
@@ -631,7 +656,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(7, 115);
+            this.label7.Location = new System.Drawing.Point(7, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 0;
@@ -666,6 +691,15 @@
             // hoSoKhamBenhTableAdapter1
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
+            // 
+            // barButtonItem1_Xuatfile
+            // 
+            this.barButtonItem1_Xuatfile.Caption = "Xuất File Bệnh nhân chờ khám";
+            this.barButtonItem1_Xuatfile.Id = 23;
+            this.barButtonItem1_Xuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1_Xuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1_Xuatfile.Name = "barButtonItem1_Xuatfile";
+            this.barButtonItem1_Xuatfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_Xuatfile_ItemClick);
             // 
             // BacSi
             // 
@@ -760,5 +794,8 @@
         private System.Windows.Forms.TextBox txt_TienKham;
         private DevExpress.XtraGrid.Columns.GridColumn colChoKham;
         private DevExpress.XtraEditors.SimpleButton btn_ChoKham;
+        private System.Windows.Forms.TextBox txt_KetQuaXetNghiem;
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_Xuatfile;
     }
 }

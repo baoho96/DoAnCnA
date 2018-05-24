@@ -27,12 +27,13 @@ namespace QuanLyPhongKham
         DangNhap dangNhap = new DangNhap();
         DonThuoc donThuoc = new DonThuoc();
         function function = new function();
-        int quyentruycap;
+        
         public static bool RowClick = false;
 
         public static string Ho_BenhNhan { get; set; }
         public static string Ten_BenhNhan { get; set; }
         public static string XetNghiem_BenhNhan { get; set; }
+        public static string KetQuaXetNghiem_BenhNhan { get; set; }
         public static string ChuanDoan_BenhNhan { get; set; }
         public static string GhiChu_BenhNhan { get; set; }
         public static string NamSinh_BenhNhan { get; set; }
@@ -42,6 +43,11 @@ namespace QuanLyPhongKham
         public static int ID_MSKB { get; set; }
         public static int ID_MSBN { get; set; }
         public static string TienThuoc { get; set; }
+        public static int ID_MSDT { get; set; }
+
+        string ngay = DateTime.Now.Day.ToString("d2");
+        string thang = DateTime.Now.Month.ToString("d2");
+        string nam = DateTime.Now.Year.ToString();
         public BacSi()
         {
             InitializeComponent();
@@ -65,12 +71,9 @@ namespace QuanLyPhongKham
         private void Load_HoSoKhamBenh()
         {
             connection.connect();
-            string ngay = DateTime.Now.Day.ToString("d2");
-            string thang = DateTime.Now.Month.ToString("d2");
-            string nam = DateTime.Now.Year.ToString();
             //quyentruycap = DangNhap.quyentruycap;
             string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
-                                                    " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem," +
+                                                    " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem,HSKB.KetQuaXetNghiem," +
                                                     " HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, " +
                                                     "HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, HSKB.KiemTraTaiKham,HSKB.CheckChoKham" +
                                 " FROM            HoSoKhamBenh HSKB LEFT JOIN" +
@@ -125,13 +128,14 @@ namespace QuanLyPhongKham
             else
             {
                 XetNghiem_BenhNhan = txt_xetnghiem.Text;
+                KetQuaXetNghiem_BenhNhan = txt_KetQuaXetNghiem.Text;
                 ChuanDoan_BenhNhan = txt_chuandoan.Text;
                 GhiChu_BenhNhan = txt_GhiChu.Text;
+                BacSiKham_BenhNhan = DangNhap.TenBacSi;
 
-                
                 DonThuoc donThuoc = new DonThuoc();
-                donThuoc.Show();
-                RowClick = false;
+                donThuoc.ShowDialog();
+                
             }
             
         }
@@ -144,20 +148,27 @@ namespace QuanLyPhongKham
             //txt_TenBacSi.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
             txt_ho.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ho").ToString();
             txt_ten.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ten").ToString();
-            txt_xetnghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("XetNghiem").ToString();
-            txt_chuandoan.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("ChuanDoan").ToString();
-            txt_GhiChu.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GhiChu").ToString();
-            dtP_NgayTaiKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NgayTaiKham").ToString();
-            txt_TienKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TienKham").ToString();
-
-            ID_MSKB =int.Parse( BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
+            ID_MSKB = int.Parse(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
             Ho_BenhNhan = txt_ho.Text;
-            Ten_BenhNhan = txt_ten.Text;            
+            Ten_BenhNhan = txt_ten.Text;
             NamSinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NamSinh").ToString();
-            GioiTinh_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
-            DiaChi_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
+            GioiTinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
+            DiaChi_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
             //BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
-                       
+            if (txt_xetnghiem.Text=="" && txt_KetQuaXetNghiem.Text == "" && txt_chuandoan.Text == "" && txt_GhiChu.Text == "" && txt_TienKham.Text =="")
+            {
+                
+                txt_xetnghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("XetNghiem").ToString();
+                txt_KetQuaXetNghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("KetQuaXetNghiem").ToString();
+                txt_chuandoan.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("ChuanDoan").ToString();
+                txt_GhiChu.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GhiChu").ToString();
+                //dtP_NgayTaiKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NgayTaiKham").ToString();
+                txt_TienKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TienKham").ToString();                              
+            }
+            else
+            {
+                
+            }                       
 
             connection.connect();
             //load_TienThuoc(); Hàm Load tiền thuốc
@@ -193,19 +204,43 @@ namespace QuanLyPhongKham
         {
             if (function.checkNull(panelControl2) == true)
             {
-                string query = @"update HoSoKhamBenh set " +
-                                " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
-                                " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
-                                " GhiChu = N'" + txt_GhiChu.Text + "'," +
-                                " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
-                                " TienKham  = " + txt_TienKham.Text + "," +
-                                " KiemTraKham = 1" + "," +
-                                " MaSoBacSi = " + DangNhap.MaSoBacSi +
-                                " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB;
-                connection.connect();
-                connection.sql(query);
-                connection.disconnect();
-                Refresh_BacSi();
+                if (dtP_NgayTaiKham.Value <= DateTime.Now)
+                {                    
+                    function.Notice("Bạn phải nhập Ngày Tái Khám lớn hơn ngày hiện tại!!", 1);
+                }
+                else
+                {
+                    connection.connect();
+                    string get_ID_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
+                    DataTable dataTable = connection.SQL(get_ID_MSDT);
+                    if(dataTable.Rows.Count <= 0)
+                    {
+                        function.Notice("Bạn cần phải tạo đơn thuốc cho Hồ Sơ Khám Bệnh",1);
+                    }
+                    else
+                    {
+                        ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());
+
+                        string query = @"update HoSoKhamBenh set " +
+                                        " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
+                                        " KetQuaXetNghiem = N'" + txt_KetQuaXetNghiem.Text + "'," +
+                                        " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
+                                        " GhiChu = N'" + txt_GhiChu.Text + "'," +
+                                        " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
+                                        " TienKham  = " + txt_TienKham.Text + "," +
+                                        " KiemTraKham = 1" + "," +
+                                        " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
+                                        " CheckChoKham = 0" +
+                                        " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB + ";" +
+                                        " insert into HoaDon(MaSoKhamBenh,MaSoDonThuoc,NgayGioLap) values (" + ID_MSKB + "," + ID_MSDT + ",'" + ngay + "/" + thang + "/" + nam + "')";
+
+                        connection.sql(query);
+                        connection.disconnect();
+                        Refresh_BacSi();
+                    }
+                    
+                    
+                }
             }
         }       
 
@@ -243,7 +278,7 @@ namespace QuanLyPhongKham
 
         private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
         private void KiemTra_HoSoChoXetNghiem_HetHan()
         {
@@ -265,18 +300,27 @@ namespace QuanLyPhongKham
             {
                 string query = @"update HoSoKhamBenh set " +
                                 " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
+                                " KetQuaXetNghiem = N'" + txt_KetQuaXetNghiem.Text + "'," +
                                 " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
                                 " GhiChu = N'" + txt_GhiChu.Text + "'," +
                                 " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
                                 " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
-                                " CheckChoKham = 1" +
+                                " CheckChoKham = 1" +","+
+                                " KiemTraKham = 0" +
                                 " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB;
+
+                                
                 connection.connect();
                 connection.sql(query);
                 connection.disconnect();
                 Refresh_BacSi();
             }
             
+        }
+
+        private void barButtonItem1_Xuatfile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ShowRibbonPrintPreview();
         }
     }
 }

@@ -102,7 +102,8 @@ namespace QuanLyPhongKham
             txt_GioiTinh.Text = BacSi.GioiTinh_BenhNhan;
             DiaChi=txt_DiaChi.Text = BacSi.DiaChi_BenhNhan;
             txt_XetNghiem.Text = BacSi.XetNghiem_BenhNhan;
-            ChuanDoan=txt_ChuanDoan.Text = BacSi.ChuanDoan_BenhNhan;
+            txt_KetQuaXetNghiem.Text = BacSi.KetQuaXetNghiem_BenhNhan;
+            ChuanDoan =txt_ChuanDoan.Text = BacSi.ChuanDoan_BenhNhan;
             txt_GhiChuKham.Text = BacSi.GhiChu_BenhNhan;
             BacSiKham= txt_BacSiKham.Text = BacSi.BacSiKham_BenhNhan;
         }
@@ -233,15 +234,15 @@ namespace QuanLyPhongKham
 
         }
 
-        //private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
-        //{
-        //    string query = @"select sum(T.DonGia * DST.SoLuong)" +//tính tổng của Đơn giá * Số Lượng nhập vào
-        //                        " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
-        //                                    " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
-        //                        " where DT.MaSoKhamBenh = " + ID_MSKB;
-        //    DataTable dataTable = connection.SQL(query);
-        //    mtxt_TienThuoc.Text = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
-        //}
+        private void TinhTienThuoc()//hàm tự động tính tiền thuốc khi load form Đơn thuốc lên
+        {
+            string query = @"select sum(T.DonGiaNhoNhat * DST.SoLuong)" +//tính tổng của Đơn giá * Số Lượng nhập vào
+                                " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
+                                            " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
+                                " where DT.MaSoKhamBenh = " + ID_MSKB;
+            DataTable dataTable = connection.SQL(query);
+            TienThuoc = dataTable.Rows[0][0].ToString();//Gán tiền thuốc vào text
+        }
 
         private void DonThuoc_FormClosed(object sender, FormClosedEventArgs e)
         {

@@ -46,7 +46,7 @@ namespace QuanLyPhongKham
 
         public void btn_DangNhap_Click(object sender, EventArgs e)
         {
-
+            TenBacSi = "";
             var passMD5 = function.toMD5(txt_matkhau.Text);
             string query = "select TenNhanVien,MaSoNhanVien,QuyenTruyCap from NhanVien where taikhoan ='" + txt_taikhoan.Text +
                 "'and matkhau = '"+ passMD5 + "'";

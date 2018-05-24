@@ -860,9 +860,23 @@ namespace QuanLyPhongKham
             //else 
             //{
             //}
-            Application.Exit();
+            //Application.Exit();
         }
 
-        
+        private void barButtonItem1_XuatDinhDang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (admin_tabP_qlyThuoc.Focus() == true)
+            {
+                gridControl1.ShowRibbonPrintPreview();
+            }
+            if (admin_tabP_qlyNhanvien.Focus() == true)
+            {
+                gridControl2.ShowRibbonPrintPreview();
+            }
+            if (admin_tabP_qlyVatdung.Focus() == true)
+            {
+                gridControl3.ShowRibbonPrintPreview();
+            }
+        }
     }
 }

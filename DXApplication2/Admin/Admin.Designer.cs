@@ -172,6 +172,7 @@
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
             this.nhanVienTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.NhanVienTableAdapter();
             this.vatDungTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.VatDungTableAdapter();
+            this.barButtonItem1_XuatDinhDang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -220,9 +221,10 @@
             this.barButtonItem4_ThuNgan,
             this.barButtonItem5,
             this.barButtonItem1_XuatFile,
-            this.btn_DangXuat});
+            this.btn_DangXuat,
+            this.barButtonItem1_XuatDinhDang});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 29;
+            this.ribbonControl.MaxItemId = 30;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -299,7 +301,7 @@
             // 
             // barButtonItem1_XuatFile
             // 
-            this.barButtonItem1_XuatFile.Caption = "Xuất file";
+            this.barButtonItem1_XuatFile.Caption = "Xuất file Excel";
             this.barButtonItem1_XuatFile.Id = 26;
             this.barButtonItem1_XuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.Image")));
             this.barButtonItem1_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.LargeImage")));
@@ -354,6 +356,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1_XuatFile);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1_XuatDinhDang);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "File excel";
             // 
@@ -1631,6 +1634,15 @@
             // 
             this.vatDungTableAdapter.ClearBeforeFill = true;
             // 
+            // barButtonItem1_XuatDinhDang
+            // 
+            this.barButtonItem1_XuatDinhDang.Caption = "Xuất các định dạng khác";
+            this.barButtonItem1_XuatDinhDang.Id = 29;
+            this.barButtonItem1_XuatDinhDang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1_XuatDinhDang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1_XuatDinhDang.Name = "barButtonItem1_XuatDinhDang";
+            this.barButtonItem1_XuatDinhDang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatDinhDang_ItemClick);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1832,5 +1844,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDonGiaNhoNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colDonViNhoNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuongNhoNhat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatDinhDang;
     }
 }

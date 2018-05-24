@@ -63,6 +63,8 @@ namespace QuanLyPhongKham
             }
             return true;
         }
+
+       
         public static string toMD5(string matkhau)
         {
             MD5CryptoServiceProvider myMD5 = new MD5CryptoServiceProvider();

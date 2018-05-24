@@ -214,6 +214,12 @@
     <Compile Include="BacSi\XemHoSoBenhNhan.Designer.cs">
       <DependentUpon>XemHoSoBenhNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nhan Vien\reportHoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\reportHoaDon.Designer.cs">
+      <DependentUpon>reportHoaDon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +250,9 @@
     <EmbeddedResource Include="Nhan Vien\NhanVienThuNgan.resx">
       <DependentUpon>NhanVienThuNgan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\reportHoaDon.resx">
+      <DependentUpon>reportHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,7 +280,6 @@
     </None>
     <None Include="PhongKhamDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PhongKhamDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="PhongKhamDataSet.xss">

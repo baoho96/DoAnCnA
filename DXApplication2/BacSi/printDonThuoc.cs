@@ -13,11 +13,12 @@ namespace QuanLyPhongKham
 {
     public partial class printDonThuoc : DevExpress.XtraEditors.XtraForm
     {
-        connection connection = new connection();
-        DataSet ds = new DataSet(); //khai báo dataset để truyền dữ liệu vào report
-        SqlDataAdapter da = new SqlDataAdapter();
+        connection connection = new connection();        
+        SqlDataAdapter sqlDataAdapter;
+        BindingSource bindingSource = new BindingSource();
         reportDonThuoc reportDonThuoc = new reportDonThuoc();
-
+        SqlCommand sqlCommand;
+        DataSet dataSet;
         public printDonThuoc()
         {
             InitializeComponent();
@@ -29,16 +30,17 @@ namespace QuanLyPhongKham
         }
         private void Load_reportDonThuoc()
         {
-            string Load_MSDT = @"select T.TenThuoc,T.DonViTinh,T.DonGia,DST.SoLuong,DST.CachDung" +
+            string Load_MSDT = @"select T.TenThuoc,T.DonViTinhNhoNhat,T.DonGiaNhoNhat,DST.SoLuong,DST.CachDung" +
                                 " from DanhSachThuoc DST left join Thuoc T on DST.MaSoThuoc = T.MaSoThuoc " +
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
-                                " where DT.MaSoKhamBenh = " + DonThuoc.ID_MSKB + " And DT.MaSoDonThuoc =" + DonThuoc.ID_MSDT;
+                                " where DT.MaSoKhamBenh = " + NhanVienThuNgan.ID_MSKB + " And DT.MaSoDonThuoc =" + NhanVienThuNgan.ID_MSDT;
             connection.connect();
-            ds.Clear();
+            dataSet = new DataSet();
+            dataSet.Clear();
             //đổ dữ liệu vào dataAdapter
-            da = new SqlDataAdapter(Load_MSDT, connection.con);
-            da.Fill(ds, "DonThuoc");
-            reportDonThuoc.DataSource = ds.Tables["DonThuoc"];
+            sqlDataAdapter = new SqlDataAdapter(Load_MSDT, connection.con);
+            sqlDataAdapter.Fill(dataSet, "DonThuoc");
+            reportDonThuoc.DataSource = dataSet.Tables["DonThuoc"];
             reportDonThuoc.Bindata();
             connection.disconnect();
             //hiển thị report lên documentViewer1

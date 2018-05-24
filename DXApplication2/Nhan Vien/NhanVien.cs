@@ -788,7 +788,7 @@ namespace QuanLyPhongKham
 
         private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
         #region Tìm kiếm bệnh nhân khám
         private void gridView1_TimBenhNhan_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
