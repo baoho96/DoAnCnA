@@ -64,7 +64,40 @@ namespace QuanLyPhongKham
             return true;
         }
 
-       
+        public static Boolean checkrong(Control form)
+        {
+            try
+            {
+                foreach (Control a in form.Controls)
+                {
+                    if (a is TextBox)
+                    {
+                        TextBox textBox = (TextBox)a;
+                        if (textBox.Text == "")
+                        {
+                            
+                            return false;
+                        }
+                    }
+
+                    if (a is ComboBox)
+                    {
+                        ComboBox comboBox = (ComboBox)a;
+                        if (comboBox.Text == "")
+                        {
+                            return false;
+                        }
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return true;
+        }
         public static string toMD5(string matkhau)
         {
             MD5CryptoServiceProvider myMD5 = new MD5CryptoServiceProvider();

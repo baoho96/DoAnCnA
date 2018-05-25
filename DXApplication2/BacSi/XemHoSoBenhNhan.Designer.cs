@@ -169,8 +169,8 @@
             this.gridControl1_TimKiemBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_TimKiemBenhNhan,
             this.gridView1_HoSoTaiKham_BenhNhan,
-            this.gridView1_HoSoTaiKham,
-            this.gridView1});
+            this.gridView1,
+            this.gridView1_HoSoTaiKham});
             // 
             // gridView1_TimKiemBenhNhan
             // 
@@ -198,6 +198,7 @@
             this.gridView1_TimKiemBenhNhan.GridControl = this.gridControl1_TimKiemBenhNhan;
             this.gridView1_TimKiemBenhNhan.Name = "gridView1_TimKiemBenhNhan";
             this.gridView1_TimKiemBenhNhan.OptionsBehavior.Editable = false;
+            this.gridView1_TimKiemBenhNhan.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_TimKiemBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView1_TimKiemBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView1_TimKiemBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;

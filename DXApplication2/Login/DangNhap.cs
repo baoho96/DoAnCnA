@@ -103,8 +103,8 @@ namespace QuanLyPhongKham
                     else if (dr["quyentruycap"].ToString() == "5")
                     {
                         quyentruycap = 5;
-                        //NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
-                        //nhanVienThuNgan.Show();
+                        NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
+                       nhanVienThuNgan.Show();
                         this.Visible = false;
                     }
                 }

@@ -60,16 +60,15 @@ namespace QuanLyPhongKham
             Load_HoaDon();
 
         }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            gridControl1_HoaDon.ShowRibbonPrintPreview();
-        }
+        
         private void refresh_HoaDon()
         {
             dataSet.Clear();
             gridControl1_HoaDon.Refresh();
             gridView1_HoaDon.RefreshData();
             documentViewer1.Refresh();
+            documentViewer1.PrintingSystem = null;
+            chBox_LayThuoc.Checked = false;
             Load_HoaDon();
         }
         private void Load_HoaDon()
@@ -155,38 +154,58 @@ namespace QuanLyPhongKham
             connection.connect();
             if (chBox_LayThuoc.Checked ==true)
             {
-                string TongTien = @"update HoaDon set"+
+                string TinhTongTien = @"update HoaDon set"+
                                     " TongTien = H.TongTien"+","+
                                     " KiemTraThanhToan = 1 "+","+
+                                    " MaNguoiLap = "+DangNhap.MaSoBacSi+ ","+
                                     " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'"+
                                     " from (select sum(HSKB.TienKham+DT.TongTienThuoc) as TongTien" +
                                     " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh"+
                                        " where HSKB.MaSoKhamBenh = " + ID_MSKB +" And DT.MaSoDonThuoc= "+ID_MSDT +") H " +
                                        " where MaHoaDon =" +ID_MSHD;
                 
-                connection.sql(TongTien);
-                
+                connection.sql(TinhTongTien);
+                connection.disconnect();
+                refresh_HoaDon();
+                if ((MessageBox.Show("Thanh toán thành công. Bạn có muốn In hóa đơn??","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question))==DialogResult.Yes)
+                {
+                    printDonThuoc printDonThuoc = new printDonThuoc();
+                    printDonThuoc.ShowDialog();
+                }
+
             }
             else
             {
-                string TongTien = @"update HoaDon set" +
+                string TinhTongTien = @"update HoaDon set" +
                                     " TongTien = H.TongTien" + "," +
                                     " KiemTraThanhToan = 1 " + "," +
+                                    " MaNguoiLap = " + DangNhap.MaSoBacSi + "," +
                                     " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'" +
                                     " from (select HSKB.TienKham as TongTien" +
                                     " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh" +
                                        " where HSKB.MaSoKhamBenh = " + ID_MSKB + " And DT.MaSoDonThuoc= " + ID_MSDT + ") H " +
                                        " where MaHoaDon =" + ID_MSHD;
 
-                connection.sql(TongTien);
+                connection.sql(TinhTongTien);
+                connection.disconnect();
+                refresh_HoaDon();
+                if ((MessageBox.Show("Thanh toán thành công. Bạn có muốn In hóa đơn??", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    printDonThuoc printDonThuoc = new printDonThuoc();
+                    printDonThuoc.ShowDialog();
+                }
             }
-            connection.disconnect();
-            refresh_HoaDon();
+            
         }
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             refresh_HoaDon();
+        }
+
+        private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridControl1_HoaDon.ShowRibbonPrintPreview();
         }
     }
 }

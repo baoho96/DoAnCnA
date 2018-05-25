@@ -41,6 +41,7 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_XuatDinhDang = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -172,7 +173,6 @@
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
             this.nhanVienTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.NhanVienTableAdapter();
             this.vatDungTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.VatDungTableAdapter();
-            this.barButtonItem1_XuatDinhDang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -318,6 +318,15 @@
             this.btn_DangXuat.Name = "btn_DangXuat";
             this.btn_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DangXuat_ItemClick);
             // 
+            // barButtonItem1_XuatDinhDang
+            // 
+            this.barButtonItem1_XuatDinhDang.Caption = "Xuất các định dạng khác";
+            this.barButtonItem1_XuatDinhDang.Id = 29;
+            this.barButtonItem1_XuatDinhDang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatDinhDang.ImageOptions.Image")));
+            this.barButtonItem1_XuatDinhDang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatDinhDang.ImageOptions.LargeImage")));
+            this.barButtonItem1_XuatDinhDang.Name = "barButtonItem1_XuatDinhDang";
+            this.barButtonItem1_XuatDinhDang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatDinhDang_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -444,6 +453,7 @@
             this.gridView1_thuoc.Name = "gridView1_thuoc";
             this.gridView1_thuoc.OptionsBehavior.Editable = false;
             this.gridView1_thuoc.OptionsBehavior.ReadOnly = true;
+            this.gridView1_thuoc.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_thuoc.OptionsFind.AlwaysVisible = true;
             this.gridView1_thuoc.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1_thuoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_thuoc_RowClick);
@@ -595,7 +605,6 @@
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Enabled = false;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1008, 175);
@@ -637,6 +646,7 @@
             // 
             this.qlyThuoc_btn_xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyThuoc_btn_xoa.Appearance.Options.UseFont = true;
+            this.qlyThuoc_btn_xoa.Enabled = false;
             this.qlyThuoc_btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_xoa.ImageOptions.Image")));
             this.qlyThuoc_btn_xoa.Location = new System.Drawing.Point(913, 127);
             this.qlyThuoc_btn_xoa.Name = "qlyThuoc_btn_xoa";
@@ -661,6 +671,7 @@
             // 
             this.qlyThuoc_btn_capnhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyThuoc_btn_capnhat.Appearance.Options.UseFont = true;
+            this.qlyThuoc_btn_capnhat.Enabled = false;
             this.qlyThuoc_btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_capnhat.ImageOptions.Image")));
             this.qlyThuoc_btn_capnhat.Location = new System.Drawing.Point(767, 127);
             this.qlyThuoc_btn_capnhat.Name = "qlyThuoc_btn_capnhat";
@@ -899,10 +910,9 @@
             this.panelControl3_NhanVien.Controls.Add(this.labelControl15);
             this.panelControl3_NhanVien.Controls.Add(this.labelControl16);
             this.panelControl3_NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3_NhanVien.Enabled = false;
             this.panelControl3_NhanVien.Location = new System.Drawing.Point(0, 0);
             this.panelControl3_NhanVien.Name = "panelControl3_NhanVien";
-            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1008, 185);
+            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1008, 197);
             this.panelControl3_NhanVien.TabIndex = 6;
             // 
             // pictureBox1_NhanVien
@@ -951,10 +961,11 @@
             // 
             this.qlyNhanvien_btn_xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyNhanvien_btn_xoa.Appearance.Options.UseFont = true;
+            this.qlyNhanvien_btn_xoa.Enabled = false;
             this.qlyNhanvien_btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyNhanvien_btn_xoa.ImageOptions.Image")));
-            this.qlyNhanvien_btn_xoa.Location = new System.Drawing.Point(915, 150);
+            this.qlyNhanvien_btn_xoa.Location = new System.Drawing.Point(915, 153);
             this.qlyNhanvien_btn_xoa.Name = "qlyNhanvien_btn_xoa";
-            this.qlyNhanvien_btn_xoa.Size = new System.Drawing.Size(88, 30);
+            this.qlyNhanvien_btn_xoa.Size = new System.Drawing.Size(88, 39);
             this.qlyNhanvien_btn_xoa.TabIndex = 4;
             this.qlyNhanvien_btn_xoa.Text = "Xóa";
             this.qlyNhanvien_btn_xoa.Click += new System.EventHandler(this.qlyNhanvien_btn_xoa_Click);
@@ -964,9 +975,9 @@
             this.qlyNhanvien_btn_taomoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyNhanvien_btn_taomoi.Appearance.Options.UseFont = true;
             this.qlyNhanvien_btn_taomoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyNhanvien_btn_taomoi.ImageOptions.Image")));
-            this.qlyNhanvien_btn_taomoi.Location = new System.Drawing.Point(689, 150);
+            this.qlyNhanvien_btn_taomoi.Location = new System.Drawing.Point(689, 153);
             this.qlyNhanvien_btn_taomoi.Name = "qlyNhanvien_btn_taomoi";
-            this.qlyNhanvien_btn_taomoi.Size = new System.Drawing.Size(88, 30);
+            this.qlyNhanvien_btn_taomoi.Size = new System.Drawing.Size(88, 39);
             this.qlyNhanvien_btn_taomoi.TabIndex = 4;
             this.qlyNhanvien_btn_taomoi.Text = "Tạo mới";
             this.qlyNhanvien_btn_taomoi.Click += new System.EventHandler(this.qlyNhanvien_btn_taomoi_Click);
@@ -975,10 +986,11 @@
             // 
             this.qlyNhanvien_btn_capnhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyNhanvien_btn_capnhat.Appearance.Options.UseFont = true;
+            this.qlyNhanvien_btn_capnhat.Enabled = false;
             this.qlyNhanvien_btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyNhanvien_btn_capnhat.ImageOptions.Image")));
-            this.qlyNhanvien_btn_capnhat.Location = new System.Drawing.Point(800, 150);
+            this.qlyNhanvien_btn_capnhat.Location = new System.Drawing.Point(800, 153);
             this.qlyNhanvien_btn_capnhat.Name = "qlyNhanvien_btn_capnhat";
-            this.qlyNhanvien_btn_capnhat.Size = new System.Drawing.Size(88, 30);
+            this.qlyNhanvien_btn_capnhat.Size = new System.Drawing.Size(88, 39);
             this.qlyNhanvien_btn_capnhat.TabIndex = 4;
             this.qlyNhanvien_btn_capnhat.Text = "Điều chỉnh";
             this.qlyNhanvien_btn_capnhat.Click += new System.EventHandler(this.qlyNhanvien_btn_capnhat_Click);
@@ -1178,20 +1190,20 @@
             this.panelControl8.Controls.Add(this.gridControl2);
             this.panelControl8.Controls.Add(this.label5);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl8.Location = new System.Drawing.Point(0, 191);
+            this.panelControl8.Location = new System.Drawing.Point(0, 203);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1008, 306);
+            this.panelControl8.Size = new System.Drawing.Size(1008, 294);
             this.panelControl8.TabIndex = 5;
             // 
             // gridControl2
             // 
             this.gridControl2.DataSource = this.nhanVienBindingSource;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl2.Location = new System.Drawing.Point(2, 26);
+            this.gridControl2.Location = new System.Drawing.Point(2, 25);
             this.gridControl2.MainView = this.gridView1_NhanVien;
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1004, 278);
+            this.gridControl2.Size = new System.Drawing.Size(1004, 267);
             this.gridControl2.TabIndex = 7;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_NhanVien});
@@ -1221,6 +1233,7 @@
             this.gridView1_NhanVien.Name = "gridView1_NhanVien";
             this.gridView1_NhanVien.OptionsBehavior.Editable = false;
             this.gridView1_NhanVien.OptionsBehavior.ReadOnly = true;
+            this.gridView1_NhanVien.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_NhanVien.OptionsFind.AlwaysVisible = true;
             this.gridView1_NhanVien.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1_NhanVien.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_NhanVien_RowClick);
@@ -1380,6 +1393,7 @@
             this.gridView1_VatDung.Name = "gridView1_VatDung";
             this.gridView1_VatDung.OptionsBehavior.Editable = false;
             this.gridView1_VatDung.OptionsBehavior.ReadOnly = true;
+            this.gridView1_VatDung.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_VatDung.OptionsFind.AlwaysVisible = true;
             this.gridView1_VatDung.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1_VatDung.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_VatDung_RowClick);
@@ -1467,7 +1481,6 @@
             this.panelControl5_VatDung.Controls.Add(this.labelControl23);
             this.panelControl5_VatDung.Controls.Add(this.labelControl26);
             this.panelControl5_VatDung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5_VatDung.Enabled = false;
             this.panelControl5_VatDung.Location = new System.Drawing.Point(0, 0);
             this.panelControl5_VatDung.Name = "panelControl5_VatDung";
             this.panelControl5_VatDung.Size = new System.Drawing.Size(1008, 143);
@@ -1519,8 +1532,9 @@
             // 
             this.qlyVatdung_btn_xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyVatdung_btn_xoa.Appearance.Options.UseFont = true;
+            this.qlyVatdung_btn_xoa.Enabled = false;
             this.qlyVatdung_btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_xoa.ImageOptions.Image")));
-            this.qlyVatdung_btn_xoa.Location = new System.Drawing.Point(745, 71);
+            this.qlyVatdung_btn_xoa.Location = new System.Drawing.Point(747, 80);
             this.qlyVatdung_btn_xoa.Name = "qlyVatdung_btn_xoa";
             this.qlyVatdung_btn_xoa.Size = new System.Drawing.Size(88, 31);
             this.qlyVatdung_btn_xoa.TabIndex = 4;
@@ -1532,7 +1546,7 @@
             this.qlyVatdung_btn_taomoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyVatdung_btn_taomoi.Appearance.Options.UseFont = true;
             this.qlyVatdung_btn_taomoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_taomoi.ImageOptions.Image")));
-            this.qlyVatdung_btn_taomoi.Location = new System.Drawing.Point(526, 71);
+            this.qlyVatdung_btn_taomoi.Location = new System.Drawing.Point(528, 80);
             this.qlyVatdung_btn_taomoi.Name = "qlyVatdung_btn_taomoi";
             this.qlyVatdung_btn_taomoi.Size = new System.Drawing.Size(88, 31);
             this.qlyVatdung_btn_taomoi.TabIndex = 4;
@@ -1543,8 +1557,9 @@
             // 
             this.qlyVatdung_btn_capnhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyVatdung_btn_capnhat.Appearance.Options.UseFont = true;
+            this.qlyVatdung_btn_capnhat.Enabled = false;
             this.qlyVatdung_btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_capnhat.ImageOptions.Image")));
-            this.qlyVatdung_btn_capnhat.Location = new System.Drawing.Point(635, 71);
+            this.qlyVatdung_btn_capnhat.Location = new System.Drawing.Point(637, 80);
             this.qlyVatdung_btn_capnhat.Name = "qlyVatdung_btn_capnhat";
             this.qlyVatdung_btn_capnhat.Size = new System.Drawing.Size(88, 31);
             this.qlyVatdung_btn_capnhat.TabIndex = 4;
@@ -1633,15 +1648,6 @@
             // vatDungTableAdapter
             // 
             this.vatDungTableAdapter.ClearBeforeFill = true;
-            // 
-            // barButtonItem1_XuatDinhDang
-            // 
-            this.barButtonItem1_XuatDinhDang.Caption = "Xuất các định dạng khác";
-            this.barButtonItem1_XuatDinhDang.Id = 29;
-            this.barButtonItem1_XuatDinhDang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1_XuatDinhDang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1_XuatDinhDang.Name = "barButtonItem1_XuatDinhDang";
-            this.barButtonItem1_XuatDinhDang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatDinhDang_ItemClick);
             // 
             // Admin
             // 

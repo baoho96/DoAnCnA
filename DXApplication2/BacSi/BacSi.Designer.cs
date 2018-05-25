@@ -36,6 +36,7 @@
             this.bbtn_TaoDonThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.bbtn_HoSoKhamBenh = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -90,7 +91,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
-            this.barButtonItem1_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -174,6 +174,15 @@
             this.btn_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DangXuat.ImageOptions.LargeImage")));
             this.btn_DangXuat.Name = "btn_DangXuat";
             this.btn_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DangXuat_ItemClick);
+            // 
+            // barButtonItem1_Xuatfile
+            // 
+            this.barButtonItem1_Xuatfile.Caption = "Xuất File Bệnh nhân chờ khám";
+            this.barButtonItem1_Xuatfile.Id = 23;
+            this.barButtonItem1_Xuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_Xuatfile.ImageOptions.Image")));
+            this.barButtonItem1_Xuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_Xuatfile.ImageOptions.LargeImage")));
+            this.barButtonItem1_Xuatfile.Name = "barButtonItem1_Xuatfile";
+            this.barButtonItem1_Xuatfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_Xuatfile_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -265,6 +274,7 @@
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GridControl = this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.Name = "BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay";
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsBehavior.Editable = false;
+            this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsCustomization.AllowQuickHideColumns = false;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsFind.AlwaysVisible = true;
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
@@ -691,15 +701,6 @@
             // hoSoKhamBenhTableAdapter1
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
-            // 
-            // barButtonItem1_Xuatfile
-            // 
-            this.barButtonItem1_Xuatfile.Caption = "Xuất File Bệnh nhân chờ khám";
-            this.barButtonItem1_Xuatfile.Id = 23;
-            this.barButtonItem1_Xuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1_Xuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1_Xuatfile.Name = "barButtonItem1_Xuatfile";
-            this.barButtonItem1_Xuatfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_Xuatfile_ItemClick);
             // 
             // BacSi
             // 

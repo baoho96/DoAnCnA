@@ -187,6 +187,7 @@
             this.gridView1_DonThuoc.GridControl = this.gridC_danhsachDonThuoc;
             this.gridView1_DonThuoc.Name = "gridView1_DonThuoc";
             this.gridView1_DonThuoc.OptionsBehavior.Editable = false;
+            this.gridView1_DonThuoc.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_DonThuoc.OptionsFind.AlwaysVisible = true;
             this.gridView1_DonThuoc.OptionsView.ShowGroupPanel = false;
             this.gridView1_DonThuoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_DonThuoc_RowClick);

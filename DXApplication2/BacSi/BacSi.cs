@@ -155,7 +155,7 @@ namespace QuanLyPhongKham
             GioiTinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
             DiaChi_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
             //BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
-            if (txt_xetnghiem.Text=="" && txt_KetQuaXetNghiem.Text == "" && txt_chuandoan.Text == "" && txt_GhiChu.Text == "" && txt_TienKham.Text =="")
+            if (txt_xetnghiem.Text=="" || txt_KetQuaXetNghiem.Text == "" || txt_chuandoan.Text == "" || txt_GhiChu.Text == "" || txt_TienKham.Text =="")
             {
                 
                 txt_xetnghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("XetNghiem").ToString();

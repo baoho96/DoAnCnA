@@ -43,6 +43,8 @@
             this.lbNgayKeDon = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.lbNgayTaiKham = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblBacSiKham = new DevExpress.XtraReports.UI.XRLabel();
             this.lblGhiChuKhamBenh = new DevExpress.XtraReports.UI.XRLabel();
@@ -89,8 +91,6 @@
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbNgayTaiKham = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -285,6 +285,31 @@
             this.ReportFooter.HeightF = 284.7917F;
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.StylePriority.UseBorders = false;
+            // 
+            // lbNgayTaiKham
+            // 
+            this.lbNgayTaiKham.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.lbNgayTaiKham.LocationFloat = new DevExpress.Utils.PointFloat(465.625F, 96.16667F);
+            this.lbNgayTaiKham.Name = "lbNgayTaiKham";
+            this.lbNgayTaiKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbNgayTaiKham.SizeF = new System.Drawing.SizeF(137.5002F, 20.00002F);
+            this.lbNgayTaiKham.StylePriority.UseBorders = false;
+            this.lbNgayTaiKham.StylePriority.UseTextAlignment = false;
+            this.lbNgayTaiKham.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel25
+            // 
+            this.xrLabel25.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel25.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel25.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(350.6249F, 97.33337F);
+            this.xrLabel25.Name = "xrLabel25";
+            this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel25.SizeF = new System.Drawing.SizeF(106.2501F, 18.83333F);
+            this.xrLabel25.StylePriority.UseBorderColor = false;
+            this.xrLabel25.StylePriority.UseBorders = false;
+            this.xrLabel25.StylePriority.UseFont = false;
+            this.xrLabel25.Text = "Ngày Tái Khám";
             // 
             // xrLabel26
             // 
@@ -591,10 +616,10 @@
             // 
             this.xrLabel5.BorderColor = System.Drawing.Color.Black;
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(482.2917F, 102.6666F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(465.625F, 117.3333F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(38.12497F, 50.08339F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(78.75F, 35.41673F);
             this.xrLabel5.StylePriority.UseBorderColor = false;
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
@@ -604,10 +629,10 @@
             // lblSDT
             // 
             this.lblSDT.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblSDT.LocationFloat = new DevExpress.Utils.PointFloat(520.4166F, 117.3333F);
+            this.lblSDT.LocationFloat = new DevExpress.Utils.PointFloat(544.375F, 117.3333F);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblSDT.SizeF = new System.Drawing.SizeF(129.5833F, 23F);
+            this.lblSDT.SizeF = new System.Drawing.SizeF(105.6249F, 23F);
             this.lblSDT.StylePriority.UseBorders = false;
             this.lblSDT.StylePriority.UseTextAlignment = false;
             this.lblSDT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -734,7 +759,7 @@
             this.xlb_Ho.LocationFloat = new DevExpress.Utils.PointFloat(69.7916F, 117.3333F);
             this.xlb_Ho.Name = "xlb_Ho";
             this.xlb_Ho.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xlb_Ho.SizeF = new System.Drawing.SizeF(169.7917F, 23F);
+            this.xlb_Ho.SizeF = new System.Drawing.SizeF(159.3751F, 23F);
             this.xlb_Ho.StylePriority.UseBorders = false;
             this.xlb_Ho.StylePriority.UseTextAlignment = false;
             this.xlb_Ho.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -742,10 +767,10 @@
             // xlbTen
             // 
             this.xlbTen.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xlbTen.LocationFloat = new DevExpress.Utils.PointFloat(239.5833F, 117.3333F);
+            this.xlbTen.LocationFloat = new DevExpress.Utils.PointFloat(229.1667F, 117.3333F);
             this.xlbTen.Name = "xlbTen";
             this.xlbTen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xlbTen.SizeF = new System.Drawing.SizeF(52.08333F, 23F);
+            this.xlbTen.SizeF = new System.Drawing.SizeF(62.49995F, 23F);
             this.xlbTen.StylePriority.UseBorders = false;
             this.xlbTen.StylePriority.UseTextAlignment = false;
             this.xlbTen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -756,7 +781,7 @@
             this.xlbNamSinh.LocationFloat = new DevExpress.Utils.PointFloat(372.5001F, 117.3333F);
             this.xlbNamSinh.Name = "xlbNamSinh";
             this.xlbNamSinh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xlbNamSinh.SizeF = new System.Drawing.SizeF(97.29156F, 23F);
+            this.xlbNamSinh.SizeF = new System.Drawing.SizeF(84.375F, 23F);
             this.xlbNamSinh.StylePriority.UseBorders = false;
             this.xlbNamSinh.StylePriority.UseTextAlignment = false;
             this.xlbNamSinh.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -927,31 +952,6 @@
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "Tên Thuốc";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lbNgayTaiKham
-            // 
-            this.lbNgayTaiKham.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lbNgayTaiKham.LocationFloat = new DevExpress.Utils.PointFloat(465.625F, 96.16667F);
-            this.lbNgayTaiKham.Name = "lbNgayTaiKham";
-            this.lbNgayTaiKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbNgayTaiKham.SizeF = new System.Drawing.SizeF(137.5002F, 20.00002F);
-            this.lbNgayTaiKham.StylePriority.UseBorders = false;
-            this.lbNgayTaiKham.StylePriority.UseTextAlignment = false;
-            this.lbNgayTaiKham.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel25
-            // 
-            this.xrLabel25.BorderColor = System.Drawing.Color.Black;
-            this.xrLabel25.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel25.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(350.6249F, 97.33337F);
-            this.xrLabel25.Name = "xrLabel25";
-            this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel25.SizeF = new System.Drawing.SizeF(106.2501F, 18.83333F);
-            this.xrLabel25.StylePriority.UseBorderColor = false;
-            this.xrLabel25.StylePriority.UseBorders = false;
-            this.xrLabel25.StylePriority.UseFont = false;
-            this.xrLabel25.Text = "Ngày Tái Khám";
             // 
             // reportDonThuoc
             // 

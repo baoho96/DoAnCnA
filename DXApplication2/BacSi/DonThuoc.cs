@@ -18,7 +18,7 @@ namespace QuanLyPhongKham
         BacSi bacSi;
         SqlDataAdapter da;
         BindingSource bindingSource = new BindingSource();
-
+        
         #region Các thuộc tính được tạo với static để sử dụng chung với các form khác
         public static int ID_MSDT { get; set; }
         public static string Ho { get; set; }

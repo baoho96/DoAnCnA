@@ -220,7 +220,15 @@ namespace QuanLyPhongKham
             string query = @"select masoloaithuoc from loaithuoc where tenloaithuoc = N'" + tenloaithuoc + "'";
             connection.connect();
             DataTable dt = connection.SQL(query);
-            ID_Loaithuoc = int.Parse(dt.Rows[0][0].ToString());
+            if(dt.Rows.Count <= 0)
+            {
+                refresh_ComboBoxLoaiThuoc();
+            }
+            else
+            {
+                ID_Loaithuoc = int.Parse(dt.Rows[0][0].ToString());
+            }
+            
         }
 
         private void gridView1_thuoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)//Sự kiện khi chọn vào hàng trong gridview
@@ -228,18 +236,22 @@ namespace QuanLyPhongKham
             object ID_Thuoc_CheckNull = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc");
             if (ID_Thuoc_CheckNull != null && ID_Thuoc_CheckNull != DBNull.Value)
             {
-                panelControl1.Enabled = true;
+                qlyThuoc_btn_capnhat.Enabled = true;
+                qlyThuoc_btn_xoa.Enabled = true;
                 string ID = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString();
-                qlyThuoc_txt_tenthuoc.Text = gridView1_thuoc.GetFocusedRowCellValue("TenThuoc").ToString();
-                qlyThuoc_txt_SoLuong.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuong").ToString();
-                qlyThuoc_txt_DonGia.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGia").ToString();
-                qlyThuoc_txt_cachdung.Text = gridView1_thuoc.GetFocusedRowCellValue("CachDung").ToString();
-                qlyThuoc_dtP_ngaytao.Text = gridView1_thuoc.GetFocusedRowCellValue("NgayNhap").ToString();
-                var MaSoLoaiThuoc = gridView1_thuoc.GetFocusedRowCellValue("MaSoLoaiThuoc").ToString();
-                qlyThuoc_comB_donvitinh.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinh").ToString();
-                qlyThuoc_comB_donvitinhnhonhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinhNhoNhat").ToString();
-                qlyThuoc_txt_SoLuongNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuongNhoNhat").ToString();
-                qlyThuoc_txt_DonGiaNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGiaNhoNhat").ToString();
+                string MaSoLoaiThuoc = gridView1_thuoc.GetFocusedRowCellValue("MaSoLoaiThuoc").ToString();
+                
+                    qlyThuoc_txt_tenthuoc.Text = gridView1_thuoc.GetFocusedRowCellValue("TenThuoc").ToString();
+                    qlyThuoc_txt_SoLuong.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuong").ToString();
+                    qlyThuoc_txt_DonGia.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGia").ToString();
+                    qlyThuoc_txt_cachdung.Text = gridView1_thuoc.GetFocusedRowCellValue("CachDung").ToString();
+                    qlyThuoc_dtP_ngaytao.Text = gridView1_thuoc.GetFocusedRowCellValue("NgayNhap").ToString();
+                    qlyThuoc_comB_donvitinh.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinh").ToString();
+                    qlyThuoc_comB_donvitinhnhonhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonViTinhNhoNhat").ToString();
+                    qlyThuoc_txt_SoLuongNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuongNhoNhat").ToString();
+                    qlyThuoc_txt_DonGiaNhoNhat.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGiaNhoNhat").ToString();
+                             
+
                 connection.connect();
                 string laytenloaithuoc = @"select tenloaithuoc  from loaithuoc where masoloaithuoc = " + MaSoLoaiThuoc;
                 if (MaSoLoaiThuoc != "")
@@ -292,7 +304,6 @@ namespace QuanLyPhongKham
 
         private void qlyThuoc_btn_taomoi_Click(object sender, EventArgs e)//sự kiện nút Tạo mới
         {
-
             if (function.checkNull(panelControl1) == true)
             {
                 connection.connect();
@@ -544,7 +555,8 @@ namespace QuanLyPhongKham
             object ID_NhanVien_CheckNull = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien");
             if (ID_NhanVien_CheckNull != null && ID_NhanVien_CheckNull != DBNull.Value)
             {
-                panelControl3_NhanVien.Enabled = true;
+                qlyNhanvien_btn_capnhat.Enabled = true;
+                qlyNhanvien_btn_xoa.Enabled = true;
                 string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
                 qlyNhanvien_txt_hoten.Text = gridView1_NhanVien.GetFocusedRowCellValue("TenNhanVien").ToString();
                 qlyNhanvien_comB_gioitinh.Text = gridView1_NhanVien.GetFocusedRowCellValue("GioiTinh").ToString();
@@ -708,7 +720,8 @@ namespace QuanLyPhongKham
             object ID_VatDung_CheckNull = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung");
             if(ID_VatDung_CheckNull !=null && ID_VatDung_CheckNull!= DBNull.Value)
             {
-                panelControl5_VatDung.Enabled = true;
+                qlyVatdung_btn_capnhat.Enabled = true;
+                qlyVatdung_btn_xoa.Enabled = true;
                 string ID = gridView1_VatDung.GetFocusedRowCellValue("MaSoVatDung").ToString();
                 qlyVatdung_txt_tenvatdung.Text = gridView1_VatDung.GetFocusedRowCellValue("TenVatDung").ToString();
                 qlyVatdung_txt_soluong.Text = gridView1_VatDung.GetFocusedRowCellValue("SoLuong").ToString();

@@ -3,18 +3,25 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
-
+using System.Data;
 namespace QuanLyPhongKham
 {
     public partial class reportDonThuoc : DevExpress.XtraReports.UI.XtraReport
     {
-
+        
         public reportDonThuoc()
         {
             InitializeComponent();
         }
         public void Bindata()
         {
+            connection connection = new connection();
+            
+            string TinhTongTien = @"select TongTien from HoaDon where MaHoaDon = " + NhanVienThuNgan.ID_MSHD.ToString();
+            connection.connect();
+            DataTable dataTable = connection.SQL(TinhTongTien);
+            lblTongTien.Text = dataTable.Rows[0][0].ToString();
+
 
             xlbMSDT.Text = NhanVienThuNgan.ID_MSDT.ToString();//gán dữ liệu từ form Nhân Viên Thu ngân
             xlbMSHD.Text = NhanVienThuNgan.ID_MSHD.ToString();
@@ -41,7 +48,7 @@ namespace QuanLyPhongKham
             lblGhiChuKhamBenh.Text = NhanVienThuNgan.GhiChuHSKB;
             lbTienThuoc.Text = NhanVienThuNgan.TienThuoc;
             lblTienKham.Text = NhanVienThuNgan.TienKham;
-            lblTongTien.Text = NhanVienThuNgan.TongTien;
+            //lblTongTien.Text = NhanVienThuNgan.TongTien;
             lbNgayKeDon.Text = NhanVienThuNgan.NgayKham;
             lbNgayTaiKham.Text = NhanVienThuNgan.NgayTaiKham;
 

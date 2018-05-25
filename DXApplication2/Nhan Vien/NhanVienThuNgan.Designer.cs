@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienThuNgan));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -78,12 +78,12 @@
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
-            this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiRefresh,
-            this.barButtonItem1_DangXuat});
+            this.barButtonItem1_DangXuat,
+            this.barButtonItem1_XuatFile});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 21;
+            this.ribbonControl.MaxItemId = 22;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -93,16 +93,6 @@
             this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bbiPrintPreview
-            // 
-            this.bbiPrintPreview.Caption = "In Danh Sách Bệnh nhân";
-            this.bbiPrintPreview.Id = 14;
-            this.bbiPrintPreview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiPrintPreview.ImageOptions.Image")));
-            this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
-            this.bbiPrintPreview.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiPrintPreview.ImageOptions.LargeImage")));
-            this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -127,6 +117,15 @@
             this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
             this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
             // 
+            // barButtonItem1_XuatFile
+            // 
+            this.barButtonItem1_XuatFile.Caption = "Xuất file Danh sách Bệnh nhân";
+            this.barButtonItem1_XuatFile.Id = 21;
+            this.barButtonItem1_XuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.Image")));
+            this.barButtonItem1_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.LargeImage")));
+            this.barButtonItem1_XuatFile.Name = "barButtonItem1_XuatFile";
+            this.barButtonItem1_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatFile_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -147,7 +146,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1_XuatFile);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Print and Export";
@@ -243,6 +242,7 @@
             this.gridView1_HoaDon.GridControl = this.gridControl1_HoaDon;
             this.gridView1_HoaDon.Name = "gridView1_HoaDon";
             this.gridView1_HoaDon.OptionsBehavior.Editable = false;
+            this.gridView1_HoaDon.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_HoaDon.OptionsFind.AlwaysVisible = true;
             this.gridView1_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colKiemTraThanhToan, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -424,7 +424,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
@@ -458,5 +457,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNgayTaiKham;
         private DevExpress.XtraGrid.Columns.GridColumn colKiemTraThanhToan;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemLoaiThuoc));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label17 = new System.Windows.Forms.Label();
             this.btn_xoa = new DevExpress.XtraEditors.SimpleButton();
@@ -77,76 +78,83 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(492, 339);
+            this.panelControl1.Size = new System.Drawing.Size(492, 122);
             this.panelControl1.TabIndex = 0;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label17.Location = new System.Drawing.Point(2, 2);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 19);
+            this.label17.Size = new System.Drawing.Size(93, 19);
             this.label17.TabIndex = 3;
             this.label17.Text = "Loại thuốc";
             // 
             // btn_xoa
             // 
+            this.btn_xoa.Enabled = false;
+            this.btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xoa.ImageOptions.Image")));
             this.btn_xoa.Location = new System.Drawing.Point(405, 81);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_xoa.Size = new System.Drawing.Size(75, 36);
             this.btn_xoa.TabIndex = 2;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_capnhat
             // 
-            this.btn_capnhat.Location = new System.Drawing.Point(405, 47);
+            this.btn_capnhat.Enabled = false;
+            this.btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_capnhat.ImageOptions.Image")));
+            this.btn_capnhat.Location = new System.Drawing.Point(324, 81);
             this.btn_capnhat.Name = "btn_capnhat";
-            this.btn_capnhat.Size = new System.Drawing.Size(75, 23);
+            this.btn_capnhat.Size = new System.Drawing.Size(75, 36);
             this.btn_capnhat.TabIndex = 2;
             this.btn_capnhat.Text = "Cập nhật";
             this.btn_capnhat.Click += new System.EventHandler(this.btn_capnhat_Click);
             // 
             // btn_themmoi
             // 
-            this.btn_themmoi.Location = new System.Drawing.Point(405, 15);
+            this.btn_themmoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_themmoi.ImageOptions.Image")));
+            this.btn_themmoi.Location = new System.Drawing.Point(243, 81);
             this.btn_themmoi.Name = "btn_themmoi";
-            this.btn_themmoi.Size = new System.Drawing.Size(75, 23);
+            this.btn_themmoi.Size = new System.Drawing.Size(75, 36);
             this.btn_themmoi.TabIndex = 2;
             this.btn_themmoi.Text = "Thêm mới";
             this.btn_themmoi.Click += new System.EventHandler(this.btn_themmoi_Click);
             // 
             // txt_ghichu
             // 
-            this.txt_ghichu.Location = new System.Drawing.Point(131, 49);
+            this.txt_ghichu.Location = new System.Drawing.Point(122, 54);
             this.txt_ghichu.Name = "txt_ghichu";
-            this.txt_ghichu.Size = new System.Drawing.Size(226, 21);
+            this.txt_ghichu.Size = new System.Drawing.Size(336, 21);
             this.txt_ghichu.TabIndex = 1;
             // 
             // txt_tenloaithuoc
             // 
-            this.txt_tenloaithuoc.Location = new System.Drawing.Point(131, 22);
+            this.txt_tenloaithuoc.Location = new System.Drawing.Point(122, 27);
             this.txt_tenloaithuoc.Name = "txt_tenloaithuoc";
-            this.txt_tenloaithuoc.Size = new System.Drawing.Size(226, 21);
+            this.txt_tenloaithuoc.Size = new System.Drawing.Size(336, 21);
             this.txt_tenloaithuoc.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 52);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(31, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ghi chú";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 25);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(31, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Loại thuốc";
             // 
@@ -187,6 +195,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
@@ -249,10 +258,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(2, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 19);
+            this.label3.Size = new System.Drawing.Size(177, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Danh sách loại thuốc";
             // 
