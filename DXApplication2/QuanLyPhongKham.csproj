@@ -117,7 +117,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KhoiTao.cs" />
+    <Compile Include="DuocSi\DuocSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuocSi\DuocSi.Designer.cs">
+      <DependentUpon>DuocSi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +147,6 @@
     </Compile>
     <Compile Include="Login\DangKi.Designer.cs">
       <DependentUpon>DangKi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DuocSi\DuocSi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DuocSi\DuocSi.Designer.cs">
-      <DependentUpon>DuocSi.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\function.cs" />
     <Compile Include="Nhan Vien\HoSoTaiKham.cs">
@@ -214,6 +213,12 @@
     <Compile Include="BacSi\XemHoSoBenhNhan.Designer.cs">
       <DependentUpon>XemHoSoBenhNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DuocSi\reportDonThuocFormDuocSi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuocSi\reportDonThuocFormDuocSi.Designer.cs">
+      <DependentUpon>reportDonThuocFormDuocSi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,14 +228,17 @@
     <EmbeddedResource Include="BacSi\reportDonThuoc.resx">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DuocSi\DuocSi.resx">
+      <DependentUpon>DuocSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuocSi\reportDonThuocFormDuocSi.resx">
+      <DependentUpon>reportDonThuocFormDuocSi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BacSi\DonThuoc.resx">
       <DependentUpon>DonThuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DuocSi\DuocSi.resx">
-      <DependentUpon>DuocSi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\HoSoTaiKham.resx">
       <DependentUpon>HoSoTaiKham.cs</DependentUpon>
@@ -272,6 +280,7 @@
     <None Include="PhongKhamDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>PhongKhamDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="PhongKhamDataSet.xss">
       <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>

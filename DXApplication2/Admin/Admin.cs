@@ -82,30 +82,7 @@ namespace QuanLyPhongKham
             NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
             nhanVienThuNgan.ShowDialog();
         }
-        private void barButtonItem2_NhapFile_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //if (admin_tabP_qlyThuoc.Focus() == true)
-            //{
-            //    function.Notice("Bạn muốn Nhập file Thuốc??", 1);
-            //    open = new OpenFileDialog();
-            //    open.InitialDirectory = "D:";
-            //    open.Filter = "Select Images |*.xlsx";
-            //    open.Multiselect = false;
-            //    result = open.ShowDialog();
-            //    open.RestoreDirectory = true;
-            //    string link = open.FileName;
-            //    function.OpenFile(link);
-            //}
-            //if (admin_tabP_qlyNhanvien.Focus() == true)
-            //{
-            //    function.Notice("Bạn muốn Nhập file Nhân Viên??", 1);
-            //}
-            //if (admin_tabP_qlyVatdung.Focus() == true)
-            //{
-            //    function.Notice("Bạn muốn Nhập file Vật Dụng??", 1);
-            //}
-        }
-
+        
         private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (admin_tabP_qlyThuoc.Focus() == true)
@@ -856,24 +833,21 @@ namespace QuanLyPhongKham
 
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Hide();            
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
+            this.Close();            
 
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if(MessageBox.Show("Bạn có muốn Đăng xuất?? 'Yes: Đăng xuất', 'No: Thoát ứng dụng'","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
-            //{
-            //    this.Close();
-            //    DangNhap dangNhap = new DangNhap();
-            //    dangNhap.Show();
-            //}
-            //else 
-            //{
-            //}
-            //Application.Exit();
+            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            {
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         private void barButtonItem1_XuatDinhDang_ItemClick(object sender, ItemClickEventArgs e)

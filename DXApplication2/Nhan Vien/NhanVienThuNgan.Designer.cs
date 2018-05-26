@@ -66,11 +66,14 @@
             this.colBacSiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -116,6 +119,7 @@
             this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
             this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
             this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
+            this.barButtonItem1_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_DangXuat_ItemClick);
             // 
             // barButtonItem1_XuatFile
             // 
@@ -204,13 +208,14 @@
             // 
             // gridControl1_HoaDon
             // 
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 211);
+            this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 26);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
             this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1_HoaDon.Size = new System.Drawing.Size(446, 451);
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(446, 425);
             this.gridControl1_HoaDon.TabIndex = 8;
             this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoaDon});
@@ -393,12 +398,31 @@
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.gridControl1_HoaDon);
+            this.panel2.Location = new System.Drawing.Point(0, 211);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(446, 451);
+            this.panel2.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Danh sách bệnh nhân khám trong ngày";
+            // 
             // NhanVienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 699);
-            this.Controls.Add(this.gridControl1_HoaDon);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonStatusBar);
@@ -409,12 +433,15 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVienThuNgan_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +485,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKiemTraThanhToan;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

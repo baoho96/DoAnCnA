@@ -96,8 +96,8 @@ namespace QuanLyPhongKham
                     else if (dr["quyentruycap"].ToString() == "4")
                     {
                         quyentruycap = 4;
-                        //DuocSi duocSi = new DuocSi();
-                        //duocSi.Show();
+                        DuocSi duocSi = new DuocSi();
+                        duocSi.Show();
                         this.Visible = false;
                     }
                     else if (dr["quyentruycap"].ToString() == "5")
@@ -113,11 +113,8 @@ namespace QuanLyPhongKham
             
             connection.disconnect();
         }
-        
 
-        
-
-        private void btn_thoat_Click(object sender, EventArgs e)
+        public void btn_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

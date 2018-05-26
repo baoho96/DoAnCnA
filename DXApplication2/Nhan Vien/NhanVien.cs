@@ -534,6 +534,9 @@ namespace QuanLyPhongKham
             object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
             if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
             {
+                string ngay = DateTime.Now.Day.ToString("d2");
+                string thang = DateTime.Now.Month.ToString("d2");
+                string nam = DateTime.Now.Year.ToString();
                 connection.connect();
                 int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
                 int CheckKham = 1;
@@ -548,13 +551,13 @@ namespace QuanLyPhongKham
 
                 ngaykham = themCho.ngaykham;
                 lidokham = themCho.lidokham;
-
-
-
-                string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
+                string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
+                                    " from  BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
+                                        " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngay + "/" + thang + "/" + nam + "%')" +
+                                 " begin insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
                     + ID_BenhNhan + ","
                     + "N'" + lidokham + "',"
-                    + "'" + ngaykham + "')";
+                    + "'" + ngaykham + "') end end";
                 connection.insert(query);
                 connection.disconnect();
                 refresh_DanhSachBenhNhan();
@@ -821,6 +824,7 @@ namespace QuanLyPhongKham
             object ID_MSKB_CheckNull = gridView1_TimBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh");
             if (ID_MSKB_CheckNull != null && ID_MSKB_CheckNull != DBNull.Value)
             {
+                TimKiemBenhNhanKham_btn_XoaHoSo.Enabled = true;
                 int ID_MSKB = int.Parse(gridView1_TimBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
             }
         }
@@ -843,16 +847,24 @@ namespace QuanLyPhongKham
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
+            //DangNhap dangNhap = new DangNhap();
+            //dangNhap.Show();
+            
+            
         }
 
         private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            if((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question))==DialogResult.Yes)
+            {
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
-
-        
     }
 
 }

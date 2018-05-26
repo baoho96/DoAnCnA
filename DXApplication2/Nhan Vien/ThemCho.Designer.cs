@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemCho));
             this.ThemCho_txt_LiDoKham = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ThemCho_dtP_ThoiGianKham = new System.Windows.Forms.DateTimePicker();
@@ -48,16 +49,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Lí Do Khám";
             // 
             // ThemCho_dtP_ThoiGianKham
             // 
-            this.ThemCho_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy    hh:mm";
+            this.ThemCho_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy    hh:mm  tt";
             this.ThemCho_dtP_ThoiGianKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ThemCho_dtP_ThoiGianKham.Location = new System.Drawing.Point(108, 61);
             this.ThemCho_dtP_ThoiGianKham.Name = "ThemCho_dtP_ThoiGianKham";
@@ -67,24 +68,26 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(8, 61);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.Size = new System.Drawing.Size(94, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Thời gian khám";
             // 
             // ThemCho_btn_ThemCho
             // 
+            this.ThemCho_btn_ThemCho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_ThemCho.ImageOptions.Image")));
             this.ThemCho_btn_ThemCho.Location = new System.Drawing.Point(114, 195);
             this.ThemCho_btn_ThemCho.Name = "ThemCho_btn_ThemCho";
-            this.ThemCho_btn_ThemCho.Size = new System.Drawing.Size(76, 31);
+            this.ThemCho_btn_ThemCho.Size = new System.Drawing.Size(81, 31);
             this.ThemCho_btn_ThemCho.TabIndex = 12;
             this.ThemCho_btn_ThemCho.Text = "Thêm Chờ";
             this.ThemCho_btn_ThemCho.Click += new System.EventHandler(this.ThemCho_btn_ThemCho_Click);
             // 
             // ThemCho_btn_Thoat
             // 
+            this.ThemCho_btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_Thoat.ImageOptions.Image")));
             this.ThemCho_btn_Thoat.Location = new System.Drawing.Point(217, 195);
             this.ThemCho_btn_Thoat.Name = "ThemCho_btn_Thoat";
             this.ThemCho_btn_Thoat.Size = new System.Drawing.Size(76, 31);
@@ -96,7 +99,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(73, 9);
+            this.label11.Location = new System.Drawing.Point(55, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(182, 19);
             this.label11.TabIndex = 13;
@@ -114,6 +117,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ThemCho_txt_LiDoKham);
             this.Controls.Add(this.label5);
+            this.MaximizeBox = false;
             this.Name = "ThemCho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm chờ";

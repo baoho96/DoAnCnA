@@ -270,15 +270,21 @@ namespace QuanLyPhongKham
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
-            BacSiKham_BenhNhan = "";
-            dangNhap = new DangNhap();
-            dangNhap.Show();
+            BacSiKham_BenhNhan = "";            
                 
         }
 
         private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            {
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
         private void KiemTra_HoSoChoXetNghiem_HetHan()
         {

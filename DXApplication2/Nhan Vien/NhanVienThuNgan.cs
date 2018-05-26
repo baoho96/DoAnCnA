@@ -123,30 +123,34 @@ namespace QuanLyPhongKham
         }
         private void gridView1_HoaDon_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            panel1.Enabled = true;
-            ID_MSDT = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
-            ID_MSKB = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
-            ID_MSHD = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon").ToString());
-            ID_MSBN = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-            Ho = gridView1_HoaDon.GetFocusedRowCellValue("Ho").ToString();
-            Ten = gridView1_HoaDon.GetFocusedRowCellValue("Ten").ToString();
-            NamSinh = gridView1_HoaDon.GetFocusedRowCellValue("NamSinh").ToString();
-            SDT = gridView1_HoaDon.GetFocusedRowCellValue("SoDienThoai").ToString();
-            DiaChi = gridView1_HoaDon.GetFocusedRowCellValue("DiaChi").ToString();
+            object ID_MSHD_CheckNull = gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon");
+            if (ID_MSHD_CheckNull != null && ID_MSHD_CheckNull != DBNull.Value)
+            {
+                panel1.Enabled = true;
+                ID_MSDT = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
+                ID_MSKB = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
+                ID_MSHD = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon").ToString());
+                ID_MSBN = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
+                Ho = gridView1_HoaDon.GetFocusedRowCellValue("Ho").ToString();
+                Ten = gridView1_HoaDon.GetFocusedRowCellValue("Ten").ToString();
+                NamSinh = gridView1_HoaDon.GetFocusedRowCellValue("NamSinh").ToString();
+                SDT = gridView1_HoaDon.GetFocusedRowCellValue("SoDienThoai").ToString();
+                DiaChi = gridView1_HoaDon.GetFocusedRowCellValue("DiaChi").ToString();
 
-            YeuCauXetNghiem = gridView1_HoaDon.GetFocusedRowCellValue("XetNghiem").ToString();
-            KetQuaXetNghiem = gridView1_HoaDon.GetFocusedRowCellValue("KetQuaXetNghiem").ToString();
-            ChuanDoan = gridView1_HoaDon.GetFocusedRowCellValue("ChuanDoan").ToString();
-            GhiChuHSDT = gridView1_HoaDon.GetFocusedRowCellValue("GhiChu").ToString();
-            GhiChuHSKB = gridView1_HoaDon.GetFocusedRowCellValue("GhiChu1").ToString();
-            NgayKham = gridView1_HoaDon.GetFocusedRowCellValue("NgayGioKham").ToString();
-            NgayTaiKham = gridView1_HoaDon.GetFocusedRowCellValue("NgayTaiKham").ToString();
-            TienThuoc = gridView1_HoaDon.GetFocusedRowCellValue("TongTienThuoc").ToString();
-            TienKham = gridView1_HoaDon.GetFocusedRowCellValue("TienKham").ToString();
-            TongTien = gridView1_HoaDon.GetFocusedRowCellValue("TongTien").ToString();
-            BacSiKham = gridView1_HoaDon.GetFocusedRowCellValue("TenNhanVien").ToString();
+                YeuCauXetNghiem = gridView1_HoaDon.GetFocusedRowCellValue("XetNghiem").ToString();
+                KetQuaXetNghiem = gridView1_HoaDon.GetFocusedRowCellValue("KetQuaXetNghiem").ToString();
+                ChuanDoan = gridView1_HoaDon.GetFocusedRowCellValue("ChuanDoan").ToString();
+                GhiChuHSDT = gridView1_HoaDon.GetFocusedRowCellValue("GhiChu").ToString();
+                GhiChuHSKB = gridView1_HoaDon.GetFocusedRowCellValue("GhiChu1").ToString();
+                NgayKham = gridView1_HoaDon.GetFocusedRowCellValue("NgayGioKham").ToString();
+                NgayTaiKham = gridView1_HoaDon.GetFocusedRowCellValue("NgayTaiKham").ToString();
+                TienThuoc = gridView1_HoaDon.GetFocusedRowCellValue("TongTienThuoc").ToString();
+                TienKham = gridView1_HoaDon.GetFocusedRowCellValue("TienKham").ToString();
+                TongTien = gridView1_HoaDon.GetFocusedRowCellValue("TongTien").ToString();
+                BacSiKham = gridView1_HoaDon.GetFocusedRowCellValue("TenNhanVien").ToString();
 
-            Load_reportDonThuoc();
+                Load_reportDonThuoc();
+            }
         }
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
@@ -158,7 +162,8 @@ namespace QuanLyPhongKham
                                     " TongTien = H.TongTien"+","+
                                     " KiemTraThanhToan = 1 "+","+
                                     " MaNguoiLap = "+DangNhap.MaSoBacSi+ ","+
-                                    " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'"+
+                                    " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "',"+
+                                    " KiemTraLayThuoc = 1" +
                                     " from (select sum(HSKB.TienKham+DT.TongTienThuoc) as TongTien" +
                                     " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh"+
                                        " where HSKB.MaSoKhamBenh = " + ID_MSKB +" And DT.MaSoDonThuoc= "+ID_MSDT +") H " +
@@ -206,6 +211,25 @@ namespace QuanLyPhongKham
         private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl1_HoaDon.ShowRibbonPrintPreview();
+        }
+
+        private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void NhanVienThuNgan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            {
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
