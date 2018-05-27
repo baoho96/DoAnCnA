@@ -34,8 +34,8 @@ namespace QuanLyPhongKham
         #endregion
 
         int ID_Thuoc_RowClick;
-        
-        bool RowClick = false;
+        bool TenThuocClick;
+        bool RowClick;
         
         public DonThuoc()
         {
@@ -89,6 +89,11 @@ namespace QuanLyPhongKham
         {
             function.ClearControl(panelControl1);
             txt_TenThuoc.Text = "";
+            txt_TenThuoc.Refresh();
+            //thuocBindingSource.ResetCurrentItem();
+            //searchLookUpEdit1View.RefreshData();
+            this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
+
             //gridC_danhsachDonThuoc.Refresh();
             //gridView1_DonThuoc.RefreshData();
             Load_DonThuoc();
@@ -128,7 +133,7 @@ namespace QuanLyPhongKham
         private void btn_ThemThuoc_Click(object sender, EventArgs e)
         {
             int ID_Thuoc;
-            
+            int SoluongThuocNhoNhat_TrongKho = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("SoLuongNhoNhat").ToString());
             if (function.checkNull(panelControl1)==true)
             {
                 if(RowClick == true)
@@ -157,12 +162,29 @@ namespace QuanLyPhongKham
                 {
 
                 }
-                
 
-                string insert_DST = @"Begin if not exists(select MaSoThuoc from DanhSachThuoc where MaSoThuoc ="+ ID_Thuoc+" and MaSoDonThuoc = "+ID_MSDT+")"+
+                //string GetSoluongThuocNhoNhat_TrongKho = @"select SoLuongNhoNhat from Thuoc where MaSoThuoc = " + ID_Thuoc;
+                //DataTable dt_SoLuongNhoNhat = connection.SQL(GetSoluongThuocNhoNhat_TrongKho);                
+                //int SoluongThuocNhoNhat_TrongKho = int.Parse(dt_SoLuongNhoNhat.Rows[0][0].ToString());
+
+                if(int.Parse(txt_SoLuong.Text) > SoluongThuocNhoNhat_TrongKho)
+                {
+                    MessageBox.Show("Số lượng trong kho không đủ!","Thông báo!!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else if(int.Parse(txt_SoLuong.Text) <= SoluongThuocNhoNhat_TrongKho)
+                {
+                    int SoLuongThuocNhoNhat_TrongKho_HienTai = SoluongThuocNhoNhat_TrongKho - int.Parse(txt_SoLuong.Text);
+                    string insert_DST = @"Begin if not exists(select MaSoThuoc from DanhSachThuoc where MaSoThuoc =" + ID_Thuoc + " and MaSoDonThuoc = " + ID_MSDT + ")" +
                                     " begin insert into DanhSachThuoc(MaSoDonThuoc,MaSoThuoc,SoLuong,CachDung) values" +
-                " (" + ID_MSDT + "," + ID_Thuoc + "," + txt_SoLuong.Text + ",N'" + txt_CachDung.Text + "') end end";
-                connection.insert(insert_DST);//Insert vào Danh Sách Thuốc từ MSDT vừa tạo, ID_Thuoc từ Cột trong ComboBoxEdit
+                " (" + ID_MSDT + "," + ID_Thuoc + "," + txt_SoLuong.Text + ",N'" + txt_CachDung.Text + "')"+
+                                    " update Thuoc set SoLuongNhoNhat ="+ SoLuongThuocNhoNhat_TrongKho_HienTai+
+                                     " where MaSoThuoc =" + ID_Thuoc + " end end";
+                    connection.insert(insert_DST);//Insert vào Danh Sách Thuốc từ MSDT vừa tạo, ID_Thuoc từ Cột trong ComboBoxEdit
+                    if (SoLuongThuocNhoNhat_TrongKho_HienTai == 0 || SoLuongThuocNhoNhat_TrongKho_HienTai <= 10)
+                    {
+                        MessageBox.Show("Số lượng trong kho đã hết! Vui lòng liên hệ đặt hàng", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
 
                 connection.disconnect();
                 refresh_DonThuoc();
@@ -172,31 +194,154 @@ namespace QuanLyPhongKham
         private void gridView1_DonThuoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             RowClick = true;
+            TenThuocClick = false;
             txt_TenThuoc.Text = gridView1_DonThuoc.GetFocusedRowCellValue("TenThuoc").ToString();
             txt_SoLuong.Text = gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString();
             txt_CachDung.Text = gridView1_DonThuoc.GetFocusedRowCellValue("CachDung").ToString();
             ID_Thuoc_RowClick = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy ID thuốc khi click vào Row trong gridview
            
         }
+        private void Update_TinhToan_TinhSoLuongThuocCu(int ID_Thuoc)//Tính số lượng của Thuốc cũ khi update Thuốc mới. Dành cho Người dùng nhấn thay đổi tên thuốc để update
+        {
+            int SoluongThuocNhoNhat_TrongKho = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("SoLuongNhoNhat").ToString());//Lấy Số lượng nhỏ nhất khi click vào Text Tên Thuốc
+            int SoLuongThuocCu_DaNhap_TrongDonThuoc = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString());//Lấy sô lượng Đã nhập của Thuốc cũ đã thêm 
+            if (int.Parse(txt_SoLuong.Text) > SoluongThuocNhoNhat_TrongKho)//kiểm tra Số lượng thuốc mới nhập 
+            {
+                MessageBox.Show("Số lượng trong kho không đủ!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (int.Parse(txt_SoLuong.Text) <= SoluongThuocNhoNhat_TrongKho)
+            {               
+                //tính số lượng thuốc cũ trong đơn thuốc để Update
+                string GetSoLuongThuoc_TrongFormDonThuoc = @"select SoLuongNhoNhat from Thuoc where MaSoThuoc = "  + ID_Thuoc_RowClick;//Lấy số lượng Thuốc khi RowClick vào gridview
+                DataTable datatable_GetSoLuongThuoc_TrongFormDonThuoc = connection.SQL(GetSoLuongThuoc_TrongFormDonThuoc);
+                int SoLuongThuocCu_TrongFormDonThuoc = int.Parse(datatable_GetSoLuongThuoc_TrongFormDonThuoc.Rows[0][0].ToString());//Lấy số lượng Thuốc khi RowClick vào gridview
+
+                int SoLuongThuocCu_KhoMoi_TrongFormThuoc = SoLuongThuocCu_DaNhap_TrongDonThuoc + SoLuongThuocCu_TrongFormDonThuoc;//Tính số lượng mới của thuốc bị thay đổi trong kho để update 
+                string Update_CongSoLuongThuocCu = @"update Thuoc set SoLuongNhoNhat = "+ SoLuongThuocCu_KhoMoi_TrongFormThuoc + " Where MaSoThuoc = " + ID_Thuoc_RowClick;
+                connection.sql(Update_CongSoLuongThuocCu);
+
+                //tính số lượng thuốc mới để Update
+                int SoLuongThuocNhoNhat_TrongKho_HienTai = SoluongThuocNhoNhat_TrongKho - int.Parse(txt_SoLuong.Text);//Tính số lượng thuốc sau khi chọn Tên thuốc mới
+                string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
+                                        " SoLuong = " + txt_SoLuong.Text + "," +
+                                        " CachDung = N'" + txt_CachDung.Text + "'" +
+                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick + ";" +
+                                        " update Thuoc set SoLuongNhoNhat =" + SoLuongThuocNhoNhat_TrongKho_HienTai +
+                                        " where MaSoThuoc =" + ID_Thuoc;//Cập nhật thuốc ngay tại con trỏ chuột đã bấm
+
+                connection.sql(update_DonThuoc);
+                if (SoLuongThuocNhoNhat_TrongKho_HienTai == 0 || SoLuongThuocNhoNhat_TrongKho_HienTai <= 10)
+                {
+                    MessageBox.Show("Số lượng trong kho đã hết! Vui lòng liên hệ đặt hàng", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }            
+        }
+
+        private void Update_TinhToan_TinhSoLuongThuocNhapMoi(int ID_Thuoc)//Tính số lượng của Thuốc cũ khi update Thuốc mới. Dành cho Người dùng Update Số lượng thuốc nhưng không thay đổi tên thuốc
+        {
+            int SoLuongDonThuoc_NhapCu = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString());
+
+            string GetSoluongThuocNhoNhat_HienTaiTrongKho = @"select SoLuongNhoNhat from Thuoc where MaSoThuoc = " + ID_Thuoc;
+            DataTable dt_SoLuongNhoNhat = connection.SQL(GetSoluongThuocNhoNhat_HienTaiTrongKho);
+            int SoluongThuocNhoNhat_HienTaiTrongKho = int.Parse(dt_SoLuongNhoNhat.Rows[0][0].ToString());
+
+            int SoLuongThuoc_KhoDuMoi;
+            int SoLuongThuoc_KhoMoi;
+            if (int.Parse(txt_SoLuong.Text) < SoluongThuocNhoNhat_HienTaiTrongKho)
+            {
+                SoLuongThuoc_KhoDuMoi = SoluongThuocNhoNhat_HienTaiTrongKho - int.Parse(txt_SoLuong.Text);
+                SoLuongThuoc_KhoMoi = SoLuongDonThuoc_NhapCu + SoLuongThuoc_KhoDuMoi;
+                if (SoLuongThuoc_KhoMoi < 0)
+                {
+                    MessageBox.Show("Số lượng trong kho không đủ!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (SoLuongThuoc_KhoMoi > 0)
+                {
+                    string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
+                                        " SoLuong = " + txt_SoLuong.Text + "," +
+                                        " CachDung = N'" + txt_CachDung.Text + "'" +
+                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick + ";" +
+                                        " update Thuoc set SoLuongNhoNhat =" + SoLuongThuoc_KhoMoi +
+                                        " where MaSoThuoc =" + ID_Thuoc;//Cập nhật thuốc ngay tại con trỏ chuột đã bấm
+
+                    connection.sql(update_DonThuoc);
+                }
+                if (SoLuongThuoc_KhoMoi >= 0 && SoLuongThuoc_KhoMoi <= 10)
+                {
+                    MessageBox.Show("Số lượng trong kho đã gần hết! Vui lòng liên hệ đặt hàng", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (int.Parse(txt_SoLuong.Text) > SoluongThuocNhoNhat_HienTaiTrongKho)
+            {
+                SoLuongThuoc_KhoDuMoi = SoluongThuocNhoNhat_HienTaiTrongKho - int.Parse(txt_SoLuong.Text);
+                SoLuongThuoc_KhoMoi = SoLuongDonThuoc_NhapCu + SoLuongThuoc_KhoDuMoi;
+                if (SoLuongThuoc_KhoMoi < 0)
+                {
+                    MessageBox.Show("Số lượng trong kho không đủ!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (SoLuongThuoc_KhoMoi > 0)
+                {
+                    string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
+                                       " SoLuong = " + txt_SoLuong.Text + "," +
+                                       " CachDung = N'" + txt_CachDung.Text + "'" +
+                                       " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick + ";" +
+                                       " update Thuoc set SoLuongNhoNhat =" + SoLuongThuoc_KhoMoi +
+                                       " where MaSoThuoc =" + ID_Thuoc;//Cập nhật thuốc ngay tại con trỏ chuột đã bấm
+                    connection.sql(update_DonThuoc);
+                }
+
+                if (SoLuongThuoc_KhoMoi >= 0 && SoLuongThuoc_KhoMoi <= 10)
+                {
+                    MessageBox.Show("Số lượng trong kho đã gần hết! Vui lòng liên hệ đặt hàng", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
 
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
-            int ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
-            string update_DonThuoc = @"update DanhSachThuoc set MaSoThuoc = " + ID_Thuoc + "," +
-                                        " SoLuong = " + txt_SoLuong.Text + "," +
-                                        " CachDung = N'" + txt_CachDung.Text + "'" +
-                                        " where MaSoDonThuoc = " + ID_MSDT + " and MaSoThuoc = " + ID_Thuoc_RowClick ;//Cập nhật thuốc ngay tại con trỏ chuột đã bấm
             connection.connect();
-            connection.sql(update_DonThuoc);
+            int ID_Thuoc=0;
+            string TenThuoc = txt_TenThuoc.Text;
+            string TenThuoc_RowClick = gridView1_DonThuoc.GetFocusedRowCellValue("TenThuoc").ToString();
+            if (RowClick ==true && TenThuocClick==false)//Khi người dùng không chọn vào Tên thuốc mà nhấn Update luôn
+            {
+                ID_Thuoc = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("MaSoThuoc").ToString());
+                Update_TinhToan_TinhSoLuongThuocNhapMoi(ID_Thuoc);
+            }
+            else if(RowClick==true && TenThuoc == TenThuoc_RowClick)//Khi người dùng chọn vào Tên thuốc nhưng giống với tên thuốc hiện tại (Không thay đổi tên thuốc, chỉ chọn)
+            {
+                ID_Thuoc= int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());//lấy mã số thuốc từ chọn tên thuốc trong ComboboxEdit
+                Update_TinhToan_TinhSoLuongThuocNhapMoi(ID_Thuoc);
+            }
+            else if(RowClick == true && TenThuoc != TenThuoc_RowClick)//Khi người dùng chọn vào tên thuốc và lấy tên thuốc khác so với thuốc hiện tại
+            {
+                ID_Thuoc = int.Parse(searchLookUpEdit1View.GetFocusedRowCellValue("MaSoThuoc").ToString());
+                Update_TinhToan_TinhSoLuongThuocCu(ID_Thuoc);
+            }            
             connection.disconnect();
             refresh_DonThuoc();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string Xoa_DanhSachThuoc = @"delete from DanhSachThuoc where MaSoThuoc = "+ID_Thuoc_RowClick;//xóa thuốc ngay tại con trỏ chuột đã bấm
+            int SoLuongThuocCu_DaNhap_TrongDonThuoc = int.Parse(gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString());
+            connection.connect();
+            string GetSoLuongThuoc_TrongFormDonThuoc = @"select SoLuongNhoNhat from Thuoc where MaSoThuoc = " + ID_Thuoc_RowClick;//Lấy số lượng Thuốc khi RowClick vào gridview
+            DataTable datatable_GetSoLuongThuoc_TrongFormDonThuoc = connection.SQL(GetSoLuongThuoc_TrongFormDonThuoc);
+            int SoLuongThuocCu_TrongFormDonThuoc = int.Parse(datatable_GetSoLuongThuoc_TrongFormDonThuoc.Rows[0][0].ToString());//Lấy số lượng Thuốc khi RowClick vào gridview
+
+            int SoLuongThuocCu_KhoMoi_TrongFormThuoc = SoLuongThuocCu_DaNhap_TrongDonThuoc + SoLuongThuocCu_TrongFormDonThuoc;
+
+            string Xoa_DanhSachThuoc = @"delete from DanhSachThuoc where MaSoThuoc = " + ID_Thuoc_RowClick;//xóa thuốc ngay tại con trỏ chuột đã bấm
             connection.connect();
             connection.delete(Xoa_DanhSachThuoc);
+
+            string Update_SoLuongThuoc_trongKho = @" update Thuoc set SoLuongNhoNhat =" + SoLuongThuocCu_KhoMoi_TrongFormThuoc +
+                                                     " where MaSoThuoc =" + ID_Thuoc_RowClick;
+            
+            connection.delete(Update_SoLuongThuoc_trongKho);
+
             connection.disconnect();
             refresh_DonThuoc();
         }
@@ -255,5 +400,12 @@ namespace QuanLyPhongKham
             ID_MSDT = 0;
             this.Close();
         }
+
+        private void txt_TenThuoc_MouseClick(object sender, MouseEventArgs e)
+        {
+            TenThuocClick = true;
+        }
+
+        
     }
 }

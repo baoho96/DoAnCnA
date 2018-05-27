@@ -42,5 +42,10 @@ namespace QuanLyPhongKham
             gridControl1_TimKiemBenhNhan.DataSource = bindingSource;
             connection.disconnect();
         }
+
+        private void btn_indanhsach_Click(object sender, EventArgs e)
+        {
+            gridControl1_TimKiemBenhNhan.ShowRibbonPrintPreview();
+        }
     }
 }

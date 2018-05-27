@@ -317,6 +317,7 @@
             this.txt_TenThuoc.Properties.ValueMember = "TenThuoc";
             this.txt_TenThuoc.Size = new System.Drawing.Size(213, 20);
             this.txt_TenThuoc.TabIndex = 14;
+            this.txt_TenThuoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_TenThuoc_MouseClick);
             // 
             // thuocBindingSource
             // 
