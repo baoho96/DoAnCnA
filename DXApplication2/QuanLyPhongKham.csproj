@@ -234,6 +234,9 @@
     <EmbeddedResource Include="DuocSi\reportDonThuocFormDuocSi.resx">
       <DependentUpon>reportDonThuocFormDuocSi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\DangKi.resx">
+      <DependentUpon>DangKi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>

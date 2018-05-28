@@ -132,6 +132,7 @@
             // 
             this.btn_Xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_Xoa.Appearance.Options.UseFont = true;
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
             this.btn_Xoa.Location = new System.Drawing.Point(679, 32);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -144,6 +145,7 @@
             // 
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_CapNhat.Appearance.Options.UseFont = true;
+            this.btn_CapNhat.Enabled = false;
             this.btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.ImageOptions.Image")));
             this.btn_CapNhat.Location = new System.Drawing.Point(560, 31);
             this.btn_CapNhat.Name = "btn_CapNhat";
@@ -745,6 +747,7 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DonThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

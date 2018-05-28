@@ -98,6 +98,8 @@ namespace QuanLyPhongKham
             //gridView1_DonThuoc.RefreshData();
             Load_DonThuoc();
             RowClick = false;
+            btn_CapNhat.Enabled = false;
+            btn_Xoa.Enabled = false;
         }
         private void GanGiaTri()//lấy giá trị từ form Bác Sĩ gán vào các textBox trong Đơn Thuốc
         {
@@ -195,6 +197,8 @@ namespace QuanLyPhongKham
         {
             RowClick = true;
             TenThuocClick = false;
+            btn_CapNhat.Enabled = true;
+            btn_Xoa.Enabled = true;
             txt_TenThuoc.Text = gridView1_DonThuoc.GetFocusedRowCellValue("TenThuoc").ToString();
             txt_SoLuong.Text = gridView1_DonThuoc.GetFocusedRowCellValue("SoLuong").ToString();
             txt_CachDung.Text = gridView1_DonThuoc.GetFocusedRowCellValue("CachDung").ToString();

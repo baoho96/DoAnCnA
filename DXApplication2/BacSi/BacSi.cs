@@ -97,6 +97,7 @@ namespace QuanLyPhongKham
             function.ClearControl(panelControl2);
             Load_HoSoKhamBenh();
             RowClick = false;
+            panelControl2.Enabled = false;
         }
 
         private void GanGiaTri()
@@ -155,7 +156,7 @@ namespace QuanLyPhongKham
             GioiTinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
             DiaChi_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
             //BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
-            if (txt_xetnghiem.Text=="" || txt_KetQuaXetNghiem.Text == "" || txt_chuandoan.Text == "" || txt_GhiChu.Text == "" || txt_TienKham.Text =="")
+            if (txt_xetnghiem.Text=="" || txt_KetQuaXetNghiem.Text == "" || txt_chuandoan.Text == "" || txt_GhiChu.Text == "")
             {
                 
                 txt_xetnghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("XetNghiem").ToString();
@@ -276,15 +277,23 @@ namespace QuanLyPhongKham
 
         private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            if(Admin.IfAdmin==true)
             {
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.Show();
+                this.Hide();
             }
             else
             {
-                e.Cancel = true;
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
+            Admin.IfAdmin = false;
         }
         private void KiemTra_HoSoChoXetNghiem_HetHan()
         {

@@ -63,6 +63,7 @@ namespace QuanLyPhongKham
         
         private void refresh_HoaDon()
         {
+            panel1.Enabled = false;
             dataSet.Clear();
             gridControl1_HoaDon.Refresh();
             gridView1_HoaDon.RefreshData();
@@ -78,7 +79,7 @@ namespace QuanLyPhongKham
             string query = @"select BN.MaSoBenhNhan,BN.Ten, BN.Ho, BN.SoDienThoai,BN.DiaChi,BN.NamSinh,HSKB.MaSoKhamBenh," +
                                     " DT.MaSoDonThuoc,DT.GhiChu,HSKB.XetNghiem,HSKB.ChuanDoan,HSKB.KetQuaXetNghiem,"+
                                     " HSKB.GhiChu,NV.TenNhanVien,HD.MaHoaDon,HSKB.NgayGioKham,DT.TongTienThuoc,"+
-                                    " HSKB.TienKham,HD.TongTien,HSKB.NgayTaiKham,HD.KiemTraThanhToan" +
+                                    " HSKB.TienKham,HD.TongTien,HSKB.NgayTaiKham,HD.KiemTraThanhToan,HD.KiemTraLayThuoc" +
                             " from HoaDon HD join HoSoKhamBenh HSKB on HD.MaSoKhamBenh = HSKB.MaSoKhamBenh " +
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
@@ -156,8 +157,10 @@ namespace QuanLyPhongKham
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
             connection.connect();
+            
             if (chBox_LayThuoc.Checked ==true)
             {
+                BenhNhanLayThuoc();
                 string TinhTongTien = @"update HoaDon set"+
                                     " TongTien = H.TongTien"+","+
                                     " KiemTraThanhToan = 1 "+","+
@@ -185,12 +188,13 @@ namespace QuanLyPhongKham
                                     " TongTien = H.TongTien" + "," +
                                     " KiemTraThanhToan = 1 " + "," +
                                     " MaNguoiLap = " + DangNhap.MaSoBacSi + "," +
-                                    " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'" +
+                                    " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'," +
+                                    " KiemTraLayThuoc = 0" +
                                     " from (select HSKB.TienKham as TongTien" +
                                     " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh" +
                                        " where HSKB.MaSoKhamBenh = " + ID_MSKB + " And DT.MaSoDonThuoc= " + ID_MSDT + ") H " +
                                        " where MaHoaDon =" + ID_MSHD;
-
+                BenhNhanKhongLayThuoc();
                 connection.sql(TinhTongTien);
                 connection.disconnect();
                 refresh_HoaDon();
@@ -216,20 +220,76 @@ namespace QuanLyPhongKham
         private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
-            
+            BacSiKham = "";
+            NguoiLap = "";
         }
 
         private void NhanVienThuNgan_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            if (Admin.IfAdmin == true)
             {
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.Show();
+                this.Hide();                
             }
             else
             {
-                e.Cancel = true;
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
+            Admin.IfAdmin = false;
+        }
+        void BenhNhanKhongLayThuoc()
+        {
+            int SoLuong;
+            int MaSo;
+            string get_MST_SL = @"select DST.MaSoThuoc,DST.SoLuong
+						from DanhSachThuoc DST join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc
+						where DST.MaSoDonThuoc = "+ ID_MSDT;
+            DataTable dataTable = connection.SQL(get_MST_SL);
+            
+            for(int i = 0; i<dataTable.Rows.Count;i++)
+            {
+                MaSo = int.Parse(dataTable.Rows[i][0].ToString());
+                SoLuong = int.Parse(dataTable.Rows[i][1].ToString());
+
+                string update_Thuoc = @"update Thuoc set SoLuongNhoNhat = SoLuongNhoNhat + "+ SoLuong +
+                                        " where MaSoThuoc = "+MaSo;
+                connection.sql(update_Thuoc);
+            }
+            
+        }
+        void BenhNhanLayThuoc()
+        {
+            int SoLuong;
+            int MaSo;
+            string get_KiemTraLayThuoc = @"select KiemTraLayThuoc from HoaDon where MaHoaDon =" + ID_MSHD;
+            DataTable dataTable_KTLT = connection.SQL(get_KiemTraLayThuoc);
+            string KiemTraLayThuoc = dataTable_KTLT.Rows[0][0].ToString();
+            if(KiemTraLayThuoc == "False")
+            {
+                string get_MST_SL = @"select DST.MaSoThuoc,DST.SoLuong
+						from DanhSachThuoc DST join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc
+						where DST.MaSoDonThuoc = " + ID_MSDT;
+                DataTable dataTable_MST_SL = connection.SQL(get_MST_SL);
+
+                for (int i = 0; i < dataTable_MST_SL.Rows.Count; i++)
+                {
+                    MaSo = int.Parse(dataTable_MST_SL.Rows[i][0].ToString());
+                    SoLuong = int.Parse(dataTable_MST_SL.Rows[i][1].ToString());
+
+                    string update_Thuoc = @"update Thuoc set SoLuongNhoNhat = SoLuongNhoNhat - " + SoLuong +
+                                            " where MaSoThuoc = " + MaSo;
+                    connection.sql(update_Thuoc);
+                }
+            }
+            
+
         }
     }
 }

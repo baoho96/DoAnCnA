@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoSoTaiKham));
             this.gridControl1_HoSoTaiKham = new DevExpress.XtraGrid.GridControl();
             this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
             this.clMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clLiDoKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clLiDoKham = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +95,14 @@
             this.clNgayGioKham.Visible = true;
             this.clNgayGioKham.VisibleIndex = 2;
             // 
+            // clLiDoKham
+            // 
+            this.clLiDoKham.Caption = "Lí Do Khám";
+            this.clLiDoKham.FieldName = "LiDoKham";
+            this.clLiDoKham.Name = "clLiDoKham";
+            this.clLiDoKham.Visible = true;
+            this.clLiDoKham.VisibleIndex = 3;
+            // 
             // clXetNghiem
             // 
             this.clXetNghiem.Caption = "Xét Nghiệm";
@@ -118,20 +127,13 @@
             this.clGhiChu.Visible = true;
             this.clGhiChu.VisibleIndex = 6;
             // 
-            // clLiDoKham
-            // 
-            this.clLiDoKham.Caption = "Lí Do Khám";
-            this.clLiDoKham.FieldName = "LiDoKham";
-            this.clLiDoKham.Name = "clLiDoKham";
-            this.clLiDoKham.Visible = true;
-            this.clLiDoKham.VisibleIndex = 3;
-            // 
             // HoSoTaiKham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 373);
             this.Controls.Add(this.gridControl1_HoSoTaiKham);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HoSoTaiKham";
             this.Text = "Hồ Sơ Tái Khám";
             this.Load += new System.EventHandler(this.HoSoTaiKham_Load);

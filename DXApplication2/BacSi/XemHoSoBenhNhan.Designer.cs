@@ -48,6 +48,7 @@
             this.colNgayGioKham1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayTaiKham1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colXetNghiem1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colChuanDoan1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTienKham1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGhiChu1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +67,6 @@
             this.colMaSoKhamBenh2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaSoBenhNhan5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colKetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_indanhsach = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).BeginInit();
@@ -258,6 +258,14 @@
             this.colXetNghiem1.VisibleIndex = 8;
             this.colXetNghiem1.Width = 39;
             // 
+            // colKetQua
+            // 
+            this.colKetQua.Caption = "Kết Quả";
+            this.colKetQua.FieldName = "KetQuaXetNghiem";
+            this.colKetQua.Name = "colKetQua";
+            this.colKetQua.Visible = true;
+            this.colKetQua.VisibleIndex = 9;
+            // 
             // colChuanDoan1
             // 
             this.colChuanDoan1.Caption = "Chuẩn đoán";
@@ -405,14 +413,6 @@
             this.gridView1.GridControl = this.gridControl1_TimKiemBenhNhan;
             this.gridView1.Name = "gridView1";
             // 
-            // colKetQua
-            // 
-            this.colKetQua.Caption = "Kết Quả";
-            this.colKetQua.FieldName = "KetQuaXetNghiem";
-            this.colKetQua.Name = "colKetQua";
-            this.colKetQua.Visible = true;
-            this.colKetQua.VisibleIndex = 9;
-            // 
             // btn_indanhsach
             // 
             this.btn_indanhsach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_indanhsach.ImageOptions.Image")));
@@ -430,6 +430,7 @@
             this.ClientSize = new System.Drawing.Size(870, 557);
             this.Controls.Add(this.btn_indanhsach);
             this.Controls.Add(this.gridControl1_TimKiemBenhNhan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "XemHoSoBenhNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem Hồ Sơ Bệnh Nhân";

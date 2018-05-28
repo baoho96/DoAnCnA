@@ -117,6 +117,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ThemCho_txt_LiDoKham);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ThemCho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

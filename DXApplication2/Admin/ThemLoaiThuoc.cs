@@ -50,13 +50,15 @@ namespace QuanLyPhongKham
                     }
                     else
                     {
-                        string query = @"insert into loaithuoc(tenloaithuoc,ghichu) values (N'" + txt_tenloaithuoc.Text + "',N'" + txt_ghichu.Text + "')";
+                        string query = @" insert into loaithuoc(tenloaithuoc,ghichu) values (N'" + txt_tenloaithuoc.Text + "',N'" + txt_ghichu.Text + "')";
                         connection.insert(query);
 
                     }
                     connection.disconnect();
                     function.ClearControl(panelControl1);
                     loaiThuocTableAdapter.Fill(phongKhamDataSet.LoaiThuoc);
+                    btn_capnhat.Enabled = false;
+                    btn_xoa.Enabled = false;
                 }
             }           
             

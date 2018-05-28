@@ -28,7 +28,7 @@ namespace QuanLyPhongKham
         int ID_Loaithuoc { get; set; }
         string hinhanh = null;
         DialogResult result;
-
+        public static bool IfAdmin;
         public Admin()
         {
             InitializeComponent();
@@ -60,25 +60,29 @@ namespace QuanLyPhongKham
             refresh_qlyVatDung();
         }
         private void barButtonItem1_BacSi_ItemClick(object sender, ItemClickEventArgs e)
-        {           
+        {
+            IfAdmin = true;
             BacSi bacSi = new BacSi();            
             bacSi.ShowDialog();
         }
 
         private void barButtonItem2_DuocSi_ItemClick(object sender, ItemClickEventArgs e)
-        {           
+        {
+            IfAdmin = true;
             DuocSi duocSi = new DuocSi();
             duocSi.ShowDialog();
         }
 
         private void barButtonItem3_TiepTan_ItemClick(object sender, ItemClickEventArgs e)
-        {            
+        {
+            IfAdmin = true;
             NhanVien nhanVien = new NhanVien();
             nhanVien.ShowDialog();
         }
 
         private void barButtonItem4_ThuNgan_ItemClick(object sender, ItemClickEventArgs e)
-        {            
+        {
+            IfAdmin = true;
             NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
             nhanVienThuNgan.ShowDialog();
         }
@@ -125,6 +129,8 @@ namespace QuanLyPhongKham
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
             hinhanh = null;
             result = new DialogResult();
+            qlyThuoc_btn_capnhat.Enabled = false;
+            qlyThuoc_btn_xoa.Enabled = false;
         }
         
         public void load_qlyThuoc_comB_loaithuoc()//load ComboBox loại thuốc
@@ -310,7 +316,7 @@ namespace QuanLyPhongKham
                 else
                 {
                     dr.Close();
-                    string query = @"insert into thuoc(masoloaithuoc,tenthuoc,soluong,dongia,donvitinh,ngaynhap,cachdung,hinhanh,DonViTinhNhoNhat,SoLuongNhoNhat,DonGiaNhoNhat) values ("
+                    string query = @" insert into thuoc(masoloaithuoc,tenthuoc,soluong,dongia,donvitinh,ngaynhap,cachdung,hinhanh,DonViTinhNhoNhat,SoLuongNhoNhat,DonGiaNhoNhat) values ("
                         + ID_Loaithuoc + ",N'"
                         + qlyThuoc_txt_tenthuoc.Text + "',"
                         + qlyThuoc_txt_SoLuong.Text + ","
@@ -321,7 +327,7 @@ namespace QuanLyPhongKham
                         + hinhanh + "',N'"
                         + qlyThuoc_comB_donvitinhnhonhat.Text + "',"
                         + qlyThuoc_txt_SoLuongNhoNhat.Text + ","
-                        + qlyThuoc_txt_DonGiaNhoNhat.Text + ")";
+                        + qlyThuoc_txt_DonGiaNhoNhat.Text + ") ";
                     connection.insert(query);
                     connection.disconnect();
                     refresh_qlyThuoc();
@@ -434,6 +440,8 @@ namespace QuanLyPhongKham
             load_qlyNhanVien_comB_QuyenTruyCap();
             hinhanh = null;
             result = new DialogResult();
+            qlyNhanvien_btn_capnhat.Enabled = false;
+            qlyNhanvien_btn_xoa.Enabled = false;
         }
         private void qlyNhanvien_txt_Luong_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -507,7 +515,8 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string query = @"insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh,Luong) values"
+                string query = @"begin if not exists (select TaiKhoan from NhanVien where TaiKhoan = N'"+ qlyNhanvien_txt_taikhoan.Text + "') "
+                    + "begin insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh,Luong) values"
                     + "(N'" + qlyNhanvien_txt_hoten.Text + "',"
                     + "'" + qlyNhanvien_dtP_ngaysinh.Text + "',"
                     + "N'" + qlyNhanvien_comB_vitri.Text + "',"
@@ -519,7 +528,7 @@ namespace QuanLyPhongKham
                     + "'" + qlyNhanvien_dtP_ngaytao.Text + "',"
                     + "N'" + qlyNhanvien_comB_gioitinh.Text + "',"
                     + "N'" + hinhanh + "',"
-                    + qlyNhanvien_txt_Luong.Text + ")";
+                    + qlyNhanvien_txt_Luong.Text + ") end end";
                 connection.insert(query);
                 connection.disconnect();
                 refresh_qlyNhanVien();
@@ -545,7 +554,7 @@ namespace QuanLyPhongKham
                 qlyNhanvien_txt_taikhoan.Text = gridView1_NhanVien.GetFocusedRowCellValue("TaiKhoan").ToString();
                 qlyNhanvien_txt_matkhau.Text = function.toMD5(gridView1_NhanVien.GetFocusedRowCellValue("MatKhau").ToString());
                 qlyNhanvien_comB_QuyenTruyCap.Text = gridView1_NhanVien.GetFocusedRowCellValue("QuyenTruyCap").ToString();
-
+                qlyNhanvien_txt_Luong.Text = gridView1_NhanVien.GetFocusedRowCellValue("Luong").ToString();
                 connection.connect();
 
                 string layhinhanh = @"select hinhanh from NhanVien where MaSoNhanVien = " + ID;
@@ -653,6 +662,8 @@ namespace QuanLyPhongKham
             this.vatDungTableAdapter.Fill(this.phongKhamDataSet.VatDung);
             hinhanh = null;
             result = new DialogResult();
+            qlyVatdung_btn_capnhat.Enabled = false;
+            qlyVatdung_btn_xoa.Enabled = false;
         }
 
         private void qlyVatdung_txt_sonamsudung_KeyPress(object sender, KeyPressEventArgs e)

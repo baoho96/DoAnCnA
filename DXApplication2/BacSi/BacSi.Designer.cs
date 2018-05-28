@@ -712,6 +712,7 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.HtmlText = "Bác Sĩ khám bệnh";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BacSi";
             this.Ribbon = this.ribbonControl;

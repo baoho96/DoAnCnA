@@ -68,6 +68,7 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.colKiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
@@ -243,7 +244,8 @@
             this.colNgayTaiKham,
             this.colNgayKham,
             this.colBacSiKham,
-            this.colKiemTraThanhToan});
+            this.colKiemTraThanhToan,
+            this.colKiemTraLayThuoc});
             this.gridView1_HoaDon.GridControl = this.gridControl1_HoaDon;
             this.gridView1_HoaDon.Name = "gridView1_HoaDon";
             this.gridView1_HoaDon.OptionsBehavior.Editable = false;
@@ -417,6 +419,14 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Danh sách bệnh nhân khám trong ngày";
             // 
+            // colKiemTraLayThuoc
+            // 
+            this.colKiemTraLayThuoc.Caption = "Lấy thuốc";
+            this.colKiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
+            this.colKiemTraLayThuoc.Name = "colKiemTraLayThuoc";
+            this.colKiemTraLayThuoc.Visible = true;
+            this.colKiemTraLayThuoc.VisibleIndex = 4;
+            // 
             // NhanVienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +438,7 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.HtmlText = "Nhân viên Thu Ngân";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NhanVienThuNgan";
             this.Ribbon = this.ribbonControl;
@@ -487,5 +498,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraLayThuoc;
     }
 }

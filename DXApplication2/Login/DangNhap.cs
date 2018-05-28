@@ -14,48 +14,37 @@ namespace QuanLyPhongKham
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        
-        public DangNhap()
-        {
-            InitializeComponent();
-            
-
-        }
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-            //KhoiTao.admin = new Admin();
-            //KhoiTao.nhanVien = new NhanVien();
-            //KhoiTao.bacSi = new BacSi();
-            //KhoiTao.duocSi = new DuocSi();
-            //KhoiTao.nhanVienThuNgan = new NhanVienThuNgan();
-            admin = new Admin();
-            nhanVien = new NhanVien();
-            bacSi= new BacSi();
-        }
         Admin admin;
         NhanVien nhanVien;
         BacSi bacSi;
-        private SqlCommand cmd;
-        private SqlDataReader reader;
-        private SqlDataAdapter da;
+        NhanVienThuNgan nhanVienThuNgan;
+        DuocSi duocSi;
         function function = new function();
-        connection connection = new connection();        
-        int quyentruycap { get; set; }
+        connection connection = new connection();
         public static string TenBacSi { get; set; }
         public static int MaSoBacSi { get; set; }
+        public string QuyenTruyCap { get; set; }
+        public DangNhap()
+        {
+            InitializeComponent();           
+        }
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            admin = new Admin();
+            nhanVien = new NhanVien();
+            bacSi= new BacSi();
+            nhanVienThuNgan = new NhanVienThuNgan();
+            duocSi = new DuocSi();
+        }                     
 
         public void btn_DangNhap_Click(object sender, EventArgs e)
         {
             TenBacSi = "";
             var passMD5 = function.toMD5(txt_matkhau.Text);
-            string query = "select TenNhanVien,MaSoNhanVien,QuyenTruyCap from NhanVien where taikhoan ='" + txt_taikhoan.Text +
-                "'and matkhau = '"+ passMD5 + "'";
-            connection.connect();
-            cmd = new SqlCommand(query, connection.con);
-            da = new SqlDataAdapter(cmd);
-            
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            string query = "select TenNhanVien,MaSoNhanVien,QuyenTruyCap from NhanVien where taikhoan ='" + txt_taikhoan.Text +"'"+
+                            " and matkhau = '"+ passMD5 + "'";
+            connection.connect();            
+            DataTable dt = connection.SQL(query);
             if (dt.Rows.Count == 0)
             {
                 function.Notice("Sai Mật khẩu hoặc tên Đăng nhập. Vui lòng nhập lại", 0);
@@ -64,53 +53,34 @@ namespace QuanLyPhongKham
             {
                 TenBacSi = dt.Rows[0][0].ToString();
                 MaSoBacSi = int.Parse(dt.Rows[0][1].ToString());
-            }
-            if (dt!=null)
-            {
-                foreach (DataRow dr in dt.Rows)
+                QuyenTruyCap = dt.Rows[0][2].ToString();
+
+                if (QuyenTruyCap == "1")
                 {
-                    if(dr["quyentruycap"].ToString()=="1")
-                    {
-                        quyentruycap = 1;
-                        //Admin admin= new Admin();
-                        admin.Show();
-                        //KhoiTao.admin.Show();
-                        this.Visible = false;
-                    }
-                    else if(dr["quyentruycap"].ToString()=="2")
-                    {
-                        quyentruycap = 2;
-                        //NhanVien nhanVien = new NhanVien();
-                        nhanVien.Show();
-                        //KhoiTao.nhanVien.Show();
-                        this.Visible=false;
-                    }
-                    else if (dr["quyentruycap"].ToString() == "3")
-                    {
-                        quyentruycap = 3;                        
-                        //BacSi bacSi = new BacSi();
-                        bacSi.Show();
-                        //KhoiTao.bacSi.Show();
-                        this.Visible = false;
-                    }
-                    else if (dr["quyentruycap"].ToString() == "4")
-                    {
-                        quyentruycap = 4;
-                        DuocSi duocSi = new DuocSi();
-                        duocSi.Show();
-                        this.Visible = false;
-                    }
-                    else if (dr["quyentruycap"].ToString() == "5")
-                    {
-                        quyentruycap = 5;
-                        NhanVienThuNgan nhanVienThuNgan = new NhanVienThuNgan();
-                       nhanVienThuNgan.Show();
-                        this.Visible = false;
-                    }
+                    admin.Show();
+                    this.Visible = false;
                 }
-                
+                else if (QuyenTruyCap == "2")
+                {
+                    nhanVien.Show();
+                    this.Visible = false;
+                }
+                else if (QuyenTruyCap == "3")
+                {
+                    bacSi.Show();
+                    this.Visible = false;
+                }
+                else if (QuyenTruyCap == "4")
+                {                   
+                    duocSi.Show();
+                    this.Visible = false;
+                }
+                else if (QuyenTruyCap == "5")
+                {                  
+                    nhanVienThuNgan.Show();
+                    this.Visible = false;
+                }
             }
-            
             connection.disconnect();
         }
 

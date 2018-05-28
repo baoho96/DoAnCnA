@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKi));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txt_nhaplaimk = new System.Windows.Forms.TextBox();
             this.txt_matkhau = new System.Windows.Forms.TextBox();
@@ -145,6 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DangKi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -924,11 +924,11 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "printDonThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In Đơn Thuốc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.printDonThuoc_FormClosing);
-            
             this.Load += new System.EventHandler(this.printDonThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();

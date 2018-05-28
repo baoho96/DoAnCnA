@@ -1658,6 +1658,7 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.HtmlText = "Admin";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Admin";
             this.Ribbon = this.ribbonControl;

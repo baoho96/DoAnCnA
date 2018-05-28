@@ -74,7 +74,6 @@ namespace QuanLyPhongKham
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            //con.Close();
             return (dt);
         }
     }

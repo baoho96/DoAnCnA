@@ -276,6 +276,7 @@
             this.ClientSize = new System.Drawing.Size(492, 361);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ThemLoaiThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

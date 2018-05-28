@@ -64,6 +64,7 @@ namespace QuanLyPhongKham
             documentViewer1.Refresh();
             documentViewer1.PrintingSystem = null;
             load_DanhSachBenhNhan();
+            btn_LayThuocXong.Enabled = false;
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -165,20 +166,29 @@ namespace QuanLyPhongKham
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
+            BacSiKham = "";
             NguoiLap = "";
         }
 
         private void DuocSi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            if (Admin.IfAdmin == true)
             {
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.Show();
+                this.Hide();
             }
             else
             {
-                e.Cancel = true;
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
+            Admin.IfAdmin = false;
         }
     }
 }

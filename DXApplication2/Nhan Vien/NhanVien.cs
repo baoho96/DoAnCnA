@@ -118,6 +118,8 @@ namespace QuanLyPhongKham
 
             hinhanh = null;
             result = new DialogResult();
+            TiepNhanBenhNhan_btn_CapNhat.Enabled = false;
+            TiepNhanBenhNhan_btn_Xoa.Enabled = false;
         }
         private void load_TiepNhanBenhNhan_comB_GioiTinh()
         {
@@ -458,6 +460,7 @@ namespace QuanLyPhongKham
             load_DanhSachBenhNhan_comB_GioiTinh();
             hinhanh = null;
             result = new DialogResult();
+            panelControl4.Enabled = false;
         }
         private void load_DanhSachBenhNhan_comB_GioiTinh()
         {
@@ -678,7 +681,8 @@ namespace QuanLyPhongKham
             function.ClearControl(panelControl5);
             this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);
             this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
-            
+            TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = false;
+            TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Enabled = false;
         }
         
         private void gridView1_TimKiemBenhNhan_RowClick(object sender, RowClickEventArgs e)
@@ -787,6 +791,7 @@ namespace QuanLyPhongKham
             function.ClearControl(panelControl1);
             this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);
             this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            TimKiemBenhNhanKham_btn_XoaHoSo.Enabled = false;
         }
         private void TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click(object sender, EventArgs e)
         {
@@ -855,15 +860,23 @@ namespace QuanLyPhongKham
 
         private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question))==DialogResult.Yes)
+            if (Admin.IfAdmin == true)
             {
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.Show();
+                this.Hide();
             }
             else
             {
-                e.Cancel = true;
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
+            Admin.IfAdmin = false;
         }
     }
 

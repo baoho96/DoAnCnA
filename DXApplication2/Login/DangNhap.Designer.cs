@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.txt_matkhau = new System.Windows.Forms.TextBox();
             this.txt_taikhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -126,6 +127,7 @@
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
