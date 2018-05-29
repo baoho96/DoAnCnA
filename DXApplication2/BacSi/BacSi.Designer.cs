@@ -91,6 +91,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phongKhamDataSet1 = new QuanLyPhongKham.PhongKhamDataSet();
             this.hoSoKhamBenhTableAdapter1 = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -105,6 +106,8 @@
             // 
             // ribbonControl
             // 
+            this.ribbonControl.ExpandCollapseItem.AllowDrawArrow = false;
+            this.ribbonControl.ExpandCollapseItem.AllowRightClickInMenu = false;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
@@ -120,9 +123,11 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
+            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
+            this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -187,7 +192,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -198,7 +204,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbtn_TaoDonThuoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbtn_HoSoKhamBenh);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_Xuatfile);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Tasks";
@@ -216,10 +221,10 @@
             // 
             this.panelControl6.Controls.Add(this.label17);
             this.panelControl6.Controls.Add(this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay);
-            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 326);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl6.Location = new System.Drawing.Point(0, 312);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1014, 342);
+            this.panelControl6.Size = new System.Drawing.Size(1014, 356);
             this.panelControl6.TabIndex = 6;
             // 
             // label17
@@ -236,11 +241,11 @@
             // BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay
             // 
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 27);
+            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 24);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MainView = this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MenuManager = this.ribbonControl;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Name = "BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay";
-            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Size = new System.Drawing.Size(1010, 313);
+            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Size = new System.Drawing.Size(1010, 330);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.TabIndex = 0;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay,
@@ -478,9 +483,9 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Enabled = false;
-            this.panelControl2.Location = new System.Drawing.Point(0, 143);
+            this.panelControl2.Location = new System.Drawing.Point(0, 130);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1014, 177);
+            this.panelControl2.Size = new System.Drawing.Size(1014, 182);
             this.panelControl2.TabIndex = 5;
             // 
             // btn_ChoKham
@@ -509,7 +514,7 @@
             this.pictureBox1_BenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1_BenhNhan.Location = new System.Drawing.Point(847, 2);
             this.pictureBox1_BenhNhan.Name = "pictureBox1_BenhNhan";
-            this.pictureBox1_BenhNhan.Size = new System.Drawing.Size(165, 103);
+            this.pictureBox1_BenhNhan.Size = new System.Drawing.Size(165, 108);
             this.pictureBox1_BenhNhan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1_BenhNhan.TabIndex = 24;
             this.pictureBox1_BenhNhan.TabStop = false;
@@ -702,6 +707,12 @@
             // 
             this.hoSoKhamBenhTableAdapter1.ClearBeforeFill = true;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1_Xuatfile);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Print and Export";
+            // 
             // BacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,5 +810,6 @@
         private System.Windows.Forms.TextBox txt_KetQuaXetNghiem;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_Xuatfile;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

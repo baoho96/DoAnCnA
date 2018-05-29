@@ -68,8 +68,10 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
+            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -146,9 +148,9 @@
             this.panel2.Controls.Add(this.btn_LayThuocXong);
             this.panel2.Controls.Add(this.gridControl_DanhSachBenhNhan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 143);
+            this.panel2.Location = new System.Drawing.Point(0, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 525);
+            this.panel2.Size = new System.Drawing.Size(442, 538);
             this.panel2.TabIndex = 5;
             // 
             // label2
@@ -177,7 +179,7 @@
             // gridControl_DanhSachBenhNhan
             // 
             this.gridControl_DanhSachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 72);
+            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 85);
             this.gridControl_DanhSachBenhNhan.MainView = this.gridView_DanhSachBenhNhan;
             this.gridControl_DanhSachBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl_DanhSachBenhNhan.Name = "gridControl_DanhSachBenhNhan";
@@ -245,9 +247,9 @@
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(442, 143);
+            this.documentViewer1.Location = new System.Drawing.Point(442, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(572, 525);
+            this.documentViewer1.Size = new System.Drawing.Size(572, 538);
             this.documentViewer1.TabIndex = 8;
             // 
             // DuocSi

@@ -65,10 +65,10 @@
             this.colNgayKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBacSiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.colKiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
@@ -91,10 +91,11 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
+            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
+            this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -170,9 +171,9 @@
             this.panel1.Controls.Add(this.btn_ThanhToan);
             this.panel1.Controls.Add(this.chBox_LayThuoc);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Location = new System.Drawing.Point(0, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 64);
+            this.panel1.Size = new System.Drawing.Size(446, 75);
             this.panel1.TabIndex = 4;
             // 
             // btn_ThanhToan
@@ -180,7 +181,7 @@
             this.btn_ThanhToan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_ThanhToan.Appearance.Options.UseFont = true;
             this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
-            this.btn_ThanhToan.Location = new System.Drawing.Point(316, 11);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(313, 12);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.Size = new System.Drawing.Size(95, 37);
             this.btn_ThanhToan.TabIndex = 1;
@@ -190,10 +191,10 @@
             // chBox_LayThuoc
             // 
             this.chBox_LayThuoc.AutoSize = true;
-            this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.chBox_LayThuoc.Location = new System.Drawing.Point(39, 22);
+            this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.chBox_LayThuoc.Location = new System.Drawing.Point(38, 22);
             this.chBox_LayThuoc.Name = "chBox_LayThuoc";
-            this.chBox_LayThuoc.Size = new System.Drawing.Size(181, 17);
+            this.chBox_LayThuoc.Size = new System.Drawing.Size(200, 18);
             this.chBox_LayThuoc.TabIndex = 0;
             this.chBox_LayThuoc.Text = "Bệnh nhân đồng ý lấy thuốc";
             this.chBox_LayThuoc.UseVisualStyleBackColor = true;
@@ -201,10 +202,11 @@
             // documentViewer1
             // 
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(452, 140);
+            this.documentViewer1.Location = new System.Drawing.Point(452, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(562, 522);
+            this.documentViewer1.Size = new System.Drawing.Size(562, 538);
             this.documentViewer1.TabIndex = 5;
             // 
             // gridControl1_HoaDon
@@ -395,6 +397,14 @@
             this.colKiemTraThanhToan.VisibleIndex = 3;
             this.colKiemTraThanhToan.Width = 120;
             // 
+            // colKiemTraLayThuoc
+            // 
+            this.colKiemTraLayThuoc.Caption = "Lấy thuốc";
+            this.colKiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
+            this.colKiemTraLayThuoc.Name = "colKiemTraLayThuoc";
+            this.colKiemTraLayThuoc.Visible = true;
+            this.colKiemTraLayThuoc.VisibleIndex = 4;
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -418,14 +428,6 @@
             this.label1.Size = new System.Drawing.Size(325, 19);
             this.label1.TabIndex = 9;
             this.label1.Text = "Danh sách bệnh nhân khám trong ngày";
-            // 
-            // colKiemTraLayThuoc
-            // 
-            this.colKiemTraLayThuoc.Caption = "Lấy thuốc";
-            this.colKiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
-            this.colKiemTraLayThuoc.Name = "colKiemTraLayThuoc";
-            this.colKiemTraLayThuoc.Visible = true;
-            this.colKiemTraLayThuoc.VisibleIndex = 4;
             // 
             // NhanVienThuNgan
             // 

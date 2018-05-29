@@ -228,9 +228,11 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
+            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
+            this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -367,7 +369,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1_XuatFile);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1_XuatDinhDang);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "File excel";
+            this.ribbonPageGroup4.Text = "Print and Export";
             // 
             // ribbonStatusBar
             // 
@@ -381,10 +383,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 143);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.admin_tabP_qlyThuoc;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1014, 525);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1014, 538);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.admin_tabP_qlyThuoc,
@@ -397,7 +399,7 @@
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl7);
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl1);
             this.admin_tabP_qlyThuoc.Name = "admin_tabP_qlyThuoc";
-            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1008, 497);
+            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1008, 510);
             this.admin_tabP_qlyThuoc.Text = "Quản lý Thuốc";
             // 
             // panelControl7
@@ -405,9 +407,9 @@
             this.panelControl7.Controls.Add(this.gridControl1);
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl7.Location = new System.Drawing.Point(0, 181);
+            this.panelControl7.Location = new System.Drawing.Point(0, 180);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1008, 316);
+            this.panelControl7.Size = new System.Drawing.Size(1008, 330);
             this.panelControl7.TabIndex = 3;
             // 
             // gridControl1
@@ -418,7 +420,7 @@
             this.gridControl1.MainView = this.gridView1_thuoc;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1004, 290);
+            this.gridControl1.Size = new System.Drawing.Size(1004, 304);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_thuoc});
@@ -607,7 +609,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1008, 175);
+            this.panelControl1.Size = new System.Drawing.Size(1008, 174);
             this.panelControl1.TabIndex = 1;
             // 
             // pictureBox1_Thuoc
@@ -648,21 +650,24 @@
             this.qlyThuoc_btn_xoa.Appearance.Options.UseFont = true;
             this.qlyThuoc_btn_xoa.Enabled = false;
             this.qlyThuoc_btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_xoa.ImageOptions.Image")));
-            this.qlyThuoc_btn_xoa.Location = new System.Drawing.Point(913, 127);
+            this.qlyThuoc_btn_xoa.Location = new System.Drawing.Point(889, 119);
             this.qlyThuoc_btn_xoa.Name = "qlyThuoc_btn_xoa";
-            this.qlyThuoc_btn_xoa.Size = new System.Drawing.Size(88, 31);
+            this.qlyThuoc_btn_xoa.Size = new System.Drawing.Size(88, 41);
             this.qlyThuoc_btn_xoa.TabIndex = 4;
             this.qlyThuoc_btn_xoa.Text = "Xóa";
             this.qlyThuoc_btn_xoa.Click += new System.EventHandler(this.qlyThuoc_btn_xoa_Click);
             // 
             // qlyThuoc_btn_taomoi
             // 
+            this.qlyThuoc_btn_taomoi.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.qlyThuoc_btn_taomoi.Appearance.BorderColor = System.Drawing.Color.Lime;
             this.qlyThuoc_btn_taomoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.qlyThuoc_btn_taomoi.Appearance.Options.UseBorderColor = true;
             this.qlyThuoc_btn_taomoi.Appearance.Options.UseFont = true;
             this.qlyThuoc_btn_taomoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_taomoi.ImageOptions.Image")));
-            this.qlyThuoc_btn_taomoi.Location = new System.Drawing.Point(767, 81);
+            this.qlyThuoc_btn_taomoi.Location = new System.Drawing.Point(642, 119);
             this.qlyThuoc_btn_taomoi.Name = "qlyThuoc_btn_taomoi";
-            this.qlyThuoc_btn_taomoi.Size = new System.Drawing.Size(94, 31);
+            this.qlyThuoc_btn_taomoi.Size = new System.Drawing.Size(94, 40);
             this.qlyThuoc_btn_taomoi.TabIndex = 4;
             this.qlyThuoc_btn_taomoi.Text = "Tạo mới";
             this.qlyThuoc_btn_taomoi.Click += new System.EventHandler(this.qlyThuoc_btn_taomoi_Click);
@@ -673,9 +678,9 @@
             this.qlyThuoc_btn_capnhat.Appearance.Options.UseFont = true;
             this.qlyThuoc_btn_capnhat.Enabled = false;
             this.qlyThuoc_btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_capnhat.ImageOptions.Image")));
-            this.qlyThuoc_btn_capnhat.Location = new System.Drawing.Point(767, 127);
+            this.qlyThuoc_btn_capnhat.Location = new System.Drawing.Point(767, 119);
             this.qlyThuoc_btn_capnhat.Name = "qlyThuoc_btn_capnhat";
-            this.qlyThuoc_btn_capnhat.Size = new System.Drawing.Size(94, 31);
+            this.qlyThuoc_btn_capnhat.Size = new System.Drawing.Size(94, 41);
             this.qlyThuoc_btn_capnhat.TabIndex = 4;
             this.qlyThuoc_btn_capnhat.Text = "Cập nhật";
             this.qlyThuoc_btn_capnhat.Click += new System.EventHandler(this.qlyThuoc_btn_capnhat_Click);
@@ -685,9 +690,9 @@
             this.qlyThuoc_btn_themloaithuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.qlyThuoc_btn_themloaithuoc.Appearance.Options.UseFont = true;
             this.qlyThuoc_btn_themloaithuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyThuoc_btn_themloaithuoc.ImageOptions.Image")));
-            this.qlyThuoc_btn_themloaithuoc.Location = new System.Drawing.Point(767, 19);
+            this.qlyThuoc_btn_themloaithuoc.Location = new System.Drawing.Point(767, 16);
             this.qlyThuoc_btn_themloaithuoc.Name = "qlyThuoc_btn_themloaithuoc";
-            this.qlyThuoc_btn_themloaithuoc.Size = new System.Drawing.Size(94, 32);
+            this.qlyThuoc_btn_themloaithuoc.Size = new System.Drawing.Size(94, 41);
             this.qlyThuoc_btn_themloaithuoc.TabIndex = 4;
             this.qlyThuoc_btn_themloaithuoc.Text = "Loại thuốc";
             this.qlyThuoc_btn_themloaithuoc.Click += new System.EventHandler(this.qlyThuoc_btn_themloaithuoc_Click);
@@ -918,7 +923,7 @@
             // pictureBox1_NhanVien
             // 
             this.pictureBox1_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1_NhanVien.Location = new System.Drawing.Point(862, 3);
+            this.pictureBox1_NhanVien.Location = new System.Drawing.Point(867, 0);
             this.pictureBox1_NhanVien.Name = "pictureBox1_NhanVien";
             this.pictureBox1_NhanVien.Size = new System.Drawing.Size(141, 89);
             this.pictureBox1_NhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1489,7 +1494,7 @@
             // pictureBox1_VatDung
             // 
             this.pictureBox1_VatDung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1_VatDung.Location = new System.Drawing.Point(860, 5);
+            this.pictureBox1_VatDung.Location = new System.Drawing.Point(867, 0);
             this.pictureBox1_VatDung.Name = "pictureBox1_VatDung";
             this.pictureBox1_VatDung.Size = new System.Drawing.Size(141, 89);
             this.pictureBox1_VatDung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1662,6 +1667,7 @@
             this.MaximizeBox = false;
             this.Name = "Admin";
             this.Ribbon = this.ribbonControl;
+            this.RibbonVisibility = DevExpress.XtraBars.Ribbon.RibbonVisibility.Visible;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);

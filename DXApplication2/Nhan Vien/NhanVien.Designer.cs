@@ -678,10 +678,11 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
+            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 143);
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -720,7 +721,7 @@
             // 
             // barButtonItem1_Xuatfilekhac
             // 
-            this.barButtonItem1_Xuatfilekhac.Caption = "Xuất file khác";
+            this.barButtonItem1_Xuatfilekhac.Caption = "Xuất các định dạng khác";
             this.barButtonItem1_Xuatfilekhac.Id = 25;
             this.barButtonItem1_Xuatfilekhac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_Xuatfilekhac.ImageOptions.Image")));
             this.barButtonItem1_Xuatfilekhac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_Xuatfilekhac.ImageOptions.LargeImage")));
@@ -751,7 +752,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1_Xuatfilekhac);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "Xuất file";
+            this.ribbonPageGroup2.Text = "Print and Export";
             // 
             // ribbonStatusBar
             // 
@@ -1866,14 +1867,14 @@
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham);
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.panelControl2);
             this.NhanVien_tabP_TiepNhanBenhNhan.Name = "NhanVien_tabP_TiepNhanBenhNhan";
-            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1008, 497);
+            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1008, 510);
             this.NhanVien_tabP_TiepNhanBenhNhan.Text = "Tiếp nhận bệnh nhân mới";
             // 
             // TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham
             // 
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = this.hoSoKhamBenhBindingSource;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 189);
+            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 202);
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MainView = this.gridView1_TiepNhanBenhNhan;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MenuManager = this.ribbonControl;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Name = "TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham";
@@ -2131,7 +2132,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1008, 183);
+            this.panelControl2.Size = new System.Drawing.Size(1008, 196);
             this.panelControl2.TabIndex = 2;
             // 
             // TiepNhanBenhNhan_dtP_NgayKham
@@ -2404,10 +2405,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 143);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.NhanVien_tabP_TiepNhanBenhNhan;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1014, 525);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1014, 538);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.NhanVien_tabP_TiepNhanBenhNhan,
