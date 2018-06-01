@@ -117,6 +117,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nhan Vien\Thong Ke\BenhNhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\BenhNhan.Designer.cs">
+      <DependentUpon>BenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\DoanhThu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\DoanhThu.Designer.cs">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DuocSi\DuocSi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,18 @@
     <Compile Include="Nhan Vien\NhanVienThuNgan.Designer.cs">
       <DependentUpon>NhanVienThuNgan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\ThongKeBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\ThongKeBenhNhan.Designer.cs">
+      <DependentUpon>ThongKeBenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\ThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\ThongKeDoanhThu.Designer.cs">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhongKhamDataSet.cs">
       <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>
     </Compile>
@@ -228,6 +252,12 @@
     <EmbeddedResource Include="BacSi\reportDonThuoc.resx">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\BenhNhan.resx">
+      <DependentUpon>BenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DuocSi\DuocSi.resx">
       <DependentUpon>DuocSi.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\NhanVienThuNgan.resx">
       <DependentUpon>NhanVienThuNgan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\ThongKeBenhNhan.resx">
+      <DependentUpon>ThongKeBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\ThongKeDoanhThu.resx">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

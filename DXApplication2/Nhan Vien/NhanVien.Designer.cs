@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
             this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
             this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -258,6 +258,7 @@
             this.xtra_TimBenhNhan = new DevExpress.XtraTab.XtraTabPage();
             this.TimKiemBenhNhanKham_btn_XoaHoSo = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.label11 = new System.Windows.Forms.Label();
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham = new System.Windows.Forms.CheckBox();
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham = new System.Windows.Forms.CheckBox();
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham = new DevExpress.XtraEditors.SimpleButton();
@@ -266,6 +267,7 @@
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.label32 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.label17 = new System.Windows.Forms.Label();
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham = new System.Windows.Forms.CheckBox();
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham = new System.Windows.Forms.CheckBox();
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham = new DevExpress.XtraEditors.SimpleButton();
@@ -434,20 +436,20 @@
             // 
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode2.RelationName = "FK_DanhSachThuoc_DonThuoc";
-            gridLevelNode3.RelationName = "FK_HoaDon_DonThuoc";
-            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2,
-            gridLevelNode3});
-            gridLevelNode1.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode4.RelationName = "FK_HoaDon_HoSoKhamBenh";
-            gridLevelNode5.LevelTemplate = this.cardView1_HoSoTaiKham;
-            gridLevelNode5.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode9.RelationName = "FK_DanhSachThuoc_DonThuoc";
+            gridLevelNode10.RelationName = "FK_HoaDon_DonThuoc";
+            gridLevelNode8.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode9,
+            gridLevelNode10});
+            gridLevelNode8.RelationName = "FK_DonThuoc_HoSoKhamBenh";
+            gridLevelNode11.RelationName = "FK_HoaDon_HoSoKhamBenh";
+            gridLevelNode12.LevelTemplate = this.cardView1_HoSoTaiKham;
+            gridLevelNode12.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode4,
-            gridLevelNode5});
-            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 46);
+            gridLevelNode8,
+            gridLevelNode11,
+            gridLevelNode12});
+            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 59);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
@@ -896,16 +898,16 @@
             // 
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode6.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode6.RelationName = "FK_HoSoKhamBenh_BenhNhan";
+            gridLevelNode1.LevelTemplate = this.cardView1_DanhsachbenhNhan;
+            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_BenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode6});
+            gridLevelNode1});
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 143);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEdit1});
-            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Size = new System.Drawing.Size(1008, 354);
+            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Size = new System.Drawing.Size(1008, 367);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.TabIndex = 0;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4_DanhSachBenhNhan,
@@ -1206,15 +1208,15 @@
             // 
             this.gridControl1_TimBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode7.LevelTemplate = this.cardView1_TimBenhNhan;
-            gridLevelNode7.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode2.LevelTemplate = this.cardView1_TimBenhNhan;
+            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode7});
+            gridLevelNode2});
             this.gridControl1_TimBenhNhan.Location = new System.Drawing.Point(2, 24);
             this.gridControl1_TimBenhNhan.MainView = this.gridView1_TimBenhNhan;
             this.gridControl1_TimBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl1_TimBenhNhan.Name = "gridControl1_TimBenhNhan";
-            this.gridControl1_TimBenhNhan.Size = new System.Drawing.Size(1004, 378);
+            this.gridControl1_TimBenhNhan.Size = new System.Drawing.Size(1004, 391);
             this.gridControl1_TimBenhNhan.TabIndex = 6;
             this.gridControl1_TimBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_TimBenhNhan,
@@ -1526,7 +1528,7 @@
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.AutoScroll = true;
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Controls.Add(this.panelControl5);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Name = "NhanVien_tabP_DanhSachBenhNhanTaiKham";
-            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1008, 497);
+            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1008, 510);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Text = "Tiếp nhận bệnh nhân tái khám";
             // 
             // panelControl5
@@ -1540,7 +1542,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl5.Location = new System.Drawing.Point(0, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1008, 494);
+            this.panelControl5.Size = new System.Drawing.Size(1008, 507);
             this.panelControl5.TabIndex = 7;
             // 
             // TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham
@@ -1548,7 +1550,7 @@
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy  hh:mm  tt";
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Enabled = false;
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Location = new System.Drawing.Point(754, 10);
+            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Location = new System.Drawing.Point(712, 23);
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Name = "TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham";
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Size = new System.Drawing.Size(147, 21);
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.TabIndex = 14;
@@ -1567,7 +1569,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label30.Location = new System.Drawing.Point(655, 16);
+            this.label30.Location = new System.Drawing.Point(613, 29);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(93, 13);
             this.label30.TabIndex = 11;
@@ -1579,7 +1581,7 @@
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Appearance.Options.UseFont = true;
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = false;
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TimKiemBenhNhanKham_btn_ThemChoTaiKham.ImageOptions.Image")));
-            this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Location = new System.Drawing.Point(907, 5);
+            this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Location = new System.Drawing.Point(865, 18);
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Name = "TimKiemBenhNhanKham_btn_ThemChoTaiKham";
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Size = new System.Drawing.Size(83, 35);
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.TabIndex = 10;
@@ -1602,7 +1604,7 @@
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.panelControl4);
             this.NhanVien_tabP_DanhSachBenhNhan.Name = "NhanVien_tabP_DanhSachBenhNhan";
-            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1008, 497);
+            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1008, 510);
             this.NhanVien_tabP_DanhSachBenhNhan.Text = "Tiếp nhận bệnh nhân cũ";
             // 
             // panelControl4
@@ -1874,13 +1876,13 @@
             // 
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = this.hoSoKhamBenhBindingSource;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 202);
+            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 188);
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MainView = this.gridView1_TiepNhanBenhNhan;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MenuManager = this.ribbonControl;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Name = "TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham";
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Size = new System.Drawing.Size(1008, 308);
+            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Size = new System.Drawing.Size(1008, 322);
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.TabIndex = 3;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_TiepNhanBenhNhan,
@@ -2132,7 +2134,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1008, 196);
+            this.panelControl2.Size = new System.Drawing.Size(1008, 182);
             this.panelControl2.TabIndex = 2;
             // 
             // TiepNhanBenhNhan_dtP_NgayKham
@@ -2423,7 +2425,7 @@
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl6);
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl1);
             this.xtra_TimBenhNhan.Name = "xtra_TimBenhNhan";
-            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1008, 497);
+            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1008, 510);
             this.xtra_TimBenhNhan.Text = "Tìm Kiếm Bệnh Nhân";
             // 
             // TimKiemBenhNhanKham_btn_XoaHoSo
@@ -2439,6 +2441,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.label11);
             this.panelControl3.Controls.Add(this.TimKiemBenhNhanKhamBenh_checB_ThangKham);
             this.panelControl3.Controls.Add(this.TimKiemBenhNhanKhamBenh_checB_NgayKham);
             this.panelControl3.Controls.Add(this.TimKiemBenhNhanKham_btn_TimKiemNgayKham);
@@ -2448,6 +2451,16 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(453, 84);
             this.panelControl3.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(218, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Nhập ngày";
             // 
             // TimKiemBenhNhanKhamBenh_checB_ThangKham
             // 
@@ -2459,6 +2472,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.TabIndex = 12;
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Text = "Tìm theo Tháng khám";
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.UseVisualStyleBackColor = true;
+            this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_ThangKham_Click);
             // 
             // TimKiemBenhNhanKhamBenh_checB_NgayKham
             // 
@@ -2470,6 +2484,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.TabIndex = 12;
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Text = "Tìm theo Ngày khám";
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.UseVisualStyleBackColor = true;
+            this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_NgayKham_Click);
             // 
             // TimKiemBenhNhanKham_btn_TimKiemNgayKham
             // 
@@ -2510,7 +2525,7 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl6.Location = new System.Drawing.Point(0, 93);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1008, 404);
+            this.panelControl6.Size = new System.Drawing.Size(1008, 417);
             this.panelControl6.TabIndex = 8;
             // 
             // label32
@@ -2526,6 +2541,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label17);
             this.panelControl1.Controls.Add(this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham);
             this.panelControl1.Controls.Add(this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham);
             this.panelControl1.Controls.Add(this.TimKiemBenhNhanKham_btn_TimKiemTaiKham);
@@ -2535,6 +2551,16 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(465, 84);
             this.panelControl1.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(230, 8);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Nhập ngày";
             // 
             // TimKiemBenhNhanKhamBenh_checB_ThangTaiKham
             // 
@@ -2546,6 +2572,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.TabIndex = 16;
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Text = "Tìm theo Tháng khám";
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.UseVisualStyleBackColor = true;
+            this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham_Click);
             // 
             // TimKiemBenhNhanKhamBenh_checB_NgayTaiKham
             // 
@@ -2557,6 +2584,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.TabIndex = 17;
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Text = "Tìm theo Ngày khám";
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.UseVisualStyleBackColor = true;
+            this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham_Click);
             // 
             // TimKiemBenhNhanKham_btn_TimKiemTaiKham
             // 
@@ -2901,5 +2929,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham;
         private DevExpress.XtraEditors.SimpleButton TimKiemBenhNhanKham_btn_XoaHoSo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label17;
     }
 }

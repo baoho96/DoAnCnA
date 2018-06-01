@@ -878,6 +878,26 @@ namespace QuanLyPhongKham
             }
             Admin.IfAdmin = false;
         }
+
+        private void TimKiemBenhNhanKhamBenh_checB_NgayKham_Click(object sender, EventArgs e)
+        {
+            TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked = false;
+        }
+
+        private void TimKiemBenhNhanKhamBenh_checB_ThangKham_Click(object sender, EventArgs e)
+        {
+            TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked = false;
+        }
+
+        private void TimKiemBenhNhanKhamBenh_checB_NgayTaiKham_Click(object sender, EventArgs e)
+        {
+            TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked = false;
+        }
+
+        private void TimKiemBenhNhanKhamBenh_checB_ThangTaiKham_Click(object sender, EventArgs e)
+        {
+            TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked = false;
+        }
     }
 
 }

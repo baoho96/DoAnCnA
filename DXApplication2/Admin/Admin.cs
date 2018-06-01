@@ -876,5 +876,7 @@ namespace QuanLyPhongKham
                 gridControl3.ShowRibbonPrintPreview();
             }
         }
+
+        
     }
 }

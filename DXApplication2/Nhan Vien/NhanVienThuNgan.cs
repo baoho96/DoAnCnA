@@ -291,5 +291,11 @@ namespace QuanLyPhongKham
             
 
         }
+
+        private void barButtonItem1_ThongKeDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu();
+            thongKeDoanhThu.ShowDialog();
+        }
     }
 }

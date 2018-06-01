@@ -281,7 +281,7 @@
             this.colTienKham1.FieldName = "TienKham";
             this.colTienKham1.Name = "colTienKham1";
             this.colTienKham1.Visible = true;
-            this.colTienKham1.VisibleIndex = 11;
+            this.colTienKham1.VisibleIndex = 12;
             this.colTienKham1.Width = 50;
             // 
             // colGhiChu1
@@ -290,7 +290,7 @@
             this.colGhiChu1.FieldName = "GhiChu";
             this.colGhiChu1.Name = "colGhiChu1";
             this.colGhiChu1.Visible = true;
-            this.colGhiChu1.VisibleIndex = 12;
+            this.colGhiChu1.VisibleIndex = 11;
             this.colGhiChu1.Width = 81;
             // 
             // colHo3
@@ -415,8 +415,11 @@
             // 
             // btn_indanhsach
             // 
+            this.btn_indanhsach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_indanhsach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_indanhsach.ImageOptions.Image")));
-            this.btn_indanhsach.Location = new System.Drawing.Point(761, 12);
+            this.btn_indanhsach.Location = new System.Drawing.Point(773, 0);
             this.btn_indanhsach.Name = "btn_indanhsach";
             this.btn_indanhsach.Size = new System.Drawing.Size(97, 35);
             this.btn_indanhsach.TabIndex = 8;
