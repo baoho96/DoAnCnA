@@ -763,12 +763,7 @@ namespace QuanLyPhongKham
             }
         }
 
-        private void gridView1_HoSoTaiKham_DoubleClick(object sender, EventArgs e)
-        {
-            ID_MSKB_DoubleClick = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoTaiKham").ToString());
-            HoSoTaiKham hoSoTaiKham = new HoSoTaiKham();
-            hoSoTaiKham.Show();
-        }
+
 
 
 

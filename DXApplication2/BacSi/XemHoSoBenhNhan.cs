@@ -47,5 +47,20 @@ namespace QuanLyPhongKham
         {
             gridControl1_TimKiemBenhNhan.ShowRibbonPrintPreview();
         }
+
+        private void gridView1_TimKiemBenhNhan_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
+
+        private void gridView1_TimKiemBenhNhan_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
+        }
+
+        private void gridView1_TimKiemBenhNhan_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

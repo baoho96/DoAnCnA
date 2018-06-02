@@ -228,7 +228,15 @@ namespace QuanLyPhongKham
         {
             if (Admin.IfAdmin == true)
             {
-                this.Hide();                
+                this.Hide();
+                foreach (Form fm in Application.OpenForms)
+                {
+                    if (fm is Admin)
+                    {
+                        ((Admin)fm).refresh_qlyThuoc();
+                        break;
+                    }
+                }
             }
             else
             {
@@ -296,6 +304,12 @@ namespace QuanLyPhongKham
         {
             ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu();
             thongKeDoanhThu.ShowDialog();
+        }
+
+        private void barButtonItem1_ThongKeBenhNhan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ThongKeBenhNhan thongKeBenhNhan = new ThongKeBenhNhan();
+            thongKeBenhNhan.ShowDialog();
         }
     }
 }

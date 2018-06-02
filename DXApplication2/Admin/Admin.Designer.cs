@@ -173,6 +173,7 @@
             this.thuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.ThuocTableAdapter();
             this.nhanVienTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.NhanVienTableAdapter();
             this.vatDungTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.VatDungTableAdapter();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -209,6 +210,7 @@
             // ribbonControl
             // 
             this.ribbonControl.AutoHideEmptyItems = true;
+            this.ribbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Teal;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
@@ -232,7 +234,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1016, 132);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -375,18 +377,18 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1014, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 23);
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 132);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.admin_tabP_qlyThuoc;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1014, 538);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 544);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.admin_tabP_qlyThuoc,
@@ -399,7 +401,7 @@
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl7);
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl1);
             this.admin_tabP_qlyThuoc.Name = "admin_tabP_qlyThuoc";
-            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1008, 510);
+            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1011, 519);
             this.admin_tabP_qlyThuoc.Text = "Quản lý Thuốc";
             // 
             // panelControl7
@@ -407,9 +409,9 @@
             this.panelControl7.Controls.Add(this.gridControl1);
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl7.Location = new System.Drawing.Point(0, 180);
+            this.panelControl7.Location = new System.Drawing.Point(0, 189);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1008, 330);
+            this.panelControl7.Size = new System.Drawing.Size(1011, 330);
             this.panelControl7.TabIndex = 3;
             // 
             // gridControl1
@@ -420,7 +422,7 @@
             this.gridControl1.MainView = this.gridView1_thuoc;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1004, 304);
+            this.gridControl1.Size = new System.Drawing.Size(1007, 304);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_thuoc});
@@ -609,7 +611,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1008, 174);
+            this.panelControl1.Size = new System.Drawing.Size(1011, 174);
             this.panelControl1.TabIndex = 1;
             // 
             // pictureBox1_Thuoc
@@ -882,7 +884,7 @@
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl3_NhanVien);
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl8);
             this.admin_tabP_qlyNhanvien.Name = "admin_tabP_qlyNhanvien";
-            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1008, 510);
+            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1011, 519);
             this.admin_tabP_qlyNhanvien.Text = "Quản lý Nhân viên";
             // 
             // panelControl3_NhanVien
@@ -917,7 +919,7 @@
             this.panelControl3_NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3_NhanVien.Location = new System.Drawing.Point(0, 0);
             this.panelControl3_NhanVien.Name = "panelControl3_NhanVien";
-            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1008, 153);
+            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1011, 153);
             this.panelControl3_NhanVien.TabIndex = 6;
             // 
             // pictureBox1_NhanVien
@@ -977,7 +979,9 @@
             // 
             // qlyNhanvien_btn_taomoi
             // 
+            this.qlyNhanvien_btn_taomoi.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.qlyNhanvien_btn_taomoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.qlyNhanvien_btn_taomoi.Appearance.Options.UseBackColor = true;
             this.qlyNhanvien_btn_taomoi.Appearance.Options.UseFont = true;
             this.qlyNhanvien_btn_taomoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyNhanvien_btn_taomoi.ImageOptions.Image")));
             this.qlyNhanvien_btn_taomoi.Location = new System.Drawing.Point(773, 37);
@@ -1076,7 +1080,7 @@
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(534, 93);
+            this.labelControl18.Location = new System.Drawing.Point(535, 94);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(53, 13);
             this.labelControl18.TabIndex = 0;
@@ -1094,7 +1098,7 @@
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(534, 42);
+            this.labelControl19.Location = new System.Drawing.Point(535, 43);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(50, 13);
             this.labelControl19.TabIndex = 0;
@@ -1104,7 +1108,7 @@
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(534, 66);
+            this.labelControl17.Location = new System.Drawing.Point(535, 67);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(55, 13);
             this.labelControl17.TabIndex = 0;
@@ -1114,7 +1118,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(324, 63);
+            this.labelControl11.Location = new System.Drawing.Point(325, 64);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(54, 13);
             this.labelControl11.TabIndex = 0;
@@ -1124,7 +1128,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(534, 120);
+            this.labelControl5.Location = new System.Drawing.Point(535, 121);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(86, 13);
             this.labelControl5.TabIndex = 0;
@@ -1134,7 +1138,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(283, 90);
+            this.labelControl10.Location = new System.Drawing.Point(284, 91);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(35, 13);
             this.labelControl10.TabIndex = 0;
@@ -1144,7 +1148,7 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(3, 117);
+            this.labelControl12.Location = new System.Drawing.Point(4, 118);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(38, 13);
             this.labelControl12.TabIndex = 0;
@@ -1154,7 +1158,7 @@
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(189, 63);
+            this.labelControl13.Location = new System.Drawing.Point(190, 64);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(26, 13);
             this.labelControl13.TabIndex = 0;
@@ -1164,7 +1168,7 @@
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(4, 90);
+            this.labelControl14.Location = new System.Drawing.Point(5, 91);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(73, 13);
             this.labelControl14.TabIndex = 0;
@@ -1174,7 +1178,7 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(4, 63);
+            this.labelControl15.Location = new System.Drawing.Point(5, 64);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(46, 13);
             this.labelControl15.TabIndex = 0;
@@ -1184,7 +1188,7 @@
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(4, 36);
+            this.labelControl16.Location = new System.Drawing.Point(5, 37);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(79, 13);
             this.labelControl16.TabIndex = 0;
@@ -1197,18 +1201,18 @@
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl8.Location = new System.Drawing.Point(0, 159);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1008, 351);
+            this.panelControl8.Size = new System.Drawing.Size(1011, 360);
             this.panelControl8.TabIndex = 5;
             // 
             // gridControl2
             // 
             this.gridControl2.DataSource = this.nhanVienBindingSource;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl2.Location = new System.Drawing.Point(2, 24);
+            this.gridControl2.Location = new System.Drawing.Point(2, 33);
             this.gridControl2.MainView = this.gridView1_NhanVien;
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1004, 325);
+            this.gridControl2.Size = new System.Drawing.Size(1007, 325);
             this.gridControl2.TabIndex = 7;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_NhanVien});
@@ -1353,7 +1357,7 @@
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl9);
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl5_VatDung);
             this.admin_tabP_qlyVatdung.Name = "admin_tabP_qlyVatdung";
-            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1008, 510);
+            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1011, 519);
             this.admin_tabP_qlyVatdung.Text = "Quản lý Vật dụng";
             // 
             // panelControl9
@@ -1361,20 +1365,20 @@
             this.panelControl9.Controls.Add(this.gridControl3);
             this.panelControl9.Controls.Add(this.label8);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl9.Location = new System.Drawing.Point(0, 162);
+            this.panelControl9.Location = new System.Drawing.Point(0, 149);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1008, 348);
+            this.panelControl9.Size = new System.Drawing.Size(1011, 370);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl3
             // 
             this.gridControl3.DataSource = this.vatDungBindingSource;
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl3.Location = new System.Drawing.Point(2, 24);
+            this.gridControl3.Location = new System.Drawing.Point(2, 35);
             this.gridControl3.MainView = this.gridView1_VatDung;
             this.gridControl3.MenuManager = this.ribbonControl;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1004, 322);
+            this.gridControl3.Size = new System.Drawing.Size(1007, 333);
             this.gridControl3.TabIndex = 3;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_VatDung});
@@ -1488,7 +1492,7 @@
             this.panelControl5_VatDung.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl5_VatDung.Location = new System.Drawing.Point(0, 0);
             this.panelControl5_VatDung.Name = "panelControl5_VatDung";
-            this.panelControl5_VatDung.Size = new System.Drawing.Size(1008, 143);
+            this.panelControl5_VatDung.Size = new System.Drawing.Size(1011, 143);
             this.panelControl5_VatDung.TabIndex = 5;
             // 
             // pictureBox1_VatDung
@@ -1541,7 +1545,7 @@
             this.qlyVatdung_btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_xoa.ImageOptions.Image")));
             this.qlyVatdung_btn_xoa.Location = new System.Drawing.Point(747, 80);
             this.qlyVatdung_btn_xoa.Name = "qlyVatdung_btn_xoa";
-            this.qlyVatdung_btn_xoa.Size = new System.Drawing.Size(88, 31);
+            this.qlyVatdung_btn_xoa.Size = new System.Drawing.Size(88, 39);
             this.qlyVatdung_btn_xoa.TabIndex = 4;
             this.qlyVatdung_btn_xoa.Text = "Xóa";
             this.qlyVatdung_btn_xoa.Click += new System.EventHandler(this.qlyVatdung_btn_xoa_Click);
@@ -1553,7 +1557,7 @@
             this.qlyVatdung_btn_taomoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_taomoi.ImageOptions.Image")));
             this.qlyVatdung_btn_taomoi.Location = new System.Drawing.Point(528, 80);
             this.qlyVatdung_btn_taomoi.Name = "qlyVatdung_btn_taomoi";
-            this.qlyVatdung_btn_taomoi.Size = new System.Drawing.Size(88, 31);
+            this.qlyVatdung_btn_taomoi.Size = new System.Drawing.Size(88, 39);
             this.qlyVatdung_btn_taomoi.TabIndex = 4;
             this.qlyVatdung_btn_taomoi.Text = "Tạo mới";
             this.qlyVatdung_btn_taomoi.Click += new System.EventHandler(this.qlyVatdung_btn_taomoi_Click);
@@ -1566,7 +1570,7 @@
             this.qlyVatdung_btn_capnhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("qlyVatdung_btn_capnhat.ImageOptions.Image")));
             this.qlyVatdung_btn_capnhat.Location = new System.Drawing.Point(637, 80);
             this.qlyVatdung_btn_capnhat.Name = "qlyVatdung_btn_capnhat";
-            this.qlyVatdung_btn_capnhat.Size = new System.Drawing.Size(88, 31);
+            this.qlyVatdung_btn_capnhat.Size = new System.Drawing.Size(88, 39);
             this.qlyVatdung_btn_capnhat.TabIndex = 4;
             this.qlyVatdung_btn_capnhat.Text = "Cập nhật";
             this.qlyVatdung_btn_capnhat.Click += new System.EventHandler(this.qlyVatdung_btn_capnhat_Click);
@@ -1654,11 +1658,17 @@
             // 
             this.vatDungTableAdapter.ClearBeforeFill = true;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Summer 2008";
+            // 
             // Admin
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 699);
+            this.ClientSize = new System.Drawing.Size(1016, 699);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
@@ -1858,5 +1868,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDonViNhoNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuongNhoNhat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatDinhDang;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

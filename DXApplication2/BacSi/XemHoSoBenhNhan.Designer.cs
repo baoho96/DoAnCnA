@@ -206,6 +206,9 @@
             this.gridView1_TimKiemBenhNhan.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             this.gridView1_TimKiemBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView1_TimKiemBenhNhan.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1_TimKiemBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_TimKiemBenhNhan_CustomDrawRowIndicator);
+            this.gridView1_TimKiemBenhNhan.DoubleClick += new System.EventHandler(this.gridView1_TimKiemBenhNhan_DoubleClick);
+            this.gridView1_TimKiemBenhNhan.RowCountChanged += new System.EventHandler(this.gridView1_TimKiemBenhNhan_RowCountChanged);
             // 
             // colMaSoKhamBenh1
             // 

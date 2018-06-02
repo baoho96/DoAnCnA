@@ -73,7 +73,7 @@
             this.lblTienKham,
             this.lblNgayKham,
             this.lblSTT});
-            this.Detail.HeightF = 23.95833F;
+            this.Detail.HeightF = 22.99999F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -83,7 +83,7 @@
             this.lblNgaySinh.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblNgaySinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNgaySinh.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblNgaySinh.LocationFloat = new DevExpress.Utils.PointFloat(193.2292F, 0F);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -99,7 +99,7 @@
             this.lblTen.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTen.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblTen.LocationFloat = new DevExpress.Utils.PointFloat(138.0208F, 0F);
             this.lblTen.Name = "lblTen";
             this.lblTen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -115,7 +115,7 @@
             this.lblHo.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblHo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblHo.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblHo.LocationFloat = new DevExpress.Utils.PointFloat(34.63513F, 0F);
             this.lblHo.Name = "lblHo";
             this.lblHo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -131,7 +131,7 @@
             this.lblDiaChi.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblDiaChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblDiaChi.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblDiaChi.LocationFloat = new DevExpress.Utils.PointFloat(274.4792F, 0F);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -147,11 +147,11 @@
             this.lblChuanDoan.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblChuanDoan.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblChuanDoan.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblChuanDoan.LocationFloat = new DevExpress.Utils.PointFloat(387.7604F, 0F);
             this.lblChuanDoan.Name = "lblChuanDoan";
             this.lblChuanDoan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblChuanDoan.SizeF = new System.Drawing.SizeF(114.5839F, 22.99998F);
+            this.lblChuanDoan.SizeF = new System.Drawing.SizeF(133.1057F, 22.99998F);
             this.lblChuanDoan.StylePriority.UseBorders = false;
             this.lblChuanDoan.StylePriority.UseFont = false;
             this.lblChuanDoan.StylePriority.UseTextAlignment = false;
@@ -163,11 +163,11 @@
             this.lblBacSiKham.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblBacSiKham.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblBacSiKham.LocationFloat = new DevExpress.Utils.PointFloat(502.3443F, 0F);
+            this.lblBacSiKham.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.lblBacSiKham.LocationFloat = new DevExpress.Utils.PointFloat(520.8661F, 0F);
             this.lblBacSiKham.Name = "lblBacSiKham";
             this.lblBacSiKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblBacSiKham.SizeF = new System.Drawing.SizeF(102.0839F, 22.99998F);
+            this.lblBacSiKham.SizeF = new System.Drawing.SizeF(126.562F, 22.99998F);
             this.lblBacSiKham.StylePriority.UseBorders = false;
             this.lblBacSiKham.StylePriority.UseFont = false;
             this.lblBacSiKham.StylePriority.UseTextAlignment = false;
@@ -179,8 +179,8 @@
             this.lblTienKham.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTienKham.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblTienKham.LocationFloat = new DevExpress.Utils.PointFloat(604.4282F, 0F);
+            this.lblTienKham.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.lblTienKham.LocationFloat = new DevExpress.Utils.PointFloat(647.4281F, 0F);
             this.lblTienKham.Name = "lblTienKham";
             this.lblTienKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTienKham.SizeF = new System.Drawing.SizeF(99.96777F, 22.99998F);
@@ -195,8 +195,8 @@
             this.lblNgayKham.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblNgayKham.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNgayKham.LocationFloat = new DevExpress.Utils.PointFloat(704.3959F, 0F);
+            this.lblNgayKham.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.lblNgayKham.LocationFloat = new DevExpress.Utils.PointFloat(747.3958F, 0F);
             this.lblNgayKham.Name = "lblNgayKham";
             this.lblNgayKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblNgayKham.SizeF = new System.Drawing.SizeF(102.6041F, 22.99998F);
@@ -213,8 +213,8 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblSTT.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber([NgayGioLap])")});
-            this.lblSTT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber([Ho])")});
+            this.lblSTT.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lblSTT.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.lblSTT.Name = "lblSTT";
             this.lblSTT.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -238,7 +238,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 28.125F;
+            this.BottomMargin.HeightF = 28F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -272,7 +272,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(704.3959F, 208.4167F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(747.3958F, 208.4167F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel11.SizeF = new System.Drawing.SizeF(102.6041F, 22.99998F);
@@ -288,7 +288,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(604.4282F, 208.4167F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(647.4281F, 208.4167F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(99.96777F, 22.99998F);
@@ -304,10 +304,10 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(502.3443F, 208.4167F);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(520.8661F, 208.4167F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(102.0839F, 22.99998F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(126.562F, 22.99998F);
             this.xrLabel8.StylePriority.UseBorders = false;
             this.xrLabel8.StylePriority.UseFont = false;
             this.xrLabel8.StylePriority.UseTextAlignment = false;
@@ -323,7 +323,7 @@
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(387.7604F, 208.4167F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(114.5839F, 22.99998F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(133.1057F, 22.99998F);
             this.xrLabel6.StylePriority.UseBorders = false;
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
@@ -364,7 +364,7 @@
             // 
             this.xrLabel3.BorderColor = System.Drawing.Color.Black;
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(103.3854F, 63.25003F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(193.2292F, 61.1667F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(284.375F, 36.91667F);
@@ -377,10 +377,10 @@
             // lblNgayTim
             // 
             this.lblNgayTim.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
-            this.lblNgayTim.LocationFloat = new DevExpress.Utils.PointFloat(399.7396F, 63.25003F);
+            this.lblNgayTim.LocationFloat = new DevExpress.Utils.PointFloat(489.5833F, 61.1667F);
             this.lblNgayTim.Name = "lblNgayTim";
             this.lblNgayTim.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgayTim.SizeF = new System.Drawing.SizeF(167.7083F, 36.91667F);
+            this.lblNgayTim.SizeF = new System.Drawing.SizeF(131.7721F, 36.91667F);
             this.lblNgayTim.StylePriority.UseFont = false;
             this.lblNgayTim.StylePriority.UseTextAlignment = false;
             this.lblNgayTim.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -397,7 +397,7 @@
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(49.21878F, 126.2084F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(483.5949F, 128.2917F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(109.375F, 23F);
@@ -409,7 +409,7 @@
             // xrLabel4
             // 
             this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(49.21873F, 160.6667F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(483.5948F, 162.7501F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(78.12497F, 23F);
@@ -421,7 +421,7 @@
             // lblTextTongTien
             // 
             this.lblTextTongTien.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblTextTongTien.LocationFloat = new DevExpress.Utils.PointFloat(170.0521F, 160.6667F);
+            this.lblTextTongTien.LocationFloat = new DevExpress.Utils.PointFloat(604.4282F, 162.7501F);
             this.lblTextTongTien.Name = "lblTextTongTien";
             this.lblTextTongTien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTextTongTien.SizeF = new System.Drawing.SizeF(186.4583F, 23F);
@@ -433,7 +433,7 @@
             // lblTextTongKham
             // 
             this.lblTextTongKham.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblTextTongKham.LocationFloat = new DevExpress.Utils.PointFloat(170.0521F, 126.2084F);
+            this.lblTextTongKham.LocationFloat = new DevExpress.Utils.PointFloat(604.4282F, 128.2917F);
             this.lblTextTongKham.Name = "lblTextTongKham";
             this.lblTextTongKham.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTextTongKham.SizeF = new System.Drawing.SizeF(186.4583F, 23.00002F);
@@ -514,7 +514,7 @@
             this.TopMargin,
             this.BottomMargin,
             this.ReportHeader});
-            this.Margins = new System.Drawing.Printing.Margins(21, 22, 0, 28);
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 28);
             this.Version = "17.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

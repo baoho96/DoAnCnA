@@ -34,15 +34,15 @@ namespace QuanLyPhongKham
             if(checkB_TimTheoThang.Checked ==true)
             {
                 NhapNgay = dtP_NhapNgay.Value.Month.ToString() + "/" + dtP_NhapNgay.Value.Year.ToString();
-                Load_reportDonThuoc(NhapNgay);
+                Load_reportDoanhThu(NhapNgay);
             }
             else if(checkB_TimTheoNam.Checked==true)
             {
                 NhapNgay =  dtP_NhapNgay.Value.Year.ToString();
-                Load_reportDonThuoc(NhapNgay);
+                Load_reportDoanhThu(NhapNgay);
             }
         }
-        private void Load_reportDonThuoc(string NhapNgay)
+        private void Load_reportDoanhThu(string NhapNgay)
         {
             string query = @"select NgayGioLap,COUNT(MaHoaDon) as SoLuong, sum(TongTien) as TongTien "+
                             " from HoaDon "+

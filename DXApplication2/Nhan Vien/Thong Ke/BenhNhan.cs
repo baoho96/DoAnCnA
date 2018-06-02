@@ -14,11 +14,20 @@ namespace QuanLyPhongKham
         }
         public void Bindata()
         {
-            lblTextTongKham.Text = ThongKeDoanhThu.TongSoLuong;
-            lblTextTongTien.Text = ThongKeDoanhThu.TongTien;
+            lblTextTongKham.Text = ThongKeBenhNhan.TongSoLuong;
+            lblTextTongTien.Text = ThongKeBenhNhan.TongTien;
+
+            lblHo.DataBindings.Add("Text", DataSource, "Ho");
+            lblTen.DataBindings.Add("Text", DataSource, "Ten");
+            lblNgaySinh.DataBindings.Add("Text", DataSource, "NamSinh");
+            lblDiaChi.DataBindings.Add("Text", DataSource, "DiaChi");
+            lblChuanDoan.DataBindings.Add("Text", DataSource, "ChuanDoan");
+            lblBacSiKham.DataBindings.Add("Text", DataSource, "TenNhanVien");
+            lblTienKham.DataBindings.Add("Text", DataSource, "TongTien");
+            lblNgayKham.DataBindings.Add("Text", DataSource, "NgayGioKham");
             
             lblNgayHienTai.Text = DateTime.Now.ToString();
-            lblNgayTim.Text = ThongKeDoanhThu.NhapNgay;
+            lblNgayTim.Text = ThongKeBenhNhan.NhapNgay;
         }
     }
 }
