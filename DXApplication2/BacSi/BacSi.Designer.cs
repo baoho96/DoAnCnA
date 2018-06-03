@@ -106,6 +106,7 @@
             // 
             // ribbonControl
             // 
+            this.ribbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Teal;
             this.ribbonControl.ExpandCollapseItem.AllowDrawArrow = false;
             this.ribbonControl.ExpandCollapseItem.AllowRightClickInMenu = false;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
@@ -127,7 +128,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1014, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1014, 132);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -218,19 +219,19 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1014, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1014, 23);
             // 
             // panelControl6
             // 
             this.panelControl6.Controls.Add(this.label17);
             this.panelControl6.Controls.Add(this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl6.Location = new System.Drawing.Point(0, 312);
+            this.panelControl6.Location = new System.Drawing.Point(0, 314);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1014, 356);
+            this.panelControl6.Size = new System.Drawing.Size(1014, 362);
             this.panelControl6.TabIndex = 6;
             // 
             // label17
@@ -247,7 +248,7 @@
             // BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay
             // 
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 24);
+            this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Location = new System.Drawing.Point(2, 30);
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MainView = this.BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.MenuManager = this.ribbonControl;
             this.BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.Name = "BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay";
@@ -489,7 +490,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Enabled = false;
-            this.panelControl2.Location = new System.Drawing.Point(0, 130);
+            this.panelControl2.Location = new System.Drawing.Point(0, 132);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1014, 182);
             this.panelControl2.TabIndex = 5;

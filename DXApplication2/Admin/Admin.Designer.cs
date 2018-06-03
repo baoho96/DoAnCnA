@@ -409,16 +409,16 @@
             this.panelControl7.Controls.Add(this.gridControl1);
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl7.Location = new System.Drawing.Point(0, 189);
+            this.panelControl7.Location = new System.Drawing.Point(0, 180);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1011, 330);
+            this.panelControl7.Size = new System.Drawing.Size(1011, 339);
             this.panelControl7.TabIndex = 3;
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.thuocBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.Location = new System.Drawing.Point(2, 24);
+            this.gridControl1.Location = new System.Drawing.Point(2, 33);
             this.gridControl1.MainView = this.gridView1_thuoc;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";

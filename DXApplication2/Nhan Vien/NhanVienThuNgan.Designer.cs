@@ -1628,7 +1628,7 @@
             this.panel1.Controls.Add(this.btn_ThanhToan);
             this.panel1.Controls.Add(this.chBox_LayThuoc);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(0, 130);
+            this.panel1.Location = new System.Drawing.Point(1, 132);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 75);
             this.panel1.TabIndex = 4;
@@ -1640,7 +1640,7 @@
             this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
             this.btn_ThanhToan.Location = new System.Drawing.Point(313, 12);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(95, 37);
+            this.btn_ThanhToan.Size = new System.Drawing.Size(95, 42);
             this.btn_ThanhToan.TabIndex = 1;
             this.btn_ThanhToan.Text = "Thanh Toán";
             this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
@@ -1659,7 +1659,7 @@
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 30);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 38);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
@@ -1864,7 +1864,7 @@
             this.panel2.Controls.Add(this.gridControl1_HoaDon);
             this.panel2.Location = new System.Drawing.Point(0, 211);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(446, 457);
+            this.panel2.Size = new System.Drawing.Size(446, 465);
             this.panel2.TabIndex = 11;
             // 
             // label1

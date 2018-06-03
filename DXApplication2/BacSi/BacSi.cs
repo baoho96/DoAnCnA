@@ -51,6 +51,7 @@ namespace QuanLyPhongKham
         string nam = DateTime.Now.Year.ToString();
         public BacSi()
         {
+            //phongKhamDataSet1.EnforceConstraints = false;
             InitializeComponent();
             //GridLocalizer.Active = new MyGridLocalizer();
             KiemTra_HoSoChoXetNghiem_HetHan();

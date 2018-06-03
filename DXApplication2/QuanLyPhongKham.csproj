@@ -161,11 +161,11 @@
       <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\function.cs" />
-    <Compile Include="BacSi\HoSoTaiKham.cs">
+    <Compile Include="BacSi\DanhSachDonThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BacSi\HoSoTaiKham.Designer.cs">
-      <DependentUpon>HoSoTaiKham.cs</DependentUpon>
+    <Compile Include="BacSi\DanhSachDonThuoc.Designer.cs">
+      <DependentUpon>DanhSachDonThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\DangNhap.cs">
       <SubType>Form</SubType>
@@ -273,8 +273,8 @@
     <EmbeddedResource Include="BacSi\DonThuoc.resx">
       <DependentUpon>DonThuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BacSi\HoSoTaiKham.resx">
-      <DependentUpon>HoSoTaiKham.cs</DependentUpon>
+    <EmbeddedResource Include="BacSi\DanhSachDonThuoc.resx">
+      <DependentUpon>DanhSachDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>

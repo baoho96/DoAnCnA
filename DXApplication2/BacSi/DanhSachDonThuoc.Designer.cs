@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhongKham
 {
-    partial class HoSoTaiKham
+    partial class DanhSachDonThuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoSoTaiKham));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachDonThuoc));
             this.gridControl1_HoSoTaiKham = new DevExpress.XtraGrid.GridControl();
             this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.clMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clNgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clLiDoKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaSoDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaSoThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clCachDung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenLoaiThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
             this.SuspendLayout();
@@ -57,13 +56,12 @@
             // 
             this.cardView1_HoSoTaiKham.CardCaptionFormat = "Tái khám";
             this.cardView1_HoSoTaiKham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clMaSoKhamBenh,
-            this.clTenNhanVien,
-            this.clNgayGioKham,
-            this.clLiDoKham,
-            this.clXetNghiem,
-            this.clChuanDoan,
-            this.clGhiChu});
+            this.clMaSoDonThuoc,
+            this.clTenLoaiThuoc,
+            this.clMaSoThuoc,
+            this.clTenThuoc,
+            this.clSoLuong,
+            this.clCachDung});
             this.cardView1_HoSoTaiKham.FocusedCardTopFieldIndex = 0;
             this.cardView1_HoSoTaiKham.GridControl = this.gridControl1_HoSoTaiKham;
             this.cardView1_HoSoTaiKham.Name = "cardView1_HoSoTaiKham";
@@ -71,72 +69,61 @@
             this.cardView1_HoSoTaiKham.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             this.cardView1_HoSoTaiKham.ViewCaption = "Hồ Sơ Tái Khám";
             // 
-            // clMaSoKhamBenh
+            // clMaSoDonThuoc
             // 
-            this.clMaSoKhamBenh.Caption = "Mã số khám bệnh";
-            this.clMaSoKhamBenh.FieldName = "MaSoKhamBenh";
-            this.clMaSoKhamBenh.Name = "clMaSoKhamBenh";
-            this.clMaSoKhamBenh.Visible = true;
-            this.clMaSoKhamBenh.VisibleIndex = 0;
+            this.clMaSoDonThuoc.Caption = "Mã Số Đơn Thuốc";
+            this.clMaSoDonThuoc.FieldName = "MaSoDonThuoc";
+            this.clMaSoDonThuoc.Name = "clMaSoDonThuoc";
             // 
-            // clTenNhanVien
+            // clMaSoThuoc
             // 
-            this.clTenNhanVien.Caption = "Tên Bác Sĩ";
-            this.clTenNhanVien.FieldName = "TenNhanVien";
-            this.clTenNhanVien.Name = "clTenNhanVien";
-            this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 1;
+            this.clMaSoThuoc.Caption = "Mã Số Thuốc";
+            this.clMaSoThuoc.FieldName = "MaSoThuoc";
+            this.clMaSoThuoc.Name = "clMaSoThuoc";
+            this.clMaSoThuoc.Visible = true;
+            this.clMaSoThuoc.VisibleIndex = 1;
             // 
-            // clNgayGioKham
+            // clCachDung
             // 
-            this.clNgayGioKham.Caption = "Ngày Giờ Khám";
-            this.clNgayGioKham.FieldName = "NgayGioKham";
-            this.clNgayGioKham.Name = "clNgayGioKham";
-            this.clNgayGioKham.Visible = true;
-            this.clNgayGioKham.VisibleIndex = 2;
+            this.clCachDung.Caption = "Cách Dùng";
+            this.clCachDung.FieldName = "CachDung";
+            this.clCachDung.Name = "clCachDung";
+            this.clCachDung.Visible = true;
+            this.clCachDung.VisibleIndex = 4;
             // 
-            // clLiDoKham
+            // clSoLuong
             // 
-            this.clLiDoKham.Caption = "Lí Do Khám";
-            this.clLiDoKham.FieldName = "LiDoKham";
-            this.clLiDoKham.Name = "clLiDoKham";
-            this.clLiDoKham.Visible = true;
-            this.clLiDoKham.VisibleIndex = 3;
+            this.clSoLuong.Caption = "Số Lượng";
+            this.clSoLuong.FieldName = "SoLuong";
+            this.clSoLuong.Name = "clSoLuong";
+            this.clSoLuong.Visible = true;
+            this.clSoLuong.VisibleIndex = 3;
             // 
-            // clXetNghiem
+            // clTenThuoc
             // 
-            this.clXetNghiem.Caption = "Xét Nghiệm";
-            this.clXetNghiem.FieldName = "XetNghiem";
-            this.clXetNghiem.Name = "clXetNghiem";
-            this.clXetNghiem.Visible = true;
-            this.clXetNghiem.VisibleIndex = 4;
+            this.clTenThuoc.Caption = "Tên Thuốc";
+            this.clTenThuoc.FieldName = "TenThuoc";
+            this.clTenThuoc.Name = "clTenThuoc";
+            this.clTenThuoc.Visible = true;
+            this.clTenThuoc.VisibleIndex = 2;
             // 
-            // clChuanDoan
+            // clTenLoaiThuoc
             // 
-            this.clChuanDoan.Caption = "Chuẩn Đoán";
-            this.clChuanDoan.FieldName = "ChuanDoan";
-            this.clChuanDoan.Name = "clChuanDoan";
-            this.clChuanDoan.Visible = true;
-            this.clChuanDoan.VisibleIndex = 5;
+            this.clTenLoaiThuoc.Caption = "Tên Loại Thuốc";
+            this.clTenLoaiThuoc.FieldName = "TenLoaiThuoc";
+            this.clTenLoaiThuoc.Name = "clTenLoaiThuoc";
+            this.clTenLoaiThuoc.Visible = true;
+            this.clTenLoaiThuoc.VisibleIndex = 0;
             // 
-            // clGhiChu
-            // 
-            this.clGhiChu.Caption = "Ghi Chú";
-            this.clGhiChu.FieldName = "GhiChu";
-            this.clGhiChu.Name = "clGhiChu";
-            this.clGhiChu.Visible = true;
-            this.clGhiChu.VisibleIndex = 6;
-            // 
-            // HoSoTaiKham
+            // DanhSachDonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 373);
             this.Controls.Add(this.gridControl1_HoSoTaiKham);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HoSoTaiKham";
+            this.Name = "DanhSachDonThuoc";
             this.Text = "Hồ Sơ Tái Khám";
-            this.Load += new System.EventHandler(this.HoSoTaiKham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).EndInit();
             this.ResumeLayout(false);
@@ -147,12 +134,11 @@
 
         private DevExpress.XtraGrid.GridControl gridControl1_HoSoTaiKham;
         private DevExpress.XtraGrid.Views.Card.CardView cardView1_HoSoTaiKham;
-        private DevExpress.XtraGrid.Columns.GridColumn clMaSoKhamBenh;
-        private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
-        private DevExpress.XtraGrid.Columns.GridColumn clNgayGioKham;
-        private DevExpress.XtraGrid.Columns.GridColumn clLiDoKham;
-        private DevExpress.XtraGrid.Columns.GridColumn clXetNghiem;
-        private DevExpress.XtraGrid.Columns.GridColumn clChuanDoan;
-        private DevExpress.XtraGrid.Columns.GridColumn clGhiChu;
+        private DevExpress.XtraGrid.Columns.GridColumn clMaSoDonThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn clMaSoThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn clCachDung;
+        private DevExpress.XtraGrid.Columns.GridColumn clSoLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn clTenThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn clTenLoaiThuoc;
     }
 }

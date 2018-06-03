@@ -44,7 +44,7 @@ namespace QuanLyPhongKham
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            
+            phongKhamDataSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'phongKhamDataSet.BenhNhan' table. You can move, or remove it, as needed.
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
 

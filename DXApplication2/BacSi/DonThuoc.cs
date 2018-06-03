@@ -44,6 +44,7 @@ namespace QuanLyPhongKham
 
         private void DonThuoc_Load(object sender, EventArgs e)
         {
+            phongKhamDataSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'phongKhamDataSet.Thuoc' table. You can move, or remove it, as needed.
             this.thuocTableAdapter.Fill(this.phongKhamDataSet.Thuoc);
 

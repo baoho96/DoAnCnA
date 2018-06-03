@@ -39,6 +39,7 @@ namespace QuanLyPhongKham
 
         public void Admin_Load(object sender, EventArgs e)
         {
+            phongKhamDataSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'phongKhamDataSet.VatDung' table. You can move, or remove it, as needed.
             this.vatDungTableAdapter.Fill(this.phongKhamDataSet.VatDung);
             // TODO: This line of code loads data into the 'phongKhamDataSet.NhanVien' table. You can move, or remove it, as needed.
