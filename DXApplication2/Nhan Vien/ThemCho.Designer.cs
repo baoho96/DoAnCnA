@@ -78,7 +78,7 @@
             // ThemCho_btn_ThemCho
             // 
             this.ThemCho_btn_ThemCho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_ThemCho.ImageOptions.Image")));
-            this.ThemCho_btn_ThemCho.Location = new System.Drawing.Point(114, 195);
+            this.ThemCho_btn_ThemCho.Location = new System.Drawing.Point(108, 184);
             this.ThemCho_btn_ThemCho.Name = "ThemCho_btn_ThemCho";
             this.ThemCho_btn_ThemCho.Size = new System.Drawing.Size(81, 31);
             this.ThemCho_btn_ThemCho.TabIndex = 12;
@@ -88,7 +88,7 @@
             // ThemCho_btn_Thoat
             // 
             this.ThemCho_btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_Thoat.ImageOptions.Image")));
-            this.ThemCho_btn_Thoat.Location = new System.Drawing.Point(217, 195);
+            this.ThemCho_btn_Thoat.Location = new System.Drawing.Point(217, 184);
             this.ThemCho_btn_Thoat.Name = "ThemCho_btn_Thoat";
             this.ThemCho_btn_Thoat.Size = new System.Drawing.Size(76, 31);
             this.ThemCho_btn_Thoat.TabIndex = 12;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 238);
+            this.ClientSize = new System.Drawing.Size(305, 230);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.ThemCho_btn_Thoat);
             this.Controls.Add(this.ThemCho_btn_ThemCho);

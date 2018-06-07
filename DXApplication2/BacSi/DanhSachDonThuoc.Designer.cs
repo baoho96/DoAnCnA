@@ -54,7 +54,7 @@
             // 
             // cardView1_HoSoTaiKham
             // 
-            this.cardView1_HoSoTaiKham.CardCaptionFormat = "Tái khám";
+            this.cardView1_HoSoTaiKham.CardCaptionFormat = "Thuốc";
             this.cardView1_HoSoTaiKham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clMaSoDonThuoc,
             this.clTenLoaiThuoc,
@@ -74,6 +74,8 @@
             this.clMaSoDonThuoc.Caption = "Mã Số Đơn Thuốc";
             this.clMaSoDonThuoc.FieldName = "MaSoDonThuoc";
             this.clMaSoDonThuoc.Name = "clMaSoDonThuoc";
+            this.clMaSoDonThuoc.Visible = true;
+            this.clMaSoDonThuoc.VisibleIndex = 0;
             // 
             // clTenLoaiThuoc
             // 
@@ -81,7 +83,7 @@
             this.clTenLoaiThuoc.FieldName = "TenLoaiThuoc";
             this.clTenLoaiThuoc.Name = "clTenLoaiThuoc";
             this.clTenLoaiThuoc.Visible = true;
-            this.clTenLoaiThuoc.VisibleIndex = 0;
+            this.clTenLoaiThuoc.VisibleIndex = 1;
             // 
             // clMaSoThuoc
             // 
@@ -89,7 +91,7 @@
             this.clMaSoThuoc.FieldName = "MaSoThuoc";
             this.clMaSoThuoc.Name = "clMaSoThuoc";
             this.clMaSoThuoc.Visible = true;
-            this.clMaSoThuoc.VisibleIndex = 1;
+            this.clMaSoThuoc.VisibleIndex = 2;
             // 
             // clTenThuoc
             // 
@@ -97,7 +99,7 @@
             this.clTenThuoc.FieldName = "TenThuoc";
             this.clTenThuoc.Name = "clTenThuoc";
             this.clTenThuoc.Visible = true;
-            this.clTenThuoc.VisibleIndex = 2;
+            this.clTenThuoc.VisibleIndex = 3;
             // 
             // clSoLuong
             // 
@@ -105,7 +107,7 @@
             this.clSoLuong.FieldName = "SoLuong";
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 3;
+            this.clSoLuong.VisibleIndex = 4;
             // 
             // clCachDung
             // 
@@ -113,7 +115,7 @@
             this.clCachDung.FieldName = "CachDung";
             this.clCachDung.Name = "clCachDung";
             this.clCachDung.Visible = true;
-            this.clCachDung.VisibleIndex = 4;
+            this.clCachDung.VisibleIndex = 5;
             // 
             // DanhSachDonThuoc
             // 
@@ -124,7 +126,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DanhSachDonThuoc";
-            this.Text = "Hồ Sơ Tái Khám";
+            this.Text = "Danh Sách Thuốc";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).EndInit();
             this.ResumeLayout(false);

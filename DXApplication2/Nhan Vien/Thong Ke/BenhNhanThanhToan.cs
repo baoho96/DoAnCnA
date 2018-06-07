@@ -20,6 +20,7 @@ namespace QuanLyPhongKham
         reportDonThuoc reportDonThuoc = new reportDonThuoc();
         DataSet dataSet = new DataSet();
         DangNhap dangNhap = new DangNhap();
+        DialogResult result;
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
@@ -54,6 +55,11 @@ namespace QuanLyPhongKham
         private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl1_HoaDon.Print();
+        }
+
+        private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            function.ToExcel("Bạn có muốn Xuất Danh Sách ra File Excel??",result,gridControl1_HoaDon);
         }
     }
 }

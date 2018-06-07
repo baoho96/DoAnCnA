@@ -52,7 +52,7 @@ namespace QuanLyPhongKham
 
         private void barButtonItem1_filekhac_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl1_BenhNhanKhamTrongNgay.ShowRibbonPrintPreview();
+            gridControl1_BenhNhanKhamTrongNgay.Print();
             
         }
 

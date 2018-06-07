@@ -59,6 +59,7 @@
             this.col_KiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_KiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
@@ -71,14 +72,15 @@
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.barButtonItem1_XuatFile});
+            this.barButtonItem1_XuatFile,
+            this.barButtonItem1_ToExcel});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 2;
+            this.ribbon.MaxItemId = 3;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbon.Size = new System.Drawing.Size(442, 86);
+            this.ribbon.Size = new System.Drawing.Size(442, 79);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1_XuatFile
@@ -100,25 +102,26 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_XuatFile);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_ToExcel);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 414);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 31);
             // 
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 86);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 79);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
             this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1_HoaDon.Size = new System.Drawing.Size(442, 328);
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(442, 339);
             this.gridControl1_HoaDon.TabIndex = 9;
             this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoaDon});
@@ -307,6 +310,15 @@
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
+            // barButtonItem1_ToExcel
+            // 
+            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
+            this.barButtonItem1_ToExcel.Id = 2;
+            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.Image")));
+            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.LargeImage")));
+            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
+            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
+            // 
             // BenhNhanThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,5 +372,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_KiemTraThanhToan;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ToExcel;
     }
 }

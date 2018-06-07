@@ -22,6 +22,7 @@ namespace QuanLyPhongKham
         DataSet dataSet = new DataSet();
         BindingSource bindingSource = new BindingSource();
         SqlCommand sqlCommand = new SqlCommand();
+        DialogResult result;
         public static int MSDT { get; set; }
 
         public XemHoSoBenhNhan()
@@ -92,6 +93,11 @@ namespace QuanLyPhongKham
             if (gridView != null)
                 MSDT =int.Parse( gridView.GetFocusedRowCellValue(gridView.Columns[0]).ToString());
             return MSDT;
+        }
+
+        private void barButtonItem1_ToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            function.ToExcel("Bạn muốn Xuất Danh sách ra File Excel",result,gridControl1_TimKiemBenhNhan);
         }
     }
 }

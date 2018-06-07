@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+
 namespace QuanLyPhongKham
 {
     class connection
@@ -18,7 +19,8 @@ namespace QuanLyPhongKham
         
         public void connect()
         { // Copy Data Source vào chuỗi
-            String cn = @"Data Source=HENDY;Initial Catalog=PhongKham;Integrated Security=True";
+            //String cn = @"Data Source=HENDY;Initial Catalog=PhongKham;Integrated Security=True";
+            string cn = ConfigurationManager.ConnectionStrings["QuanLyPhongKham.Properties.Settings.PhongKhamConnectionString"].ConnectionString;
             try
             {
                 con = new SqlConnection(cn);

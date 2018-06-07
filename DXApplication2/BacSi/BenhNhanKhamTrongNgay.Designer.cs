@@ -69,12 +69,12 @@
             this.ribbonPage1});
             this.ribbon.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbon.Size = new System.Drawing.Size(872, 85);
+            this.ribbon.Size = new System.Drawing.Size(872, 79);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1_filekhac
             // 
-            this.barButtonItem1_filekhac.Caption = "Xuất file khác";
+            this.barButtonItem1_filekhac.Caption = "Xuất File PDF";
             this.barButtonItem1_filekhac.Id = 1;
             this.barButtonItem1_filekhac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_filekhac.ImageOptions.Image")));
             this.barButtonItem1_filekhac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_filekhac.ImageOptions.LargeImage")));
@@ -83,7 +83,7 @@
             // 
             // barButtonItem2_excel
             // 
-            this.barButtonItem2_excel.Caption = "Excel";
+            this.barButtonItem2_excel.Caption = "Xuất File Excel";
             this.barButtonItem2_excel.Id = 2;
             this.barButtonItem2_excel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_excel.ImageOptions.Image")));
             this.barButtonItem2_excel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2_excel.ImageOptions.LargeImage")));
@@ -95,7 +95,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Print";
+            this.ribbonPage1.Text = "Print And Export";
             // 
             // ribbonPageGroup1
             // 
@@ -106,19 +106,19 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 576);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 568);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(872, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(872, 31);
             // 
             // gridControl1_BenhNhanKhamTrongNgay
             // 
             this.gridControl1_BenhNhanKhamTrongNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1_BenhNhanKhamTrongNgay.Location = new System.Drawing.Point(0, 85);
+            this.gridControl1_BenhNhanKhamTrongNgay.Location = new System.Drawing.Point(0, 79);
             this.gridControl1_BenhNhanKhamTrongNgay.MainView = this.gridView1_BenhNhanKhamTrongNgay;
             this.gridControl1_BenhNhanKhamTrongNgay.MenuManager = this.ribbon;
             this.gridControl1_BenhNhanKhamTrongNgay.Name = "gridControl1_BenhNhanKhamTrongNgay";
-            this.gridControl1_BenhNhanKhamTrongNgay.Size = new System.Drawing.Size(872, 491);
+            this.gridControl1_BenhNhanKhamTrongNgay.Size = new System.Drawing.Size(872, 489);
             this.gridControl1_BenhNhanKhamTrongNgay.TabIndex = 2;
             this.gridControl1_BenhNhanKhamTrongNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_BenhNhanKhamTrongNgay});
