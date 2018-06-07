@@ -329,6 +329,7 @@
             // phongKhamDataSet
             // 
             this.phongKhamDataSet.DataSetName = "PhongKhamDataSet";
+            this.phongKhamDataSet.EnforceConstraints = false;
             this.phongKhamDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // searchLookUpEdit1View
@@ -747,6 +748,7 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DonThuoc";

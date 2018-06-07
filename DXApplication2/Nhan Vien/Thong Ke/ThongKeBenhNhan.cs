@@ -15,7 +15,6 @@ namespace QuanLyPhongKham
     {
         connection connection = new connection();
         function function = new function();
-        SqlCommand sqlCommand;
         DataSet dataSet = new DataSet();
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();

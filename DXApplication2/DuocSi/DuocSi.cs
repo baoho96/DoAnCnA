@@ -24,28 +24,22 @@ namespace QuanLyPhongKham
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
+        DialogResult result;
         #region Giá trị
         public static int ID_MSDT { get; set; }
         public static int ID_MSKB { get; set; }
         public static int ID_MSHD { get; set; }
-        public static int ID_MSBN { get; set; }
 
         public static string Ho { get; set; }
         public static string Ten { get; set; }
         public static string NamSinh { get; set; }
         public static string SDT { get; set; }
-        public static string DiaChi { get; set; }
 
-        public static string YeuCauXetNghiem { get; set; }
-        public static string KetQuaXetNghiem { get; set; }
         public static string ChuanDoan { get; set; }
         public static string GhiChuHSKB { get; set; }
         public static string GhiChuHSDT { get; set; }
         public static string NgayKham { get; set; }
-        public static string NgayTaiKham { get; set; }
-        public static string TienThuoc { get; set; }
-        public static string TienKham { get; set; }
-        public static string TongTien { get; set; }
+
         public static string BacSiKham { get; set; }
 
         public static string NguoiLap { get; set; }
@@ -55,6 +49,14 @@ namespace QuanLyPhongKham
         {
             InitializeComponent();
             load_DanhSachBenhNhan();
+            function.Timer_load(timer_tick);
+        }
+        public void timer_tick(object sender, EventArgs e)
+        {
+            int TiepNhanBenhNhan = gridView_DanhSachBenhNhan.FocusedRowHandle;
+            load_DanhSachBenhNhan();
+            gridView_DanhSachBenhNhan.FocusedRowHandle = TiepNhanBenhNhan;
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
         private void refresh_DuocSi()
         {
@@ -77,10 +79,10 @@ namespace QuanLyPhongKham
         private void load_DanhSachBenhNhan()
         {
             NguoiLap = DangNhap.TenBacSi;
-            string Load_data = @"select BN.MaSoBenhNhan,BN.Ten, BN.Ho, BN.SoDienThoai,BN.DiaChi,BN.NamSinh,HSKB.MaSoKhamBenh," +
-                                    " DT.MaSoDonThuoc,DT.GhiChu,HSKB.XetNghiem,HSKB.ChuanDoan,HSKB.KetQuaXetNghiem," +
-                                    " HSKB.GhiChu,NV.TenNhanVien,HD.MaHoaDon,HSKB.NgayGioKham,DT.TongTienThuoc," +
-                                    " HSKB.TienKham,HD.TongTien,HSKB.NgayTaiKham,HD.KiemTraThanhToan,HD.KiemTraDaLayThuoc" +
+            string Load_data = @"select BN.Ten, BN.Ho, BN.SoDienThoai,BN.NamSinh,HSKB.MaSoKhamBenh," +
+                                    " DT.MaSoDonThuoc,DT.GhiChu,HSKB.ChuanDoan," +
+                                    " HSKB.GhiChu,NV.TenNhanVien,HD.MaHoaDon,HSKB.NgayGioKham," +
+                                    " HD.KiemTraDaLayThuoc" +
                             " from HoaDon HD join HoSoKhamBenh HSKB on HD.MaSoKhamBenh = HSKB.MaSoKhamBenh " +
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
@@ -131,23 +133,15 @@ namespace QuanLyPhongKham
                 ID_MSDT = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
                 ID_MSKB = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
                 ID_MSHD = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaHoaDon").ToString());
-                ID_MSBN = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
                 Ho = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ho").ToString();
                 Ten = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ten").ToString();
                 NamSinh = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NamSinh").ToString();
                 SDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("SoDienThoai").ToString();
-                DiaChi = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("DiaChi").ToString();
 
-                YeuCauXetNghiem = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("XetNghiem").ToString();
-                KetQuaXetNghiem = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("KetQuaXetNghiem").ToString();
-                ChuanDoan = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("ChuanDoan").ToString();
                 GhiChuHSDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu").ToString();
                 GhiChuHSKB = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu1").ToString();
                 NgayKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
-                NgayTaiKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NgayTaiKham").ToString();
-                TienThuoc = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TongTienThuoc").ToString();
-                TienKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TienKham").ToString();
-                TongTien = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TongTien").ToString();
+
                 BacSiKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TenNhanVien").ToString();
                 Load_reportDonThuoc();
             }
@@ -189,6 +183,17 @@ namespace QuanLyPhongKham
                 }
             }
             Admin.IfAdmin = false;
+        }
+
+        private void barButtonItem1_Toexcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            function.ToExcel("Bạn có muốn xuất file Danh sách bệnh nhân lấy thuốc",result,gridControl_DanhSachBenhNhan);
+        }
+
+        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan();
+            benhNhanThanhToan.ShowDialog();
         }
     }
 }

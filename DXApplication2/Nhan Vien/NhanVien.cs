@@ -30,7 +30,9 @@ namespace QuanLyPhongKham
         function function = new function();
         connection connection = new connection();
         ThemCho themCho;
-
+        string ngay = DateTime.Now.Day.ToString("d2");
+        string thang = DateTime.Now.Month.ToString("d2");
+        string nam = DateTime.Now.Year.ToString();
         bool Rowfocus = false;//Kiểm tra khi chọn row
 
         public static int ID_MSKB_DoubleClick { get; set; }
@@ -48,11 +50,11 @@ namespace QuanLyPhongKham
             // TODO: This line of code loads data into the 'phongKhamDataSet.BenhNhan' table. You can move, or remove it, as needed.
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
 
-            this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);//Load Hồ Sơ Khám Bệnh cho tab Tìm kiếm bệnh nhân khám bệnh
+            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);//Load Hồ Sơ Khám Bệnh cho tab Tìm kiếm bệnh nhân khám bệnh
             // TODO: This line of code loads data into the 'phongKhamDataSet.HoSoKhamBenh' table. You can move, or remove it, as needed.
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
 
-            hoSoTaiKhamTableAdapter1.Fill(phongKhamDataSet.HoSoTaiKham);//Load Hồ sơ tái khám ở tab Tìm kiếm bệnh nhân khám bênh
+            this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);//Load Hồ sơ tái khám ở tab Tìm kiếm bệnh nhân khám bênh
 
 
 
@@ -62,7 +64,7 @@ namespace QuanLyPhongKham
 
             filterColumn_TiepNhanBenhNhan();
 
-            
+            function.Timer_load(timer_tick);
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -70,24 +72,52 @@ namespace QuanLyPhongKham
             refresh_DanhSachBenhNhan();//Tiếp nhận bệnh nhân cũ
             refresh_TimKiemBenhNhan();//Tiếp nhận bệnh nhân tái khám
             refresh_TimKiemBenhNhanTaiKham();
+
             gridView1_TimBenhNhan.ClearGrouping();   //Tìm kiếm bệnh nhân         
             gridView4_DanhSachBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân cũ
             gridView1_TimKiemBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân tái khám
 
-            gridView1_TiepNhanBenhNhan.UnselectRow(int.Parse(gridView1_TiepNhanBenhNhan.FocusedRowHandle.ToString()));            
+            gridView1_TiepNhanBenhNhan.FocusedRowHandle = 0;
+            gridView4_DanhSachBenhNhan.FocusedRowHandle = 0;
+            gridView1_TimKiemBenhNhan.FocusedRowHandle = 0;
+            gridView1_TimBenhNhan.FocusedRowHandle = 0;
+
+            gridView1_TiepNhanBenhNhan.UnselectRow(int.Parse(gridView1_TiepNhanBenhNhan.FocusedRowHandle.ToString()));
             gridView4_DanhSachBenhNhan.UnselectRow(int.Parse(gridView4_DanhSachBenhNhan.FocusedRowHandle.ToString()));
             gridView1_TimKiemBenhNhan.UnselectRow(int.Parse(gridView1_TimKiemBenhNhan.FocusedRowHandle.ToString()));
             gridView1_TimBenhNhan.UnselectRow(int.Parse(gridView1_TimBenhNhan.FocusedRowHandle.ToString()));
         }
+
+        public void timer_tick(object sender, EventArgs e)
+        {
+            int TiepNhanBenhNhan = gridView1_TiepNhanBenhNhan.FocusedRowHandle;
+            int DanhSachBenhNhan = gridView4_DanhSachBenhNhan.FocusedRowHandle;
+            int TimKiemBenhNhan = gridView1_TimKiemBenhNhan.FocusedRowHandle;
+            int TimBenhNhan = gridView1_TimBenhNhan.FocusedRowHandle;
+
+            this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
+
+            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);//Load Hồ Sơ Khám Bệnh cho tab Tìm kiếm bệnh nhân khám bệnh
+            // TODO: This line of code loads data into the 'phongKhamDataSet.HoSoKhamBenh' table. You can move, or remove it, as needed.
+            this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);//Load Hồ sơ tái khám ở tab Tìm kiếm bệnh nhân khám bênh
+
+            gridView1_TiepNhanBenhNhan.FocusedRowHandle = TiepNhanBenhNhan;
+            gridView4_DanhSachBenhNhan.FocusedRowHandle = DanhSachBenhNhan;
+            gridView1_TimKiemBenhNhan.FocusedRowHandle = TimKiemBenhNhan;
+            gridView1_TimBenhNhan.FocusedRowHandle = TimBenhNhan;
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString()+ ":" + DateTime.Now.Minute.ToString();
+            
+        }
         #region tab Tiếp nhận bệnh nhân
 
         private void filterColumn_TiepNhanBenhNhan()
-        {            //string ngay = DateTime.Now.ToString("dd/MM/yyyy");
+        {           
             string ngay = DateTime.Now.Day.ToString("d2");
             string thang = DateTime.Now.Month.ToString("d2");
             string nam = DateTime.Now.Year.ToString();            
             gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '" + ngay + "/" + thang + "/" + nam + "') And [KiemTraKham] Is Null";
-            //gridView1_TimKiemBenhNhan.ActiveFilterString = "Contains([NgayTaiKham], '" + ngay + "/" + thang + "/" + nam + "')";
+            
         }
         //private void Load_TiepNhanBenhNhan()
         //{
@@ -168,6 +198,7 @@ namespace QuanLyPhongKham
                 pictureBox1_BenhNhan.Image = new Bitmap(open.FileName);
             }
         }
+        
         private void TiepNhanBenhNhan_btn_TaoMoi_Click(object sender, EventArgs e)
         {
             if (function.checkNull(panelControl2) == true)
@@ -187,48 +218,52 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string KiemTraTonTai = @"select Ho, Ten,NamSinh,CheckDaKham from BenhNhan" +
-                    " where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text +
-                    "' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
+                string KiemTraTonTai = @"select Ho, Ten,NamSinh from BenhNhan" +
+                    " where Ho like N'%" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'%" + TiepNhanBenhNhan_txt_Ten.Text +
+                    "%' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "' and CheckDaKham = 1 or SoDienThoai = "+ TiepNhanBenhNhan_txt_SDT.Text;
                 cmd = new SqlCommand(KiemTraTonTai, connection.con);
                 da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0 && dt.Rows[0][3].ToString() != "NULL")
+                if (dt.Rows.Count == 1)
                 {
-                    if (MessageBox.Show("Bạn đã trùng tên và bạn có muốn Thêm bệnh nhân vào hàng chờ khám??!", "Thông Báo Nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    if (MessageBox.Show("Bạn đã nhập trùng Họ & Tên:" + TiepNhanBenhNhan_txt_Ho.Text + " " + TiepNhanBenhNhan_txt_Ten.Text + "\n" +
+                        "Năm sinh: " + TiepNhanBenhNhan_dtP_namsinh.Text + "\n" +
+                        "Bạn có muốn Thêm bệnh nhân vào hàng chờ khám??!",
+                        "Thông Báo nhập trùng Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         int ID_BenhNhan;
-                        int CheckKham = 1;
                         string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
                             + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
                         DataTable dt1 = connection.SQL(layMSBN);
                         ID_BenhNhan = int.Parse(dt1.Rows[0][0].ToString());
 
-                        if (TiepNhanBenhNhan_txt_LiDoKham.Text != "")
-                        {
-                            string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
-                            + ID_BenhNhan + ","
-                            + "N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "',"
-                            + "'" + TiepNhanBenhNhan_dtP_NgayKham.Text + "')";
-                            connection.insert(query);
-
-                            string query1 = @"update BenhNhan set CheckDaKham = " + CheckKham + " where MaSoBenhNhan = " + ID_BenhNhan;
-                            connection.insert(query1);
-                            refresh_TiepNhanBenhNhan();
-                        }
-                        else { MessageBox.Show("Vui lòng nhập lý do khám và Nhấn vào nút 'Thêm chờ'", "Thông báo"); }
-
+                        string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
+                                        " from  BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
+                                        " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngay + "/" + thang + "/" + nam + "%')" +
+                                " begin insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
+                                + ID_BenhNhan + ","
+                                + "N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "',"
+                                + "'" + TiepNhanBenhNhan_dtP_NgayKham.Text + "')end end" +
+                                "  update BenhNhan set CheckDaKham = 1 where MaSoBenhNhan = " + ID_BenhNhan;
+                        connection.insert(query);
+                        
+                        refresh_TiepNhanBenhNhan();
                     }
 
 
                 }
-
+                else if (dt.Rows.Count >1)
+                {
+                    if (MessageBox.Show("Bạn đã nhập trùng Số điện thoại: " + TiepNhanBenhNhan_txt_SDT.Text + "\n" +                        
+                        "Vui lòng kiểm tra lại thông tin Bệnh nhân??!",
+                        "Thông Báo nhập trùng Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                    }
+                }
                 else
                 {
-                    //dt.Dispose();
-                    int CheckDaKham = 1;
                     string query = @" insert into BenhNhan(Ho, Ten, NamSinh,DiaChi, SoDienThoai, GioiTinh,HinhAnh,CanNang,TenNguoiThan,CheckDaKham) values"
                    + "(N'" + TiepNhanBenhNhan_txt_Ho.Text + "',"
                    + "N'" + TiepNhanBenhNhan_txt_Ten.Text + "',"
@@ -239,14 +274,15 @@ namespace QuanLyPhongKham
                    + "N'" + hinhanh + "',"
                    + TiepNhanBenhNhan_txt_CanNang.Text + ","
                    + "N'" + TiepNhanBenhNhan_txt_TenNguoiThan.Text + "',"
-                   + CheckDaKham + ")";
+                   + " 1 )";
                     connection.insert(query);
 
                     ThemChoKham_TiepNhanBenhNhan();
 
                     refresh_TiepNhanBenhNhan();                    
                     hoSoTaiKhamTableAdapter1.Fill(phongKhamDataSet.HoSoTaiKham);
-                    this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+                    //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+                    this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
                     this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
                     MessageBox.Show("Nhập Thành công!", "Thông Báo Nhập");
                 }
@@ -455,7 +491,8 @@ namespace QuanLyPhongKham
         private void refresh_DanhSachBenhNhan()
         {
             function.ClearControl(panelControl4);
-            this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
             load_DanhSachBenhNhan_comB_GioiTinh();
             hinhanh = null;
@@ -537,12 +574,9 @@ namespace QuanLyPhongKham
             object ID_BenhNhan_CheckNull = gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
             if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
             {
-                string ngay = DateTime.Now.Day.ToString("d2");
-                string thang = DateTime.Now.Month.ToString("d2");
-                string nam = DateTime.Now.Year.ToString();
+                
                 connection.connect();
                 int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-                int CheckKham = 1;
                 //string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
                 //                + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
                 //DataTable dt = connection.SQL(layMSBN);
@@ -678,9 +712,10 @@ namespace QuanLyPhongKham
         #region Tiếp Nhận bệnh nhân tái khám
         private void refresh_TimKiemBenhNhan()//Tiếp Nhận bệnh nhân tái khám
         {            
-            function.ClearControl(panelControl5);
+            function.ClearControl(panelControl5);            
+            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);
-            this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = false;
             TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Enabled = false;
         }
@@ -751,7 +786,7 @@ namespace QuanLyPhongKham
                         + ID_MSKB_old + ","
                         + ID_BenhNhan + ")";
                     connection.insert(Insert_HSTK);
-
+                    MessageBox.Show("Nhập Bệnh nhân tái khám thành công!", "Thông Báo Nhập");
                     connection.disconnect();
                     refresh_TimKiemBenhNhan();
                 }
@@ -784,8 +819,6 @@ namespace QuanLyPhongKham
         {
             function.ClearControl(panelControl3);
             function.ClearControl(panelControl1);
-            this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);
-            this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             TimKiemBenhNhanKham_btn_XoaHoSo.Enabled = false;
         }
         private void TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click(object sender, EventArgs e)

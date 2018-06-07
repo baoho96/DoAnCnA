@@ -117,11 +117,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BacSi\BenhNhanKhamTrongNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BacSi\BenhNhanKhamTrongNgay.Designer.cs">
+      <DependentUpon>BenhNhanKhamTrongNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nhan Vien\Thong Ke\BenhNhan.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Nhan Vien\Thong Ke\BenhNhan.Designer.cs">
       <DependentUpon>BenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\BenhNhanThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhan Vien\Thong Ke\BenhNhanThanhToan.Designer.cs">
+      <DependentUpon>BenhNhanThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Nhan Vien\Thong Ke\DoanhThu.cs">
       <SubType>Component</SubType>
@@ -200,16 +212,16 @@
     <Compile Include="PhongKhamDataSet.cs">
       <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PhongKhamDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BacSi\printDonThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BacSi\printDonThuoc.Designer.cs">
       <DependentUpon>printDonThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKhamDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,11 +261,17 @@
     <EmbeddedResource Include="BacSi\BacSi.resx">
       <DependentUpon>BacSi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BacSi\BenhNhanKhamTrongNgay.resx">
+      <DependentUpon>BenhNhanKhamTrongNgay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BacSi\reportDonThuoc.resx">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\Thong Ke\BenhNhan.resx">
       <DependentUpon>BenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\BenhNhanThanhToan.resx">
+      <DependentUpon>BenhNhanThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\Thong Ke\DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>
@@ -311,7 +329,9 @@
     <EmbeddedResource Include="BacSi\XemHoSoBenhNhan.resx">
       <DependentUpon>XemHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="PhongKhamDataSet.xsc">
       <DependentUpon>PhongKhamDataSet.xsd</DependentUpon>

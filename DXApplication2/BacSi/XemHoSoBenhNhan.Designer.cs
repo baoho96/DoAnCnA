@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XemHoSoBenhNhan));
             this.gridView2_DonThuoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSoDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,6 +74,7 @@
             this.colHinhAnh2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKiemTraKham1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cl_KiemTraTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTienKham11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView3_DanhSachThuoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSoThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -178,17 +179,17 @@
             // 
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.LevelTemplate = this.gridView2_DonThuoc;
-            gridLevelNode3.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode4.LevelTemplate = this.gridView1_HoSoTaiKham;
-            gridLevelNode4.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode1.LevelTemplate = this.gridView2_DonThuoc;
+            gridLevelNode1.RelationName = "FK_DonThuoc_HoSoKhamBenh";
+            gridLevelNode2.LevelTemplate = this.gridView1_HoSoTaiKham;
+            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode4});
-            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(0, 79);
+            gridLevelNode1,
+            gridLevelNode2});
+            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(0, 85);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
-            this.gridControl1_TimKiemBenhNhan.Size = new System.Drawing.Size(870, 447);
+            this.gridControl1_TimKiemBenhNhan.Size = new System.Drawing.Size(872, 491);
             this.gridControl1_TimKiemBenhNhan.TabIndex = 7;
             this.gridControl1_TimKiemBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoSoTaiKham,
@@ -330,7 +331,8 @@
             this.colSoDienThoai3,
             this.colHinhAnh2,
             this.colKiemTraKham1,
-            this.cl_KiemTraTaiKham});
+            this.cl_KiemTraTaiKham,
+            this.colTienKham11});
             this.gridView1_TimKiemBenhNhan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1_TimKiemBenhNhan.GridControl = this.gridControl1_TimKiemBenhNhan;
             this.gridView1_TimKiemBenhNhan.Name = "gridView1_TimKiemBenhNhan";
@@ -349,7 +351,7 @@
             this.colMaSoKhamBenh1.Name = "colMaSoKhamBenh1";
             this.colMaSoKhamBenh1.Visible = true;
             this.colMaSoKhamBenh1.VisibleIndex = 0;
-            this.colMaSoKhamBenh1.Width = 44;
+            this.colMaSoKhamBenh1.Width = 46;
             // 
             // colMaSoBenhNhan4
             // 
@@ -358,7 +360,7 @@
             this.colMaSoBenhNhan4.Name = "colMaSoBenhNhan4";
             this.colMaSoBenhNhan4.Visible = true;
             this.colMaSoBenhNhan4.VisibleIndex = 1;
-            this.colMaSoBenhNhan4.Width = 43;
+            this.colMaSoBenhNhan4.Width = 45;
             // 
             // colMaSoBacSi1
             // 
@@ -373,7 +375,7 @@
             this.colNgayGioKham1.Name = "colNgayGioKham1";
             this.colNgayGioKham1.Visible = true;
             this.colNgayGioKham1.VisibleIndex = 2;
-            this.colNgayGioKham1.Width = 83;
+            this.colNgayGioKham1.Width = 87;
             // 
             // colNgayTaiKham1
             // 
@@ -382,7 +384,7 @@
             this.colNgayTaiKham1.Name = "colNgayTaiKham1";
             this.colNgayTaiKham1.Visible = true;
             this.colNgayTaiKham1.VisibleIndex = 3;
-            this.colNgayTaiKham1.Width = 74;
+            this.colNgayTaiKham1.Width = 78;
             // 
             // colXetNghiem1
             // 
@@ -391,15 +393,13 @@
             this.colXetNghiem1.Name = "colXetNghiem1";
             this.colXetNghiem1.Visible = true;
             this.colXetNghiem1.VisibleIndex = 8;
-            this.colXetNghiem1.Width = 39;
+            this.colXetNghiem1.Width = 41;
             // 
             // colKetQua
             // 
             this.colKetQua.Caption = "Kết Quả";
             this.colKetQua.FieldName = "KetQuaXetNghiem";
             this.colKetQua.Name = "colKetQua";
-            this.colKetQua.Visible = true;
-            this.colKetQua.VisibleIndex = 9;
             // 
             // colChuanDoan1
             // 
@@ -407,16 +407,14 @@
             this.colChuanDoan1.FieldName = "ChuanDoan";
             this.colChuanDoan1.Name = "colChuanDoan1";
             this.colChuanDoan1.Visible = true;
-            this.colChuanDoan1.VisibleIndex = 10;
-            this.colChuanDoan1.Width = 51;
+            this.colChuanDoan1.VisibleIndex = 9;
+            this.colChuanDoan1.Width = 53;
             // 
             // colTienKham1
             // 
             this.colTienKham1.Caption = "Tiền Khám";
             this.colTienKham1.FieldName = "TienKham";
             this.colTienKham1.Name = "colTienKham1";
-            this.colTienKham1.Visible = true;
-            this.colTienKham1.VisibleIndex = 12;
             this.colTienKham1.Width = 50;
             // 
             // colGhiChu1
@@ -425,8 +423,8 @@
             this.colGhiChu1.FieldName = "GhiChu";
             this.colGhiChu1.Name = "colGhiChu1";
             this.colGhiChu1.Visible = true;
-            this.colGhiChu1.VisibleIndex = 11;
-            this.colGhiChu1.Width = 81;
+            this.colGhiChu1.VisibleIndex = 10;
+            this.colGhiChu1.Width = 108;
             // 
             // colHo3
             // 
@@ -435,7 +433,7 @@
             this.colHo3.Name = "colHo3";
             this.colHo3.Visible = true;
             this.colHo3.VisibleIndex = 4;
-            this.colHo3.Width = 41;
+            this.colHo3.Width = 43;
             // 
             // colTen3
             // 
@@ -444,7 +442,7 @@
             this.colTen3.Name = "colTen3";
             this.colTen3.Visible = true;
             this.colTen3.VisibleIndex = 5;
-            this.colTen3.Width = 40;
+            this.colTen3.Width = 42;
             // 
             // colGioiTinh3
             // 
@@ -460,7 +458,7 @@
             this.colNamSinh3.Name = "colNamSinh3";
             this.colNamSinh3.Visible = true;
             this.colNamSinh3.VisibleIndex = 6;
-            this.colNamSinh3.Width = 55;
+            this.colNamSinh3.Width = 57;
             // 
             // colLiDoKham1
             // 
@@ -469,7 +467,7 @@
             this.colLiDoKham1.Name = "colLiDoKham1";
             this.colLiDoKham1.Visible = true;
             this.colLiDoKham1.VisibleIndex = 7;
-            this.colLiDoKham1.Width = 53;
+            this.colLiDoKham1.Width = 55;
             // 
             // colDiaChi3
             // 
@@ -503,8 +501,17 @@
             this.cl_KiemTraTaiKham.FieldName = "KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Name = "cl_KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Visible = true;
-            this.cl_KiemTraTaiKham.VisibleIndex = 13;
-            this.cl_KiemTraTaiKham.Width = 38;
+            this.cl_KiemTraTaiKham.VisibleIndex = 12;
+            this.cl_KiemTraTaiKham.Width = 43;
+            // 
+            // colTienKham11
+            // 
+            this.colTienKham11.Caption = "Tiền Khám";
+            this.colTienKham11.FieldName = "TienKham1";
+            this.colTienKham11.Name = "colTienKham11";
+            this.colTienKham11.Visible = true;
+            this.colTienKham11.VisibleIndex = 11;
+            this.colTienKham11.Width = 58;
             // 
             // gridView3_DanhSachThuoc
             // 
@@ -586,7 +593,7 @@
             this.ribbonPage1});
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(870, 79);
+            this.ribbonControl1.Size = new System.Drawing.Size(872, 85);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_indanhsach
@@ -613,10 +620,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 526);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 576);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(870, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(872, 23);
             // 
             // ribbonPage2
             // 
@@ -645,7 +652,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 557);
+            this.ClientSize = new System.Drawing.Size(872, 599);
             this.Controls.Add(this.gridControl1_TimKiemBenhNhan);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -733,5 +740,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn colMaSoDonThuoc1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTienKham11;
     }
 }

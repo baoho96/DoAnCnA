@@ -277,9 +277,9 @@
             this.documentViewer1_DoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.documentViewer1_DoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1_DoanhThu.IsMetric = false;
-            this.documentViewer1_DoanhThu.Location = new System.Drawing.Point(0, 110);
+            this.documentViewer1_DoanhThu.Location = new System.Drawing.Point(0, 113);
             this.documentViewer1_DoanhThu.Name = "documentViewer1_DoanhThu";
-            this.documentViewer1_DoanhThu.Size = new System.Drawing.Size(784, 424);
+            this.documentViewer1_DoanhThu.Size = new System.Drawing.Size(784, 425);
             this.documentViewer1_DoanhThu.TabIndex = 0;
             // 
             // panel1
@@ -371,6 +371,7 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoHideEmptyItems = true;
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Teal;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -440,7 +441,7 @@
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(784, 52);
+            this.ribbonControl1.Size = new System.Drawing.Size(784, 55);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -1569,10 +1570,10 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 538);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 23);
             // 
             // ThongKeDoanhThu
             // 
@@ -1583,6 +1584,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "ThongKeDoanhThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -182,6 +182,7 @@
             // phongKhamDataSet
             // 
             this.phongKhamDataSet.DataSetName = "PhongKhamDataSet";
+            this.phongKhamDataSet.EnforceConstraints = false;
             this.phongKhamDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
@@ -276,6 +277,7 @@
             this.ClientSize = new System.Drawing.Size(492, 361);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ThemLoaiThuoc";
@@ -323,7 +325,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit colMaSoLoaiThuoc1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit colTenLoaiThuoc1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit colGhiChu1;
-        private PhongKhamDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private PhongKhamDataSet phongKhamDataSet;
         private System.Windows.Forms.BindingSource loaiThuocBindingSource;
         private PhongKhamDataSetTableAdapters.LoaiThuocTableAdapter loaiThuocTableAdapter;

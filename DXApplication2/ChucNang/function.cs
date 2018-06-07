@@ -251,6 +251,12 @@ namespace QuanLyPhongKham
                 }
             }
         }
-
+        public void Timer_load(EventHandler eventHandler)
+        {
+            Timer timer = new Timer();
+            timer.Interval = (5 * 1000); //10s
+            timer.Tick += new EventHandler(eventHandler);
+            timer.Start();
+        }
     }
 }

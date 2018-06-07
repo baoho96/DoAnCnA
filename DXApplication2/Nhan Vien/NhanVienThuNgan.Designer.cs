@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienThuNgan));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienThuNgan));
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
@@ -186,25 +186,14 @@
             DevExpress.Utils.SuperToolTip superToolTip52 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem52 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem52 = new DevExpress.Utils.ToolTipItem();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1_ThongKeDoanhThu = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1_ThongKeBenhNhan = new DevExpress.XtraBars.BarButtonItem();
             this.printPreviewBarItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
-            this.printPreviewBarItem52 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
-            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -255,6 +244,13 @@
             this.printPreviewBarItem49 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem50 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem51 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
+            this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_ThongKeBenhNhan = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_ThongKeDoanhThu = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_BenhNhanLayThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -272,41 +268,55 @@
             this.chBox_LayThuoc = new System.Windows.Forms.CheckBox();
             this.gridControl1_HoaDon = new DevExpress.XtraGrid.GridControl();
             this.gridView1_HoaDon = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colHo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSBN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSKB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSHD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNamSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKetQuaXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGhiChuDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGhiChuHSKB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTienThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTienKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgayKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBacSiKham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_MSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_MSKB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_MSHD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_MSBN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_Ho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_Ten = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_NamSinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_SoDienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_XetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_KQXN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_ChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_GhiChu1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_NgayGioKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_NgayTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TongTienThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TienKham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TongTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_TenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_KiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_KiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
+            this.txt_capnhat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar1.AllowFocused = false;
+            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar1.LookAndFeel.SkinName = "Office 2007 Blue";
+            this.repositoryItemZoomTrackBar1.Maximum = 180;
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
             // 
             // ribbonControl
             // 
@@ -315,12 +325,6 @@
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
-            this.bsiRecordsCount,
-            this.bbiRefresh,
-            this.barButtonItem1_DangXuat,
-            this.barButtonItem1_XuatFile,
-            this.barButtonItem1_ThongKeDoanhThu,
-            this.barButtonItem1_ThongKeBenhNhan,
             this.printPreviewBarItem1,
             this.printPreviewBarItem2,
             this.printPreviewBarItem3,
@@ -372,21 +376,20 @@
             this.printPreviewBarItem49,
             this.printPreviewBarItem50,
             this.printPreviewBarItem51,
-            this.printPreviewStaticItem1,
-            this.barStaticItem1,
             this.progressBarEditItem1,
-            this.printPreviewBarItem52,
-            this.printPreviewStaticItem2,
-            this.zoomTrackBarEditItem1});
+            this.barButtonItem1_DangXuat,
+            this.barButtonItem1_XuatFile,
+            this.barButtonItem1_ToExcel,
+            this.barButtonItem1_ThongKeBenhNhan,
+            this.barButtonItem1_ThongKeDoanhThu,
+            this.bbiRefresh,
+            this.barButtonItem1_BenhNhanLayThuoc});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 81;
+            this.ribbonControl.MaxItemId = 89;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemProgressBar1,
-            this.repositoryItemZoomTrackBar1});
             this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
@@ -395,57 +398,6 @@
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // bsiRecordsCount
-            // 
-            this.bsiRecordsCount.Caption = "RECORDS : 0";
-            this.bsiRecordsCount.Id = 15;
-            this.bsiRecordsCount.Name = "bsiRecordsCount";
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
-            // 
-            // barButtonItem1_DangXuat
-            // 
-            this.barButtonItem1_DangXuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem1_DangXuat.Caption = "Đăng xuất";
-            this.barButtonItem1_DangXuat.Id = 20;
-            this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
-            this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
-            this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
-            this.barButtonItem1_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_DangXuat_ItemClick);
-            // 
-            // barButtonItem1_XuatFile
-            // 
-            this.barButtonItem1_XuatFile.Caption = "Xuất file Danh sách Bệnh nhân";
-            this.barButtonItem1_XuatFile.Id = 21;
-            this.barButtonItem1_XuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.Image")));
-            this.barButtonItem1_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.LargeImage")));
-            this.barButtonItem1_XuatFile.Name = "barButtonItem1_XuatFile";
-            this.barButtonItem1_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatFile_ItemClick);
-            // 
-            // barButtonItem1_ThongKeDoanhThu
-            // 
-            this.barButtonItem1_ThongKeDoanhThu.Caption = "Thống kê Doanh Thu";
-            this.barButtonItem1_ThongKeDoanhThu.Id = 22;
-            this.barButtonItem1_ThongKeDoanhThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeDoanhThu.ImageOptions.Image")));
-            this.barButtonItem1_ThongKeDoanhThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeDoanhThu.ImageOptions.LargeImage")));
-            this.barButtonItem1_ThongKeDoanhThu.Name = "barButtonItem1_ThongKeDoanhThu";
-            this.barButtonItem1_ThongKeDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ThongKeDoanhThu_ItemClick);
-            // 
-            // barButtonItem1_ThongKeBenhNhan
-            // 
-            this.barButtonItem1_ThongKeBenhNhan.Caption = "Thống kê Bệnh Nhân";
-            this.barButtonItem1_ThongKeBenhNhan.Id = 23;
-            this.barButtonItem1_ThongKeBenhNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeBenhNhan.ImageOptions.Image")));
-            this.barButtonItem1_ThongKeBenhNhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeBenhNhan.ImageOptions.LargeImage")));
-            this.barButtonItem1_ThongKeBenhNhan.Name = "barButtonItem1_ThongKeBenhNhan";
-            this.barButtonItem1_ThongKeBenhNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ThongKeBenhNhan_ItemClick);
             // 
             // printPreviewBarItem1
             // 
@@ -479,96 +431,26 @@
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(456, 132);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(562, 544);
+            this.documentViewer1.Size = new System.Drawing.Size(562, 532);
             this.documentViewer1.TabIndex = 5;
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1_DangXuat);
-            this.ribbonStatusBar.ItemLinks.Add(this.printPreviewStaticItem1);
-            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
-            this.ribbonStatusBar.ItemLinks.Add(this.progressBarEditItem1);
-            this.ribbonStatusBar.ItemLinks.Add(this.printPreviewBarItem52);
-            this.ribbonStatusBar.ItemLinks.Add(this.printPreviewStaticItem2);
-            this.ribbonStatusBar.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 35);
             // 
-            // printPreviewStaticItem1
+            // barButtonItem1_DangXuat
             // 
-            this.printPreviewStaticItem1.Caption = "Nothing";
-            this.printPreviewStaticItem1.Id = 75;
-            this.printPreviewStaticItem1.LeftIndent = 1;
-            this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
-            this.printPreviewStaticItem1.RightIndent = 1;
-            this.printPreviewStaticItem1.Type = "PageOfPages";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
-            this.barStaticItem1.Enabled = false;
-            this.barStaticItem1.Id = 76;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
-            // 
-            // progressBarEditItem1
-            // 
-            this.progressBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
-            this.progressBarEditItem1.EditHeight = 12;
-            this.progressBarEditItem1.EditWidth = 150;
-            this.progressBarEditItem1.Id = 77;
-            this.progressBarEditItem1.Name = "progressBarEditItem1";
-            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // repositoryItemProgressBar1
-            // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            // 
-            // printPreviewBarItem52
-            // 
-            this.printPreviewBarItem52.Caption = "Stop";
-            this.printPreviewBarItem52.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
-            this.printPreviewBarItem52.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem52.Enabled = false;
-            this.printPreviewBarItem52.Hint = "Stop";
-            this.printPreviewBarItem52.Id = 78;
-            this.printPreviewBarItem52.Name = "printPreviewBarItem52";
-            this.printPreviewBarItem52.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // printPreviewStaticItem2
-            // 
-            this.printPreviewStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.printPreviewStaticItem2.AutoSize = DevExpress.XtraBars.BarStaticItemSize.None;
-            this.printPreviewStaticItem2.Caption = "100%";
-            this.printPreviewStaticItem2.Id = 79;
-            this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
-            this.printPreviewStaticItem2.Type = "ZoomFactorText";
-            // 
-            // zoomTrackBarEditItem1
-            // 
-            this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.zoomTrackBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.zoomTrackBarEditItem1.Edit = this.repositoryItemZoomTrackBar1;
-            this.zoomTrackBarEditItem1.EditValue = 90;
-            this.zoomTrackBarEditItem1.EditWidth = 140;
-            this.zoomTrackBarEditItem1.Enabled = false;
-            this.zoomTrackBarEditItem1.Id = 80;
-            this.zoomTrackBarEditItem1.Name = "zoomTrackBarEditItem1";
-            this.zoomTrackBarEditItem1.Range = new int[] {
-        10,
-        500};
-            // 
-            // repositoryItemZoomTrackBar1
-            // 
-            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemZoomTrackBar1.AllowFocused = false;
-            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.repositoryItemZoomTrackBar1.Maximum = 180;
-            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            this.barButtonItem1_DangXuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem1_DangXuat.Caption = "Đăng Xuất";
+            this.barButtonItem1_DangXuat.Id = 82;
+            this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
+            this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
+            this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
+            this.barButtonItem1_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_DangXuat_ItemClick);
             // 
             // printPreviewBarItem2
             // 
@@ -1470,6 +1352,70 @@
             superToolTip51.MaxWidth = 210;
             this.printPreviewBarItem51.SuperTip = superToolTip51;
             // 
+            // progressBarEditItem1
+            // 
+            this.progressBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
+            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
+            this.progressBarEditItem1.EditHeight = 12;
+            this.progressBarEditItem1.EditWidth = 150;
+            this.progressBarEditItem1.Id = 77;
+            this.progressBarEditItem1.Name = "progressBarEditItem1";
+            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem1_XuatFile
+            // 
+            this.barButtonItem1_XuatFile.Caption = "Xuất File PDF";
+            this.barButtonItem1_XuatFile.Id = 83;
+            this.barButtonItem1_XuatFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.Image")));
+            this.barButtonItem1_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.LargeImage")));
+            this.barButtonItem1_XuatFile.Name = "barButtonItem1_XuatFile";
+            this.barButtonItem1_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatFile_ItemClick);
+            // 
+            // barButtonItem1_ToExcel
+            // 
+            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
+            this.barButtonItem1_ToExcel.Id = 84;
+            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.Image")));
+            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.LargeImage")));
+            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
+            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
+            // 
+            // barButtonItem1_ThongKeBenhNhan
+            // 
+            this.barButtonItem1_ThongKeBenhNhan.Caption = "Thống Kê Bệnh nhân";
+            this.barButtonItem1_ThongKeBenhNhan.Id = 85;
+            this.barButtonItem1_ThongKeBenhNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeBenhNhan.ImageOptions.Image")));
+            this.barButtonItem1_ThongKeBenhNhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeBenhNhan.ImageOptions.LargeImage")));
+            this.barButtonItem1_ThongKeBenhNhan.Name = "barButtonItem1_ThongKeBenhNhan";
+            this.barButtonItem1_ThongKeBenhNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ThongKeBenhNhan_ItemClick);
+            // 
+            // barButtonItem1_ThongKeDoanhThu
+            // 
+            this.barButtonItem1_ThongKeDoanhThu.Caption = "Thống kê Doanh thu";
+            this.barButtonItem1_ThongKeDoanhThu.Id = 86;
+            this.barButtonItem1_ThongKeDoanhThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeDoanhThu.ImageOptions.Image")));
+            this.barButtonItem1_ThongKeDoanhThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ThongKeDoanhThu.ImageOptions.LargeImage")));
+            this.barButtonItem1_ThongKeDoanhThu.Name = "barButtonItem1_ThongKeDoanhThu";
+            this.barButtonItem1_ThongKeDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ThongKeDoanhThu_ItemClick);
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Id = 87;
+            this.bbiRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiRefresh.ImageOptions.Image")));
+            this.bbiRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiRefresh.ImageOptions.LargeImage")));
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
+            // barButtonItem1_BenhNhanLayThuoc
+            // 
+            this.barButtonItem1_BenhNhanLayThuoc.Caption = "Bệnh Nhân đã lấy thuốc";
+            this.barButtonItem1_BenhNhanLayThuoc.Id = 88;
+            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image")));
+            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage")));
+            this.barButtonItem1_BenhNhanLayThuoc.Name = "barButtonItem1_BenhNhanLayThuoc";
+            this.barButtonItem1_BenhNhanLayThuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_BenhNhanLayThuoc_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1483,8 +1429,9 @@
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_ThongKeDoanhThu);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_ThongKeBenhNhan);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_ThongKeDoanhThu);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1_BenhNhanLayThuoc);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Tasks";
@@ -1493,6 +1440,7 @@
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1_XuatFile);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1_ToExcel);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Print and Export";
@@ -1518,6 +1466,8 @@
             this.printPreviewRibbonPageGroup1.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem50);
             this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem51);
+            this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem50);
+            this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem51);
             this.printPreviewRibbonPageGroup1.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Document;
             this.printPreviewRibbonPageGroup1.Name = "printPreviewRibbonPageGroup1";
             this.printPreviewRibbonPageGroup1.ShowCaptionButton = false;
@@ -1531,6 +1481,10 @@
             this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem8);
             this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem6);
             this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem3);
+            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem7);
+            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem8);
+            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem6);
+            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem3);
             this.printPreviewRibbonPageGroup2.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Print;
             this.printPreviewRibbonPageGroup2.Name = "printPreviewRibbonPageGroup2";
             this.printPreviewRibbonPageGroup2.ShowCaptionButton = false;
@@ -1540,6 +1494,11 @@
             // 
             this.printPreviewRibbonPageGroup3.AllowTextClipping = false;
             this.printPreviewRibbonPageGroup3.ContextSpecifier = this.documentViewerRibbonController1;
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem10);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem11);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem30);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem28);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem29);
             this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem10);
             this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem11);
             this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem30);
@@ -1569,6 +1528,14 @@
             this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem19);
             this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem20);
             this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem21);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem4);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem5);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem2);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem1);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem18, true);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem19);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem20);
+            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem21);
             this.printPreviewRibbonPageGroup4.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Navigation;
             this.printPreviewRibbonPageGroup4.Name = "printPreviewRibbonPageGroup4";
             this.printPreviewRibbonPageGroup4.ShowCaptionButton = false;
@@ -1578,6 +1545,13 @@
             // 
             this.printPreviewRibbonPageGroup5.AllowTextClipping = false;
             this.printPreviewRibbonPageGroup5.ContextSpecifier = this.documentViewerRibbonController1;
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem12);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem13);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem14);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem22);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem15);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem17);
+            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem16);
             this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem12);
             this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem13);
             this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem14);
@@ -1596,6 +1570,8 @@
             this.printPreviewRibbonPageGroup6.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem23);
             this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem24);
+            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem23);
+            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem24);
             this.printPreviewRibbonPageGroup6.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Background;
             this.printPreviewRibbonPageGroup6.Name = "printPreviewRibbonPageGroup6";
             this.printPreviewRibbonPageGroup6.ShowCaptionButton = false;
@@ -1605,6 +1581,8 @@
             // 
             this.printPreviewRibbonPageGroup7.AllowTextClipping = false;
             this.printPreviewRibbonPageGroup7.ContextSpecifier = this.documentViewerRibbonController1;
+            this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem25);
+            this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem26);
             this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem25);
             this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem26);
             this.printPreviewRibbonPageGroup7.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Export;
@@ -1617,6 +1595,7 @@
             this.printPreviewRibbonPageGroup8.AllowTextClipping = false;
             this.printPreviewRibbonPageGroup8.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewRibbonPageGroup8.ItemLinks.Add(this.printPreviewBarItem27);
+            this.printPreviewRibbonPageGroup8.ItemLinks.Add(this.printPreviewBarItem27);
             this.printPreviewRibbonPageGroup8.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Close;
             this.printPreviewRibbonPageGroup8.Name = "printPreviewRibbonPageGroup8";
             this.printPreviewRibbonPageGroup8.ShowCaptionButton = false;
@@ -1628,9 +1607,9 @@
             this.panel1.Controls.Add(this.btn_ThanhToan);
             this.panel1.Controls.Add(this.chBox_LayThuoc);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(1, 132);
+            this.panel1.Location = new System.Drawing.Point(0, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 75);
+            this.panel1.Size = new System.Drawing.Size(450, 75);
             this.panel1.TabIndex = 4;
             // 
             // btn_ThanhToan
@@ -1659,13 +1638,13 @@
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 38);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 26);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
             this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1_HoaDon.Size = new System.Drawing.Size(444, 425);
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(448, 425);
             this.gridControl1_HoaDon.TabIndex = 8;
             this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoaDon});
@@ -1673,184 +1652,186 @@
             // gridView1_HoaDon
             // 
             this.gridView1_HoaDon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colHo,
-            this.colTen,
-            this.colSDT,
-            this.colMSBN,
-            this.colMSKB,
-            this.colMSHD,
-            this.colMSDT,
-            this.colDiaChi,
-            this.colNamSinh,
-            this.colChuanDoan,
-            this.colXetNghiem,
-            this.colKetQuaXetNghiem,
-            this.colGhiChuDonThuoc,
-            this.colGhiChuHSKB,
-            this.colTienThuoc,
-            this.colTienKham,
-            this.collTongTien,
-            this.colNgayTaiKham,
-            this.colNgayKham,
-            this.colBacSiKham,
-            this.colKiemTraThanhToan,
-            this.colKiemTraLayThuoc});
+            this.col_MSDT,
+            this.col_MSKB,
+            this.col_MSHD,
+            this.col_MSBN,
+            this.col_Ho,
+            this.col_Ten,
+            this.col_NamSinh,
+            this.col_SoDienThoai,
+            this.col_DiaChi,
+            this.col_XetNghiem,
+            this.col_KQXN,
+            this.col_ChuanDoan,
+            this.col_GhiChu,
+            this.col_GhiChu1,
+            this.col_NgayGioKham,
+            this.col_NgayTaiKham,
+            this.col_TongTienThuoc,
+            this.col_TienKham,
+            this.col_TongTien,
+            this.col_TenNhanVien,
+            this.col_KiemTraLayThuoc,
+            this.col_KiemTraThanhToan});
             this.gridView1_HoaDon.GridControl = this.gridControl1_HoaDon;
             this.gridView1_HoaDon.Name = "gridView1_HoaDon";
             this.gridView1_HoaDon.OptionsBehavior.Editable = false;
             this.gridView1_HoaDon.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_HoaDon.OptionsFind.AlwaysVisible = true;
             this.gridView1_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colKiemTraThanhToan, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_KiemTraThanhToan, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1_HoaDon.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_HoaDon_RowClick);
             this.gridView1_HoaDon.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_HoaDon_CustomDrawRowIndicator);
             this.gridView1_HoaDon.RowCountChanged += new System.EventHandler(this.gridView1_HoaDon_RowCountChanged);
             // 
-            // colHo
+            // col_MSDT
             // 
-            this.colHo.Caption = "Họ";
-            this.colHo.FieldName = "Ho";
-            this.colHo.Name = "colHo";
-            this.colHo.Visible = true;
-            this.colHo.VisibleIndex = 0;
-            this.colHo.Width = 215;
+            this.col_MSDT.Caption = "MSDT";
+            this.col_MSDT.FieldName = "MaSoDonThuoc";
+            this.col_MSDT.Name = "col_MSDT";
             // 
-            // colTen
+            // col_MSKB
             // 
-            this.colTen.Caption = "Tên";
-            this.colTen.FieldName = "Ten";
-            this.colTen.Name = "colTen";
-            this.colTen.Visible = true;
-            this.colTen.VisibleIndex = 1;
-            this.colTen.Width = 143;
+            this.col_MSKB.Caption = "MSKB";
+            this.col_MSKB.FieldName = "MaSoKhamBenh";
+            this.col_MSKB.Name = "col_MSKB";
             // 
-            // colSDT
+            // col_MSHD
             // 
-            this.colSDT.Caption = "SĐT Người thân";
-            this.colSDT.FieldName = "SoDienThoai";
-            this.colSDT.Name = "colSDT";
-            this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 2;
-            this.colSDT.Width = 214;
+            this.col_MSHD.Caption = "MSHD";
+            this.col_MSHD.FieldName = "MaHoaDon";
+            this.col_MSHD.Name = "col_MSHD";
             // 
-            // colMSBN
+            // col_MSBN
             // 
-            this.colMSBN.Caption = "MSBN";
-            this.colMSBN.FieldName = "MaSoBenhNhan";
-            this.colMSBN.Name = "colMSBN";
+            this.col_MSBN.Caption = "MSBN";
+            this.col_MSBN.FieldName = "MaSoBenhNhan";
+            this.col_MSBN.Name = "col_MSBN";
+            this.col_MSBN.Width = 60;
             // 
-            // colMSKB
+            // col_Ho
             // 
-            this.colMSKB.Caption = "MSKB";
-            this.colMSKB.FieldName = "MaSoKhamBenh";
-            this.colMSKB.Name = "colMSKB";
+            this.col_Ho.Caption = "Họ";
+            this.col_Ho.FieldName = "Ho";
+            this.col_Ho.Name = "col_Ho";
+            this.col_Ho.Visible = true;
+            this.col_Ho.VisibleIndex = 0;
+            this.col_Ho.Width = 277;
             // 
-            // colMSHD
+            // col_Ten
             // 
-            this.colMSHD.Caption = "MSHĐ";
-            this.colMSHD.FieldName = "MaHoaDon";
-            this.colMSHD.Name = "colMSHD";
+            this.col_Ten.Caption = "Tên";
+            this.col_Ten.FieldName = "Ten";
+            this.col_Ten.Name = "col_Ten";
+            this.col_Ten.Visible = true;
+            this.col_Ten.VisibleIndex = 1;
+            this.col_Ten.Width = 116;
             // 
-            // colMSDT
+            // col_NamSinh
             // 
-            this.colMSDT.Caption = "MSĐT";
-            this.colMSDT.FieldName = "MaSoDonThuoc";
-            this.colMSDT.Name = "colMSDT";
+            this.col_NamSinh.Caption = "NamSinh";
+            this.col_NamSinh.FieldName = "NamSinh";
+            this.col_NamSinh.Name = "col_NamSinh";
             // 
-            // colDiaChi
+            // col_SoDienThoai
             // 
-            this.colDiaChi.Caption = "Địa Chỉ";
-            this.colDiaChi.FieldName = "DiaChi";
-            this.colDiaChi.Name = "colDiaChi";
+            this.col_SoDienThoai.Caption = "SĐT";
+            this.col_SoDienThoai.FieldName = "SoDienThoai";
+            this.col_SoDienThoai.Name = "col_SoDienThoai";
+            this.col_SoDienThoai.Visible = true;
+            this.col_SoDienThoai.VisibleIndex = 2;
+            this.col_SoDienThoai.Width = 140;
             // 
-            // colNamSinh
+            // col_DiaChi
             // 
-            this.colNamSinh.Caption = "Năm Sinh";
-            this.colNamSinh.FieldName = "NamSinh";
-            this.colNamSinh.Name = "colNamSinh";
+            this.col_DiaChi.Caption = "DiaChi";
+            this.col_DiaChi.FieldName = "DiaChi";
+            this.col_DiaChi.Name = "col_DiaChi";
             // 
-            // colChuanDoan
+            // col_XetNghiem
             // 
-            this.colChuanDoan.Caption = "Chuẩn đoán";
-            this.colChuanDoan.FieldName = "ChuanDoan";
-            this.colChuanDoan.Name = "colChuanDoan";
+            this.col_XetNghiem.Caption = "XetNghiem";
+            this.col_XetNghiem.FieldName = "XetNghiem";
+            this.col_XetNghiem.Name = "col_XetNghiem";
             // 
-            // colXetNghiem
+            // col_KQXN
             // 
-            this.colXetNghiem.Caption = "Xét Nghiệm";
-            this.colXetNghiem.FieldName = "XetNghiem";
-            this.colXetNghiem.Name = "colXetNghiem";
+            this.col_KQXN.Caption = "KQXN";
+            this.col_KQXN.FieldName = "KQXN";
+            this.col_KQXN.Name = "col_KQXN";
             // 
-            // colKetQuaXetNghiem
+            // col_ChuanDoan
             // 
-            this.colKetQuaXetNghiem.Caption = "Kết quả xét nghiệm";
-            this.colKetQuaXetNghiem.FieldName = "KetQuaXetNghiem";
-            this.colKetQuaXetNghiem.Name = "colKetQuaXetNghiem";
+            this.col_ChuanDoan.Caption = "ChuanDoan";
+            this.col_ChuanDoan.FieldName = "ChuanDoan";
+            this.col_ChuanDoan.Name = "col_ChuanDoan";
             // 
-            // colGhiChuDonThuoc
+            // col_GhiChu
             // 
-            this.colGhiChuDonThuoc.Caption = "Ghi Chú ĐT";
-            this.colGhiChuDonThuoc.FieldName = "GhiChu";
-            this.colGhiChuDonThuoc.Name = "colGhiChuDonThuoc";
+            this.col_GhiChu.Caption = "GhiChu";
+            this.col_GhiChu.FieldName = "GhiChu";
+            this.col_GhiChu.Name = "col_GhiChu";
             // 
-            // colGhiChuHSKB
+            // col_GhiChu1
             // 
-            this.colGhiChuHSKB.Caption = "Ghi chú HSKB";
-            this.colGhiChuHSKB.FieldName = "GhiChu1";
-            this.colGhiChuHSKB.Name = "colGhiChuHSKB";
+            this.col_GhiChu1.Caption = "GhiChu1";
+            this.col_GhiChu1.FieldName = "GhiChu1";
+            this.col_GhiChu1.Name = "col_GhiChu1";
             // 
-            // colTienThuoc
+            // col_NgayGioKham
             // 
-            this.colTienThuoc.Caption = "Tiền Thuốc";
-            this.colTienThuoc.FieldName = "TienThuoc";
-            this.colTienThuoc.Name = "colTienThuoc";
+            this.col_NgayGioKham.Caption = "NgayGioKham";
+            this.col_NgayGioKham.FieldName = "NgayGioKham";
+            this.col_NgayGioKham.Name = "col_NgayGioKham";
             // 
-            // colTienKham
+            // col_NgayTaiKham
             // 
-            this.colTienKham.Caption = "Tiền Khám";
-            this.colTienKham.FieldName = "TienKham";
-            this.colTienKham.Name = "colTienKham";
+            this.col_NgayTaiKham.Caption = "NgayTaiKham";
+            this.col_NgayTaiKham.FieldName = "NgayTaiKham";
+            this.col_NgayTaiKham.Name = "col_NgayTaiKham";
             // 
-            // collTongTien
+            // col_TongTienThuoc
             // 
-            this.collTongTien.Caption = "Tổng tiền";
-            this.collTongTien.FieldName = "TongTien";
-            this.collTongTien.Name = "collTongTien";
+            this.col_TongTienThuoc.Caption = "TongTienThuoc";
+            this.col_TongTienThuoc.FieldName = "TongTienThuoc";
+            this.col_TongTienThuoc.Name = "col_TongTienThuoc";
             // 
-            // colNgayTaiKham
+            // col_TienKham
             // 
-            this.colNgayTaiKham.Caption = "Ngày Tái Khám";
-            this.colNgayTaiKham.FieldName = "NgayTaiKham";
-            this.colNgayTaiKham.Name = "colNgayTaiKham";
+            this.col_TienKham.Caption = "TienKham";
+            this.col_TienKham.FieldName = "TienKham";
+            this.col_TienKham.Name = "col_TienKham";
             // 
-            // colNgayKham
+            // col_TongTien
             // 
-            this.colNgayKham.Caption = "Ngày Khám";
-            this.colNgayKham.FieldName = "NgayGioKham";
-            this.colNgayKham.Name = "colNgayKham";
+            this.col_TongTien.Caption = "TongTien";
+            this.col_TongTien.FieldName = "TongTien";
+            this.col_TongTien.Name = "col_TongTien";
             // 
-            // colBacSiKham
+            // col_TenNhanVien
             // 
-            this.colBacSiKham.Caption = "Bác Sĩ";
-            this.colBacSiKham.FieldName = "TenNhanVien";
-            this.colBacSiKham.Name = "colBacSiKham";
+            this.col_TenNhanVien.Caption = "TenNhanVien";
+            this.col_TenNhanVien.FieldName = "TenNhanVien";
+            this.col_TenNhanVien.Name = "col_TenNhanVien";
             // 
-            // colKiemTraThanhToan
+            // col_KiemTraLayThuoc
             // 
-            this.colKiemTraThanhToan.Caption = "Thanh toán";
-            this.colKiemTraThanhToan.FieldName = "KiemTraThanhToan";
-            this.colKiemTraThanhToan.Name = "colKiemTraThanhToan";
-            this.colKiemTraThanhToan.Visible = true;
-            this.colKiemTraThanhToan.VisibleIndex = 3;
-            this.colKiemTraThanhToan.Width = 120;
+            this.col_KiemTraLayThuoc.Caption = "Lấy Thuốc";
+            this.col_KiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
+            this.col_KiemTraLayThuoc.Name = "col_KiemTraLayThuoc";
+            this.col_KiemTraLayThuoc.Visible = true;
+            this.col_KiemTraLayThuoc.VisibleIndex = 3;
+            this.col_KiemTraLayThuoc.Width = 109;
             // 
-            // colKiemTraLayThuoc
+            // col_KiemTraThanhToan
             // 
-            this.colKiemTraLayThuoc.Caption = "Lấy thuốc";
-            this.colKiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
-            this.colKiemTraLayThuoc.Name = "colKiemTraLayThuoc";
-            this.colKiemTraLayThuoc.Visible = true;
-            this.colKiemTraLayThuoc.VisibleIndex = 4;
+            this.col_KiemTraThanhToan.Caption = "Thanh toán";
+            this.col_KiemTraThanhToan.FieldName = "KiemTraThanhToan";
+            this.col_KiemTraThanhToan.Name = "col_KiemTraThanhToan";
+            this.col_KiemTraThanhToan.Visible = true;
+            this.col_KiemTraThanhToan.VisibleIndex = 4;
+            this.col_KiemTraThanhToan.Width = 115;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -1864,7 +1845,7 @@
             this.panel2.Controls.Add(this.gridControl1_HoaDon);
             this.panel2.Location = new System.Drawing.Point(0, 211);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(446, 465);
+            this.panel2.Size = new System.Drawing.Size(450, 453);
             this.panel2.TabIndex = 11;
             // 
             // label1
@@ -1877,16 +1858,27 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Danh sách bệnh nhân khám trong ngày";
             // 
+            // txt_capnhat
+            // 
+            this.txt_capnhat.Enabled = false;
+            this.txt_capnhat.Location = new System.Drawing.Point(39, 670);
+            this.txt_capnhat.Multiline = true;
+            this.txt_capnhat.Name = "txt_capnhat";
+            this.txt_capnhat.Size = new System.Drawing.Size(133, 23);
+            this.txt_capnhat.TabIndex = 14;
+            // 
             // NhanVienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 699);
+            this.Controls.Add(this.txt_capnhat);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HtmlText = "Nhân viên Thu Ngân";
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1895,10 +1887,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVienThuNgan_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).EndInit();
@@ -1917,53 +1909,18 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btn_ThanhToan;
         private System.Windows.Forms.CheckBox chBox_LayThuoc;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1_DangXuat;
         private DevExpress.XtraGrid.GridControl gridControl1_HoaDon;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1_HoaDon;
-        private DevExpress.XtraGrid.Columns.GridColumn colHo;
-        private DevExpress.XtraGrid.Columns.GridColumn colTen;
-        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSKB;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
-        private DevExpress.XtraGrid.Columns.GridColumn colNamSinh;
-        private DevExpress.XtraGrid.Columns.GridColumn colChuanDoan;
-        private DevExpress.XtraGrid.Columns.GridColumn colXetNghiem;
-        private DevExpress.XtraGrid.Columns.GridColumn colKetQuaXetNghiem;
-        private DevExpress.XtraGrid.Columns.GridColumn colGhiChuDonThuoc;
-        private DevExpress.XtraGrid.Columns.GridColumn colGhiChuHSKB;
-        private DevExpress.XtraGrid.Columns.GridColumn colTienThuoc;
-        private DevExpress.XtraGrid.Columns.GridColumn colTienKham;
-        private DevExpress.XtraGrid.Columns.GridColumn collTongTien;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayKham;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSHD;
-        private DevExpress.XtraGrid.Columns.GridColumn colBacSiKham;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSBN;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayTaiKham;
-        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraThanhToan;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraLayThuoc;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ThongKeDoanhThu;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ThongKeBenhNhan;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem1;
         private DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController documentViewerRibbonController1;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraPrinting.Preview.ProgressBarEditItem progressBarEditItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem52;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem2;
-        private DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem zoomTrackBarEditItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem2;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem3;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem4;
@@ -2023,5 +1980,59 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup6;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup7;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup8;
+        private System.Windows.Forms.TextBox txt_capnhat;
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_DangXuat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_XuatFile;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ToExcel;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ThongKeBenhNhan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_ThongKeDoanhThu;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSKB;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSHD;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSBN;
+        private DevExpress.XtraGrid.Columns.GridColumn colHo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colNamSinh;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoDienThoai;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn colXetNghiem;
+        private DevExpress.XtraGrid.Columns.GridColumn colKQXN;
+        private DevExpress.XtraGrid.Columns.GridColumn colChuanDoan;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayGioKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayTaiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colTongTienThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn colTienKham;
+        private DevExpress.XtraGrid.Columns.GridColumn colTongTien;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraLayThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn colKiemTraThanhToan;
+        private DevExpress.XtraGrid.Columns.GridColumn col_MSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn col_MSKB;
+        private DevExpress.XtraGrid.Columns.GridColumn col_MSHD;
+        private DevExpress.XtraGrid.Columns.GridColumn col_MSBN;
+        private DevExpress.XtraGrid.Columns.GridColumn col_Ho;
+        private DevExpress.XtraGrid.Columns.GridColumn col_Ten;
+        private DevExpress.XtraGrid.Columns.GridColumn col_NamSinh;
+        private DevExpress.XtraGrid.Columns.GridColumn col_SoDienThoai;
+        private DevExpress.XtraGrid.Columns.GridColumn col_DiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn col_XetNghiem;
+        private DevExpress.XtraGrid.Columns.GridColumn col_KQXN;
+        private DevExpress.XtraGrid.Columns.GridColumn col_ChuanDoan;
+        private DevExpress.XtraGrid.Columns.GridColumn col_GhiChu;
+        private DevExpress.XtraGrid.Columns.GridColumn col_GhiChu1;
+        private DevExpress.XtraGrid.Columns.GridColumn col_NgayGioKham;
+        private DevExpress.XtraGrid.Columns.GridColumn col_NgayTaiKham;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TongTienThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TienKham;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TongTien;
+        private DevExpress.XtraGrid.Columns.GridColumn col_TenNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn col_KiemTraLayThuoc;
+        private DevExpress.XtraGrid.Columns.GridColumn col_KiemTraThanhToan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1_BenhNhanLayThuoc;
     }
 }

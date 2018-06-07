@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.txt_matkhau = new System.Windows.Forms.TextBox();
             this.txt_taikhoan = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.btn_thoat = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.label4 = new System.Windows.Forms.Label();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +119,10 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Mật khẩu";
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Seven";
+            // 
             // DangNhap
             // 
             this.AcceptButton = this.btn_DangNhap;
@@ -127,6 +133,7 @@
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DangNhap";
@@ -151,5 +158,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_thoat;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Label label4;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

@@ -21,10 +21,9 @@ namespace QuanLyPhongKham
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();
         reportDonThuoc reportDonThuoc = new reportDonThuoc();
-        SqlCommand sqlCommand;
         DataSet dataSet =new DataSet();
         DangNhap dangNhap = new DangNhap();
-
+        DialogResult result;
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
@@ -58,7 +57,7 @@ namespace QuanLyPhongKham
         {
             InitializeComponent();
             Load_HoaDon();
-
+            function.Timer_load(timer_tick);
         }
         
         private void refresh_HoaDon()
@@ -71,6 +70,13 @@ namespace QuanLyPhongKham
             documentViewer1.PrintingSystem = null;
             chBox_LayThuoc.Checked = false;
             Load_HoaDon();
+        }
+        public void timer_tick(object sender, EventArgs e)
+        {
+            int HoaDon = gridView1_HoaDon.FocusedRowHandle;
+            Load_HoaDon();
+            gridView1_HoaDon.FocusedRowHandle = HoaDon;
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
         private void Load_HoaDon()
         {
@@ -229,14 +235,6 @@ namespace QuanLyPhongKham
             if (Admin.IfAdmin == true)
             {
                 this.Hide();
-                foreach (Form fm in Application.OpenForms)
-                {
-                    if (fm is Admin)
-                    {
-                        ((Admin)fm).refresh_qlyThuoc();
-                        break;
-                    }
-                }
             }
             else
             {
@@ -310,6 +308,18 @@ namespace QuanLyPhongKham
         {
             ThongKeBenhNhan thongKeBenhNhan = new ThongKeBenhNhan();
             thongKeBenhNhan.ShowDialog();
+        }
+
+        private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            function.ToExcel("Bạn có muốn xuất file Danh sách bệnh nhân đã khám?", result, gridControl1_HoaDon);
+        }
+
+        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan();
+            benhNhanThanhToan.ShowDialog();
         }
     }
 }

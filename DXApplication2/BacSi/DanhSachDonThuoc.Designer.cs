@@ -32,11 +32,11 @@
             this.gridControl1_HoSoTaiKham = new DevExpress.XtraGrid.GridControl();
             this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
             this.clMaSoDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaSoThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clCachDung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenLoaiThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaSoThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTenThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clCachDung = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1_HoSoTaiKham)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,14 @@
             this.clMaSoDonThuoc.FieldName = "MaSoDonThuoc";
             this.clMaSoDonThuoc.Name = "clMaSoDonThuoc";
             // 
+            // clTenLoaiThuoc
+            // 
+            this.clTenLoaiThuoc.Caption = "Tên Loại Thuốc";
+            this.clTenLoaiThuoc.FieldName = "TenLoaiThuoc";
+            this.clTenLoaiThuoc.Name = "clTenLoaiThuoc";
+            this.clTenLoaiThuoc.Visible = true;
+            this.clTenLoaiThuoc.VisibleIndex = 0;
+            // 
             // clMaSoThuoc
             // 
             this.clMaSoThuoc.Caption = "Mã Số Thuốc";
@@ -82,22 +90,6 @@
             this.clMaSoThuoc.Name = "clMaSoThuoc";
             this.clMaSoThuoc.Visible = true;
             this.clMaSoThuoc.VisibleIndex = 1;
-            // 
-            // clCachDung
-            // 
-            this.clCachDung.Caption = "Cách Dùng";
-            this.clCachDung.FieldName = "CachDung";
-            this.clCachDung.Name = "clCachDung";
-            this.clCachDung.Visible = true;
-            this.clCachDung.VisibleIndex = 4;
-            // 
-            // clSoLuong
-            // 
-            this.clSoLuong.Caption = "Số Lượng";
-            this.clSoLuong.FieldName = "SoLuong";
-            this.clSoLuong.Name = "clSoLuong";
-            this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 3;
             // 
             // clTenThuoc
             // 
@@ -107,13 +99,21 @@
             this.clTenThuoc.Visible = true;
             this.clTenThuoc.VisibleIndex = 2;
             // 
-            // clTenLoaiThuoc
+            // clSoLuong
             // 
-            this.clTenLoaiThuoc.Caption = "Tên Loại Thuốc";
-            this.clTenLoaiThuoc.FieldName = "TenLoaiThuoc";
-            this.clTenLoaiThuoc.Name = "clTenLoaiThuoc";
-            this.clTenLoaiThuoc.Visible = true;
-            this.clTenLoaiThuoc.VisibleIndex = 0;
+            this.clSoLuong.Caption = "Số Lượng";
+            this.clSoLuong.FieldName = "SoLuong";
+            this.clSoLuong.Name = "clSoLuong";
+            this.clSoLuong.Visible = true;
+            this.clSoLuong.VisibleIndex = 3;
+            // 
+            // clCachDung
+            // 
+            this.clCachDung.Caption = "Cách Dùng";
+            this.clCachDung.FieldName = "CachDung";
+            this.clCachDung.Name = "clCachDung";
+            this.clCachDung.Visible = true;
+            this.clCachDung.VisibleIndex = 4;
             // 
             // DanhSachDonThuoc
             // 
@@ -121,6 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 373);
             this.Controls.Add(this.gridControl1_HoSoTaiKham);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DanhSachDonThuoc";
             this.Text = "Hồ Sơ Tái Khám";
