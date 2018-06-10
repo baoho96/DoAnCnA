@@ -214,6 +214,7 @@ namespace QuanLyPhongKham
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
         public void RowCountChanged(object sender, EventArgs e)

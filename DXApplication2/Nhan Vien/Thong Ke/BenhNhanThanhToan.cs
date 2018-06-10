@@ -36,12 +36,13 @@ namespace QuanLyPhongKham
             XemBenhNhan = _XemBenhNhan;
             checkColumn = _checkColumn;//0 là thu ngân. 1: dược sĩ
             if(checkColumn == 0)
-            {
-                col_KiemTraLayThuoc.Visible = false;
+            {                
+                col_KiemTraDaLayThuoc.Visible = false;
             }
             else if(checkColumn ==1 )
             {
                 col_KiemTraThanhToan.Visible = false;
+                col_KiemTraLayThuoc.Visible = false;
             }
             Load_HoaDon(XemBenhNhan);
         }
@@ -50,7 +51,7 @@ namespace QuanLyPhongKham
             string query = @"select BN.MaSoBenhNhan,BN.Ten, BN.Ho, BN.SoDienThoai,BN.DiaChi,BN.NamSinh,HSKB.MaSoKhamBenh," +
                                     " DT.MaSoDonThuoc,DT.GhiChu,HSKB.XetNghiem,HSKB.ChuanDoan,HSKB.KetQuaXetNghiem," +
                                     " HSKB.GhiChu,NV.TenNhanVien,HD.MaHoaDon,HSKB.NgayGioKham,DT.TongTienThuoc," +
-                                    " HSKB.TienKham,HD.TongTien,HSKB.NgayTaiKham,HD.KiemTraThanhToan,HD.KiemTraLayThuoc" +
+                                    " HSKB.TienKham,HD.TongTien,HSKB.NgayTaiKham,HD.KiemTraThanhToan,HD.KiemTraLayThuoc,HD.KiemTraDaLayThuoc" +
                             " from HoaDon HD join HoSoKhamBenh HSKB on HD.MaSoKhamBenh = HSKB.MaSoKhamBenh " +
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +

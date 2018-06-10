@@ -137,7 +137,7 @@
             this.btn_Xoa.Location = new System.Drawing.Point(679, 32);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(89, 38);
-            this.btn_Xoa.TabIndex = 12;
+            this.btn_Xoa.TabIndex = 5;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
@@ -150,7 +150,7 @@
             this.btn_CapNhat.Location = new System.Drawing.Point(560, 31);
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.Size = new System.Drawing.Size(90, 39);
-            this.btn_CapNhat.TabIndex = 12;
+            this.btn_CapNhat.TabIndex = 4;
             this.btn_CapNhat.Text = "Điều Chỉnh";
             this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
@@ -162,7 +162,7 @@
             this.btn_ThemThuoc.Location = new System.Drawing.Point(441, 32);
             this.btn_ThemThuoc.Name = "btn_ThemThuoc";
             this.btn_ThemThuoc.Size = new System.Drawing.Size(90, 39);
-            this.btn_ThemThuoc.TabIndex = 12;
+            this.btn_ThemThuoc.TabIndex = 3;
             this.btn_ThemThuoc.Text = "Thêm";
             this.btn_ThemThuoc.Click += new System.EventHandler(this.btn_ThemThuoc_Click);
             // 
@@ -265,7 +265,7 @@
             this.txt_CachDung.Multiline = true;
             this.txt_CachDung.Name = "txt_CachDung";
             this.txt_CachDung.Size = new System.Drawing.Size(323, 34);
-            this.txt_CachDung.TabIndex = 1;
+            this.txt_CachDung.TabIndex = 2;
             // 
             // label14
             // 
@@ -318,7 +318,7 @@
             this.txt_TenThuoc.Properties.PopupView = this.searchLookUpEdit1View;
             this.txt_TenThuoc.Properties.ValueMember = "TenThuoc";
             this.txt_TenThuoc.Size = new System.Drawing.Size(213, 20);
-            this.txt_TenThuoc.TabIndex = 14;
+            this.txt_TenThuoc.TabIndex = 0;
             this.txt_TenThuoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_TenThuoc_MouseClick);
             // 
             // thuocBindingSource
@@ -444,7 +444,7 @@
             this.txt_GhiChu.Multiline = true;
             this.txt_GhiChu.Name = "txt_GhiChu";
             this.txt_GhiChu.Size = new System.Drawing.Size(252, 34);
-            this.txt_GhiChu.TabIndex = 7;
+            this.txt_GhiChu.TabIndex = 0;
             // 
             // label6
             // 
@@ -719,7 +719,7 @@
             this.btn_HoanThanh.Location = new System.Drawing.Point(576, 11);
             this.btn_HoanThanh.Name = "btn_HoanThanh";
             this.btn_HoanThanh.Size = new System.Drawing.Size(91, 33);
-            this.btn_HoanThanh.TabIndex = 14;
+            this.btn_HoanThanh.TabIndex = 1;
             this.btn_HoanThanh.Text = "Hoàn thành";
             this.btn_HoanThanh.Click += new System.EventHandler(this.btn_HoanThanh_Click);
             // 
@@ -731,7 +731,7 @@
             this.btn_Thoat.Location = new System.Drawing.Point(693, 11);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(75, 33);
-            this.btn_Thoat.TabIndex = 12;
+            this.btn_Thoat.TabIndex = 2;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 

@@ -193,25 +193,57 @@ namespace QuanLyPhongKham
             }
             else
             {
-                string TinhTongTien = @"update HoaDon set" +
+                string CheckKiemTraDaLayThuoc = @"select KiemTraDaLayThuoc from HoaDon where MaHoaDon =" + ID_MSHD;                
+                DataTable KiemTraDaLayThuoc = connection.SQL(CheckKiemTraDaLayThuoc);
+                if (KiemTraDaLayThuoc.Rows[0][0].ToString() != "")
+                {
+                    if ((MessageBox.Show("Bệnh nhân đã lấy thuốc, hãy chắc rằng bệnh nhân đã hoàn trả thuốc cho Nhân Viên Giao Thuốc.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                    {
+                        string TinhTongTien = @"update HoaDon set" +
                                     " TongTien = H.TongTien" + "," +
                                     " KiemTraThanhToan = 1 " + "," +
                                     " MaNguoiLap = " + DangNhap.MaSoBacSi + "," +
                                     " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'," +
-                                    " KiemTraLayThuoc = 0" +
+                                    " KiemTraLayThuoc = 0" + "," +
+                                    " KiemTraDaLayThuoc = NULL" +
                                     " from (select HSKB.TienKham as TongTien" +
                                     " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh" +
                                        " where HSKB.MaSoKhamBenh = " + ID_MSKB + " And DT.MaSoDonThuoc= " + ID_MSDT + ") H " +
                                        " where MaHoaDon =" + ID_MSHD;
-                BenhNhanKhongLayThuoc();
-                connection.sql(TinhTongTien);
-                connection.disconnect();
-                refresh_HoaDon();
-                if ((MessageBox.Show("Thanh toán thành công. Bạn có muốn In hóa đơn??", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
-                {
-                    printDonThuoc printDonThuoc = new printDonThuoc();
-                    printDonThuoc.ShowDialog();
+                        BenhNhanKhongLayThuoc();
+                        connection.sql(TinhTongTien);
+                        connection.disconnect();
+                        refresh_HoaDon();
+                        if ((MessageBox.Show("Thanh toán thành công. Bạn có muốn In hóa đơn??", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                        {
+                            printDonThuoc printDonThuoc = new printDonThuoc();
+                            printDonThuoc.ShowDialog();
+                        }
+                    }
                 }
+                else
+                {
+                    string TinhTongTien = @"update HoaDon set" +
+                                    " TongTien = H.TongTien" + "," +
+                                    " KiemTraThanhToan = 1 " + "," +
+                                    " MaNguoiLap = " + DangNhap.MaSoBacSi + "," +
+                                    " NgayGioLap = '" + ngay + "/" + thang + "/" + nam + "'," +
+                                    " KiemTraLayThuoc = 0" + 
+                                    " from (select HSKB.TienKham as TongTien" +
+                                    " from HoSoKhamBenh HSKB join DonThuoc DT on HSKB.MaSoKhamBenh = DT.MaSoKhamBenh" +
+                                       " where HSKB.MaSoKhamBenh = " + ID_MSKB + " And DT.MaSoDonThuoc= " + ID_MSDT + ") H " +
+                                       " where MaHoaDon =" + ID_MSHD;
+                    BenhNhanKhongLayThuoc();
+                    connection.sql(TinhTongTien);
+                    connection.disconnect();
+                    refresh_HoaDon();
+                    if ((MessageBox.Show("Thanh toán thành công. Bạn có muốn In hóa đơn??", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                    {
+                        printDonThuoc printDonThuoc = new printDonThuoc();
+                        printDonThuoc.ShowDialog();
+                    }
+                }
+                
             }
             
         }

@@ -31,8 +31,9 @@ namespace QuanLyPhongKham
                     con.Open();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
             }
         }
         public void disconnect()   // gọi hàm này sau khi đã dùng xong csdl 
@@ -47,19 +48,28 @@ namespace QuanLyPhongKham
         }
         public void insert(string query)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                connect();
+            }
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
             try
             {
                 cmd.ExecuteNonQuery();
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
         }
         public void delete(string query)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                connect();
+            }
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
@@ -67,6 +77,10 @@ namespace QuanLyPhongKham
         }
         public void sql(string query)//update
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                connect();
+            }
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
@@ -74,6 +88,10 @@ namespace QuanLyPhongKham
         }
         public void loadcomboBox(string query)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                connect();
+            }
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
@@ -81,6 +99,10 @@ namespace QuanLyPhongKham
         }
         public DataTable SQL(string query)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                connect();
+            }            
             cmd = new SqlCommand(query, con);
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

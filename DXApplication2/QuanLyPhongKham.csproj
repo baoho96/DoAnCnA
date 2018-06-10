@@ -166,12 +166,6 @@
       <DependentUpon>DonThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\connection.cs" />
-    <Compile Include="Login\DangKi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\DangKi.Designer.cs">
-      <DependentUpon>DangKi.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChucNang\function.cs" />
     <Compile Include="BacSi\DanhSachDonThuoc.cs">
       <SubType>Form</SubType>
@@ -281,9 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DuocSi\reportDonThuocFormDuocSi.resx">
       <DependentUpon>reportDonThuocFormDuocSi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\DangKi.resx">
-      <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>

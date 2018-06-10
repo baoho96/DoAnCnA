@@ -392,7 +392,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1018, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1018, 132);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
@@ -427,18 +427,18 @@
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(469, 130);
+            this.documentViewer1.Location = new System.Drawing.Point(469, 132);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(549, 538);
+            this.documentViewer1.Size = new System.Drawing.Size(549, 532);
             this.documentViewer1.TabIndex = 5;
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 35);
             // 
             // barButtonItem1_DangXuat
             // 
@@ -1602,7 +1602,7 @@
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 89);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 83);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
@@ -1643,6 +1643,7 @@
             this.gridView1_HoaDon.OptionsBehavior.Editable = false;
             this.gridView1_HoaDon.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_HoaDon.OptionsFind.AlwaysVisible = true;
+            this.gridView1_HoaDon.OptionsView.ShowGroupPanel = false;
             this.gridView1_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_KiemTraThanhToan, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1_HoaDon.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_HoaDon_RowClick);
@@ -1810,9 +1811,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.gridControl1_HoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 130);
+            this.panel2.Location = new System.Drawing.Point(0, 132);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 538);
+            this.panel2.Size = new System.Drawing.Size(450, 532);
             this.panel2.TabIndex = 11;
             // 
             // btn_ThanhToan
@@ -1821,7 +1822,7 @@
             this.btn_ThanhToan.Appearance.Options.UseFont = true;
             this.btn_ThanhToan.Enabled = false;
             this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
-            this.btn_ThanhToan.Location = new System.Drawing.Point(307, 41);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(321, 29);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.Size = new System.Drawing.Size(95, 42);
             this.btn_ThanhToan.TabIndex = 1;
@@ -1833,7 +1834,7 @@
             this.chBox_LayThuoc.AutoSize = true;
             this.chBox_LayThuoc.Enabled = false;
             this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.chBox_LayThuoc.Location = new System.Drawing.Point(53, 53);
+            this.chBox_LayThuoc.Location = new System.Drawing.Point(70, 41);
             this.chBox_LayThuoc.Name = "chBox_LayThuoc";
             this.chBox_LayThuoc.Size = new System.Drawing.Size(200, 18);
             this.chBox_LayThuoc.TabIndex = 0;

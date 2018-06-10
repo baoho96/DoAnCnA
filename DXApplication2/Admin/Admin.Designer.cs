@@ -231,7 +231,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1016, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1016, 132);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -367,18 +367,18 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 35);
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 132);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.admin_tabP_qlyThuoc;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 538);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 532);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.admin_tabP_qlyThuoc,
@@ -391,7 +391,7 @@
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl7);
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl1);
             this.admin_tabP_qlyThuoc.Name = "admin_tabP_qlyThuoc";
-            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1010, 503);
             this.admin_tabP_qlyThuoc.Text = "Quản lý Thuốc";
             // 
             // panelControl7
@@ -399,9 +399,9 @@
             this.panelControl7.Controls.Add(this.gridControl1);
             this.panelControl7.Controls.Add(this.label2);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl7.Location = new System.Drawing.Point(0, 180);
+            this.panelControl7.Location = new System.Drawing.Point(0, 174);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1010, 330);
+            this.panelControl7.Size = new System.Drawing.Size(993, 330);
             this.panelControl7.TabIndex = 3;
             // 
             // gridControl1
@@ -412,8 +412,8 @@
             this.gridControl1.MainView = this.gridView1_thuoc;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1006, 304);
-            this.gridControl1.TabIndex = 3;
+            this.gridControl1.Size = new System.Drawing.Size(989, 304);
+            this.gridControl1.TabIndex = 15;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_thuoc});
             // 
@@ -604,7 +604,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1010, 174);
+            this.panelControl1.Size = new System.Drawing.Size(993, 174);
             this.panelControl1.TabIndex = 1;
             // 
             // pictureBox1_Thuoc
@@ -637,7 +637,7 @@
             this.qlyThuoc_dtP_ngaytao.Location = new System.Drawing.Point(626, 63);
             this.qlyThuoc_dtP_ngaytao.Name = "qlyThuoc_dtP_ngaytao";
             this.qlyThuoc_dtP_ngaytao.Size = new System.Drawing.Size(100, 21);
-            this.qlyThuoc_dtP_ngaytao.TabIndex = 5;
+            this.qlyThuoc_dtP_ngaytao.TabIndex = 10;
             // 
             // qlyThuoc_btn_xoa
             // 
@@ -648,7 +648,7 @@
             this.qlyThuoc_btn_xoa.Location = new System.Drawing.Point(889, 119);
             this.qlyThuoc_btn_xoa.Name = "qlyThuoc_btn_xoa";
             this.qlyThuoc_btn_xoa.Size = new System.Drawing.Size(88, 41);
-            this.qlyThuoc_btn_xoa.TabIndex = 4;
+            this.qlyThuoc_btn_xoa.TabIndex = 14;
             this.qlyThuoc_btn_xoa.Text = "Xóa";
             this.qlyThuoc_btn_xoa.Click += new System.EventHandler(this.qlyThuoc_btn_xoa_Click);
             // 
@@ -663,7 +663,7 @@
             this.qlyThuoc_btn_taomoi.Location = new System.Drawing.Point(642, 119);
             this.qlyThuoc_btn_taomoi.Name = "qlyThuoc_btn_taomoi";
             this.qlyThuoc_btn_taomoi.Size = new System.Drawing.Size(94, 40);
-            this.qlyThuoc_btn_taomoi.TabIndex = 4;
+            this.qlyThuoc_btn_taomoi.TabIndex = 12;
             this.qlyThuoc_btn_taomoi.Text = "Tạo mới";
             this.qlyThuoc_btn_taomoi.Click += new System.EventHandler(this.qlyThuoc_btn_taomoi_Click);
             // 
@@ -676,7 +676,7 @@
             this.qlyThuoc_btn_capnhat.Location = new System.Drawing.Point(767, 119);
             this.qlyThuoc_btn_capnhat.Name = "qlyThuoc_btn_capnhat";
             this.qlyThuoc_btn_capnhat.Size = new System.Drawing.Size(94, 41);
-            this.qlyThuoc_btn_capnhat.TabIndex = 4;
+            this.qlyThuoc_btn_capnhat.TabIndex = 13;
             this.qlyThuoc_btn_capnhat.Text = "Cập nhật";
             this.qlyThuoc_btn_capnhat.Click += new System.EventHandler(this.qlyThuoc_btn_capnhat_Click);
             // 
@@ -688,7 +688,7 @@
             this.qlyThuoc_btn_themloaithuoc.Location = new System.Drawing.Point(767, 25);
             this.qlyThuoc_btn_themloaithuoc.Name = "qlyThuoc_btn_themloaithuoc";
             this.qlyThuoc_btn_themloaithuoc.Size = new System.Drawing.Size(94, 41);
-            this.qlyThuoc_btn_themloaithuoc.TabIndex = 4;
+            this.qlyThuoc_btn_themloaithuoc.TabIndex = 11;
             this.qlyThuoc_btn_themloaithuoc.Text = "Loại thuốc";
             this.qlyThuoc_btn_themloaithuoc.Click += new System.EventHandler(this.qlyThuoc_btn_themloaithuoc_Click);
             // 
@@ -700,7 +700,7 @@
             this.qlyThuoc_comB_donvitinhnhonhat.Location = new System.Drawing.Point(124, 90);
             this.qlyThuoc_comB_donvitinhnhonhat.Name = "qlyThuoc_comB_donvitinhnhonhat";
             this.qlyThuoc_comB_donvitinhnhonhat.Size = new System.Drawing.Size(67, 21);
-            this.qlyThuoc_comB_donvitinhnhonhat.TabIndex = 3;
+            this.qlyThuoc_comB_donvitinhnhonhat.TabIndex = 6;
             // 
             // qlyThuoc_comB_donvitinh
             // 
@@ -721,7 +721,7 @@
             this.qlyThuoc_comB_loaithuoc.Location = new System.Drawing.Point(626, 36);
             this.qlyThuoc_comB_loaithuoc.Name = "qlyThuoc_comB_loaithuoc";
             this.qlyThuoc_comB_loaithuoc.Size = new System.Drawing.Size(135, 21);
-            this.qlyThuoc_comB_loaithuoc.TabIndex = 3;
+            this.qlyThuoc_comB_loaithuoc.TabIndex = 2;
             this.qlyThuoc_comB_loaithuoc.SelectedIndexChanged += new System.EventHandler(this.qlyThuoc_comB_loaithuoc_SelectedIndexChanged);
             // 
             // qlyThuoc_txt_DonGiaNhoNhat
@@ -729,7 +729,7 @@
             this.qlyThuoc_txt_DonGiaNhoNhat.Location = new System.Drawing.Point(483, 90);
             this.qlyThuoc_txt_DonGiaNhoNhat.Name = "qlyThuoc_txt_DonGiaNhoNhat";
             this.qlyThuoc_txt_DonGiaNhoNhat.Size = new System.Drawing.Size(64, 21);
-            this.qlyThuoc_txt_DonGiaNhoNhat.TabIndex = 1;
+            this.qlyThuoc_txt_DonGiaNhoNhat.TabIndex = 8;
             this.qlyThuoc_txt_DonGiaNhoNhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyThuoc_txt_DonGiaNhoNhat_KeyPress);
             // 
             // qlyThuoc_txt_DonGia
@@ -737,7 +737,7 @@
             this.qlyThuoc_txt_DonGia.Location = new System.Drawing.Point(483, 63);
             this.qlyThuoc_txt_DonGia.Name = "qlyThuoc_txt_DonGia";
             this.qlyThuoc_txt_DonGia.Size = new System.Drawing.Size(64, 21);
-            this.qlyThuoc_txt_DonGia.TabIndex = 1;
+            this.qlyThuoc_txt_DonGia.TabIndex = 5;
             this.qlyThuoc_txt_DonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyThuoc_txt_DonGia_KeyPress);
             // 
             // qlyThuoc_txt_SoLuongNhoNhat
@@ -745,7 +745,7 @@
             this.qlyThuoc_txt_SoLuongNhoNhat.Location = new System.Drawing.Point(274, 90);
             this.qlyThuoc_txt_SoLuongNhoNhat.Name = "qlyThuoc_txt_SoLuongNhoNhat";
             this.qlyThuoc_txt_SoLuongNhoNhat.Size = new System.Drawing.Size(36, 21);
-            this.qlyThuoc_txt_SoLuongNhoNhat.TabIndex = 1;
+            this.qlyThuoc_txt_SoLuongNhoNhat.TabIndex = 7;
             this.qlyThuoc_txt_SoLuongNhoNhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyThuoc_txt_SoLuongNhoNhat_KeyPress);
             // 
             // qlyThuoc_txt_SoLuong
@@ -753,7 +753,7 @@
             this.qlyThuoc_txt_SoLuong.Location = new System.Drawing.Point(274, 63);
             this.qlyThuoc_txt_SoLuong.Name = "qlyThuoc_txt_SoLuong";
             this.qlyThuoc_txt_SoLuong.Size = new System.Drawing.Size(36, 21);
-            this.qlyThuoc_txt_SoLuong.TabIndex = 1;
+            this.qlyThuoc_txt_SoLuong.TabIndex = 4;
             this.qlyThuoc_txt_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyThuoc_txt_SoLuong_KeyPress);
             // 
             // qlyThuoc_txt_cachdung
@@ -762,7 +762,7 @@
             this.qlyThuoc_txt_cachdung.Multiline = true;
             this.qlyThuoc_txt_cachdung.Name = "qlyThuoc_txt_cachdung";
             this.qlyThuoc_txt_cachdung.Size = new System.Drawing.Size(423, 40);
-            this.qlyThuoc_txt_cachdung.TabIndex = 1;
+            this.qlyThuoc_txt_cachdung.TabIndex = 9;
             // 
             // qlyThuoc_txt_tenthuoc
             // 
@@ -877,7 +877,7 @@
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl3_NhanVien);
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl8);
             this.admin_tabP_qlyNhanvien.Name = "admin_tabP_qlyNhanvien";
-            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1010, 503);
             this.admin_tabP_qlyNhanvien.Text = "Quản lý Nhân viên";
             // 
             // panelControl3_NhanVien
@@ -944,8 +944,8 @@
             this.qlyNhanvien_dtP_ngaytao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.qlyNhanvien_dtP_ngaytao.Location = new System.Drawing.Point(622, 36);
             this.qlyNhanvien_dtP_ngaytao.Name = "qlyNhanvien_dtP_ngaytao";
-            this.qlyNhanvien_dtP_ngaytao.Size = new System.Drawing.Size(112, 21);
-            this.qlyNhanvien_dtP_ngaytao.TabIndex = 5;
+            this.qlyNhanvien_dtP_ngaytao.Size = new System.Drawing.Size(119, 21);
+            this.qlyNhanvien_dtP_ngaytao.TabIndex = 8;
             // 
             // qlyNhanvien_dtP_ngaysinh
             // 
@@ -955,7 +955,7 @@
             this.qlyNhanvien_dtP_ngaysinh.Location = new System.Drawing.Point(384, 60);
             this.qlyNhanvien_dtP_ngaysinh.Name = "qlyNhanvien_dtP_ngaysinh";
             this.qlyNhanvien_dtP_ngaysinh.Size = new System.Drawing.Size(97, 21);
-            this.qlyNhanvien_dtP_ngaysinh.TabIndex = 5;
+            this.qlyNhanvien_dtP_ngaysinh.TabIndex = 4;
             // 
             // qlyNhanvien_btn_xoa
             // 
@@ -966,7 +966,7 @@
             this.qlyNhanvien_btn_xoa.Location = new System.Drawing.Point(913, 99);
             this.qlyNhanvien_btn_xoa.Name = "qlyNhanvien_btn_xoa";
             this.qlyNhanvien_btn_xoa.Size = new System.Drawing.Size(88, 39);
-            this.qlyNhanvien_btn_xoa.TabIndex = 4;
+            this.qlyNhanvien_btn_xoa.TabIndex = 14;
             this.qlyNhanvien_btn_xoa.Text = "Xóa";
             this.qlyNhanvien_btn_xoa.Click += new System.EventHandler(this.qlyNhanvien_btn_xoa_Click);
             // 
@@ -980,7 +980,7 @@
             this.qlyNhanvien_btn_taomoi.Location = new System.Drawing.Point(773, 37);
             this.qlyNhanvien_btn_taomoi.Name = "qlyNhanvien_btn_taomoi";
             this.qlyNhanvien_btn_taomoi.Size = new System.Drawing.Size(88, 39);
-            this.qlyNhanvien_btn_taomoi.TabIndex = 4;
+            this.qlyNhanvien_btn_taomoi.TabIndex = 12;
             this.qlyNhanvien_btn_taomoi.Text = "Tạo mới";
             this.qlyNhanvien_btn_taomoi.Click += new System.EventHandler(this.qlyNhanvien_btn_taomoi_Click);
             // 
@@ -993,7 +993,7 @@
             this.qlyNhanvien_btn_capnhat.Location = new System.Drawing.Point(773, 99);
             this.qlyNhanvien_btn_capnhat.Name = "qlyNhanvien_btn_capnhat";
             this.qlyNhanvien_btn_capnhat.Size = new System.Drawing.Size(88, 39);
-            this.qlyNhanvien_btn_capnhat.TabIndex = 4;
+            this.qlyNhanvien_btn_capnhat.TabIndex = 13;
             this.qlyNhanvien_btn_capnhat.Text = "Điều chỉnh";
             this.qlyNhanvien_btn_capnhat.Click += new System.EventHandler(this.qlyNhanvien_btn_capnhat_Click);
             // 
@@ -1005,7 +1005,7 @@
             this.qlyNhanvien_comB_QuyenTruyCap.Location = new System.Drawing.Point(622, 117);
             this.qlyNhanvien_comB_QuyenTruyCap.Name = "qlyNhanvien_comB_QuyenTruyCap";
             this.qlyNhanvien_comB_QuyenTruyCap.Size = new System.Drawing.Size(119, 21);
-            this.qlyNhanvien_comB_QuyenTruyCap.TabIndex = 3;
+            this.qlyNhanvien_comB_QuyenTruyCap.TabIndex = 11;
             this.qlyNhanvien_comB_QuyenTruyCap.SelectedIndexChanged += new System.EventHandler(this.qlyNhanvien_comB_QuyenTruyCap_SelectedIndexChanged);
             // 
             // qlyNhanvien_comB_vitri
@@ -1026,7 +1026,7 @@
             this.qlyNhanvien_comB_gioitinh.Location = new System.Drawing.Point(89, 60);
             this.qlyNhanvien_comB_gioitinh.Name = "qlyNhanvien_comB_gioitinh";
             this.qlyNhanvien_comB_gioitinh.Size = new System.Drawing.Size(68, 21);
-            this.qlyNhanvien_comB_gioitinh.TabIndex = 3;
+            this.qlyNhanvien_comB_gioitinh.TabIndex = 2;
             // 
             // qlyNhanvien_txt_matkhau
             // 
@@ -1035,7 +1035,7 @@
             this.qlyNhanvien_txt_matkhau.Name = "qlyNhanvien_txt_matkhau";
             this.qlyNhanvien_txt_matkhau.PasswordChar = '*';
             this.qlyNhanvien_txt_matkhau.Size = new System.Drawing.Size(119, 21);
-            this.qlyNhanvien_txt_matkhau.TabIndex = 1;
+            this.qlyNhanvien_txt_matkhau.TabIndex = 10;
             this.qlyNhanvien_txt_matkhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyNhanvien_txt_matkhau_KeyPress);
             // 
             // qlyNhanvien_txt_taikhoan
@@ -1044,14 +1044,14 @@
             this.qlyNhanvien_txt_taikhoan.MaxLength = 50;
             this.qlyNhanvien_txt_taikhoan.Name = "qlyNhanvien_txt_taikhoan";
             this.qlyNhanvien_txt_taikhoan.Size = new System.Drawing.Size(119, 21);
-            this.qlyNhanvien_txt_taikhoan.TabIndex = 1;
+            this.qlyNhanvien_txt_taikhoan.TabIndex = 9;
             // 
             // qlyNhanvien_txt_Luong
             // 
             this.qlyNhanvien_txt_Luong.Location = new System.Drawing.Point(324, 87);
             this.qlyNhanvien_txt_Luong.Name = "qlyNhanvien_txt_Luong";
             this.qlyNhanvien_txt_Luong.Size = new System.Drawing.Size(156, 21);
-            this.qlyNhanvien_txt_Luong.TabIndex = 1;
+            this.qlyNhanvien_txt_Luong.TabIndex = 6;
             this.qlyNhanvien_txt_Luong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyNhanvien_txt_Luong_KeyPress);
             // 
             // qlyNhanvien_txt_diachi
@@ -1059,7 +1059,7 @@
             this.qlyNhanvien_txt_diachi.Location = new System.Drawing.Point(89, 114);
             this.qlyNhanvien_txt_diachi.Name = "qlyNhanvien_txt_diachi";
             this.qlyNhanvien_txt_diachi.Size = new System.Drawing.Size(391, 21);
-            this.qlyNhanvien_txt_diachi.TabIndex = 1;
+            this.qlyNhanvien_txt_diachi.TabIndex = 7;
             // 
             // qlyNhanvien_txt_sdt
             // 
@@ -1067,7 +1067,7 @@
             this.qlyNhanvien_txt_sdt.MaxLength = 20;
             this.qlyNhanvien_txt_sdt.Name = "qlyNhanvien_txt_sdt";
             this.qlyNhanvien_txt_sdt.Size = new System.Drawing.Size(177, 21);
-            this.qlyNhanvien_txt_sdt.TabIndex = 1;
+            this.qlyNhanvien_txt_sdt.TabIndex = 5;
             this.qlyNhanvien_txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyNhanvien_txt_sdt_KeyPress);
             // 
             // labelControl18
@@ -1193,7 +1193,7 @@
             this.panelControl8.Controls.Add(this.gridControl2);
             this.panelControl8.Controls.Add(this.label5);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl8.Location = new System.Drawing.Point(0, 155);
+            this.panelControl8.Location = new System.Drawing.Point(0, 148);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(1010, 355);
             this.panelControl8.TabIndex = 5;
@@ -1207,7 +1207,7 @@
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.Size = new System.Drawing.Size(1006, 325);
-            this.gridControl2.TabIndex = 7;
+            this.gridControl2.TabIndex = 15;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_NhanVien});
             // 
@@ -1351,7 +1351,7 @@
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl9);
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl5_VatDung);
             this.admin_tabP_qlyVatdung.Name = "admin_tabP_qlyVatdung";
-            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1010, 503);
             this.admin_tabP_qlyVatdung.Text = "Quản lý Vật dụng";
             // 
             // panelControl9
@@ -1359,7 +1359,7 @@
             this.panelControl9.Controls.Add(this.gridControl3);
             this.panelControl9.Controls.Add(this.label8);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl9.Location = new System.Drawing.Point(0, 140);
+            this.panelControl9.Location = new System.Drawing.Point(0, 133);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(1010, 370);
             this.panelControl9.TabIndex = 7;
@@ -1373,7 +1373,7 @@
             this.gridControl3.MenuManager = this.ribbonControl;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.Size = new System.Drawing.Size(1006, 333);
-            this.gridControl3.TabIndex = 3;
+            this.gridControl3.TabIndex = 8;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_VatDung});
             // 
@@ -1519,7 +1519,7 @@
             this.qlyVatdung_dtP_ngaytao.Location = new System.Drawing.Point(459, 32);
             this.qlyVatdung_dtP_ngaytao.Name = "qlyVatdung_dtP_ngaytao";
             this.qlyVatdung_dtP_ngaytao.Size = new System.Drawing.Size(133, 21);
-            this.qlyVatdung_dtP_ngaytao.TabIndex = 5;
+            this.qlyVatdung_dtP_ngaytao.TabIndex = 4;
             // 
             // labelControl28
             // 
@@ -1540,7 +1540,7 @@
             this.qlyVatdung_btn_xoa.Location = new System.Drawing.Point(747, 80);
             this.qlyVatdung_btn_xoa.Name = "qlyVatdung_btn_xoa";
             this.qlyVatdung_btn_xoa.Size = new System.Drawing.Size(88, 39);
-            this.qlyVatdung_btn_xoa.TabIndex = 4;
+            this.qlyVatdung_btn_xoa.TabIndex = 7;
             this.qlyVatdung_btn_xoa.Text = "Xóa";
             this.qlyVatdung_btn_xoa.Click += new System.EventHandler(this.qlyVatdung_btn_xoa_Click);
             // 
@@ -1552,7 +1552,7 @@
             this.qlyVatdung_btn_taomoi.Location = new System.Drawing.Point(528, 80);
             this.qlyVatdung_btn_taomoi.Name = "qlyVatdung_btn_taomoi";
             this.qlyVatdung_btn_taomoi.Size = new System.Drawing.Size(88, 39);
-            this.qlyVatdung_btn_taomoi.TabIndex = 4;
+            this.qlyVatdung_btn_taomoi.TabIndex = 5;
             this.qlyVatdung_btn_taomoi.Text = "Tạo mới";
             this.qlyVatdung_btn_taomoi.Click += new System.EventHandler(this.qlyVatdung_btn_taomoi_Click);
             // 
@@ -1565,7 +1565,7 @@
             this.qlyVatdung_btn_capnhat.Location = new System.Drawing.Point(637, 80);
             this.qlyVatdung_btn_capnhat.Name = "qlyVatdung_btn_capnhat";
             this.qlyVatdung_btn_capnhat.Size = new System.Drawing.Size(88, 39);
-            this.qlyVatdung_btn_capnhat.TabIndex = 4;
+            this.qlyVatdung_btn_capnhat.TabIndex = 6;
             this.qlyVatdung_btn_capnhat.Text = "Cập nhật";
             this.qlyVatdung_btn_capnhat.Click += new System.EventHandler(this.qlyVatdung_btn_capnhat_Click);
             // 
@@ -1574,7 +1574,7 @@
             this.qlyVatdung_txt_sonamsudung.Location = new System.Drawing.Point(108, 59);
             this.qlyVatdung_txt_sonamsudung.Name = "qlyVatdung_txt_sonamsudung";
             this.qlyVatdung_txt_sonamsudung.Size = new System.Drawing.Size(133, 21);
-            this.qlyVatdung_txt_sonamsudung.TabIndex = 1;
+            this.qlyVatdung_txt_sonamsudung.TabIndex = 2;
             this.qlyVatdung_txt_sonamsudung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyVatdung_txt_sonamsudung_KeyPress);
             // 
             // qlyVatdung_txt_soluong
@@ -1582,7 +1582,7 @@
             this.qlyVatdung_txt_soluong.Location = new System.Drawing.Point(108, 86);
             this.qlyVatdung_txt_soluong.Name = "qlyVatdung_txt_soluong";
             this.qlyVatdung_txt_soluong.Size = new System.Drawing.Size(133, 21);
-            this.qlyVatdung_txt_soluong.TabIndex = 1;
+            this.qlyVatdung_txt_soluong.TabIndex = 3;
             this.qlyVatdung_txt_soluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qlyVatdung_txt_soluong_KeyPress);
             // 
             // qlyVatdung_txt_tenvatdung

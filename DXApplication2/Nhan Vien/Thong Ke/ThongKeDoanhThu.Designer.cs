@@ -277,9 +277,9 @@
             this.documentViewer1_DoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.documentViewer1_DoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1_DoanhThu.IsMetric = false;
-            this.documentViewer1_DoanhThu.Location = new System.Drawing.Point(0, 113);
+            this.documentViewer1_DoanhThu.Location = new System.Drawing.Point(0, 114);
             this.documentViewer1_DoanhThu.Name = "documentViewer1_DoanhThu";
-            this.documentViewer1_DoanhThu.Size = new System.Drawing.Size(784, 425);
+            this.documentViewer1_DoanhThu.Size = new System.Drawing.Size(784, 422);
             this.documentViewer1_DoanhThu.TabIndex = 0;
             // 
             // panel1
@@ -304,7 +304,7 @@
             this.checkB_TimTheoNam.Location = new System.Drawing.Point(430, 31);
             this.checkB_TimTheoNam.Name = "checkB_TimTheoNam";
             this.checkB_TimTheoNam.Size = new System.Drawing.Size(104, 17);
-            this.checkB_TimTheoNam.TabIndex = 3;
+            this.checkB_TimTheoNam.TabIndex = 2;
             this.checkB_TimTheoNam.Text = "Tìm theo năm";
             this.checkB_TimTheoNam.UseVisualStyleBackColor = true;
             this.checkB_TimTheoNam.Click += new System.EventHandler(this.checkB_TimTheoNam_Click);
@@ -316,7 +316,7 @@
             this.checkB_TimTheoThang.Location = new System.Drawing.Point(430, 8);
             this.checkB_TimTheoThang.Name = "checkB_TimTheoThang";
             this.checkB_TimTheoThang.Size = new System.Drawing.Size(112, 17);
-            this.checkB_TimTheoThang.TabIndex = 3;
+            this.checkB_TimTheoThang.TabIndex = 1;
             this.checkB_TimTheoThang.Text = "Tìm theo tháng";
             this.checkB_TimTheoThang.UseVisualStyleBackColor = true;
             this.checkB_TimTheoThang.Click += new System.EventHandler(this.checkB_TimTheoThang_Click);
@@ -329,7 +329,7 @@
             this.btn_TimKiem.Location = new System.Drawing.Point(610, 8);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(80, 40);
-            this.btn_TimKiem.TabIndex = 2;
+            this.btn_TimKiem.TabIndex = 3;
             this.btn_TimKiem.Text = "Tìm kiếm";
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
@@ -441,7 +441,7 @@
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(784, 55);
+            this.ribbonControl1.Size = new System.Drawing.Size(784, 56);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -1570,10 +1570,10 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 538);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 536);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 25);
             // 
             // ThongKeDoanhThu
             // 

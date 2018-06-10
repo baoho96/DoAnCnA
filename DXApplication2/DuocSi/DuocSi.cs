@@ -88,7 +88,7 @@ namespace QuanLyPhongKham
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
                             " join DonThuoc DT on DT.MaSoDonThuoc = HD.MaSoDonThuoc" +
-                            " where HD.KiemTraLayThuoc = 1 And HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "'";
+                            " where HD.KiemTraLayThuoc = 1 And HD.KiemTraDaLayThuoc is NULL And HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "'";
             connection.connect();
             sqlDataAdapter = new SqlDataAdapter(Load_data, connection.con);
             dataSet.Clear();
@@ -193,7 +193,7 @@ namespace QuanLyPhongKham
 
         private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraLayThuoc = 1";
+            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraDaLayThuoc = 1";
             int checkColumn = 1;
             BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);            
             benhNhanThanhToan.ShowDialog();

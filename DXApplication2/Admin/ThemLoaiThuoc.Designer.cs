@@ -99,7 +99,7 @@
             this.btn_xoa.Location = new System.Drawing.Point(405, 81);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(75, 36);
-            this.btn_xoa.TabIndex = 2;
+            this.btn_xoa.TabIndex = 5;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
@@ -110,7 +110,7 @@
             this.btn_capnhat.Location = new System.Drawing.Point(324, 81);
             this.btn_capnhat.Name = "btn_capnhat";
             this.btn_capnhat.Size = new System.Drawing.Size(75, 36);
-            this.btn_capnhat.TabIndex = 2;
+            this.btn_capnhat.TabIndex = 4;
             this.btn_capnhat.Text = "Cập nhật";
             this.btn_capnhat.Click += new System.EventHandler(this.btn_capnhat_Click);
             // 
@@ -120,7 +120,7 @@
             this.btn_themmoi.Location = new System.Drawing.Point(243, 81);
             this.btn_themmoi.Name = "btn_themmoi";
             this.btn_themmoi.Size = new System.Drawing.Size(75, 36);
-            this.btn_themmoi.TabIndex = 2;
+            this.btn_themmoi.TabIndex = 3;
             this.btn_themmoi.Text = "Thêm mới";
             this.btn_themmoi.Click += new System.EventHandler(this.btn_themmoi_Click);
             // 
@@ -129,7 +129,7 @@
             this.txt_ghichu.Location = new System.Drawing.Point(122, 54);
             this.txt_ghichu.Name = "txt_ghichu";
             this.txt_ghichu.Size = new System.Drawing.Size(336, 21);
-            this.txt_ghichu.TabIndex = 1;
+            this.txt_ghichu.TabIndex = 2;
             // 
             // txt_tenloaithuoc
             // 
@@ -170,7 +170,7 @@
             this.colTenLoaiThuoc1,
             this.colGhiChu1});
             this.gridC_danhsachloaithuoc.Size = new System.Drawing.Size(488, 215);
-            this.gridC_danhsachloaithuoc.TabIndex = 1;
+            this.gridC_danhsachloaithuoc.TabIndex = 6;
             this.gridC_danhsachloaithuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 

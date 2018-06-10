@@ -50,7 +50,7 @@
             this.txt_matkhau.Name = "txt_matkhau";
             this.txt_matkhau.PasswordChar = '*';
             this.txt_matkhau.Size = new System.Drawing.Size(176, 21);
-            this.txt_matkhau.TabIndex = 6;
+            this.txt_matkhau.TabIndex = 2;
             // 
             // txt_taikhoan
             // 
@@ -58,14 +58,15 @@
             this.txt_taikhoan.MaxLength = 50;
             this.txt_taikhoan.Name = "txt_taikhoan";
             this.txt_taikhoan.Size = new System.Drawing.Size(176, 21);
-            this.txt_taikhoan.TabIndex = 5;
+            this.txt_taikhoan.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 104);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(4, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tài khoản";
             // 
@@ -82,24 +83,31 @@
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.Location = new System.Drawing.Point(88, 196);
+            this.btn_DangNhap.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_DangNhap.Appearance.Options.UseFont = true;
+            this.btn_DangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DangNhap.ImageOptions.Image")));
+            this.btn_DangNhap.Location = new System.Drawing.Point(70, 189);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(75, 35);
-            this.btn_DangNhap.TabIndex = 8;
+            this.btn_DangNhap.Size = new System.Drawing.Size(89, 42);
+            this.btn_DangNhap.TabIndex = 3;
             this.btn_DangNhap.Text = "Đăng Nhập";
             this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
             // 
             // btn_thoat
             // 
-            this.btn_thoat.Location = new System.Drawing.Point(179, 196);
+            this.btn_thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_thoat.Appearance.Options.UseFont = true;
+            this.btn_thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_thoat.ImageOptions.Image")));
+            this.btn_thoat.Location = new System.Drawing.Point(172, 189);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(75, 35);
-            this.btn_thoat.TabIndex = 8;
+            this.btn_thoat.Size = new System.Drawing.Size(74, 42);
+            this.btn_thoat.TabIndex = 4;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.btn_thoat);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label4);
@@ -113,9 +121,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 129);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(4, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mật khẩu";
             // 
@@ -129,7 +138,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.groupControl1);

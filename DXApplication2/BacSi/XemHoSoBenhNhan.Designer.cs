@@ -197,10 +197,10 @@
             gridLevelNode1,
             gridLevelNode4,
             gridLevelNode5});
-            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(0, 79);
+            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(0, 86);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
-            this.gridControl1_TimKiemBenhNhan.Size = new System.Drawing.Size(872, 489);
+            this.gridControl1_TimKiemBenhNhan.Size = new System.Drawing.Size(872, 478);
             this.gridControl1_TimKiemBenhNhan.TabIndex = 7;
             this.gridControl1_TimKiemBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoSoTaiKham,
@@ -412,6 +412,8 @@
             this.colKetQua.Caption = "Kết Quả";
             this.colKetQua.FieldName = "KetQuaXetNghiem";
             this.colKetQua.Name = "colKetQua";
+            this.colKetQua.Visible = true;
+            this.colKetQua.VisibleIndex = 9;
             // 
             // colChuanDoan1
             // 
@@ -419,7 +421,7 @@
             this.colChuanDoan1.FieldName = "ChuanDoan";
             this.colChuanDoan1.Name = "colChuanDoan1";
             this.colChuanDoan1.Visible = true;
-            this.colChuanDoan1.VisibleIndex = 9;
+            this.colChuanDoan1.VisibleIndex = 10;
             this.colChuanDoan1.Width = 53;
             // 
             // colTienKham1
@@ -435,7 +437,7 @@
             this.colGhiChu1.FieldName = "GhiChu";
             this.colGhiChu1.Name = "colGhiChu1";
             this.colGhiChu1.Visible = true;
-            this.colGhiChu1.VisibleIndex = 10;
+            this.colGhiChu1.VisibleIndex = 11;
             this.colGhiChu1.Width = 108;
             // 
             // colHo3
@@ -513,7 +515,7 @@
             this.cl_KiemTraTaiKham.FieldName = "KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Name = "cl_KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Visible = true;
-            this.cl_KiemTraTaiKham.VisibleIndex = 12;
+            this.cl_KiemTraTaiKham.VisibleIndex = 13;
             this.cl_KiemTraTaiKham.Width = 43;
             // 
             // colTienKham11
@@ -522,7 +524,7 @@
             this.colTienKham11.FieldName = "TienKham1";
             this.colTienKham11.Name = "colTienKham11";
             this.colTienKham11.Visible = true;
-            this.colTienKham11.VisibleIndex = 11;
+            this.colTienKham11.VisibleIndex = 12;
             this.colTienKham11.Width = 58;
             // 
             // gridView3_DanhSachThuoc
@@ -606,7 +608,7 @@
             this.ribbonPage1});
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(872, 79);
+            this.ribbonControl1.Size = new System.Drawing.Size(872, 86);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_indanhsach
@@ -643,10 +645,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 568);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 564);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(872, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(872, 35);
             // 
             // ribbonPage2
             // 

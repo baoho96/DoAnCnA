@@ -44,7 +44,7 @@
             this.ThemCho_txt_LiDoKham.Multiline = true;
             this.ThemCho_txt_LiDoKham.Name = "ThemCho_txt_LiDoKham";
             this.ThemCho_txt_LiDoKham.Size = new System.Drawing.Size(199, 61);
-            this.ThemCho_txt_LiDoKham.TabIndex = 9;
+            this.ThemCho_txt_LiDoKham.TabIndex = 1;
             // 
             // label5
             // 
@@ -63,7 +63,7 @@
             this.ThemCho_dtP_ThoiGianKham.Location = new System.Drawing.Point(108, 61);
             this.ThemCho_dtP_ThoiGianKham.Name = "ThemCho_dtP_ThoiGianKham";
             this.ThemCho_dtP_ThoiGianKham.Size = new System.Drawing.Size(185, 20);
-            this.ThemCho_dtP_ThoiGianKham.TabIndex = 11;
+            this.ThemCho_dtP_ThoiGianKham.TabIndex = 0;
             // 
             // label6
             // 
@@ -77,21 +77,25 @@
             // 
             // ThemCho_btn_ThemCho
             // 
+            this.ThemCho_btn_ThemCho.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ThemCho_btn_ThemCho.Appearance.Options.UseFont = true;
             this.ThemCho_btn_ThemCho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_ThemCho.ImageOptions.Image")));
-            this.ThemCho_btn_ThemCho.Location = new System.Drawing.Point(108, 184);
+            this.ThemCho_btn_ThemCho.Location = new System.Drawing.Point(108, 177);
             this.ThemCho_btn_ThemCho.Name = "ThemCho_btn_ThemCho";
-            this.ThemCho_btn_ThemCho.Size = new System.Drawing.Size(81, 31);
-            this.ThemCho_btn_ThemCho.TabIndex = 12;
+            this.ThemCho_btn_ThemCho.Size = new System.Drawing.Size(86, 38);
+            this.ThemCho_btn_ThemCho.TabIndex = 2;
             this.ThemCho_btn_ThemCho.Text = "Thêm Chờ";
             this.ThemCho_btn_ThemCho.Click += new System.EventHandler(this.ThemCho_btn_ThemCho_Click);
             // 
             // ThemCho_btn_Thoat
             // 
+            this.ThemCho_btn_Thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ThemCho_btn_Thoat.Appearance.Options.UseFont = true;
             this.ThemCho_btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ThemCho_btn_Thoat.ImageOptions.Image")));
-            this.ThemCho_btn_Thoat.Location = new System.Drawing.Point(217, 184);
+            this.ThemCho_btn_Thoat.Location = new System.Drawing.Point(217, 177);
             this.ThemCho_btn_Thoat.Name = "ThemCho_btn_Thoat";
-            this.ThemCho_btn_Thoat.Size = new System.Drawing.Size(76, 31);
-            this.ThemCho_btn_Thoat.TabIndex = 12;
+            this.ThemCho_btn_Thoat.Size = new System.Drawing.Size(76, 38);
+            this.ThemCho_btn_Thoat.TabIndex = 3;
             this.ThemCho_btn_Thoat.Text = "Thoát";
             this.ThemCho_btn_Thoat.Click += new System.EventHandler(this.ThemCho_btn_Thoat_Click);
             // 

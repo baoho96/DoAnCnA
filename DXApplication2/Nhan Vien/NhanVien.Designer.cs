@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.cardView1_HoSoTaiKham = new DevExpress.XtraGrid.Views.Card.CardView();
             this.clHSTKMaSoTaiKham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHSTKMaSoKhamBenh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -434,11 +434,11 @@
             this.gridControl1_TimKiemBenhNhan.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode1.LevelTemplate = this.cardView1_HoSoTaiKham;
-            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode4.LevelTemplate = this.cardView1_HoSoTaiKham;
+            gridLevelNode4.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 66);
+            gridLevelNode4});
+            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 59);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
@@ -676,7 +676,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1016, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1016, 132);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -750,10 +750,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 35);
             // 
             // gridView1_HoSoTaiKham_BenhNhan
             // 
@@ -888,11 +888,11 @@
             // 
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = this.benhNhanBindingSource;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode2.LevelTemplate = this.cardView1_DanhsachbenhNhan;
-            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_BenhNhan";
+            gridLevelNode1.LevelTemplate = this.cardView1_DanhsachbenhNhan;
+            gridLevelNode1.RelationName = "FK_HoSoKhamBenh_BenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 152);
+            gridLevelNode1});
+            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 145);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1199,10 +1199,10 @@
             this.gridControl1_TimBenhNhan.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridControl1_TimBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gridLevelNode3.LevelTemplate = this.cardView1_TimBenhNhan;
-            gridLevelNode3.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode2.LevelTemplate = this.cardView1_TimBenhNhan;
+            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControl1_TimBenhNhan.Location = new System.Drawing.Point(2, 29);
             this.gridControl1_TimBenhNhan.MainView = this.gridView1_TimBenhNhan;
             this.gridControl1_TimBenhNhan.MenuManager = this.ribbonControl;
@@ -1515,7 +1515,7 @@
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.AutoScroll = true;
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Controls.Add(this.panelControl5);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Name = "NhanVien_tabP_DanhSachBenhNhanTaiKham";
-            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1010, 510);
+            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1010, 503);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Text = "Tiếp nhận bệnh nhân tái khám";
             // 
             // panelControl5
@@ -1529,7 +1529,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1010, 510);
+            this.panelControl5.Size = new System.Drawing.Size(1010, 503);
             this.panelControl5.TabIndex = 7;
             // 
             // TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham
@@ -1540,7 +1540,7 @@
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Location = new System.Drawing.Point(712, 23);
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Name = "TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham";
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Size = new System.Drawing.Size(147, 21);
-            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.TabIndex = 14;
+            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.TabIndex = 0;
             // 
             // label31
             // 
@@ -1571,7 +1571,7 @@
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Location = new System.Drawing.Point(865, 15);
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Name = "TimKiemBenhNhanKham_btn_ThemChoTaiKham";
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Size = new System.Drawing.Size(83, 38);
-            this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.TabIndex = 10;
+            this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.TabIndex = 1;
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Text = "Chờ Khám";
             this.TimKiemBenhNhanKham_btn_ThemChoTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_ThemChoTaiKham_Click);
             // 
@@ -1591,7 +1591,7 @@
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.panelControl4);
             this.NhanVien_tabP_DanhSachBenhNhan.Name = "NhanVien_tabP_DanhSachBenhNhan";
-            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1010, 510);
+            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1010, 503);
             this.NhanVien_tabP_DanhSachBenhNhan.Text = "Tiếp nhận bệnh nhân cũ";
             // 
             // panelControl4
@@ -1642,7 +1642,7 @@
             this.DanhSachBenhNhan_txt_TenNguoiThan.MaxLength = 50;
             this.DanhSachBenhNhan_txt_TenNguoiThan.Name = "DanhSachBenhNhan_txt_TenNguoiThan";
             this.DanhSachBenhNhan_txt_TenNguoiThan.Size = new System.Drawing.Size(141, 21);
-            this.DanhSachBenhNhan_txt_TenNguoiThan.TabIndex = 25;
+            this.DanhSachBenhNhan_txt_TenNguoiThan.TabIndex = 6;
             // 
             // label26
             // 
@@ -1660,7 +1660,7 @@
             this.DanhSachBenhNhan_txt_CanNang.MaxLength = 20;
             this.DanhSachBenhNhan_txt_CanNang.Name = "DanhSachBenhNhan_txt_CanNang";
             this.DanhSachBenhNhan_txt_CanNang.Size = new System.Drawing.Size(35, 21);
-            this.DanhSachBenhNhan_txt_CanNang.TabIndex = 23;
+            this.DanhSachBenhNhan_txt_CanNang.TabIndex = 4;
             this.DanhSachBenhNhan_txt_CanNang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DanhSachBenhNhan_txt_CanNang_KeyPress);
             // 
             // label27
@@ -1691,7 +1691,7 @@
             this.DanhSachBenhNhan_btn_ThemCho.Location = new System.Drawing.Point(619, 88);
             this.DanhSachBenhNhan_btn_ThemCho.Name = "DanhSachBenhNhan_btn_ThemCho";
             this.DanhSachBenhNhan_btn_ThemCho.Size = new System.Drawing.Size(90, 46);
-            this.DanhSachBenhNhan_btn_ThemCho.TabIndex = 20;
+            this.DanhSachBenhNhan_btn_ThemCho.TabIndex = 8;
             this.DanhSachBenhNhan_btn_ThemCho.Text = "Chờ khám";
             this.DanhSachBenhNhan_btn_ThemCho.Click += new System.EventHandler(this.DanhSachBenhNhan_btn_ThemCho_Click);
             // 
@@ -1703,7 +1703,7 @@
             this.DanhSachBenhNhan_btn_Xoa.Location = new System.Drawing.Point(742, 88);
             this.DanhSachBenhNhan_btn_Xoa.Name = "DanhSachBenhNhan_btn_Xoa";
             this.DanhSachBenhNhan_btn_Xoa.Size = new System.Drawing.Size(89, 46);
-            this.DanhSachBenhNhan_btn_Xoa.TabIndex = 13;
+            this.DanhSachBenhNhan_btn_Xoa.TabIndex = 10;
             this.DanhSachBenhNhan_btn_Xoa.Text = "Xóa";
             this.DanhSachBenhNhan_btn_Xoa.Click += new System.EventHandler(this.DanhSachBenhNhan_btn_Xoa_Click);
             // 
@@ -1715,7 +1715,7 @@
             this.DanhSachBenhNhan_btn_DieuChinh.Location = new System.Drawing.Point(742, 27);
             this.DanhSachBenhNhan_btn_DieuChinh.Name = "DanhSachBenhNhan_btn_DieuChinh";
             this.DanhSachBenhNhan_btn_DieuChinh.Size = new System.Drawing.Size(89, 46);
-            this.DanhSachBenhNhan_btn_DieuChinh.TabIndex = 13;
+            this.DanhSachBenhNhan_btn_DieuChinh.TabIndex = 9;
             this.DanhSachBenhNhan_btn_DieuChinh.Text = "Điều chỉnh";
             this.DanhSachBenhNhan_btn_DieuChinh.Click += new System.EventHandler(this.DanhSachBenhNhan_btn_DieuChinh_Click);
             // 
@@ -1737,7 +1737,7 @@
             this.DanhSachBenhNhan_dtP_NamSinh.Location = new System.Drawing.Point(88, 57);
             this.DanhSachBenhNhan_dtP_NamSinh.Name = "DanhSachBenhNhan_dtP_NamSinh";
             this.DanhSachBenhNhan_dtP_NamSinh.Size = new System.Drawing.Size(98, 21);
-            this.DanhSachBenhNhan_dtP_NamSinh.TabIndex = 11;
+            this.DanhSachBenhNhan_dtP_NamSinh.TabIndex = 2;
             // 
             // label12
             // 
@@ -1755,7 +1755,7 @@
             this.DanhSachBenhNhan_txt_Ten.MaxLength = 50;
             this.DanhSachBenhNhan_txt_Ten.Name = "DanhSachBenhNhan_txt_Ten";
             this.DanhSachBenhNhan_txt_Ten.Size = new System.Drawing.Size(109, 21);
-            this.DanhSachBenhNhan_txt_Ten.TabIndex = 8;
+            this.DanhSachBenhNhan_txt_Ten.TabIndex = 1;
             // 
             // label13
             // 
@@ -1773,7 +1773,7 @@
             this.DanhSachBenhNhan_txt_Ho.MaxLength = 50;
             this.DanhSachBenhNhan_txt_Ho.Name = "DanhSachBenhNhan_txt_Ho";
             this.DanhSachBenhNhan_txt_Ho.Size = new System.Drawing.Size(188, 21);
-            this.DanhSachBenhNhan_txt_Ho.TabIndex = 9;
+            this.DanhSachBenhNhan_txt_Ho.TabIndex = 0;
             // 
             // label16
             // 
@@ -1793,7 +1793,7 @@
             this.DanhSachBenhNhan_comB_GioiTinh.Location = new System.Drawing.Point(243, 58);
             this.DanhSachBenhNhan_comB_GioiTinh.Name = "DanhSachBenhNhan_comB_GioiTinh";
             this.DanhSachBenhNhan_comB_GioiTinh.Size = new System.Drawing.Size(59, 21);
-            this.DanhSachBenhNhan_comB_GioiTinh.TabIndex = 5;
+            this.DanhSachBenhNhan_comB_GioiTinh.TabIndex = 3;
             // 
             // label18
             // 
@@ -1811,7 +1811,7 @@
             this.DanhSachBenhNhan_txt_SDT.MaxLength = 20;
             this.DanhSachBenhNhan_txt_SDT.Name = "DanhSachBenhNhan_txt_SDT";
             this.DanhSachBenhNhan_txt_SDT.Size = new System.Drawing.Size(102, 21);
-            this.DanhSachBenhNhan_txt_SDT.TabIndex = 1;
+            this.DanhSachBenhNhan_txt_SDT.TabIndex = 7;
             this.DanhSachBenhNhan_txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DanhSachBenhNhan_txt_SDT_KeyPress);
             // 
             // DanhSachBenhNhan_txt_DiaChi
@@ -1820,7 +1820,7 @@
             this.DanhSachBenhNhan_txt_DiaChi.Multiline = true;
             this.DanhSachBenhNhan_txt_DiaChi.Name = "DanhSachBenhNhan_txt_DiaChi";
             this.DanhSachBenhNhan_txt_DiaChi.Size = new System.Drawing.Size(343, 29);
-            this.DanhSachBenhNhan_txt_DiaChi.TabIndex = 1;
+            this.DanhSachBenhNhan_txt_DiaChi.TabIndex = 5;
             // 
             // label19
             // 
@@ -1858,14 +1858,14 @@
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham);
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.panelControl2);
             this.NhanVien_tabP_TiepNhanBenhNhan.Name = "NhanVien_tabP_TiepNhanBenhNhan";
-            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1010, 510);
+            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1010, 503);
             this.NhanVien_tabP_TiepNhanBenhNhan.Text = "Tiếp nhận bệnh nhân mới";
             // 
             // TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham
             // 
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = this.hoSoKhamBenhBindingSource;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 188);
+            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 181);
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MainView = this.gridView1_TiepNhanBenhNhan;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MenuManager = this.ribbonControl;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Name = "TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham";
@@ -2123,7 +2123,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1011, 182);
+            this.panelControl2.Size = new System.Drawing.Size(1011, 176);
             this.panelControl2.TabIndex = 2;
             // 
             // TiepNhanBenhNhan_dtP_NgayKham
@@ -2133,7 +2133,7 @@
             this.TiepNhanBenhNhan_dtP_NgayKham.Location = new System.Drawing.Point(587, 118);
             this.TiepNhanBenhNhan_dtP_NgayKham.Name = "TiepNhanBenhNhan_dtP_NgayKham";
             this.TiepNhanBenhNhan_dtP_NgayKham.Size = new System.Drawing.Size(152, 21);
-            this.TiepNhanBenhNhan_dtP_NgayKham.TabIndex = 17;
+            this.TiepNhanBenhNhan_dtP_NgayKham.TabIndex = 9;
             // 
             // TiepNhanBenhNhan_txt_LiDoKham
             // 
@@ -2141,7 +2141,7 @@
             this.TiepNhanBenhNhan_txt_LiDoKham.Multiline = true;
             this.TiepNhanBenhNhan_txt_LiDoKham.Name = "TiepNhanBenhNhan_txt_LiDoKham";
             this.TiepNhanBenhNhan_txt_LiDoKham.Size = new System.Drawing.Size(364, 48);
-            this.TiepNhanBenhNhan_txt_LiDoKham.TabIndex = 16;
+            this.TiepNhanBenhNhan_txt_LiDoKham.TabIndex = 6;
             // 
             // label6
             // 
@@ -2193,7 +2193,7 @@
             this.TiepNhanBenhNhan_btn_Xoa.Location = new System.Drawing.Point(918, 122);
             this.TiepNhanBenhNhan_btn_Xoa.Name = "TiepNhanBenhNhan_btn_Xoa";
             this.TiepNhanBenhNhan_btn_Xoa.Size = new System.Drawing.Size(83, 45);
-            this.TiepNhanBenhNhan_btn_Xoa.TabIndex = 9;
+            this.TiepNhanBenhNhan_btn_Xoa.TabIndex = 12;
             this.TiepNhanBenhNhan_btn_Xoa.Text = "Xóa";
             this.TiepNhanBenhNhan_btn_Xoa.Click += new System.EventHandler(this.TiepNhanBenhNhan_btn_Xoa_Click);
             // 
@@ -2204,7 +2204,7 @@
             this.TiepNhanBenhNhan_dtP_namsinh.Location = new System.Drawing.Point(88, 57);
             this.TiepNhanBenhNhan_dtP_namsinh.Name = "TiepNhanBenhNhan_dtP_namsinh";
             this.TiepNhanBenhNhan_dtP_namsinh.Size = new System.Drawing.Size(97, 21);
-            this.TiepNhanBenhNhan_dtP_namsinh.TabIndex = 11;
+            this.TiepNhanBenhNhan_dtP_namsinh.TabIndex = 2;
             this.TiepNhanBenhNhan_dtP_namsinh.Value = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             // 
             // label8
@@ -2223,7 +2223,7 @@
             this.TiepNhanBenhNhan_txt_TenNguoiThan.MaxLength = 50;
             this.TiepNhanBenhNhan_txt_TenNguoiThan.Name = "TiepNhanBenhNhan_txt_TenNguoiThan";
             this.TiepNhanBenhNhan_txt_TenNguoiThan.Size = new System.Drawing.Size(152, 21);
-            this.TiepNhanBenhNhan_txt_TenNguoiThan.TabIndex = 8;
+            this.TiepNhanBenhNhan_txt_TenNguoiThan.TabIndex = 7;
             // 
             // label22
             // 
@@ -2241,7 +2241,7 @@
             this.TiepNhanBenhNhan_txt_Ten.MaxLength = 50;
             this.TiepNhanBenhNhan_txt_Ten.Name = "TiepNhanBenhNhan_txt_Ten";
             this.TiepNhanBenhNhan_txt_Ten.Size = new System.Drawing.Size(138, 21);
-            this.TiepNhanBenhNhan_txt_Ten.TabIndex = 8;
+            this.TiepNhanBenhNhan_txt_Ten.TabIndex = 1;
             // 
             // label2
             // 
@@ -2262,7 +2262,7 @@
             this.TiepNhanBenhNhan_btn_CapNhat.Location = new System.Drawing.Point(815, 122);
             this.TiepNhanBenhNhan_btn_CapNhat.Name = "TiepNhanBenhNhan_btn_CapNhat";
             this.TiepNhanBenhNhan_btn_CapNhat.Size = new System.Drawing.Size(88, 45);
-            this.TiepNhanBenhNhan_btn_CapNhat.TabIndex = 3;
+            this.TiepNhanBenhNhan_btn_CapNhat.TabIndex = 11;
             this.TiepNhanBenhNhan_btn_CapNhat.Text = "Điều chỉnh";
             this.TiepNhanBenhNhan_btn_CapNhat.Click += new System.EventHandler(this.TiepNhanBenhNhan_btn_CapNhat_Click);
             // 
@@ -2272,7 +2272,7 @@
             this.TiepNhanBenhNhan_txt_Ho.MaxLength = 50;
             this.TiepNhanBenhNhan_txt_Ho.Name = "TiepNhanBenhNhan_txt_Ho";
             this.TiepNhanBenhNhan_txt_Ho.Size = new System.Drawing.Size(182, 21);
-            this.TiepNhanBenhNhan_txt_Ho.TabIndex = 9;
+            this.TiepNhanBenhNhan_txt_Ho.TabIndex = 0;
             // 
             // label7
             // 
@@ -2292,7 +2292,7 @@
             this.TiepNhanBenhNhan_comB_GioiTinh.Location = new System.Drawing.Point(243, 58);
             this.TiepNhanBenhNhan_comB_GioiTinh.Name = "TiepNhanBenhNhan_comB_GioiTinh";
             this.TiepNhanBenhNhan_comB_GioiTinh.Size = new System.Drawing.Size(74, 21);
-            this.TiepNhanBenhNhan_comB_GioiTinh.TabIndex = 5;
+            this.TiepNhanBenhNhan_comB_GioiTinh.TabIndex = 3;
             // 
             // TiepNhanBenhNhan_btn_TaoMoi
             // 
@@ -2302,7 +2302,7 @@
             this.TiepNhanBenhNhan_btn_TaoMoi.Location = new System.Drawing.Point(755, 29);
             this.TiepNhanBenhNhan_btn_TaoMoi.Name = "TiepNhanBenhNhan_btn_TaoMoi";
             this.TiepNhanBenhNhan_btn_TaoMoi.Size = new System.Drawing.Size(83, 45);
-            this.TiepNhanBenhNhan_btn_TaoMoi.TabIndex = 3;
+            this.TiepNhanBenhNhan_btn_TaoMoi.TabIndex = 10;
             this.TiepNhanBenhNhan_btn_TaoMoi.Text = "Tiếp Nhận";
             this.TiepNhanBenhNhan_btn_TaoMoi.Click += new System.EventHandler(this.TiepNhanBenhNhan_btn_TaoMoi_Click);
             // 
@@ -2322,7 +2322,7 @@
             this.TiepNhanBenhNhan_txt_CanNang.MaxLength = 20;
             this.TiepNhanBenhNhan_txt_CanNang.Name = "TiepNhanBenhNhan_txt_CanNang";
             this.TiepNhanBenhNhan_txt_CanNang.Size = new System.Drawing.Size(35, 21);
-            this.TiepNhanBenhNhan_txt_CanNang.TabIndex = 1;
+            this.TiepNhanBenhNhan_txt_CanNang.TabIndex = 4;
             this.TiepNhanBenhNhan_txt_CanNang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TiepNhanBenhNhan_txt_CanNang_KeyPress);
             // 
             // TiepNhanBenhNhan_txt_SDT
@@ -2331,7 +2331,7 @@
             this.TiepNhanBenhNhan_txt_SDT.MaxLength = 20;
             this.TiepNhanBenhNhan_txt_SDT.Name = "TiepNhanBenhNhan_txt_SDT";
             this.TiepNhanBenhNhan_txt_SDT.Size = new System.Drawing.Size(93, 21);
-            this.TiepNhanBenhNhan_txt_SDT.TabIndex = 1;
+            this.TiepNhanBenhNhan_txt_SDT.TabIndex = 8;
             this.TiepNhanBenhNhan_txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TiepNhanBenhNhan_txt_SDT_KeyPress);
             // 
             // label25
@@ -2360,7 +2360,7 @@
             this.TiepNhanBenhNhan_txt_DiaChi.Multiline = true;
             this.TiepNhanBenhNhan_txt_DiaChi.Name = "TiepNhanBenhNhan_txt_DiaChi";
             this.TiepNhanBenhNhan_txt_DiaChi.Size = new System.Drawing.Size(364, 29);
-            this.TiepNhanBenhNhan_txt_DiaChi.TabIndex = 1;
+            this.TiepNhanBenhNhan_txt_DiaChi.TabIndex = 5;
             // 
             // label4
             // 
@@ -2396,10 +2396,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 132);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.NhanVien_tabP_TiepNhanBenhNhan;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 538);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 532);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.NhanVien_tabP_TiepNhanBenhNhan,
@@ -2414,7 +2414,7 @@
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl6);
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl1);
             this.xtra_TimBenhNhan.Name = "xtra_TimBenhNhan";
-            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1010, 510);
+            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1010, 503);
             this.xtra_TimBenhNhan.Text = "Tìm kiếm Hồ sơ khám bệnh";
             // 
             // TimKiemBenhNhanKham_btn_XoaHoSo
@@ -2424,7 +2424,7 @@
             this.TimKiemBenhNhanKham_btn_XoaHoSo.Location = new System.Drawing.Point(462, 44);
             this.TimKiemBenhNhanKham_btn_XoaHoSo.Name = "TimKiemBenhNhanKham_btn_XoaHoSo";
             this.TimKiemBenhNhanKham_btn_XoaHoSo.Size = new System.Drawing.Size(75, 38);
-            this.TimKiemBenhNhanKham_btn_XoaHoSo.TabIndex = 16;
+            this.TimKiemBenhNhanKham_btn_XoaHoSo.TabIndex = 0;
             this.TimKiemBenhNhanKham_btn_XoaHoSo.Text = "Xóa Hồ sơ";
             this.TimKiemBenhNhanKham_btn_XoaHoSo.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_XoaHoSo_Click);
             // 
@@ -2458,7 +2458,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Location = new System.Drawing.Point(24, 52);
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Name = "TimKiemBenhNhanKhamBenh_checB_ThangKham";
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Size = new System.Drawing.Size(149, 17);
-            this.TimKiemBenhNhanKhamBenh_checB_ThangKham.TabIndex = 12;
+            this.TimKiemBenhNhanKhamBenh_checB_ThangKham.TabIndex = 2;
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Text = "Tìm theo Tháng khám";
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.UseVisualStyleBackColor = true;
             this.TimKiemBenhNhanKhamBenh_checB_ThangKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_ThangKham_Click);
@@ -2470,7 +2470,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Location = new System.Drawing.Point(24, 29);
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Name = "TimKiemBenhNhanKhamBenh_checB_NgayKham";
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Size = new System.Drawing.Size(142, 17);
-            this.TimKiemBenhNhanKhamBenh_checB_NgayKham.TabIndex = 12;
+            this.TimKiemBenhNhanKhamBenh_checB_NgayKham.TabIndex = 1;
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Text = "Tìm theo Ngày khám";
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.UseVisualStyleBackColor = true;
             this.TimKiemBenhNhanKhamBenh_checB_NgayKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_NgayKham_Click);
@@ -2483,7 +2483,7 @@
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Location = new System.Drawing.Point(331, 40);
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Name = "TimKiemBenhNhanKham_btn_TimKiemNgayKham";
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Size = new System.Drawing.Size(85, 38);
-            this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.TabIndex = 15;
+            this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.TabIndex = 3;
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Text = "Tìm kiếm";
             this.TimKiemBenhNhanKham_btn_TimKiemNgayKham.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click);
             // 
@@ -2494,7 +2494,7 @@
             this.TimKiemBenhNhanKhamBenh_dtP_NgayKham.Location = new System.Drawing.Point(290, 5);
             this.TimKiemBenhNhanKhamBenh_dtP_NgayKham.Name = "TimKiemBenhNhanKhamBenh_dtP_NgayKham";
             this.TimKiemBenhNhanKhamBenh_dtP_NgayKham.Size = new System.Drawing.Size(126, 21);
-            this.TimKiemBenhNhanKhamBenh_dtP_NgayKham.TabIndex = 10;
+            this.TimKiemBenhNhanKhamBenh_dtP_NgayKham.TabIndex = 0;
             // 
             // label15
             // 
@@ -2512,7 +2512,7 @@
             this.panelControl6.Controls.Add(this.label32);
             this.panelControl6.Controls.Add(this.gridControl1_TimBenhNhan);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 95);
+            this.panelControl6.Location = new System.Drawing.Point(0, 88);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1010, 415);
             this.panelControl6.TabIndex = 8;
@@ -2558,7 +2558,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Location = new System.Drawing.Point(35, 56);
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Name = "TimKiemBenhNhanKhamBenh_checB_ThangTaiKham";
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Size = new System.Drawing.Size(149, 17);
-            this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.TabIndex = 16;
+            this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.TabIndex = 2;
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Text = "Tìm theo Tháng khám";
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.UseVisualStyleBackColor = true;
             this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_ThangTaiKham_Click);
@@ -2570,7 +2570,7 @@
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Location = new System.Drawing.Point(35, 33);
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Name = "TimKiemBenhNhanKhamBenh_checB_NgayTaiKham";
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Size = new System.Drawing.Size(142, 17);
-            this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.TabIndex = 17;
+            this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.TabIndex = 1;
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Text = "Tìm theo Ngày khám";
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.UseVisualStyleBackColor = true;
             this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKhamBenh_checB_NgayTaiKham_Click);
@@ -2583,7 +2583,7 @@
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Location = new System.Drawing.Point(353, 41);
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Name = "TimKiemBenhNhanKham_btn_TimKiemTaiKham";
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Size = new System.Drawing.Size(81, 37);
-            this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.TabIndex = 15;
+            this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.TabIndex = 3;
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Text = "Tìm kiếm";
             this.TimKiemBenhNhanKham_btn_TimKiemTaiKham.Click += new System.EventHandler(this.TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click);
             // 
@@ -2594,7 +2594,7 @@
             this.TimKiemBenhNhanKhamBenh_dtP_TaiKham.Location = new System.Drawing.Point(302, 5);
             this.TimKiemBenhNhanKhamBenh_dtP_TaiKham.Name = "TimKiemBenhNhanKhamBenh_dtP_TaiKham";
             this.TimKiemBenhNhanKhamBenh_dtP_TaiKham.Size = new System.Drawing.Size(132, 21);
-            this.TimKiemBenhNhanKhamBenh_dtP_TaiKham.TabIndex = 14;
+            this.TimKiemBenhNhanKhamBenh_dtP_TaiKham.TabIndex = 0;
             // 
             // label10
             // 

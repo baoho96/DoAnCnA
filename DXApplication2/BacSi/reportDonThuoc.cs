@@ -48,7 +48,8 @@ namespace QuanLyPhongKham
             lblGhiChuKhamBenh.Text = NhanVienThuNgan.GhiChuHSKB;
             lbTienThuoc.Text = NhanVienThuNgan.TienThuoc;
             lblTienKham.Text = NhanVienThuNgan.TienKham;
-            //lblTongTien.Text = NhanVienThuNgan.TongTien;
+            int XemTruocTongTien = int.Parse(NhanVienThuNgan.TienThuoc) + int.Parse(NhanVienThuNgan.TienKham);
+            lblXemTruocTongTien.Text = XemTruocTongTien.ToString();
             lbNgayKeDon.Text = NhanVienThuNgan.NgayKham;
             lbNgayTaiKham.Text = NhanVienThuNgan.NgayTaiKham;
 

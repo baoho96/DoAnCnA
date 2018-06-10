@@ -68,7 +68,7 @@ namespace QuanLyPhongKham
             gridView1_thuoc.FocusedRowHandle = qlythuoc;
             gridView1_NhanVien.FocusedRowHandle = qlynhanvien;
             gridView1_VatDung.FocusedRowHandle = qlyvatdung;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + "giờ : " + DateTime.Now.Minute.ToString() + " phút";
 
         }
 
