@@ -60,5 +60,15 @@ namespace QuanLyPhongKham
         {
             function.ToExcel("Bạn muốn xuất file Bệnh nhân đã khám trong ngày??", result, gridControl1_BenhNhanKhamTrongNgay);
         }
+
+        private void gridView1_BenhNhanKhamTrongNgay_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
+        }
+
+        private void gridView1_BenhNhanKhamTrongNgay_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
     }
 }

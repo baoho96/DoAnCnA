@@ -1407,7 +1407,7 @@
             // 
             // barButtonItem1_BenhNhanLayThuoc
             // 
-            this.barButtonItem1_BenhNhanLayThuoc.Caption = "Bệnh Nhân đã lấy thuốc";
+            this.barButtonItem1_BenhNhanLayThuoc.Caption = "Bệnh Nhân đã thanh toán";
             this.barButtonItem1_BenhNhanLayThuoc.Id = 88;
             this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image")));
             this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage")));

@@ -142,6 +142,8 @@
             this.gridView1_BenhNhanKhamTrongNgay.Name = "gridView1_BenhNhanKhamTrongNgay";
             this.gridView1_BenhNhanKhamTrongNgay.OptionsBehavior.Editable = false;
             this.gridView1_BenhNhanKhamTrongNgay.OptionsFind.AlwaysVisible = true;
+            this.gridView1_BenhNhanKhamTrongNgay.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_BenhNhanKhamTrongNgay_CustomDrawRowIndicator);
+            this.gridView1_BenhNhanKhamTrongNgay.RowCountChanged += new System.EventHandler(this.gridView1_BenhNhanKhamTrongNgay_RowCountChanged);
             // 
             // gridColumn1_MSKB
             // 

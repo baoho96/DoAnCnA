@@ -24,13 +24,28 @@ namespace QuanLyPhongKham
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
+        public string XemBenhNhan;
+        public int checkColumn;
         public BenhNhanThanhToan()
         {
             InitializeComponent();
-            Load_HoaDon();
+            //Load_HoaDon(XemBenhNhan);
         }
-
-        private void Load_HoaDon()
+        public BenhNhanThanhToan(string _XemBenhNhan,int _checkColumn) :this()
+        {
+            XemBenhNhan = _XemBenhNhan;
+            checkColumn = _checkColumn;//0 là thu ngân. 1: dược sĩ
+            if(checkColumn == 0)
+            {
+                col_KiemTraLayThuoc.Visible = false;
+            }
+            else if(checkColumn ==1 )
+            {
+                col_KiemTraThanhToan.Visible = false;
+            }
+            Load_HoaDon(XemBenhNhan);
+        }
+        private void Load_HoaDon(string XemBenhNhan)
         {
             string query = @"select BN.MaSoBenhNhan,BN.Ten, BN.Ho, BN.SoDienThoai,BN.DiaChi,BN.NamSinh,HSKB.MaSoKhamBenh," +
                                     " DT.MaSoDonThuoc,DT.GhiChu,HSKB.XetNghiem,HSKB.ChuanDoan,HSKB.KetQuaXetNghiem," +
@@ -40,7 +55,7 @@ namespace QuanLyPhongKham
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
                             " join DonThuoc DT on DT.MaSoDonThuoc = HD.MaSoDonThuoc" +
-                            " where (HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraThanhToan = 1) or (HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraLayThuoc = 1)";
+                            " where " + XemBenhNhan;
             connection.connect();
             sqlDataAdapter = new SqlDataAdapter(query, connection.con);
             dataSet = new DataSet();
@@ -60,6 +75,16 @@ namespace QuanLyPhongKham
         private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
             function.ToExcel("Bạn có muốn Xuất Danh Sách ra File Excel??",result,gridControl1_HoaDon);
+        }
+
+        private void gridView1_HoaDon_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
+
+        private void gridView1_HoaDon_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
         }
     }
 }

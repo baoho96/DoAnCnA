@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BenhNhanThanhToan));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1_XuatFile = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -59,7 +60,6 @@
             this.col_KiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_KiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
@@ -91,6 +91,15 @@
             this.barButtonItem1_XuatFile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_XuatFile.ImageOptions.LargeImage")));
             this.barButtonItem1_XuatFile.Name = "barButtonItem1_XuatFile";
             this.barButtonItem1_XuatFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_XuatFile_ItemClick);
+            // 
+            // barButtonItem1_ToExcel
+            // 
+            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
+            this.barButtonItem1_ToExcel.Id = 2;
+            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.Image")));
+            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.LargeImage")));
+            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
+            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -156,6 +165,8 @@
             this.gridView1_HoaDon.OptionsBehavior.Editable = false;
             this.gridView1_HoaDon.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1_HoaDon.OptionsFind.AlwaysVisible = true;
+            this.gridView1_HoaDon.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_HoaDon_CustomDrawRowIndicator);
+            this.gridView1_HoaDon.RowCountChanged += new System.EventHandler(this.gridView1_HoaDon_RowCountChanged);
             // 
             // col_MSDT
             // 
@@ -309,15 +320,6 @@
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
-            // barButtonItem1_ToExcel
-            // 
-            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
-            this.barButtonItem1_ToExcel.Id = 2;
-            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.Image")));
-            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.LargeImage")));
-            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
-            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
             // 
             // BenhNhanThanhToan
             // 

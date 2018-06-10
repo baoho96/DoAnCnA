@@ -43,6 +43,7 @@ namespace QuanLyPhongKham
         public static string BacSiKham { get; set; }
 
         public static string NguoiLap { get; set; }
+
         #endregion
 
         public DuocSi()
@@ -192,7 +193,9 @@ namespace QuanLyPhongKham
 
         private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan();
+            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraLayThuoc = 1";
+            int checkColumn = 1;
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);            
             benhNhanThanhToan.ShowDialog();
         }
     }

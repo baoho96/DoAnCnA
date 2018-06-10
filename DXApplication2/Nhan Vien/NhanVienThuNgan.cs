@@ -51,7 +51,7 @@ namespace QuanLyPhongKham
         public static string TongTien { get; set; }
         public static string BacSiKham { get; set; }
 
-        public static string NguoiLap { get; set; }
+        public static string NguoiLap { get; set; }     
 
         public NhanVienThuNgan()
         {
@@ -321,7 +321,9 @@ namespace QuanLyPhongKham
 
         private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan();
+            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraThanhToan = 1";
+            int checkColumn = 0;
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);            
             benhNhanThanhToan.ShowDialog();
         }
     }
