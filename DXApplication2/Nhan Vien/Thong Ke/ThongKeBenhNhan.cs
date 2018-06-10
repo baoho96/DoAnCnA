@@ -34,7 +34,7 @@ namespace QuanLyPhongKham
             string query = @"select  BN.Ho, BN.Ten,BN.NamSinh,BN.DiaChi,HSKB.ChuanDoan,NV.TenNhanVien,"+
                             " HD.TongTien,SUBSTRING( HSKB.NgayGioKham,1,10) as NgayGioKham"+
                         " from BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan "+
-                        " join NhanVien NV on BN.MaSoBenhNhan = NV.MaSoNhanVien join HoaDon HD on HSKB.MaSoKhamBenh = HD.MaSoKhamBenh"+
+                        " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien join HoaDon HD on HSKB.MaSoKhamBenh = HD.MaSoKhamBenh" +
                         " where HD.NgayGioLap like N'%" + NhapNgay  + "%'";
 
             connection.connect();

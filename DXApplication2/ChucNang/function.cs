@@ -254,7 +254,7 @@ namespace QuanLyPhongKham
         public void Timer_load(EventHandler eventHandler)
         {
             Timer timer = new Timer();
-            timer.Interval = (180 * 1000); //10s
+            timer.Interval = (30 * 1000); //30s
             timer.Tick += new EventHandler(eventHandler);
             timer.Start();
         }

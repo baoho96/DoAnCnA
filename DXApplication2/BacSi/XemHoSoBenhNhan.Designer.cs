@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XemHoSoBenhNhan));
             this.gridView2_DonThuoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSoDonThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,6 +88,7 @@
             this.hoSoKhamBenhTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoKhamBenhTableAdapter();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_indanhsach = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -93,7 +97,6 @@
             this.hoSoTaiKhamTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoTaiKhamTableAdapter();
             this.donThuocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.donThuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.DonThuocTableAdapter();
-            this.barButtonItem1_ToExcel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2_DonThuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoSoKhamBenhBindingSource)).BeginInit();
@@ -181,12 +184,19 @@
             this.gridControl1_TimKiemBenhNhan.DataSource = this.hoSoKhamBenhBindingSource;
             this.gridControl1_TimKiemBenhNhan.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.LevelTemplate = this.gridView2_DonThuoc;
+            gridLevelNode2.RelationName = "FK_HoaDon_DonThuoc";
+            gridLevelNode3.RelationName = "FK_DanhSachThuoc_DonThuoc";
+            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2,
+            gridLevelNode3});
             gridLevelNode1.RelationName = "FK_DonThuoc_HoSoKhamBenh";
-            gridLevelNode2.LevelTemplate = this.gridView1_HoSoTaiKham;
-            gridLevelNode2.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
+            gridLevelNode4.RelationName = "FK_HoaDon_HoSoKhamBenh";
+            gridLevelNode5.LevelTemplate = this.gridView1_HoSoTaiKham;
+            gridLevelNode5.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode4,
+            gridLevelNode5});
             this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(0, 79);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
@@ -608,6 +618,15 @@
             this.btn_indanhsach.Name = "btn_indanhsach";
             this.btn_indanhsach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_indanhsach_ItemClick);
             // 
+            // barButtonItem1_ToExcel
+            // 
+            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
+            this.barButtonItem1_ToExcel.Id = 2;
+            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.Image")));
+            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_ToExcel.ImageOptions.LargeImage")));
+            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
+            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -651,15 +670,6 @@
             // donThuocTableAdapter
             // 
             this.donThuocTableAdapter.ClearBeforeFill = true;
-            // 
-            // barButtonItem1_ToExcel
-            // 
-            this.barButtonItem1_ToExcel.Caption = "Xuất File Excel";
-            this.barButtonItem1_ToExcel.Id = 2;
-            this.barButtonItem1_ToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1_ToExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1_ToExcel.Name = "barButtonItem1_ToExcel";
-            this.barButtonItem1_ToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ToExcel_ItemClick);
             // 
             // XemHoSoBenhNhan
             // 

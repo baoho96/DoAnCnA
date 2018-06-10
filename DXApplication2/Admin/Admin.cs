@@ -29,6 +29,8 @@ namespace QuanLyPhongKham
         string hinhanh = null;
         DialogResult result;
         public static bool IfAdmin;
+        bool textchanged = false;
+        string MatkhauSoSanh;
         public Admin()
         {
             InitializeComponent();
@@ -240,8 +242,8 @@ namespace QuanLyPhongKham
                 qlyThuoc_btn_capnhat.Enabled = true;
                 qlyThuoc_btn_xoa.Enabled = true;
                 string ID = gridView1_thuoc.GetFocusedRowCellValue("MaSoThuoc").ToString();
-                string MaSoLoaiThuoc = gridView1_thuoc.GetFocusedRowCellValue("MaSoLoaiThuoc").ToString();
-                
+                string MaSoLoaiThuoc = gridView1_thuoc.GetFocusedRowCellValue("MaSoLoaiThuoc").ToString();                
+
                     qlyThuoc_txt_tenthuoc.Text = gridView1_thuoc.GetFocusedRowCellValue("TenThuoc").ToString();
                     qlyThuoc_txt_SoLuong.Text = gridView1_thuoc.GetFocusedRowCellValue("SoLuong").ToString();
                     qlyThuoc_txt_DonGia.Text = gridView1_thuoc.GetFocusedRowCellValue("DonGia").ToString();
@@ -533,23 +535,33 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string query = @"begin if not exists (select TaiKhoan from NhanVien where TaiKhoan = N'"+ qlyNhanvien_txt_taikhoan.Text + "') "
-                    + "begin insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh,Luong) values"
-                    + "(N'" + qlyNhanvien_txt_hoten.Text + "',"
-                    + "'" + qlyNhanvien_dtP_ngaysinh.Text + "',"
-                    + "N'" + qlyNhanvien_comB_vitri.Text + "',"
-                    + "N'" + qlyNhanvien_txt_diachi.Text + "',"
-                    + qlyNhanvien_txt_sdt.Text + ","
-                    + quyentruycap + ","
-                    + "N'" + qlyNhanvien_txt_taikhoan.Text + "',"
-                    + "'" + matkhau + "',"
-                    + "'" + qlyNhanvien_dtP_ngaytao.Text + "',"
-                    + "N'" + qlyNhanvien_comB_gioitinh.Text + "',"
-                    + "N'" + hinhanh + "',"
-                    + qlyNhanvien_txt_Luong.Text + ") end end";
-                connection.insert(query);
+                string CheckTrungTaiKhoan = @"select TaiKhoan from NhanVien where TaiKhoan = N'" + qlyNhanvien_txt_taikhoan.Text + "'";                
+                DataTable TrungTaiKhoan = connection.SQL(CheckTrungTaiKhoan);
+                if(TrungTaiKhoan.Rows.Count > 0)
+                {
+                    function.Notice("Bạn nhập trùng tên Tài Khoản nhân viên!", 0);
+                }
+                else
+                {
+                    string query = @"begin if not exists (select TaiKhoan from NhanVien where TaiKhoan = N'" + qlyNhanvien_txt_taikhoan.Text + "') "
+                                        + "begin insert into NhanVien(TenNhanVien, NgaySinh, ViTri, DiaChi, SoDienThoai, QuyenTruyCap, TaiKhoan, MatKhau, NgayTao, GioiTinh,HinhAnh,Luong) values"
+                                        + "(N'" + qlyNhanvien_txt_hoten.Text + "',"
+                                        + "'" + qlyNhanvien_dtP_ngaysinh.Text + "',"
+                                        + "N'" + qlyNhanvien_comB_vitri.Text + "',"
+                                        + "N'" + qlyNhanvien_txt_diachi.Text + "',"
+                                        + qlyNhanvien_txt_sdt.Text + ","
+                                        + quyentruycap + ","
+                                        + "N'" + qlyNhanvien_txt_taikhoan.Text + "',"
+                                        + "'" + matkhau + "',"
+                                        + "'" + qlyNhanvien_dtP_ngaytao.Text + "',"
+                                        + "N'" + qlyNhanvien_comB_gioitinh.Text + "',"
+                                        + "N'" + hinhanh + "',"
+                                        + qlyNhanvien_txt_Luong.Text + ") end end";
+                    connection.insert(query);
+                    connection.disconnect();
+                    refresh_qlyNhanVien();
+                }
                 connection.disconnect();
-                refresh_qlyNhanVien();
             }
             
         }
@@ -570,7 +582,7 @@ namespace QuanLyPhongKham
                 qlyNhanvien_txt_diachi.Text = gridView1_NhanVien.GetFocusedRowCellValue("DiaChi").ToString();
                 qlyNhanvien_dtP_ngaytao.Text = gridView1_NhanVien.GetFocusedRowCellValue("NgayTao").ToString();
                 qlyNhanvien_txt_taikhoan.Text = gridView1_NhanVien.GetFocusedRowCellValue("TaiKhoan").ToString();
-                qlyNhanvien_txt_matkhau.Text = function.toMD5(gridView1_NhanVien.GetFocusedRowCellValue("MatKhau").ToString());
+                MatkhauSoSanh =qlyNhanvien_txt_matkhau.Text = gridView1_NhanVien.GetFocusedRowCellValue("MatKhau").ToString();
                 qlyNhanvien_comB_QuyenTruyCap.Text = gridView1_NhanVien.GetFocusedRowCellValue("QuyenTruyCap").ToString();
                 qlyNhanvien_txt_Luong.Text = gridView1_NhanVien.GetFocusedRowCellValue("Luong").ToString();
                 connection.connect();
@@ -614,12 +626,14 @@ namespace QuanLyPhongKham
             {
                 if (function.checkNull(panelControl3_NhanVien) == true)//kiểm tra các thành phần có rỗng hay không
                 {
+                    string matkhau = qlyNhanvien_txt_matkhau.Text;
+                    if (textchanged == true && MatkhauSoSanh != matkhau)
+                    {
+                        matkhau = function.toMD5(qlyNhanvien_txt_matkhau.Text);
+                    }
                     connection.connect();
                     string ID = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien").ToString();
-
-                    var matkhau = function.toMD5(qlyNhanvien_txt_matkhau.Text);
-
-
+                    
                     if (pictureBox1_NhanVien.Image != null)//kiểm tra picturebox có rỗng hay không
                     {
                         if (result == DialogResult.OK)
@@ -656,7 +670,10 @@ namespace QuanLyPhongKham
                 }
             }
         }
-
+        private bool txt_matkhau_changed()
+        {
+            return true;
+        }
         private void qlyNhanvien_btn_xoa_Click(object sender, EventArgs e)
         {
             object ID_NhanVien_CheckNull = gridView1_NhanVien.GetFocusedRowCellValue("MaSoNhanVien");
@@ -895,6 +912,10 @@ namespace QuanLyPhongKham
             }
         }
 
-        
+        private void qlyNhanvien_txt_matkhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textchanged = true;
+        }
+
     }
 }

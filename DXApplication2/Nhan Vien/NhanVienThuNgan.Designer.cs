@@ -263,9 +263,6 @@
             this.printPreviewRibbonPageGroup6 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup7 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup8 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_ThanhToan = new DevExpress.XtraEditors.SimpleButton();
-            this.chBox_LayThuoc = new System.Windows.Forms.CheckBox();
             this.gridControl1_HoaDon = new DevExpress.XtraGrid.GridControl();
             this.gridView1_HoaDon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.col_MSDT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -292,13 +289,14 @@
             this.col_KiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ThanhToan = new DevExpress.XtraEditors.SimpleButton();
+            this.chBox_LayThuoc = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_capnhat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -394,7 +392,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1018, 132);
+            this.ribbonControl.Size = new System.Drawing.Size(1018, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
@@ -429,18 +427,18 @@
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(456, 132);
+            this.documentViewer1.Location = new System.Drawing.Point(469, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(562, 532);
+            this.documentViewer1.Size = new System.Drawing.Size(549, 538);
             this.documentViewer1.TabIndex = 5;
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 31);
             // 
             // barButtonItem1_DangXuat
             // 
@@ -1601,50 +1599,16 @@
             this.printPreviewRibbonPageGroup8.ShowCaptionButton = false;
             this.printPreviewRibbonPageGroup8.Text = "Close";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_ThanhToan);
-            this.panel1.Controls.Add(this.chBox_LayThuoc);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(0, 130);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 75);
-            this.panel1.TabIndex = 4;
-            // 
-            // btn_ThanhToan
-            // 
-            this.btn_ThanhToan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_ThanhToan.Appearance.Options.UseFont = true;
-            this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
-            this.btn_ThanhToan.Location = new System.Drawing.Point(313, 12);
-            this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(95, 42);
-            this.btn_ThanhToan.TabIndex = 1;
-            this.btn_ThanhToan.Text = "Thanh Toán";
-            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
-            // 
-            // chBox_LayThuoc
-            // 
-            this.chBox_LayThuoc.AutoSize = true;
-            this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.chBox_LayThuoc.Location = new System.Drawing.Point(38, 22);
-            this.chBox_LayThuoc.Name = "chBox_LayThuoc";
-            this.chBox_LayThuoc.Size = new System.Drawing.Size(200, 18);
-            this.chBox_LayThuoc.TabIndex = 0;
-            this.chBox_LayThuoc.Text = "Bệnh nhân đồng ý lấy thuốc";
-            this.chBox_LayThuoc.UseVisualStyleBackColor = true;
-            // 
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 26);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 89);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
             this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1_HoaDon.Size = new System.Drawing.Size(448, 425);
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(448, 447);
             this.gridControl1_HoaDon.TabIndex = 8;
             this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoaDon});
@@ -1717,7 +1681,7 @@
             this.col_Ho.Name = "col_Ho";
             this.col_Ho.Visible = true;
             this.col_Ho.VisibleIndex = 0;
-            this.col_Ho.Width = 277;
+            this.col_Ho.Width = 259;
             // 
             // col_Ten
             // 
@@ -1726,7 +1690,7 @@
             this.col_Ten.Name = "col_Ten";
             this.col_Ten.Visible = true;
             this.col_Ten.VisibleIndex = 1;
-            this.col_Ten.Width = 116;
+            this.col_Ten.Width = 120;
             // 
             // col_NamSinh
             // 
@@ -1741,7 +1705,7 @@
             this.col_SoDienThoai.Name = "col_SoDienThoai";
             this.col_SoDienThoai.Visible = true;
             this.col_SoDienThoai.VisibleIndex = 2;
-            this.col_SoDienThoai.Width = 140;
+            this.col_SoDienThoai.Width = 127;
             // 
             // col_DiaChi
             // 
@@ -1822,7 +1786,7 @@
             this.col_KiemTraLayThuoc.Name = "col_KiemTraLayThuoc";
             this.col_KiemTraLayThuoc.Visible = true;
             this.col_KiemTraLayThuoc.VisibleIndex = 3;
-            this.col_KiemTraLayThuoc.Width = 109;
+            this.col_KiemTraLayThuoc.Width = 119;
             // 
             // col_KiemTraThanhToan
             // 
@@ -1831,7 +1795,7 @@
             this.col_KiemTraThanhToan.Name = "col_KiemTraThanhToan";
             this.col_KiemTraThanhToan.Visible = true;
             this.col_KiemTraThanhToan.VisibleIndex = 4;
-            this.col_KiemTraThanhToan.Width = 115;
+            this.col_KiemTraThanhToan.Width = 132;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -1841,12 +1805,40 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_ThanhToan);
+            this.panel2.Controls.Add(this.chBox_LayThuoc);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.gridControl1_HoaDon);
-            this.panel2.Location = new System.Drawing.Point(0, 211);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 453);
+            this.panel2.Size = new System.Drawing.Size(450, 538);
             this.panel2.TabIndex = 11;
+            // 
+            // btn_ThanhToan
+            // 
+            this.btn_ThanhToan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_ThanhToan.Appearance.Options.UseFont = true;
+            this.btn_ThanhToan.Enabled = false;
+            this.btn_ThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhToan.ImageOptions.Image")));
+            this.btn_ThanhToan.Location = new System.Drawing.Point(307, 41);
+            this.btn_ThanhToan.Name = "btn_ThanhToan";
+            this.btn_ThanhToan.Size = new System.Drawing.Size(95, 42);
+            this.btn_ThanhToan.TabIndex = 1;
+            this.btn_ThanhToan.Text = "Thanh Toán";
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
+            // 
+            // chBox_LayThuoc
+            // 
+            this.chBox_LayThuoc.AutoSize = true;
+            this.chBox_LayThuoc.Enabled = false;
+            this.chBox_LayThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.chBox_LayThuoc.Location = new System.Drawing.Point(53, 53);
+            this.chBox_LayThuoc.Name = "chBox_LayThuoc";
+            this.chBox_LayThuoc.Size = new System.Drawing.Size(200, 18);
+            this.chBox_LayThuoc.TabIndex = 0;
+            this.chBox_LayThuoc.Text = "Bệnh nhân đồng ý lấy thuốc";
+            this.chBox_LayThuoc.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -1875,7 +1867,6 @@
             this.Controls.Add(this.txt_capnhat);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1891,8 +1882,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -1909,9 +1898,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btn_ThanhToan;
-        private System.Windows.Forms.CheckBox chBox_LayThuoc;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private DevExpress.XtraGrid.GridControl gridControl1_HoaDon;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1_HoaDon;
@@ -2034,5 +2020,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_KiemTraLayThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn col_KiemTraThanhToan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_BenhNhanLayThuoc;
+        private DevExpress.XtraEditors.SimpleButton btn_ThanhToan;
+        private System.Windows.Forms.CheckBox chBox_LayThuoc;
     }
 }

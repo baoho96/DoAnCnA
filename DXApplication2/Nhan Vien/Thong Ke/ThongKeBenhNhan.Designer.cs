@@ -330,7 +330,7 @@
             this.btn_TimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_TimKiem.Appearance.Options.UseFont = true;
             this.btn_TimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimKiem.ImageOptions.Image")));
-            this.btn_TimKiem.Location = new System.Drawing.Point(622, 34);
+            this.btn_TimKiem.Location = new System.Drawing.Point(625, 22);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(82, 40);
             this.btn_TimKiem.TabIndex = 2;
@@ -370,9 +370,9 @@
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 149);
+            this.documentViewer1.Location = new System.Drawing.Point(0, 146);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(784, 389);
+            this.documentViewer1.Size = new System.Drawing.Size(784, 388);
             this.documentViewer1.TabIndex = 4;
             // 
             // documentViewerRibbonController1
@@ -454,7 +454,7 @@
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(784, 55);
+            this.ribbonControl1.Size = new System.Drawing.Size(784, 52);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -1583,10 +1583,10 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 538);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(784, 27);
             // 
             // ThongKeBenhNhan
             // 

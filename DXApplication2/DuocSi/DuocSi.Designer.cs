@@ -34,6 +34,7 @@
             this.barButtonItem1_Toexcel = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XuatFile = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1_BenhNhanLayThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -43,13 +44,12 @@
             this.gridView_DanhSachBenhNhan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1_Ho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2_Ten = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3_NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3_SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4_LayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_LayThuocXong = new DevExpress.XtraEditors.SimpleButton();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.txt_capnhat = new System.Windows.Forms.TextBox();
-            this.barButtonItem1_BenhNhanLayThuoc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DanhSachBenhNhan)).BeginInit();
@@ -75,7 +75,7 @@
             this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1012, 132);
+            this.ribbonControl.Size = new System.Drawing.Size(1012, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -116,6 +116,15 @@
             this.bbiRefresh.Name = "bbiRefresh";
             this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
+            // barButtonItem1_BenhNhanLayThuoc
+            // 
+            this.barButtonItem1_BenhNhanLayThuoc.Caption = "Bệnh Nhân đã lấy thuốc";
+            this.barButtonItem1_BenhNhanLayThuoc.Id = 27;
+            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image")));
+            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage")));
+            this.barButtonItem1_BenhNhanLayThuoc.Name = "barButtonItem1_BenhNhanLayThuoc";
+            this.barButtonItem1_BenhNhanLayThuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_BenhNhanLayThuoc_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -146,10 +155,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1012, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1012, 31);
             // 
             // panel2
             // 
@@ -157,19 +166,19 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_LayThuocXong);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 132);
+            this.panel2.Location = new System.Drawing.Point(0, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 532);
+            this.panel2.Size = new System.Drawing.Size(470, 538);
             this.panel2.TabIndex = 5;
             // 
             // gridControl_DanhSachBenhNhan
             // 
             this.gridControl_DanhSachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 68);
+            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 74);
             this.gridControl_DanhSachBenhNhan.MainView = this.gridView_DanhSachBenhNhan;
             this.gridControl_DanhSachBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl_DanhSachBenhNhan.Name = "gridControl_DanhSachBenhNhan";
-            this.gridControl_DanhSachBenhNhan.Size = new System.Drawing.Size(442, 464);
+            this.gridControl_DanhSachBenhNhan.Size = new System.Drawing.Size(470, 464);
             this.gridControl_DanhSachBenhNhan.TabIndex = 4;
             this.gridControl_DanhSachBenhNhan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_DanhSachBenhNhan});
@@ -179,7 +188,7 @@
             this.gridView_DanhSachBenhNhan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1_Ho,
             this.gridColumn2_Ten,
-            this.gridColumn3_NgaySinh,
+            this.gridColumn3_SDT,
             this.gridColumn4_LayThuoc});
             this.gridView_DanhSachBenhNhan.GridControl = this.gridControl_DanhSachBenhNhan;
             this.gridView_DanhSachBenhNhan.Name = "gridView_DanhSachBenhNhan";
@@ -197,6 +206,7 @@
             this.gridColumn1_Ho.Name = "gridColumn1_Ho";
             this.gridColumn1_Ho.Visible = true;
             this.gridColumn1_Ho.VisibleIndex = 0;
+            this.gridColumn1_Ho.Width = 365;
             // 
             // gridColumn2_Ten
             // 
@@ -205,14 +215,16 @@
             this.gridColumn2_Ten.Name = "gridColumn2_Ten";
             this.gridColumn2_Ten.Visible = true;
             this.gridColumn2_Ten.VisibleIndex = 1;
+            this.gridColumn2_Ten.Width = 146;
             // 
-            // gridColumn3_NgaySinh
+            // gridColumn3_SDT
             // 
-            this.gridColumn3_NgaySinh.Caption = "Ngày sinh";
-            this.gridColumn3_NgaySinh.FieldName = "NamSinh";
-            this.gridColumn3_NgaySinh.Name = "gridColumn3_NgaySinh";
-            this.gridColumn3_NgaySinh.Visible = true;
-            this.gridColumn3_NgaySinh.VisibleIndex = 2;
+            this.gridColumn3_SDT.Caption = "SĐT";
+            this.gridColumn3_SDT.FieldName = "SoDienThoai";
+            this.gridColumn3_SDT.Name = "gridColumn3_SDT";
+            this.gridColumn3_SDT.Visible = true;
+            this.gridColumn3_SDT.VisibleIndex = 2;
+            this.gridColumn3_SDT.Width = 149;
             // 
             // gridColumn4_LayThuoc
             // 
@@ -221,6 +233,7 @@
             this.gridColumn4_LayThuoc.Name = "gridColumn4_LayThuoc";
             this.gridColumn4_LayThuoc.Visible = true;
             this.gridColumn4_LayThuoc.VisibleIndex = 3;
+            this.gridColumn4_LayThuoc.Width = 97;
             // 
             // label2
             // 
@@ -238,7 +251,7 @@
             this.btn_LayThuocXong.Appearance.Options.UseFont = true;
             this.btn_LayThuocXong.Enabled = false;
             this.btn_LayThuocXong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_LayThuocXong.ImageOptions.Image")));
-            this.btn_LayThuocXong.Location = new System.Drawing.Point(316, 26);
+            this.btn_LayThuocXong.Location = new System.Drawing.Point(327, 26);
             this.btn_LayThuocXong.Name = "btn_LayThuocXong";
             this.btn_LayThuocXong.Size = new System.Drawing.Size(120, 36);
             this.btn_LayThuocXong.TabIndex = 1;
@@ -248,11 +261,11 @@
             // documentViewer1
             // 
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(442, 132);
+            this.documentViewer1.Location = new System.Drawing.Point(486, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(570, 532);
+            this.documentViewer1.Size = new System.Drawing.Size(526, 538);
             this.documentViewer1.TabIndex = 8;
             // 
             // txt_capnhat
@@ -263,15 +276,6 @@
             this.txt_capnhat.Name = "txt_capnhat";
             this.txt_capnhat.Size = new System.Drawing.Size(133, 23);
             this.txt_capnhat.TabIndex = 11;
-            // 
-            // barButtonItem1_BenhNhanLayThuoc
-            // 
-            this.barButtonItem1_BenhNhanLayThuoc.Caption = "Bệnh Nhân đã lấy thuốc";
-            this.barButtonItem1_BenhNhanLayThuoc.Id = 27;
-            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.Image")));
-            this.barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_BenhNhanLayThuoc.ImageOptions.LargeImage")));
-            this.barButtonItem1_BenhNhanLayThuoc.Name = "barButtonItem1_BenhNhanLayThuoc";
-            this.barButtonItem1_BenhNhanLayThuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_BenhNhanLayThuoc_ItemClick);
             // 
             // DuocSi
             // 
@@ -322,7 +326,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_DanhSachBenhNhan;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1_Ho;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2_Ten;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3_NgaySinh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3_SDT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4_LayThuoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_BenhNhanLayThuoc;
     }

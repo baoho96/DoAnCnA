@@ -16,15 +16,20 @@ namespace QuanLyPhongKham
         public SqlCommand cmd;
         public SqlDataReader reader;
         public SqlDataAdapter da;
-        
-        public void connect()
-        { // Copy Data Source vào chuỗi
-            //String cn = @"Data Source=HENDY;Initial Catalog=PhongKham;Integrated Security=True";
+
+        public void connect()// Copy Data Source vào chuỗi
+        {
+
             string cn = ConfigurationManager.ConnectionStrings["QuanLyPhongKham.Properties.Settings.PhongKhamConnectionString"].ConnectionString;
             try
             {
                 con = new SqlConnection(cn);
-                con.Open();
+                if (con.State == ConnectionState.Open)
+                { }
+                else
+                {                    
+                    con.Open();
+                }
             }
             catch (Exception ex)
             {
@@ -32,9 +37,13 @@ namespace QuanLyPhongKham
         }
         public void disconnect()   // gọi hàm này sau khi đã dùng xong csdl 
         {
-            con.Close();
-            con.Dispose();
-            con = null;
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+                con.Dispose();
+                //con = null;
+            }
+            else { }
         }
         public void insert(string query)
         {

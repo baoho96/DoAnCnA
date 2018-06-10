@@ -222,7 +222,7 @@ namespace QuanLyPhongKham
 
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
-            if (txt_chuandoan.Text != "" || txt_GhiChu.Text != "" || txt_TienKham.Text != "")
+            if (txt_chuandoan.Text != "" && txt_GhiChu.Text != "" && txt_TienKham.Text != "")
             {
                 if (dtP_NgayTaiKham.Value <= DateTime.Now)
                 {

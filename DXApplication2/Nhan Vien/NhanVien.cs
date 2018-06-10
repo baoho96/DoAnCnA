@@ -926,6 +926,16 @@ namespace QuanLyPhongKham
         {
             TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked = false;
         }
+
+        private void DanhSachBenhNhan_txt_CanNang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
+
+        private void DanhSachBenhNhan_txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
     }
 
 }

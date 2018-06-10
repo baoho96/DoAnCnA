@@ -501,6 +501,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5CF6B901C8D04954A61BEC859477B14C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5F509747F6E5D11F80FE011EAE5A9835"
         "OwnerKey" = "8:_CAF0BB8AED6BB2AC4B947477A6546E97"
         "MsmSig" = "8:_UNDEFINED"
@@ -599,12 +605,6 @@
         {
         "MsmKey" = "8:_611BAE00FC32551F6D2C9550EC64F733"
         "OwnerKey" = "8:_A4BC7471A96A4033ABEB347E593B6004"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_68D607477D5E4FE4ADAFAAA7D3824D69"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1203,12 +1203,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C5504EA3B6414EEFAACA3B5244517EA9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C8D57877F28337FEB066F1C1D102E0A1"
         "OwnerKey" = "8:_4F7A8072F724D347DFED4F8B8ED5B0FB"
         "MsmSig" = "8:_UNDEFINED"
@@ -1617,8 +1611,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_758A9CF48B161815E9AE8E128BA91D33"
+        "MsmKey" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1859,6 +1853,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6115F249FFF7A2212E8F7C7685BECD62"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_758A9CF48B161815E9AE8E128BA91D33"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -2399,6 +2399,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5CF6B901C8D04954A61BEC859477B14C"
+            {
+            "SourcePath" = "8:D:\\Hendy's\\Desktop\\scriptwithData.sql"
+            "TargetName" = "8:scriptWithData.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5F509747F6E5D11F80FE011EAE5A9835"
             {
             "AssemblyRegister" = "3:1"
@@ -2490,26 +2510,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_68D607477D5E4FE4ADAFAAA7D3824D69"
-            {
-            "SourcePath" = "8:D:\\Hendy's\\Desktop\\images.ico"
-            "TargetName" = "8:images.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6E4B68B488654BC845AC074F10E6B0D1"
@@ -2986,26 +2986,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C5504EA3B6414EEFAACA3B5244517EA9"
-            {
-            "SourcePath" = "8:C:\\Windows\\System32\\msiexec.exe"
-            "TargetName" = "8:msiexec.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
-            "Condition" = "8:"
-            "Transitive" = "11:TRUE"
-            "Vital" = "11:FALSE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:TRUE"
-            "Permanent" = "11:TRUE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C8D57877F28337FEB066F1C1D102E0A1"
             {
             "AssemblyRegister" = "3:1"
@@ -3376,6 +3356,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE4DF236EFCB4186A096D749C2F5DFB1"
+            {
+            "SourcePath" = "8:C:\\Windows\\System32\\msiexec.exe"
+            "TargetName" = "8:msiexec.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "Condition" = "8:"
+            "Transitive" = "11:TRUE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:TRUE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -3436,6 +3436,61 @@
                         {
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_701A8A3855C84315AD32124BE09A1721"
+                    {
+                    "Name" = "8:Hinh"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_060AF0CFBC064EFAA501FC9C15E98D3C"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_C9D167A91F52463E8559C39EBEF52250"
+                            {
+                            "Name" = "8:VatDung"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_7849E3B7FBF24381A549FC80321C8ABB"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_D51686FF5E7645F09B734AA71BEF5180"
+                            {
+                            "Name" = "8:Thuoc"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_E78663C346D94DB387B1B1A15E66E54F"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_D97669294DFB4767AC62FE93E5B735B0"
+                            {
+                            "Name" = "8:NhanVien"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_40616D4A493A412FAC4C78596C85D2CB"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_E1F73181B9324CA99CCF72BAF05745AF"
+                            {
+                            "Name" = "8:BenhNhan"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_CA9C89899B3B4524BD243868C5F62190"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_E0FE8069432147EDB8C844D6994D6E3C"
@@ -3464,9 +3519,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Pediatric clinic"
+        "ProductName" = "8:QuanLyPhongKham"
         "ProductCode" = "8:{60486ECE-8AA9-49D0-B98A-E35FCD79BECF}"
-        "PackageCode" = "8:{40662E10-7590-4B6F-9641-0CA3C28C2FD9}"
+        "PackageCode" = "8:{8E5D0B38-4A19-4F7A-BF9A-81AFFFEB5263}"
         "UpgradeCode" = "8:{D67E94FD-BC13-4E0F-B0DC-56F4BBFBC42E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3477,7 +3532,7 @@
         "Manufacturer" = "8:Hoa Sen University"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Pediatric clinic"
+        "Title" = "8:QuanLyPhongKham"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Hendy Ho"
         "Keywords" = "8:"
@@ -3586,20 +3641,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_25CA8F3A27044074ADF89523FF28BB40"
-            {
-            "Name" = "8:Uninstall PhongKham"
-            "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_C5504EA3B6414EEFAACA3B5244517EA9"
-            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
-            "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
-            "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5FAB93976327437291032C637DDD7533"
             {
             "Name" = "8:Uninstall PhongKham"
@@ -3608,7 +3649,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_C5504EA3B6414EEFAACA3B5244517EA9"
+            "Target" = "8:"
             "Folder" = "8:_E3CE066330FE4E7492DCA059486AAA64"
             "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
             "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
@@ -3626,6 +3667,48 @@
             "Folder" = "8:_E3CE066330FE4E7492DCA059486AAA64"
             "WorkingFolder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
             "Icon" = "8:_C8FA1E49C2794372B91B19832311729B"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_861C714AB98949F0B56914FC7DF62913"
+            {
+            "Name" = "8:Uninstall PhongKham"
+            "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
+            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D2182DE3EA9E4054A57DC57C4D6A10F9"
+            {
+            "Name" = "8:PhongKham"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A4BC7471A96A4033ABEB347E593B6004"
+            "Folder" = "8:_81E068089EB04785A058D3898121CE28"
+            "WorkingFolder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
+            "Icon" = "8:_CDBB3D7F09F34BB0B862CAC3D4282E74"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F252F29B47554A0487DF6FBE68C21596"
+            {
+            "Name" = "8:PhongKham"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A4BC7471A96A4033ABEB347E593B6004"
+            "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
+            "WorkingFolder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
+            "Icon" = "8:_CDBB3D7F09F34BB0B862CAC3D4282E74"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FECC25FA51EC49B4B2270E03173953AF"

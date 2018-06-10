@@ -62,7 +62,8 @@ namespace QuanLyPhongKham
         
         private void refresh_HoaDon()
         {
-            panel1.Enabled = false;
+            chBox_LayThuoc.Enabled = false;
+            btn_ThanhToan.Enabled = false;
             dataSet.Clear();
             gridControl1_HoaDon.Refresh();
             gridView1_HoaDon.RefreshData();
@@ -133,7 +134,9 @@ namespace QuanLyPhongKham
             object ID_MSHD_CheckNull = gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon");
             if (ID_MSHD_CheckNull != null && ID_MSHD_CheckNull != DBNull.Value)
             {
-                panel1.Enabled = true;
+                chBox_LayThuoc.Enabled = false;
+                btn_ThanhToan.Enabled = false;
+
                 ID_MSDT = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
                 ID_MSKB = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
                 ID_MSHD = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon").ToString());
