@@ -22,7 +22,7 @@ namespace QuanLyPhongKham
     {
         connection connection = new connection();
         function function = new function();
-        SqlDataAdapter da;
+        //SqlDataAdapter da;
         SqlCommand cmd;
         OpenFileDialog open;
         int ID_Loaithuoc { get; set; }

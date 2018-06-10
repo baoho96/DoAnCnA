@@ -21,9 +21,9 @@ namespace QuanLyPhongKham
     {
         SqlDataAdapter da;
         SqlCommand cmd;
-        SqlDataReader rd;
+        //SqlDataReader rd;
         BindingSource bindingSource = new BindingSource();
-        DataSet ds;
+        //DataSet ds;
         OpenFileDialog open;
         string hinhanh = null;
         DialogResult result;
@@ -33,7 +33,7 @@ namespace QuanLyPhongKham
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
-        bool Rowfocus = false;//Kiểm tra khi chọn row
+        //bool Rowfocus = false;//Kiểm tra khi chọn row
 
         public static int ID_MSKB_DoubleClick { get; set; }
 

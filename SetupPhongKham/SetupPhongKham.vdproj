@@ -3641,7 +3641,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5FAB93976327437291032C637DDD7533"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_238A7DBB6D9A4F98ABFCE0AF0918A557"
             {
             "Name" = "8:Uninstall PhongKham"
             "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
@@ -3649,7 +3649,35 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:"
+            "Target" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
+            "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
+            "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3F8950C31AE34A95949EFCF1389C0534"
+            {
+            "Name" = "8:Unistall PhongKham"
+            "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
+            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
+            "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_645468CF8F274EC18874C040A6FFF541"
+            {
+            "Name" = "8:Uninstall PhongKham"
+            "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
             "Folder" = "8:_E3CE066330FE4E7492DCA059486AAA64"
             "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
             "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
@@ -3667,20 +3695,6 @@
             "Folder" = "8:_E3CE066330FE4E7492DCA059486AAA64"
             "WorkingFolder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
             "Icon" = "8:_C8FA1E49C2794372B91B19832311729B"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_861C714AB98949F0B56914FC7DF62913"
-            {
-            "Name" = "8:Uninstall PhongKham"
-            "Arguments" = "8:/x {60486ECE-8AA9-49D0-B98A-E35FCD79BECF} /qr"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_FE4DF236EFCB4186A096D749C2F5DFB1"
-            "Folder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
-            "WorkingFolder" = "8:_E0FE8069432147EDB8C844D6994D6E3C"
-            "Icon" = "8:_6F2166122B914B1D9D4B41379403022E"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D2182DE3EA9E4054A57DC57C4D6A10F9"

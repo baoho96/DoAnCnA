@@ -17,7 +17,7 @@ namespace QuanLyPhongKham
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();
         reportDonThuoc reportDonThuoc = new reportDonThuoc();
-        SqlCommand sqlCommand;
+        //SqlCommand sqlCommand;
         DataSet dataSet;
         public printDonThuoc()
         {

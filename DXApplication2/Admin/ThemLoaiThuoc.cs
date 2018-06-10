@@ -19,7 +19,7 @@ namespace QuanLyPhongKham
 
         connection connection = new connection();
         function function = new function();
-        SqlDataAdapter da;
+        //SqlDataAdapter da;
         SqlCommand cmd;
         
         public ThemLoaiThuoc()

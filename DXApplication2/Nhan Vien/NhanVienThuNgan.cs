@@ -61,15 +61,15 @@ namespace QuanLyPhongKham
         }
         
         private void refresh_HoaDon()
-        {
-            chBox_LayThuoc.Enabled = false;
-            btn_ThanhToan.Enabled = false;
+        {            
             dataSet.Clear();
             gridControl1_HoaDon.Refresh();
             gridView1_HoaDon.RefreshData();
             documentViewer1.Refresh();
             documentViewer1.PrintingSystem = null;
             chBox_LayThuoc.Checked = false;
+            chBox_LayThuoc.Enabled = false;
+            btn_ThanhToan.Enabled = false;
             Load_HoaDon();
         }
         public void timer_tick(object sender, EventArgs e)
@@ -134,8 +134,8 @@ namespace QuanLyPhongKham
             object ID_MSHD_CheckNull = gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon");
             if (ID_MSHD_CheckNull != null && ID_MSHD_CheckNull != DBNull.Value)
             {
-                chBox_LayThuoc.Enabled = false;
-                btn_ThanhToan.Enabled = false;
+                chBox_LayThuoc.Enabled = true;
+                btn_ThanhToan.Enabled = true;
 
                 ID_MSDT = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
                 ID_MSKB = int.Parse(gridView1_HoaDon.GetFocusedRowCellValue("MaSoKhamBenh").ToString());

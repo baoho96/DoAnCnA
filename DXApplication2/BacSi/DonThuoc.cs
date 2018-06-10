@@ -15,7 +15,7 @@ namespace QuanLyPhongKham
     {
         connection connection = new connection();
         function function = new function();
-        BacSi bacSi;
+        //BacSi bacSi;
         SqlDataAdapter da;
         BindingSource bindingSource = new BindingSource();
         
