@@ -430,7 +430,9 @@
             this.documentViewer1.Location = new System.Drawing.Point(469, 130);
             this.documentViewer1.Name = "documentViewer1";
             this.documentViewer1.Size = new System.Drawing.Size(549, 538);
+            this.documentViewer1.Status = "Xem trước hóa đơn";
             this.documentViewer1.TabIndex = 5;
+            this.documentViewer1.Zoom = 0.75F;
             // 
             // ribbonStatusBar
             // 

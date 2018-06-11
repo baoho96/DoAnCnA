@@ -43,6 +43,8 @@
             this.lbNgayKeDon = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.lblXemTruocTongTien = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbNgayTaiKham = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
@@ -91,8 +93,6 @@
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblXemTruocTongTien = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -194,14 +194,14 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 20.87502F;
+            this.TopMargin.HeightF = 21F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 20.83333F;
+            this.BottomMargin.HeightF = 21F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -289,6 +289,34 @@
             this.ReportFooter.HeightF = 284.7917F;
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.StylePriority.UseBorders = false;
+            // 
+            // lblXemTruocTongTien
+            // 
+            this.lblXemTruocTongTien.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.lblXemTruocTongTien.LocationFloat = new DevExpress.Utils.PointFloat(141.6664F, 97.33337F);
+            this.lblXemTruocTongTien.Name = "lblXemTruocTongTien";
+            this.lblXemTruocTongTien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblXemTruocTongTien.SizeF = new System.Drawing.SizeF(178.1252F, 20.00002F);
+            this.lblXemTruocTongTien.StylePriority.UseBorders = false;
+            this.lblXemTruocTongTien.StylePriority.UseTextAlignment = false;
+            this.lblXemTruocTongTien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblXemTruocTongTien.TextFormatString = "{0:n}";
+            // 
+            // xrLabel30
+            // 
+            this.xrLabel30.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel30.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel30.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(11.04186F, 97.33337F);
+            this.xrLabel30.Name = "xrLabel30";
+            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel30.SizeF = new System.Drawing.SizeF(127.4998F, 20F);
+            this.xrLabel30.StylePriority.UseBorderColor = false;
+            this.xrLabel30.StylePriority.UseBorders = false;
+            this.xrLabel30.StylePriority.UseFont = false;
+            this.xrLabel30.StylePriority.UseTextAlignment = false;
+            this.xrLabel30.Text = "Xem trước Tổng tiền ";
+            this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // lbNgayTaiKham
             // 
@@ -957,34 +985,6 @@
             this.xrLabel7.Text = "Tên Thuốc";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // lblXemTruocTongTien
-            // 
-            this.lblXemTruocTongTien.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblXemTruocTongTien.LocationFloat = new DevExpress.Utils.PointFloat(141.6664F, 97.33337F);
-            this.lblXemTruocTongTien.Name = "lblXemTruocTongTien";
-            this.lblXemTruocTongTien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblXemTruocTongTien.SizeF = new System.Drawing.SizeF(178.1252F, 20.00002F);
-            this.lblXemTruocTongTien.StylePriority.UseBorders = false;
-            this.lblXemTruocTongTien.StylePriority.UseTextAlignment = false;
-            this.lblXemTruocTongTien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.lblXemTruocTongTien.TextFormatString = "{0:n}";
-            // 
-            // xrLabel30
-            // 
-            this.xrLabel30.BorderColor = System.Drawing.Color.Black;
-            this.xrLabel30.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel30.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(11.04186F, 97.33337F);
-            this.xrLabel30.Name = "xrLabel30";
-            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel30.SizeF = new System.Drawing.SizeF(127.4998F, 20F);
-            this.xrLabel30.StylePriority.UseBorderColor = false;
-            this.xrLabel30.StylePriority.UseBorders = false;
-            this.xrLabel30.StylePriority.UseFont = false;
-            this.xrLabel30.StylePriority.UseTextAlignment = false;
-            this.xrLabel30.Text = "Xem trước Tổng tiền ";
-            this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // reportDonThuoc
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -993,7 +993,7 @@
             this.BottomMargin,
             this.ReportFooter,
             this.ReportHeader});
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 21, 21);
+            this.Margins = new System.Drawing.Printing.Margins(28, 171, 21, 21);
             this.Version = "17.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

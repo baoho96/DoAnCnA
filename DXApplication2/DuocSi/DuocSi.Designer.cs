@@ -196,6 +196,8 @@
             this.gridView_DanhSachBenhNhan.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView_DanhSachBenhNhan.OptionsFind.AlwaysVisible = true;
             this.gridView_DanhSachBenhNhan.OptionsView.ShowGroupPanel = false;
+            this.gridView_DanhSachBenhNhan.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4_LayThuoc, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView_DanhSachBenhNhan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView_DanhSachBenhNhan_RowClick);
             this.gridView_DanhSachBenhNhan.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView_DanhSachBenhNhan_CustomDrawRowIndicator);
             this.gridView_DanhSachBenhNhan.RowCountChanged += new System.EventHandler(this.gridView_DanhSachBenhNhan_RowCountChanged);
@@ -267,7 +269,9 @@
             this.documentViewer1.Location = new System.Drawing.Point(486, 130);
             this.documentViewer1.Name = "documentViewer1";
             this.documentViewer1.Size = new System.Drawing.Size(526, 538);
+            this.documentViewer1.Status = "Xem trước đơn thuốc";
             this.documentViewer1.TabIndex = 8;
+            this.documentViewer1.Zoom = 0.75F;
             // 
             // txt_capnhat
             // 

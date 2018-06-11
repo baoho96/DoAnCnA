@@ -117,9 +117,12 @@ namespace QuanLyPhongKham
             reportDonThuoc.DataSource = dataSet.Tables["DonThuoc"];
             reportDonThuoc.Bindata();
             connection.disconnect();
-            //hiển thị report lên documentViewer1
-            documentViewer1.PrintingSystem = reportDonThuoc.PrintingSystem;
+            //hiển thị report lên documentViewer1            
             reportDonThuoc.CreateDocument();
+            
+            documentViewer1.PrintingSystem = reportDonThuoc.PrintingSystem;
+            reportDonThuoc.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            documentViewer1.PrintingSystem.Document.AutoFitToPagesWidth = 1;
         }
         private void gridView1_HoaDon_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {

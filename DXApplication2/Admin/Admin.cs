@@ -450,10 +450,10 @@ namespace QuanLyPhongKham
         }
         private void load_qlyNhanVien_comB_QuyenTruyCap()//load ComboBox Quyền truy cập
         {
-            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Điều dưỡng   (2)");
-            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Bác Sĩ       (3)");
-            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Giao thuốc    (4)");
-            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Thu ngân (5)");
+            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Điều dưỡng    (2)");
+            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Bác Sĩ             (3)");
+            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Giao thuốc     (4)");
+            qlyNhanvien_comB_QuyenTruyCap.Items.Add("Thu ngân       (5)");
         }
         private void refresh_qlyNhanVien()
         {
