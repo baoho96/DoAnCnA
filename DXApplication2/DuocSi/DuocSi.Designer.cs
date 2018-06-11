@@ -75,7 +75,7 @@
             this.ribbonControl.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Left;
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1012, 132);
+            this.ribbonControl.Size = new System.Drawing.Size(1012, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -155,10 +155,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1012, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1012, 31);
             // 
             // panel2
             // 
@@ -166,15 +166,15 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_LayThuocXong);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 132);
+            this.panel2.Location = new System.Drawing.Point(0, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(470, 532);
+            this.panel2.Size = new System.Drawing.Size(470, 538);
             this.panel2.TabIndex = 5;
             // 
             // gridControl_DanhSachBenhNhan
             // 
             this.gridControl_DanhSachBenhNhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 68);
+            this.gridControl_DanhSachBenhNhan.Location = new System.Drawing.Point(0, 74);
             this.gridControl_DanhSachBenhNhan.MainView = this.gridView_DanhSachBenhNhan;
             this.gridControl_DanhSachBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl_DanhSachBenhNhan.Name = "gridControl_DanhSachBenhNhan";
@@ -264,9 +264,9 @@
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(486, 132);
+            this.documentViewer1.Location = new System.Drawing.Point(486, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(526, 532);
+            this.documentViewer1.Size = new System.Drawing.Size(526, 538);
             this.documentViewer1.TabIndex = 8;
             // 
             // txt_capnhat
@@ -275,7 +275,7 @@
             this.txt_capnhat.Location = new System.Drawing.Point(35, 670);
             this.txt_capnhat.Multiline = true;
             this.txt_capnhat.Name = "txt_capnhat";
-            this.txt_capnhat.Size = new System.Drawing.Size(133, 23);
+            this.txt_capnhat.Size = new System.Drawing.Size(160, 23);
             this.txt_capnhat.TabIndex = 11;
             // 
             // DuocSi

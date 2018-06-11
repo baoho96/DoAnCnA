@@ -550,7 +550,7 @@
             this.txt_GhiChu.Location = new System.Drawing.Point(90, 139);
             this.txt_GhiChu.Multiline = true;
             this.txt_GhiChu.Name = "txt_GhiChu";
-            this.txt_GhiChu.Size = new System.Drawing.Size(396, 19);
+            this.txt_GhiChu.Size = new System.Drawing.Size(396, 29);
             this.txt_GhiChu.TabIndex = 5;
             // 
             // txt_chuandoan
@@ -663,7 +663,7 @@
             this.txt_capnhat.Location = new System.Drawing.Point(31, 670);
             this.txt_capnhat.Multiline = true;
             this.txt_capnhat.Name = "txt_capnhat";
-            this.txt_capnhat.Size = new System.Drawing.Size(133, 23);
+            this.txt_capnhat.Size = new System.Drawing.Size(160, 23);
             this.txt_capnhat.TabIndex = 9;
             // 
             // BacSi

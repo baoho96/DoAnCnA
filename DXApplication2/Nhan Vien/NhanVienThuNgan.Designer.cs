@@ -392,7 +392,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1018, 132);
+            this.ribbonControl.Size = new System.Drawing.Size(1018, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
@@ -427,18 +427,18 @@
             this.documentViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(469, 132);
+            this.documentViewer1.Location = new System.Drawing.Point(469, 130);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(549, 532);
+            this.documentViewer1.Size = new System.Drawing.Size(549, 538);
             this.documentViewer1.TabIndex = 5;
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1018, 31);
             // 
             // barButtonItem1_DangXuat
             // 
@@ -1602,7 +1602,7 @@
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 83);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 89);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.MenuManager = this.ribbonControl;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
@@ -1811,9 +1811,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.gridControl1_HoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 132);
+            this.panel2.Location = new System.Drawing.Point(0, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 532);
+            this.panel2.Size = new System.Drawing.Size(450, 538);
             this.panel2.TabIndex = 11;
             // 
             // btn_ThanhToan
@@ -1857,7 +1857,7 @@
             this.txt_capnhat.Location = new System.Drawing.Point(39, 670);
             this.txt_capnhat.Multiline = true;
             this.txt_capnhat.Name = "txt_capnhat";
-            this.txt_capnhat.Size = new System.Drawing.Size(133, 23);
+            this.txt_capnhat.Size = new System.Drawing.Size(160, 23);
             this.txt_capnhat.TabIndex = 14;
             // 
             // NhanVienThuNgan

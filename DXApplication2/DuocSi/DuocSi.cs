@@ -57,7 +57,7 @@ namespace QuanLyPhongKham
             int TiepNhanBenhNhan = gridView_DanhSachBenhNhan.FocusedRowHandle;
             load_DanhSachBenhNhan();
             gridView_DanhSachBenhNhan.FocusedRowHandle = TiepNhanBenhNhan;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
         }
         private void refresh_DuocSi()
         {
@@ -72,6 +72,7 @@ namespace QuanLyPhongKham
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             refresh_DuocSi();
+            function.ClearFilterText(gridView_DanhSachBenhNhan);
         }
         private void btn_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
         {

@@ -68,7 +68,7 @@ namespace QuanLyPhongKham
             gridView1_thuoc.FocusedRowHandle = qlythuoc;
             gridView1_NhanVien.FocusedRowHandle = qlynhanvien;
             gridView1_VatDung.FocusedRowHandle = qlyvatdung;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + "giờ : " + DateTime.Now.Minute.ToString() + " phút";
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
 
         }
 
@@ -78,6 +78,10 @@ namespace QuanLyPhongKham
             refresh_qlyThuoc();
             refresh_qlyNhanVien();
             refresh_qlyVatDung();
+
+            function.ClearFilterText(gridView1_thuoc);
+            function.ClearFilterText(gridView1_thuoc);
+            function.ClearFilterText(gridView1_thuoc);
         }
         private void barButtonItem1_BacSi_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -549,7 +553,7 @@ namespace QuanLyPhongKham
                                         + "'" + qlyNhanvien_dtP_ngaysinh.Text + "',"
                                         + "N'" + qlyNhanvien_comB_vitri.Text + "',"
                                         + "N'" + qlyNhanvien_txt_diachi.Text + "',"
-                                        + qlyNhanvien_txt_sdt.Text + ","
+                                        + "N'" + qlyNhanvien_txt_sdt.Text + "',"
                                         + quyentruycap + ","
                                         + "N'" + qlyNhanvien_txt_taikhoan.Text + "',"
                                         + "'" + matkhau + "',"
@@ -653,7 +657,7 @@ namespace QuanLyPhongKham
 
                     string query = @"update NhanVien set TenNhanVien = N'" + qlyNhanvien_txt_hoten.Text + "'," +
                     "GioiTinh = N'" + qlyNhanvien_comB_gioitinh.Text + "'," +
-                    "SoDienThoai =" + qlyNhanvien_txt_sdt.Text + "," +
+                    "SoDienThoai = N'" + qlyNhanvien_txt_sdt.Text + "'," +
                     "ViTri = N'" + qlyNhanvien_comB_vitri.Text + "'," +
                     "NgaySinh ='" + qlyNhanvien_dtP_ngaysinh.Text + "'," +
                     "DiaChi = N'" + qlyNhanvien_txt_diachi.Text + "'," +
@@ -917,5 +921,19 @@ namespace QuanLyPhongKham
             textchanged = true;
         }
 
+        private void gridView1_NhanVien_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            function.FilterText(gridView1_NhanVien);
+        }
+
+        private void gridView1_VatDung_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            function.FilterText(gridView1_VatDung);
+        }
+
+        private void gridView1_thuoc_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            function.FilterText(gridView1_thuoc);
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace QuanLyPhongKham
             int HoaDon = gridView1_HoaDon.FocusedRowHandle;
             Load_HoaDon();
             gridView1_HoaDon.FocusedRowHandle = HoaDon;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
         }
         private void Load_HoaDon()
         {
@@ -251,6 +251,7 @@ namespace QuanLyPhongKham
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             refresh_HoaDon();
+            function.ClearFilterText(gridView1_HoaDon);
         }
 
         private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)

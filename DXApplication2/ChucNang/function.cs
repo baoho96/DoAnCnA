@@ -259,5 +259,14 @@ namespace QuanLyPhongKham
             timer.Tick += new EventHandler(eventHandler);
             timer.Start();
         }
+        public void FilterText(GridView gridView)
+        {
+            if (!string.IsNullOrEmpty(gridView.FindFilterText) && !gridView.FindFilterText.Contains('"'))
+                gridView.FindFilterText = "\"" + gridView.FindFilterText + "\"";
+        }
+        public void ClearFilterText(GridView gridView)
+        {
+            gridView.FindFilterText = "";
+        }
     }
 }

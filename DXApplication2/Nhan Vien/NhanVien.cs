@@ -82,6 +82,11 @@ namespace QuanLyPhongKham
             gridView1_TimKiemBenhNhan.FocusedRowHandle = 0;
             gridView1_TimBenhNhan.FocusedRowHandle = 0;
 
+            function.ClearFilterText(gridView1_TiepNhanBenhNhan);
+            function.ClearFilterText(gridView4_DanhSachBenhNhan);
+            function.ClearFilterText(gridView1_TimKiemBenhNhan);
+            function.ClearFilterText(gridView1_TimBenhNhan);
+
             gridView1_TiepNhanBenhNhan.UnselectRow(int.Parse(gridView1_TiepNhanBenhNhan.FocusedRowHandle.ToString()));
             gridView4_DanhSachBenhNhan.UnselectRow(int.Parse(gridView4_DanhSachBenhNhan.FocusedRowHandle.ToString()));
             gridView1_TimKiemBenhNhan.UnselectRow(int.Parse(gridView1_TimKiemBenhNhan.FocusedRowHandle.ToString()));
@@ -106,8 +111,8 @@ namespace QuanLyPhongKham
             gridView4_DanhSachBenhNhan.FocusedRowHandle = DanhSachBenhNhan;
             gridView1_TimKiemBenhNhan.FocusedRowHandle = TimKiemBenhNhan;
             gridView1_TimBenhNhan.FocusedRowHandle = TimBenhNhan;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString()+ ":" + DateTime.Now.Minute.ToString();
-            
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
+
         }
         #region tab Tiếp nhận bệnh nhân
 
@@ -220,7 +225,7 @@ namespace QuanLyPhongKham
 
                 string KiemTraTonTai = @"select Ho, Ten,NamSinh from BenhNhan" +
                     " where Ho like N'%" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'%" + TiepNhanBenhNhan_txt_Ten.Text +
-                    "%' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "' and CheckDaKham = 1 or SoDienThoai = "+ TiepNhanBenhNhan_txt_SDT.Text;
+                    "%' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "' and CheckDaKham = 1 or SoDienThoai = N'"+ TiepNhanBenhNhan_txt_SDT.Text +"'";
                 cmd = new SqlCommand(KiemTraTonTai, connection.con);
                 da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -269,7 +274,7 @@ namespace QuanLyPhongKham
                    + "N'" + TiepNhanBenhNhan_txt_Ten.Text + "',"
                    + "'" + TiepNhanBenhNhan_dtP_namsinh.Text + "',"
                    + "N'" + TiepNhanBenhNhan_txt_DiaChi.Text + "',"
-                   + TiepNhanBenhNhan_txt_SDT.Text + ","
+                   + "N'" + TiepNhanBenhNhan_txt_SDT.Text + "',"
                    + "N'" + TiepNhanBenhNhan_comB_GioiTinh.Text + "',"
                    + "N'" + hinhanh + "',"
                    + TiepNhanBenhNhan_txt_CanNang.Text + ","
@@ -552,7 +557,7 @@ namespace QuanLyPhongKham
 
                     string query = @"update BenhNhan set Ho = N'" + DanhSachBenhNhan_txt_Ho.Text + "'," +
                     "Ten = N'" + DanhSachBenhNhan_txt_Ten.Text + "'," +
-                    "SoDienThoai =" + DanhSachBenhNhan_txt_SDT.Text + "," +
+                    "SoDienThoai = N'" + DanhSachBenhNhan_txt_SDT.Text + "'," +
                     "GioiTinh = N'" + DanhSachBenhNhan_comB_GioiTinh.Text + "'," +
                     "NamSinh ='" + DanhSachBenhNhan_dtP_NamSinh.Text + "'," +
                     "DiaChi = N'" + DanhSachBenhNhan_txt_DiaChi.Text + "'," +
@@ -935,6 +940,21 @@ namespace QuanLyPhongKham
         private void DanhSachBenhNhan_txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             function.KoNhapKiTu(sender, e);
+        }
+
+        private void gridView1_TiepNhanBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            function.FilterText(gridView1_TiepNhanBenhNhan);
+        }
+
+        private void gridView4_DanhSachBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            //function.FilterText(gridView4_DanhSachBenhNhan);
+        }
+
+        private void gridView1_TimKiemBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            /*unction.FilterText(gridView1_TimKiemBenhNhan);*/
         }
     }
 

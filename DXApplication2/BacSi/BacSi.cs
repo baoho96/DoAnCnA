@@ -77,7 +77,7 @@ namespace QuanLyPhongKham
             Load_HoSoKhamBenh();
             BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.FocusedRowHandle = danhsachBenhNhan;
 
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
 
         }
 
@@ -118,6 +118,7 @@ namespace QuanLyPhongKham
         private void Refresh_BacSi()
         {
             function.ClearControl(panelControl2);
+            
             Load_HoSoKhamBenh();
             RowClick = false;
             panelControl2.Enabled = false;
@@ -309,6 +310,7 @@ namespace QuanLyPhongKham
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             Refresh_BacSi();
+            function.ClearFilterText(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay);
         }
 
         private void bbtn_TaoDonThuoc_ItemClick(object sender, ItemClickEventArgs e)
