@@ -876,6 +876,7 @@ namespace QuanLyPhongKham
                 connection.connect();
                 string query1 = @"delete from HoSoKhamBenh where MaSoKhamBenh = " + ID_MSKB;
                 connection.delete(query1);
+                this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
                 connection.disconnect();
                 refresh_TimKiemBenhNhanTaiKham();
             }

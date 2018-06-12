@@ -228,8 +228,15 @@ namespace QuanLyPhongKham
 
         public void KoNhapKiTu(object sender,KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if(!Char.IsLetterOrDigit(e.KeyChar))
+            {
                 e.Handled = true;
+            }
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                
+            }
         }
 
         public void ToExcel(string noidung,DialogResult result,GridControl gridControl)
