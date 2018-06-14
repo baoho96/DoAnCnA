@@ -361,7 +361,7 @@
             this.xlabel7.SizeF = new System.Drawing.SizeF(80.20834F, 18.83333F);
             this.xlabel7.StylePriority.UseBorderColor = false;
             this.xlabel7.StylePriority.UseFont = false;
-            this.xlabel7.Text = "Chuẩn đoán";
+            this.xlabel7.Text = "Chẩn đoán";
             // 
             // xlbChuanDoan
             // 

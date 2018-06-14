@@ -188,7 +188,7 @@
             this.gridColumn5_NgayTaiKham.Name = "gridColumn5_NgayTaiKham";
             this.gridColumn5_NgayTaiKham.Visible = true;
             this.gridColumn5_NgayTaiKham.VisibleIndex = 6;
-            this.gridColumn5_NgayTaiKham.Width = 66;
+            this.gridColumn5_NgayTaiKham.Width = 73;
             // 
             // gridColumn6_NamSinh
             // 
@@ -206,7 +206,7 @@
             this.gridColumn8_XetNghiem.Name = "gridColumn8_XetNghiem";
             this.gridColumn8_XetNghiem.Visible = true;
             this.gridColumn8_XetNghiem.VisibleIndex = 7;
-            this.gridColumn8_XetNghiem.Width = 66;
+            this.gridColumn8_XetNghiem.Width = 64;
             // 
             // gridColumn9_KQXN
             // 
@@ -215,16 +215,16 @@
             this.gridColumn9_KQXN.Name = "gridColumn9_KQXN";
             this.gridColumn9_KQXN.Visible = true;
             this.gridColumn9_KQXN.VisibleIndex = 8;
-            this.gridColumn9_KQXN.Width = 66;
+            this.gridColumn9_KQXN.Width = 64;
             // 
             // gridColumn10_ChuanDoan
             // 
-            this.gridColumn10_ChuanDoan.Caption = "Chuẩn đoán";
+            this.gridColumn10_ChuanDoan.Caption = "Chẩn đoán";
             this.gridColumn10_ChuanDoan.FieldName = "ChuanDoan";
             this.gridColumn10_ChuanDoan.Name = "gridColumn10_ChuanDoan";
             this.gridColumn10_ChuanDoan.Visible = true;
             this.gridColumn10_ChuanDoan.VisibleIndex = 9;
-            this.gridColumn10_ChuanDoan.Width = 66;
+            this.gridColumn10_ChuanDoan.Width = 64;
             // 
             // gridColumn1_GhiChu
             // 
@@ -233,7 +233,7 @@
             this.gridColumn1_GhiChu.Name = "gridColumn1_GhiChu";
             this.gridColumn1_GhiChu.Visible = true;
             this.gridColumn1_GhiChu.VisibleIndex = 10;
-            this.gridColumn1_GhiChu.Width = 66;
+            this.gridColumn1_GhiChu.Width = 64;
             // 
             // gridColumn1_LiDoKham
             // 
@@ -242,7 +242,7 @@
             this.gridColumn1_LiDoKham.Name = "gridColumn1_LiDoKham";
             this.gridColumn1_LiDoKham.Visible = true;
             this.gridColumn1_LiDoKham.VisibleIndex = 5;
-            this.gridColumn1_LiDoKham.Width = 66;
+            this.gridColumn1_LiDoKham.Width = 60;
             // 
             // gridColumn1_TenNhanVien
             // 
@@ -251,7 +251,7 @@
             this.gridColumn1_TenNhanVien.Name = "gridColumn1_TenNhanVien";
             this.gridColumn1_TenNhanVien.Visible = true;
             this.gridColumn1_TenNhanVien.VisibleIndex = 11;
-            this.gridColumn1_TenNhanVien.Width = 79;
+            this.gridColumn1_TenNhanVien.Width = 87;
             // 
             // BenhNhanKhamTrongNgay
             // 

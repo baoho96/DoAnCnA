@@ -124,6 +124,7 @@ namespace QuanLyPhongKham
             gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '" + ngay + "/" + thang + "/" + nam + "') And [KiemTraKham] Is Null";
             
         }
+        
         //private void Load_TiepNhanBenhNhan()
         //{
         //    connection.connect();
@@ -593,37 +594,41 @@ namespace QuanLyPhongKham
 
                 ngaykham = themCho.ngaykham;
                 lidokham = themCho.lidokham;
-                string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
+                string ngaykhamCheck = ngay + "/" + thang + "/" + nam;
+                if (CheckTrungBenhNhanKhamTrongNgay(ID_BenhNhan,ngaykhamCheck) == false)
+                {
+                    string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
                                     " from  BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
-                                        " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngay + "/" + thang + "/" + nam + "%')" +
+                                        " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngaykhamCheck + "%')" +
                                  " begin insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
                     + ID_BenhNhan + ","
                     + "N'" + lidokham + "',"
                     + "'" + ngaykham + "') end end";
-                connection.insert(query);
+                    connection.insert(query);
+                    connection.disconnect();
+                    refresh_DanhSachBenhNhan();
+                }
                 connection.disconnect();
-                refresh_DanhSachBenhNhan();
-                
+
             }
             
         }
-        //private void DanhSachBenhNhan_btn_TimKiem_Click(object sender, EventArgs e)
-        //{
-        //    connection.connect();
-
-        //    string Load_Data = @"select * from BenhNhan where Ho like '" + DanhSachBenhNhan_txt_Ho.Text + "%'" +
-        //                                              " and Ten like '" + DanhSachBenhNhan_txt_Ten.Text + "'" +
-        //                                              " and NamSinh = '" + DanhSachBenhNhan_dtP_NamSinh.Text + "'";
-        //    da = new SqlDataAdapter(Load_Data, connection.con);
-        //    ds = new DataSet();
-        //    ds.Clear();
-        //    da.Fill(ds, "BenhNhan");
-
-        //    bindingSource.DataSource = ds.Tables["BenhNhan"];
-        //    DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.DataSource = bindingSource;
-
-        //    connection.disconnect();
-        //}
+        private bool CheckTrungBenhNhanKhamTrongNgay(int ID_BenhNhan, string ngaykhamCheck)
+        {
+            bool a;            
+            string CheckBenhNhanKhamTrongNgay = @"select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
+                                    " from  BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
+                                        " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngaykhamCheck + "%'";
+            DataTable dt = connection.SQL(CheckBenhNhanKhamTrongNgay);
+            if(dt.Rows.Count > 0)
+            {
+                function.Notice("Bệnh nhân đã được thêm vào hàng chờ khám trong ngày"+"\n"+"Bạn vui lòng kiểm tra lại.", 0);
+                a = true;
+                return a;
+            }
+            else { a = false; return a; }
+            //return a;
+        }
 
         private void gridView4_DanhSachBenhNhan_RowClick(object sender, RowClickEventArgs e)
         {
@@ -750,6 +755,8 @@ namespace QuanLyPhongKham
             //int ID_MSKB_old = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
             //string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             int KiemTraTaiKham = 1;
+            string ngaykhamCheck = TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Day.ToString("d2") + "/" +
+                 TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Month.ToString("d2") + "/" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Year.ToString();
             //tạo object và gán cho cột khi row click để kiểm tra khi sử dụng chức năng group column
             object ID_BenhNhan_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
             object ID_MSKB_old_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh");
@@ -769,31 +776,35 @@ namespace QuanLyPhongKham
                 }
                 else
                 {
-                    string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
-                    + ID_BenhNhan + ","
-                    + "N'" + LiDoKham + "',"
-                    + "'" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Text + "',"
-                    + KiemTraTaiKham + ")";
-                    connection.insert(Insert_HSKB);
+                    if (CheckTrungBenhNhanKhamTrongNgay(ID_BenhNhan, ngaykhamCheck) == false)
+                    {
+                        string Insert_HSKB = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham,KiemTraTaiKham) values ("
+                                + ID_BenhNhan + ","
+                                + "N'" + LiDoKham + "',"
+                                + "'" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Text + "',"
+                                + KiemTraTaiKham + ")";
+                        connection.insert(Insert_HSKB);
 
-                    //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
-                    string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
-                        + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
-                        + " LiDoKham = N'" + LiDoKham + "' AND "
-                        + " NgayGioKham = '" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Text + "' AND "
-                        + " KiemTraTaiKham = " + KiemTraTaiKham;
-                    DataTable dataTable = connection.SQL(LayID_MSKB_New);
-                    int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
+                        //lấy ID MSKB mới khi vừa insert vào hồ sơ khám bệnh
+                        string LayID_MSKB_New = @"select MaSoKhamBenh from HoSoKhamBenh"
+                            + " where MaSoBenhNhan = " + ID_BenhNhan + " AND"
+                            + " LiDoKham = N'" + LiDoKham + "' AND "
+                            + " NgayGioKham = '" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Text + "' AND "
+                            + " KiemTraTaiKham = " + KiemTraTaiKham;
+                        DataTable dataTable = connection.SQL(LayID_MSKB_New);
+                        int ID_MSKB_New = int.Parse(dataTable.Rows[0][0].ToString());
 
-                    //insert vào hồ sơ tái khám
-                    string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
-                        + ID_MSKB_New + ","
-                        + ID_MSKB_old + ","
-                        + ID_BenhNhan + ")";
-                    connection.insert(Insert_HSTK);
-                    MessageBox.Show("Nhập Bệnh nhân tái khám thành công!", "Thông Báo Nhập");
-                    connection.disconnect();
-                    refresh_TimKiemBenhNhan();
+                        //insert vào hồ sơ tái khám
+                        string Insert_HSTK = @"insert into HoSoTaiKham(MaSoTaiKham,MaSoKhamBenh,MaSoBenhNhan) values ("
+                            + ID_MSKB_New + ","
+                            + ID_MSKB_old + ","
+                            + ID_BenhNhan + ")";
+                        connection.insert(Insert_HSTK);
+                        MessageBox.Show("Nhập Bệnh nhân tái khám thành công!", "Thông Báo Nhập");
+                        connection.disconnect();
+                        refresh_TimKiemBenhNhan();
+                    }
+                    
                 }
                 //insert vào Hồ sơ khám bệnh
             }

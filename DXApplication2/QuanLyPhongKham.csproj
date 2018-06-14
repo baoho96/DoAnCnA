@@ -231,10 +231,10 @@
     <Compile Include="Nhan Vien\ThemCho.Designer.cs">
       <DependentUpon>ThemCho.cs</DependentUpon>
     </Compile>
-    <Compile Include="BacSi\reportDonThuoc.cs">
+    <Compile Include="Nhan Vien\Thong Ke\reportDonThuoc.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BacSi\reportDonThuoc.Designer.cs">
+    <Compile Include="Nhan Vien\Thong Ke\reportDonThuoc.Designer.cs">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="BacSi\XemHoSoBenhNhan.cs">
@@ -258,7 +258,7 @@
     <EmbeddedResource Include="BacSi\BenhNhanKhamTrongNgay.resx">
       <DependentUpon>BenhNhanKhamTrongNgay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BacSi\reportDonThuoc.resx">
+    <EmbeddedResource Include="Nhan Vien\Thong Ke\reportDonThuoc.resx">
       <DependentUpon>reportDonThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhan Vien\Thong Ke\BenhNhan.resx">

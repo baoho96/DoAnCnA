@@ -280,6 +280,7 @@
             // txt_SoLuong
             // 
             this.txt_SoLuong.Location = new System.Drawing.Point(368, 32);
+            this.txt_SoLuong.MaxLength = 20;
             this.txt_SoLuong.Name = "txt_SoLuong";
             this.txt_SoLuong.Size = new System.Drawing.Size(39, 21);
             this.txt_SoLuong.TabIndex = 1;
@@ -655,9 +656,9 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(18, 110);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Chuẩn đoán";
+            this.label7.Text = "Chẩn đoán";
             // 
             // txt_KetQuaXetNghiem
             // 

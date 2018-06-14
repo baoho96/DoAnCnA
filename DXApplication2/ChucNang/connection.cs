@@ -48,10 +48,7 @@ namespace QuanLyPhongKham
         }
         public void insert(string query)
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                connect();
-            }
+            CheckConnect();
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
@@ -66,48 +63,63 @@ namespace QuanLyPhongKham
         }
         public void delete(string query)
         {
-            if (con.State == ConnectionState.Closed)
+            CheckConnect();
+            try
             {
-                connect();
+                cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
             }
-            cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
         public void sql(string query)//update
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                connect();
-            }
+            CheckConnect();
+            try
+            { 
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
             cmd.ExecuteNonQuery();
-        }
-        public void loadcomboBox(string query)
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                connect();
             }
-            cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = query;
-            reader = cmd.ExecuteReader();
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
         public DataTable SQL(string query)
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                connect();
-            }            
-            cmd = new SqlCommand(query, con);
-            da = new SqlDataAdapter(cmd);
+            CheckConnect();
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            return (dt);
+            try
+            {
+                cmd = new SqlCommand(query, con);
+                da = new SqlDataAdapter(cmd);            
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return (dt);            
+        }
+        public void CheckConnect()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    connect();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }

@@ -699,6 +699,7 @@
             this.qlyThuoc_comB_donvitinhnhonhat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.qlyThuoc_comB_donvitinhnhonhat.FormattingEnabled = true;
             this.qlyThuoc_comB_donvitinhnhonhat.Location = new System.Drawing.Point(124, 90);
+            this.qlyThuoc_comB_donvitinhnhonhat.MaxLength = 10;
             this.qlyThuoc_comB_donvitinhnhonhat.Name = "qlyThuoc_comB_donvitinhnhonhat";
             this.qlyThuoc_comB_donvitinhnhonhat.Size = new System.Drawing.Size(67, 21);
             this.qlyThuoc_comB_donvitinhnhonhat.TabIndex = 6;
@@ -715,10 +716,15 @@
             // 
             // qlyThuoc_comB_loaithuoc
             // 
+            this.qlyThuoc_comB_loaithuoc.AllowDrop = true;
             this.qlyThuoc_comB_loaithuoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.qlyThuoc_comB_loaithuoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.qlyThuoc_comB_loaithuoc.DisplayMember = "1";
+            this.qlyThuoc_comB_loaithuoc.DropDownHeight = 120;
+            this.qlyThuoc_comB_loaithuoc.DropDownWidth = 135;
             this.qlyThuoc_comB_loaithuoc.FormattingEnabled = true;
+            this.qlyThuoc_comB_loaithuoc.IntegralHeight = false;
+            this.qlyThuoc_comB_loaithuoc.ItemHeight = 13;
             this.qlyThuoc_comB_loaithuoc.Location = new System.Drawing.Point(626, 36);
             this.qlyThuoc_comB_loaithuoc.Name = "qlyThuoc_comB_loaithuoc";
             this.qlyThuoc_comB_loaithuoc.Size = new System.Drawing.Size(135, 21);
@@ -744,6 +750,7 @@
             // qlyThuoc_txt_SoLuongNhoNhat
             // 
             this.qlyThuoc_txt_SoLuongNhoNhat.Location = new System.Drawing.Point(274, 90);
+            this.qlyThuoc_txt_SoLuongNhoNhat.MaxLength = 20;
             this.qlyThuoc_txt_SoLuongNhoNhat.Name = "qlyThuoc_txt_SoLuongNhoNhat";
             this.qlyThuoc_txt_SoLuongNhoNhat.Size = new System.Drawing.Size(36, 21);
             this.qlyThuoc_txt_SoLuongNhoNhat.TabIndex = 7;
@@ -752,6 +759,7 @@
             // qlyThuoc_txt_SoLuong
             // 
             this.qlyThuoc_txt_SoLuong.Location = new System.Drawing.Point(274, 63);
+            this.qlyThuoc_txt_SoLuong.MaxLength = 20;
             this.qlyThuoc_txt_SoLuong.Name = "qlyThuoc_txt_SoLuong";
             this.qlyThuoc_txt_SoLuong.Size = new System.Drawing.Size(36, 21);
             this.qlyThuoc_txt_SoLuong.TabIndex = 4;
@@ -1004,6 +1012,7 @@
             this.qlyNhanvien_comB_QuyenTruyCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.qlyNhanvien_comB_QuyenTruyCap.FormattingEnabled = true;
             this.qlyNhanvien_comB_QuyenTruyCap.Location = new System.Drawing.Point(622, 117);
+            this.qlyNhanvien_comB_QuyenTruyCap.MaxLength = 20;
             this.qlyNhanvien_comB_QuyenTruyCap.Name = "qlyNhanvien_comB_QuyenTruyCap";
             this.qlyNhanvien_comB_QuyenTruyCap.Size = new System.Drawing.Size(119, 21);
             this.qlyNhanvien_comB_QuyenTruyCap.TabIndex = 11;
@@ -1015,6 +1024,7 @@
             this.qlyNhanvien_comB_vitri.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.qlyNhanvien_comB_vitri.FormattingEnabled = true;
             this.qlyNhanvien_comB_vitri.Location = new System.Drawing.Point(221, 60);
+            this.qlyNhanvien_comB_vitri.MaxLength = 50;
             this.qlyNhanvien_comB_vitri.Name = "qlyNhanvien_comB_vitri";
             this.qlyNhanvien_comB_vitri.Size = new System.Drawing.Size(89, 21);
             this.qlyNhanvien_comB_vitri.TabIndex = 3;
@@ -1025,6 +1035,7 @@
             this.qlyNhanvien_comB_gioitinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.qlyNhanvien_comB_gioitinh.FormattingEnabled = true;
             this.qlyNhanvien_comB_gioitinh.Location = new System.Drawing.Point(89, 60);
+            this.qlyNhanvien_comB_gioitinh.MaxLength = 10;
             this.qlyNhanvien_comB_gioitinh.Name = "qlyNhanvien_comB_gioitinh";
             this.qlyNhanvien_comB_gioitinh.Size = new System.Drawing.Size(68, 21);
             this.qlyNhanvien_comB_gioitinh.TabIndex = 2;
@@ -1575,6 +1586,7 @@
             // qlyVatdung_txt_sonamsudung
             // 
             this.qlyVatdung_txt_sonamsudung.Location = new System.Drawing.Point(108, 59);
+            this.qlyVatdung_txt_sonamsudung.MaxLength = 20;
             this.qlyVatdung_txt_sonamsudung.Name = "qlyVatdung_txt_sonamsudung";
             this.qlyVatdung_txt_sonamsudung.Size = new System.Drawing.Size(133, 21);
             this.qlyVatdung_txt_sonamsudung.TabIndex = 2;
@@ -1583,6 +1595,7 @@
             // qlyVatdung_txt_soluong
             // 
             this.qlyVatdung_txt_soluong.Location = new System.Drawing.Point(108, 86);
+            this.qlyVatdung_txt_soluong.MaxLength = 20;
             this.qlyVatdung_txt_soluong.Name = "qlyVatdung_txt_soluong";
             this.qlyVatdung_txt_soluong.Size = new System.Drawing.Size(133, 21);
             this.qlyVatdung_txt_soluong.TabIndex = 3;

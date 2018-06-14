@@ -43,23 +43,20 @@ namespace QuanLyPhongKham
                             Notice("Bạn phải nhập vào ô nhập còn trống", 0);                            
                             return false;
                         }         
-                    }
-                    
+                    }                    
                     if (a is ComboBox)
                     {
                         ComboBox comboBox = (ComboBox)a;
                         if (comboBox.Text=="")
                         {
                             Notice("Bạn phải nhập vào ô lựa chọn còn trống", 0); return false;
-                        }
-                        
-                        
+                        }                                            
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                MessageBox.Show(e.Message);
             }
             return true;
         }
@@ -87,8 +84,6 @@ namespace QuanLyPhongKham
                         {
                             return false;
                         }
-
-
                     }
                 }
             }
@@ -113,11 +108,6 @@ namespace QuanLyPhongKham
         }
         public static void ClearControl(Control form)//hàm clear tất cả
         {
-            //if (form is TabPage)
-            //{
-            //    TabPage tab = (TabPage)form;
-            //    tab.Refresh();
-            //}
             foreach (Control control in form.Controls)
             {
                 if (control is TextBox)
@@ -207,7 +197,6 @@ namespace QuanLyPhongKham
                     {
                         gridView.IndicatorWidth = nNewSize;
                     }
-
                     e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                     e.Info.DisplayText = "STT";
                 }
@@ -228,14 +217,22 @@ namespace QuanLyPhongKham
 
         public void KoNhapKiTu(object sender,KeyPressEventArgs e)
         {
-            if(!Char.IsLetterOrDigit(e.KeyChar))
+            try
             {
-                e.Handled = true;
+                if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                if (!Char.IsLetterOrDigit(e.KeyChar))
+                {
+                    if (e.KeyChar == '\b')//loại nút Backspace ra
+                    { }
+                    else { e.Handled = true; }
+                }
             }
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            catch (Exception ex)
             {
-                e.Handled = true;
-                
+                MessageBox.Show(ex.Message);
             }
         }
 
