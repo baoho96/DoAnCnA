@@ -22,7 +22,7 @@ namespace QuanLyPhongKham
             switch (type)
             {
                 case 0:
-                    MessageBox.Show(noidung, "Lỗi", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MessageBox.Show(noidung, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 1:
                     MessageBox.Show(noidung, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -236,24 +236,22 @@ namespace QuanLyPhongKham
             }
         }
 
-        public void ToExcel(string noidung,DialogResult result,GridControl gridControl)
+        public void ToExcel(string noidung, DialogResult result, GridControl gridControl)
         {
-            if (MessageBox.Show(noidung, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = "D:";
+            save.Filter = "Select File |*.xlsx||*.docx||*.pdf";
+            result = save.ShowDialog();
+            string link = save.FileName;
+            save.RestoreDirectory = true;
+            if (result == DialogResult.OK)
             {
-                SaveFileDialog save = new SaveFileDialog();
-                save.InitialDirectory = "D:";
-                save.Filter = "Select File |*.xlsx||*.docx";
-                
-                result = save.ShowDialog();
-                string link = save.FileName;
-                save.RestoreDirectory = true;
-                if (result == DialogResult.OK)
-                {
-                    if (save.FilterIndex == 1)
-                        gridControl.ExportToXlsx(link);
-                    if (save.FilterIndex == 2)
-                        gridControl.ExportToDocx(link);
-                }
+                if (save.FilterIndex == 1)
+                    gridControl.ExportToXlsx(link);
+                if (save.FilterIndex == 2)
+                    gridControl.ExportToDocx(link);
+                if (save.FilterIndex == 3)
+                    gridControl.ExportToPdf(link);
             }
         }
         public void Timer_load(EventHandler eventHandler)

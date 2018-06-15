@@ -442,7 +442,7 @@
             gridLevelNode1.RelationName = "FK_HoSoKhamBenh_HoSoTaiKham";
             this.gridControl1_TimKiemBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 59);
+            this.gridControl1_TimKiemBenhNhan.Location = new System.Drawing.Point(2, 66);
             this.gridControl1_TimKiemBenhNhan.MainView = this.gridView1_TimKiemBenhNhan;
             this.gridControl1_TimKiemBenhNhan.MenuManager = this.ribbonControl;
             this.gridControl1_TimKiemBenhNhan.Name = "gridControl1_TimKiemBenhNhan";
@@ -699,7 +699,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1016, 132);
+            this.ribbonControl.Size = new System.Drawing.Size(1016, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -773,10 +773,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btn_DangXuat);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 664);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 31);
             // 
             // gridView1_HoSoTaiKham_BenhNhan
             // 
@@ -915,7 +915,7 @@
             gridLevelNode2.RelationName = "FK_HoSoKhamBenh_BenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode2});
-            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 145);
+            this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Location = new System.Drawing.Point(0, 152);
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.MainView = this.gridView4_DanhSachBenhNhan;
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Name = "DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan";
             this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1558,7 +1558,7 @@
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.AutoScroll = true;
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Controls.Add(this.panelControl5);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Name = "NhanVien_tabP_DanhSachBenhNhanTaiKham";
-            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1010, 503);
+            this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Size = new System.Drawing.Size(1010, 510);
             this.NhanVien_tabP_DanhSachBenhNhanTaiKham.Text = "Tiếp nhận bệnh nhân tái khám";
             // 
             // panelControl5
@@ -1572,7 +1572,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1010, 503);
+            this.panelControl5.Size = new System.Drawing.Size(1010, 510);
             this.panelControl5.TabIndex = 7;
             // 
             // TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham
@@ -1623,7 +1623,7 @@
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label29.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label29.Location = new System.Drawing.Point(2, 40);
+            this.label29.Location = new System.Drawing.Point(2, 47);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(338, 19);
             this.label29.TabIndex = 9;
@@ -1634,7 +1634,7 @@
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
             this.NhanVien_tabP_DanhSachBenhNhan.Controls.Add(this.panelControl4);
             this.NhanVien_tabP_DanhSachBenhNhan.Name = "NhanVien_tabP_DanhSachBenhNhan";
-            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1010, 503);
+            this.NhanVien_tabP_DanhSachBenhNhan.Size = new System.Drawing.Size(1010, 510);
             this.NhanVien_tabP_DanhSachBenhNhan.Text = "Tiếp nhận bệnh nhân cũ";
             // 
             // panelControl4
@@ -1902,14 +1902,14 @@
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham);
             this.NhanVien_tabP_TiepNhanBenhNhan.Controls.Add(this.panelControl2);
             this.NhanVien_tabP_TiepNhanBenhNhan.Name = "NhanVien_tabP_TiepNhanBenhNhan";
-            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1010, 503);
+            this.NhanVien_tabP_TiepNhanBenhNhan.Size = new System.Drawing.Size(1010, 510);
             this.NhanVien_tabP_TiepNhanBenhNhan.Text = "Tiếp nhận bệnh nhân mới";
             // 
             // TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham
             // 
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = this.hoSoKhamBenhBindingSource;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 181);
+            this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Location = new System.Drawing.Point(0, 188);
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MainView = this.gridView1_TiepNhanBenhNhan;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.MenuManager = this.ribbonControl;
             this.TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Name = "TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham";
@@ -2176,7 +2176,7 @@
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1011, 176);
+            this.panelControl2.Size = new System.Drawing.Size(1011, 182);
             this.panelControl2.TabIndex = 2;
             // 
             // TiepNhanBenhNhan_dtP_NgayKham
@@ -2450,10 +2450,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 132);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.NhanVien_tabP_TiepNhanBenhNhan;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 532);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 538);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.NhanVien_tabP_TiepNhanBenhNhan,
@@ -2468,7 +2468,7 @@
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl6);
             this.xtra_TimBenhNhan.Controls.Add(this.panelControl1);
             this.xtra_TimBenhNhan.Name = "xtra_TimBenhNhan";
-            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1010, 503);
+            this.xtra_TimBenhNhan.Size = new System.Drawing.Size(1010, 510);
             this.xtra_TimBenhNhan.Text = "Tìm kiếm Hồ sơ khám bệnh";
             // 
             // TimKiemBenhNhanKham_btn_XoaHoSo
@@ -2566,7 +2566,7 @@
             this.panelControl6.Controls.Add(this.label32);
             this.panelControl6.Controls.Add(this.gridControl1_TimBenhNhan);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 88);
+            this.panelControl6.Location = new System.Drawing.Point(0, 95);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1010, 415);
             this.panelControl6.TabIndex = 8;

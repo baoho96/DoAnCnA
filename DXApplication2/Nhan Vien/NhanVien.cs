@@ -224,15 +224,20 @@ namespace QuanLyPhongKham
                 }
                 else { }
 
-                string KiemTraTonTai = @"select Ho, Ten,NamSinh from BenhNhan" +
+                string KiemTraTonTai = @"select Ho, Ten,NamSinh,SoDienThoai from BenhNhan" +
                     " where Ho like N'%" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'%" + TiepNhanBenhNhan_txt_Ten.Text +
                     "%' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "' and CheckDaKham = 1 or SoDienThoai = N'"+ TiepNhanBenhNhan_txt_SDT.Text +"'";
-                cmd = new SqlCommand(KiemTraTonTai, connection.con);
-                da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = connection.SQL(KiemTraTonTai);
 
-                if (dt.Rows.Count == 1)
+                if ((dt.Rows.Count != 0) && (TiepNhanBenhNhan_txt_SDT.Text == dt.Rows[0][3].ToString()))
+                {
+                    if (MessageBox.Show("Bạn đã nhập trùng Số điện thoại: " + TiepNhanBenhNhan_txt_SDT.Text + "\n" +
+                        "Vui lòng kiểm tra lại thông tin Bệnh nhân??!",
+                        "Thông Báo nhập trùng Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                    }
+                }
+                else if (dt.Rows.Count >= 1)
                 {
                     if (MessageBox.Show("Bạn đã nhập trùng Họ & Tên:" + TiepNhanBenhNhan_txt_Ho.Text + " " + TiepNhanBenhNhan_txt_Ten.Text + "\n" +
                         "Năm sinh: " + TiepNhanBenhNhan_dtP_namsinh.Text + "\n" +
@@ -244,8 +249,9 @@ namespace QuanLyPhongKham
                             + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
                         DataTable dt1 = connection.SQL(layMSBN);
                         ID_BenhNhan = int.Parse(dt1.Rows[0][0].ToString());
-
-                        string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
+                        if(CheckTrungBenhNhanKhamTrongNgay(ID_BenhNhan, ngay + "/" + thang + "/" + nam)==false)
+                        {
+                            string query = @"begin if not exists (select HSKB.MaSoBenhNhan ,HSKB.NgayGioKham" +
                                         " from  BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan" +
                                         " where HSKB.MaSoBenhNhan = " + ID_BenhNhan + "and HSKB.NgayGioKham like '" + ngay + "/" + thang + "/" + nam + "%')" +
                                 " begin insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
@@ -253,21 +259,11 @@ namespace QuanLyPhongKham
                                 + "N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "',"
                                 + "'" + TiepNhanBenhNhan_dtP_NgayKham.Text + "')end end" +
                                 "  update BenhNhan set CheckDaKham = 1 where MaSoBenhNhan = " + ID_BenhNhan;
-                        connection.insert(query);
-                        
-                        refresh_TiepNhanBenhNhan();
+                            connection.insert(query);
+                            refresh_TiepNhanBenhNhan();
+                        }                        
                     }
-
-
-                }
-                else if (dt.Rows.Count >1)
-                {
-                    if (MessageBox.Show("Bạn đã nhập trùng Số điện thoại: " + TiepNhanBenhNhan_txt_SDT.Text + "\n" +                        
-                        "Vui lòng kiểm tra lại thông tin Bệnh nhân??!",
-                        "Thông Báo nhập trùng Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
-                    {
-                    }
-                }
+                }                
                 else
                 {
                     string query = @" insert into BenhNhan(Ho, Ten, NamSinh,DiaChi, SoDienThoai, GioiTinh,HinhAnh,CanNang,TenNguoiThan,CheckDaKham) values"
@@ -759,17 +755,14 @@ namespace QuanLyPhongKham
                  TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Month.ToString("d2") + "/" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Year.ToString();
             //tạo object và gán cho cột khi row click để kiểm tra khi sử dụng chức năng group column
             object ID_BenhNhan_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
-            object ID_MSKB_old_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh");
-            object LiDoKham_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham");
             //sử dụng if để kiểm tra rỗng. Nếu không rỗng thì tiếp tục chức năng
-            if ((ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)|| (ID_BenhNhan_CheckNull == null && ID_MSKB_old_CheckNull == DBNull.Value)|| (LiDoKham_CheckNull == null && LiDoKham_CheckNull == DBNull.Value))
+            if (ID_BenhNhan_CheckNull != null && ID_BenhNhan_CheckNull != DBNull.Value)
             {
                 int ID_BenhNhan = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
                 int ID_MSKB_old = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
                 string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
                 string Check_ID_MSKB_OLD_CoTonTai = @"select MaSoKhamBenh from HoSoTaiKham where MaSoKhamBenh =" + ID_MSKB_old;
                 DataTable dataTable0 = connection.SQL(Check_ID_MSKB_OLD_CoTonTai);
-                //int ID_MSKB_OLD_CoTonTai = int.Parse(dataTable0.Rows[0][0].ToString());
                 if (dataTable0.Rows.Count >= 1)//kiểm tra tồn tại của cột trong sql
                 {
                     function.Notice("Hồ Sơ số " + ID_MSKB_old + " đã có Tái khám!", 0);
