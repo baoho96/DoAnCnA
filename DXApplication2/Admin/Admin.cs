@@ -52,7 +52,6 @@ namespace QuanLyPhongKham
             load_qlyThuoc_comB_donvitinhnhonhat();
             function.Timer_load(timer_tick);
         }
-
         public void timer_tick(object sender, EventArgs e)
         {
             int qlythuoc = gridView1_thuoc.FocusedRowHandle;
@@ -67,7 +66,6 @@ namespace QuanLyPhongKham
             gridView1_NhanVien.FocusedRowHandle = qlynhanvien;
             gridView1_VatDung.FocusedRowHandle = qlyvatdung;
             txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
-
         }
 
         #region Ribbon Admin

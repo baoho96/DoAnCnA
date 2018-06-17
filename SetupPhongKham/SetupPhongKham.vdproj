@@ -111,12 +111,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0BE8701EA61D4CF5A8B9AEEF2187E97B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_12038A0B8F5C97881033E868DB64E5B2"
         "OwnerKey" = "8:_A4BC7471A96A4033ABEB347E593B6004"
         "MsmSig" = "8:_UNDEFINED"
@@ -634,6 +628,12 @@
         "Entry"
         {
         "MsmKey" = "8:_6F2166122B914B1D9D4B41379403022E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_72B0943137984637954E83FB17C7870B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1222,12 +1222,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C8FA1E49C2794372B91B19832311729B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C910A7D6C6684B709473218D3A7E11D8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1987,26 +1981,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BE8701EA61D4CF5A8B9AEEF2187E97B"
-            {
-            "SourcePath" = "8:D:\\SQL\\PhongKham01_log.ldf"
-            "TargetName" = "8:PhongKham01_log.ldf"
-            "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_12038A0B8F5C97881033E868DB64E5B2"
             {
             "AssemblyRegister" = "3:1"
@@ -2563,6 +2537,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72B0943137984637954E83FB17C7870B"
+            {
+            "SourcePath" = "8:D:\\Hendy's\\Downloads\\CreateDatabase.zip"
+            "TargetName" = "8:CreateDatabase.zip"
+            "Tag" = "8:"
+            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7458B7AD6F294BE3BEE1E027C3DE1DF4"
             {
             "AssemblyRegister" = "3:1"
@@ -3023,26 +3017,6 @@
             "TargetName" = "8:Dapino-Medical-Hospital.ico"
             "Tag" = "8:"
             "Folder" = "8:_E3CE066330FE4E7492DCA059486AAA64"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C910A7D6C6684B709473218D3A7E11D8"
-            {
-            "SourcePath" = "8:D:\\SQL\\PhongKham01.mdf"
-            "TargetName" = "8:PhongKham01.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4140,7 +4114,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A4BC7471A96A4033ABEB347E593B6004"
             {
-            "SourcePath" = "8:..\\DXApplication2\\obj\\Release\\QuanLyPhongKham.exe"
+            "SourcePath" = "8:..\\DXApplication2\\obj\\Debug\\QuanLyPhongKham.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"

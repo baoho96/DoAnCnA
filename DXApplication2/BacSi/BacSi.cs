@@ -225,13 +225,13 @@ namespace QuanLyPhongKham
         {
             if (txt_chuandoan.Text != "" && txt_GhiChu.Text != "" && txt_TienKham.Text != "")
             {
+                connection.connect();
                 if (dtP_NgayTaiKham.Value <= DateTime.Now)
                 {
                     if(MessageBox.Show("Bạn nhập Ngày Tái Khám < hơn hoặc = ngày hiện tại!!"+"\n"
                                     + "Bạn có chắc Bệnh nhân không cần tái khám!!"
                                     ,"Thông báo nhập Ngày tái khám",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
-                    {
-                        connection.connect();
+                    {                        
                         string get_ID_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
                         DataTable dataTable = connection.SQL(get_ID_MSDT);
                         if (dataTable.Rows.Count <= 0)
@@ -248,6 +248,7 @@ namespace QuanLyPhongKham
                                             " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
                                             " GhiChu = N'" + txt_GhiChu.Text + "'," +
                                             " NgayTaiKham = N''," +
+                                            " NgayGioKham = N'" + ngay + "/" + thang + "/" + nam  + "'," +
                                             " TienKham  = " + txt_TienKham.Text + "," +
                                             " KiemTraKham = 1" + "," +
                                             " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
@@ -259,13 +260,10 @@ namespace QuanLyPhongKham
                             connection.disconnect();
                             Refresh_BacSi();
                         }
-                    }
-                    
+                    }                    
                 }
                 else if(dtP_NgayTaiKham.Value > DateTime.Now)
-                {
-                    
-                    connection.connect();
+                {                                      
                     string get_ID_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
                     DataTable dataTable = connection.SQL(get_ID_MSDT);
                     if (dataTable.Rows.Count <= 0)
@@ -282,6 +280,7 @@ namespace QuanLyPhongKham
                                         " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
                                         " GhiChu = N'" + txt_GhiChu.Text + "'," +
                                         " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
+                                        " NgayGioKham = N'" + ngay + "/" + thang + "/" + nam + "'," +
                                         " TienKham  = " + txt_TienKham.Text + "," +
                                         " KiemTraKham = 1" + "," +
                                         " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
@@ -293,14 +292,10 @@ namespace QuanLyPhongKham
                         connection.disconnect();
                         Refresh_BacSi();
                     }
-
-
                 }
             }
             else { function.Notice("Bạn nên nhập đủ thông tin Chuẩn đoán, Ghi chú, Tiền khám",1); }
         }       
-
-       
 
         private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
         {

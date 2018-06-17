@@ -190,7 +190,7 @@ namespace QuanLyPhongKham
         }
         private void pictureBox1_BenhNhan_DoubleClick(object sender, EventArgs e)
         {
-            open = new OpenFileDialog();
+            open = new OpenFileDialog();            
             open.InitialDirectory = "D:";
             open.Filter = "Select Images |*.jpg||*.png";
             open.Multiselect = false;
@@ -200,7 +200,8 @@ namespace QuanLyPhongKham
             {
                 pictureBox1_BenhNhan.Image = Image.FromStream(open.OpenFile());
 
-                hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1, open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
+                hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1,
+                            open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
                 pictureBox1_BenhNhan.Image = new Bitmap(open.FileName);
             }
         }
@@ -211,19 +212,19 @@ namespace QuanLyPhongKham
             {
                 connection.connect();
 
-                if (pictureBox1_BenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
+                if (pictureBox1_BenhNhan.Image != null)
                 {
                     if (result == DialogResult.OK)
                     {
-                        hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1, open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
+                        hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1,
+                                    open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
                         string previewPath = Application.StartupPath + @"\Hinh\BenhNhan\" + hinhanh;
                         string linkHinhAnh = open.FileName;
                         File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
                     }
                     else { }
                 }
-                else { }
-
+                else { }                
                 string KiemTraTonTai = @"select Ho, Ten,NamSinh,SoDienThoai from BenhNhan" +
                     " where Ho like N'%" + TiepNhanBenhNhan_txt_Ho.Text + "%' and Ten like N'%" + TiepNhanBenhNhan_txt_Ten.Text +
                     "%' and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "' and CheckDaKham = 1 or SoDienThoai = N'"+ TiepNhanBenhNhan_txt_SDT.Text +"'";
@@ -518,8 +519,8 @@ namespace QuanLyPhongKham
             if (result == DialogResult.OK)
             {
                 pictureBox1_DanhSachBenhNhan.Image = Image.FromStream(open.OpenFile());
-
-                hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1, open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
+                hinhanh = open.FileName.Substring(open.FileName.LastIndexOf("\\") + 1,
+                            open.FileName.Length - open.FileName.LastIndexOf("\\") - 1);
                 pictureBox1_DanhSachBenhNhan.Image = new Bitmap(open.FileName);
             }
         }
@@ -650,10 +651,12 @@ namespace QuanLyPhongKham
                 {
                     if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
                     {
-                        if (File.Exists(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
+                        //kiểm tra hình ảnh có trong thư mục hay không
+                        if (File.Exists(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString()))
                         {
                             //có thì sẽ load hình ảnh vào pictureBox
-                            pictureBox1_DanhSachBenhNhan.Image = new Bitmap(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString());
+                            pictureBox1_DanhSachBenhNhan.Image = new Bitmap(Application.StartupPath + @"\Hinh\BenhNhan\" +
+                                                                            dr["hinhanh"].ToString());
                         }
                         else
                         {
@@ -670,7 +673,6 @@ namespace QuanLyPhongKham
                     }
                 }
                 dr.Close();
-
                 connection.disconnect();
             }
             else
@@ -747,12 +749,10 @@ namespace QuanLyPhongKham
         {
             connection.connect();
             //lấy thông tin khi click chuột vào gridview
-            //int ID_BenhNhan = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-            //int ID_MSKB_old = int.Parse(gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
-            //string LiDoKham = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
             int KiemTraTaiKham = 1;
             string ngaykhamCheck = TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Day.ToString("d2") + "/" +
-                 TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Month.ToString("d2") + "/" + TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Year.ToString();
+                                    TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Month.ToString("d2") + "/" + 
+                                    TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Value.Year.ToString();
             //tạo object và gán cho cột khi row click để kiểm tra khi sử dụng chức năng group column
             object ID_BenhNhan_CheckNull = gridView1_TimKiemBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan");
             //sử dụng if để kiểm tra rỗng. Nếu không rỗng thì tiếp tục chức năng
@@ -830,35 +830,36 @@ namespace QuanLyPhongKham
             function.ClearControl(panelControl1);
             TimKiemBenhNhanKham_btn_XoaHoSo.Enabled = false;
         }
-        private void TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click(object sender, EventArgs e)
+        private void TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click(object sender, EventArgs e)//tìm kiếm hồ sơ theo ngày khám
         {
-
-            gridView1_TimBenhNhan.ClearGrouping();
-            //colNgayTaiKham1.GroupIndex = -1;
-            clTimBenhNhan_NgayKham.GroupIndex = 1;
-
-            if (TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked)
+            gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+            clTimBenhNhan_NgayKham.GroupIndex = 1;//group column ngày khám
+            if (TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked)//kiểm tra check tìm theo ngày hay tháng
             {
+                //đưa text ngày khám vào phần tìm kiếm trong gridview
                 gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Text;
             }
             else if (TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked)
             {
-                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() + "/" + TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
+                //đưa text tháng + năm khám vào phần tìm kiếm trong gridview
+                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() 
+                                                + "/" + TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
             }
         }
-        private void TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click(object sender, EventArgs e)
+        private void TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click(object sender, EventArgs e)//tìm kiếm hồ sơ theo ngày tái khám
         {
-            gridView1_TimBenhNhan.ClearGrouping();
-            //colNgayGioKham1.GroupIndex = -1;
-            clTimBenhNhan_NgayTaiKham.GroupIndex = 1;
-            if (TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked)
+            gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+            clTimBenhNhan_NgayTaiKham.GroupIndex = 1;//group column ngày tái khám
+            if (TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked)//kiểm tra check tìm theo ngày hay tháng
             {
+                //đưa text ngày khám vào phần tìm kiếm trong gridview
                 gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Text;
             }
             else if (TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked)
             {
-
-                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Month.ToString() + "/" + TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Year.ToString();
+                //đưa text tháng + năm khám vào phần tìm kiếm trong gridview
+                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Month.ToString()
+                                                + "/" + TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Year.ToString();
             }
         }
         private void gridView1_TimBenhNhan_RowClick(object sender, RowClickEventArgs e)

@@ -58,7 +58,7 @@
             // 
             // ThemCho_dtP_ThoiGianKham
             // 
-            this.ThemCho_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy    hh:mm  tt";
+            this.ThemCho_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy";
             this.ThemCho_dtP_ThoiGianKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ThemCho_dtP_ThoiGianKham.Location = new System.Drawing.Point(108, 61);
             this.ThemCho_dtP_ThoiGianKham.Name = "ThemCho_dtP_ThoiGianKham";

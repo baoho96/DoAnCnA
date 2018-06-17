@@ -363,7 +363,7 @@
             this.colMaSoKhamBenh1.Name = "colMaSoKhamBenh1";
             this.colMaSoKhamBenh1.Visible = true;
             this.colMaSoKhamBenh1.VisibleIndex = 0;
-            this.colMaSoKhamBenh1.Width = 46;
+            this.colMaSoKhamBenh1.Width = 45;
             // 
             // colMaSoBenhNhan4
             // 
@@ -372,7 +372,7 @@
             this.colMaSoBenhNhan4.Name = "colMaSoBenhNhan4";
             this.colMaSoBenhNhan4.Visible = true;
             this.colMaSoBenhNhan4.VisibleIndex = 1;
-            this.colMaSoBenhNhan4.Width = 45;
+            this.colMaSoBenhNhan4.Width = 44;
             // 
             // colMaSoBacSi1
             // 
@@ -387,7 +387,6 @@
             this.colNgayGioKham1.Name = "colNgayGioKham1";
             this.colNgayGioKham1.Visible = true;
             this.colNgayGioKham1.VisibleIndex = 2;
-            this.colNgayGioKham1.Width = 87;
             // 
             // colNgayTaiKham1
             // 
@@ -396,7 +395,7 @@
             this.colNgayTaiKham1.Name = "colNgayTaiKham1";
             this.colNgayTaiKham1.Visible = true;
             this.colNgayTaiKham1.VisibleIndex = 3;
-            this.colNgayTaiKham1.Width = 78;
+            this.colNgayTaiKham1.Width = 66;
             // 
             // colXetNghiem1
             // 
@@ -405,7 +404,7 @@
             this.colXetNghiem1.Name = "colXetNghiem1";
             this.colXetNghiem1.Visible = true;
             this.colXetNghiem1.VisibleIndex = 8;
-            this.colXetNghiem1.Width = 41;
+            this.colXetNghiem1.Width = 45;
             // 
             // colKetQua
             // 
@@ -414,6 +413,7 @@
             this.colKetQua.Name = "colKetQua";
             this.colKetQua.Visible = true;
             this.colKetQua.VisibleIndex = 9;
+            this.colKetQua.Width = 63;
             // 
             // colChuanDoan1
             // 
@@ -422,7 +422,7 @@
             this.colChuanDoan1.Name = "colChuanDoan1";
             this.colChuanDoan1.Visible = true;
             this.colChuanDoan1.VisibleIndex = 10;
-            this.colChuanDoan1.Width = 53;
+            this.colChuanDoan1.Width = 71;
             // 
             // colTienKham1
             // 
@@ -438,7 +438,7 @@
             this.colGhiChu1.Name = "colGhiChu1";
             this.colGhiChu1.Visible = true;
             this.colGhiChu1.VisibleIndex = 11;
-            this.colGhiChu1.Width = 108;
+            this.colGhiChu1.Width = 98;
             // 
             // colHo3
             // 
@@ -447,7 +447,7 @@
             this.colHo3.Name = "colHo3";
             this.colHo3.Visible = true;
             this.colHo3.VisibleIndex = 4;
-            this.colHo3.Width = 43;
+            this.colHo3.Width = 52;
             // 
             // colTen3
             // 
@@ -456,7 +456,7 @@
             this.colTen3.Name = "colTen3";
             this.colTen3.Visible = true;
             this.colTen3.VisibleIndex = 5;
-            this.colTen3.Width = 42;
+            this.colTen3.Width = 40;
             // 
             // colGioiTinh3
             // 
@@ -472,7 +472,7 @@
             this.colNamSinh3.Name = "colNamSinh3";
             this.colNamSinh3.Visible = true;
             this.colNamSinh3.VisibleIndex = 6;
-            this.colNamSinh3.Width = 57;
+            this.colNamSinh3.Width = 54;
             // 
             // colLiDoKham1
             // 
@@ -515,16 +515,14 @@
             this.cl_KiemTraTaiKham.FieldName = "KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Name = "cl_KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Visible = true;
-            this.cl_KiemTraTaiKham.VisibleIndex = 13;
-            this.cl_KiemTraTaiKham.Width = 43;
+            this.cl_KiemTraTaiKham.VisibleIndex = 12;
+            this.cl_KiemTraTaiKham.Width = 49;
             // 
             // colTienKham11
             // 
             this.colTienKham11.Caption = "Tiền Khám";
             this.colTienKham11.FieldName = "TienKham1";
             this.colTienKham11.Name = "colTienKham11";
-            this.colTienKham11.Visible = true;
-            this.colTienKham11.VisibleIndex = 12;
             this.colTienKham11.Width = 58;
             // 
             // gridView3_DanhSachThuoc

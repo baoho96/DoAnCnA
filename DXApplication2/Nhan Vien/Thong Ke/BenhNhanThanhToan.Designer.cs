@@ -59,8 +59,8 @@
             this.col_TenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_KiemTraLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_KiemTraThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.col_KiemTraDaLayThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_HoaDon)).BeginInit();
@@ -81,7 +81,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbon.Size = new System.Drawing.Size(442, 86);
+            this.ribbon.Size = new System.Drawing.Size(442, 79);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1_XuatFile
@@ -118,20 +118,20 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 414);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 35);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 31);
             // 
             // gridControl1_HoaDon
             // 
             this.gridControl1_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 86);
+            this.gridControl1_HoaDon.Location = new System.Drawing.Point(0, 79);
             this.gridControl1_HoaDon.MainView = this.gridView1_HoaDon;
             this.gridControl1_HoaDon.Name = "gridControl1_HoaDon";
             this.gridControl1_HoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1_HoaDon.Size = new System.Drawing.Size(442, 328);
+            this.gridControl1_HoaDon.Size = new System.Drawing.Size(442, 339);
             this.gridControl1_HoaDon.TabIndex = 9;
             this.gridControl1_HoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_HoaDon});
@@ -318,11 +318,6 @@
             this.col_KiemTraThanhToan.VisibleIndex = 4;
             this.col_KiemTraThanhToan.Width = 115;
             // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // col_KiemTraDaLayThuoc
             // 
             this.col_KiemTraDaLayThuoc.Caption = "Lấy thuốc";
@@ -330,6 +325,11 @@
             this.col_KiemTraDaLayThuoc.Name = "col_KiemTraDaLayThuoc";
             this.col_KiemTraDaLayThuoc.Visible = true;
             this.col_KiemTraDaLayThuoc.VisibleIndex = 5;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // BenhNhanThanhToan
             // 
@@ -339,6 +339,7 @@
             this.Controls.Add(this.gridControl1_HoaDon);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BenhNhanThanhToan";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

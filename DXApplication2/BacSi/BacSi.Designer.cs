@@ -402,16 +402,16 @@
             this.TaiKham.Name = "TaiKham";
             this.TaiKham.Visible = true;
             this.TaiKham.VisibleIndex = 6;
-            this.TaiKham.Width = 55;
+            this.TaiKham.Width = 40;
             // 
             // ChoKham
             // 
-            this.ChoKham.Caption = "Chờ khám";
+            this.ChoKham.Caption = "Chờ xét nghiệm";
             this.ChoKham.FieldName = "CheckChoKham";
             this.ChoKham.Name = "ChoKham";
             this.ChoKham.Visible = true;
             this.ChoKham.VisibleIndex = 7;
-            this.ChoKham.Width = 58;
+            this.ChoKham.Width = 73;
             // 
             // gridView1
             // 
@@ -497,7 +497,7 @@
             this.btn_TaoDonThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_TaoDonThuoc.Appearance.Options.UseFont = true;
             this.btn_TaoDonThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaoDonThuoc.ImageOptions.Image")));
-            this.btn_TaoDonThuoc.Location = new System.Drawing.Point(754, 31);
+            this.btn_TaoDonThuoc.Location = new System.Drawing.Point(754, 40);
             this.btn_TaoDonThuoc.Name = "btn_TaoDonThuoc";
             this.btn_TaoDonThuoc.Size = new System.Drawing.Size(87, 39);
             this.btn_TaoDonThuoc.TabIndex = 8;

@@ -54,36 +54,38 @@ namespace QuanLyPhongKham
                 TenBacSi = dt.Rows[0][0].ToString();
                 MaSoBacSi = int.Parse(dt.Rows[0][1].ToString());
                 QuyenTruyCap = dt.Rows[0][2].ToString();
-
-                if (QuyenTruyCap == "1")
-                {
-                    admin.Show();
-                    this.Visible = false;
-                }
-                else if (QuyenTruyCap == "2")
-                {
-                    nhanVien.Show();
-                    this.Visible = false;
-                }
-                else if (QuyenTruyCap == "3")
-                {
-                    bacSi.Show();
-                    this.Visible = false;
-                }
-                else if (QuyenTruyCap == "4")
-                {                   
-                    duocSi.Show();
-                    this.Visible = false;
-                }
-                else if (QuyenTruyCap == "5")
-                {                  
-                    nhanVienThuNgan.Show();
-                    this.Visible = false;
-                }
+                PhanQuyen(QuyenTruyCap);
             }
             connection.disconnect();
         }
-
+        public void PhanQuyen(string QuyenTruyCap)
+        {
+            if (QuyenTruyCap == "1")//Admin
+            {
+                admin.Show();
+                this.Visible = false;
+            }
+            else if (QuyenTruyCap == "2")//Nhân viên điều dưỡng
+            {
+                nhanVien.Show();
+                this.Visible = false;
+            }
+            else if (QuyenTruyCap == "3")//Bác sĩ
+            {
+                bacSi.Show();
+                this.Visible = false;
+            }
+            else if (QuyenTruyCap == "4")// Nhân viên giao thuốc
+            {
+                duocSi.Show();
+                this.Visible = false;
+            }
+            else if (QuyenTruyCap == "5")//Nhân viên thu ngân
+            {
+                nhanVienThuNgan.Show();
+                this.Visible = false;
+            }
+        }
         public void btn_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();

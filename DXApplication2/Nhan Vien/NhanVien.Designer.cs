@@ -1577,12 +1577,12 @@
             // 
             // TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham
             // 
-            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy  hh:mm  tt";
+            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.CustomFormat = "dd/MM/yyyy";
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Enabled = false;
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Location = new System.Drawing.Point(712, 23);
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Name = "TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham";
-            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Size = new System.Drawing.Size(147, 21);
+            this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.Size = new System.Drawing.Size(106, 21);
             this.TiepNhanBenhNhanTaiKham_dtP_ThoiGianKham.TabIndex = 0;
             // 
             // label31
@@ -2181,11 +2181,11 @@
             // 
             // TiepNhanBenhNhan_dtP_NgayKham
             // 
-            this.TiepNhanBenhNhan_dtP_NgayKham.CustomFormat = "dd/MM/yyyy  hh:mm  tt";
+            this.TiepNhanBenhNhan_dtP_NgayKham.CustomFormat = "dd/MM/yyyy";
             this.TiepNhanBenhNhan_dtP_NgayKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TiepNhanBenhNhan_dtP_NgayKham.Location = new System.Drawing.Point(587, 118);
             this.TiepNhanBenhNhan_dtP_NgayKham.Name = "TiepNhanBenhNhan_dtP_NgayKham";
-            this.TiepNhanBenhNhan_dtP_NgayKham.Size = new System.Drawing.Size(152, 21);
+            this.TiepNhanBenhNhan_dtP_NgayKham.Size = new System.Drawing.Size(104, 21);
             this.TiepNhanBenhNhan_dtP_NgayKham.TabIndex = 9;
             // 
             // TiepNhanBenhNhan_txt_LiDoKham
@@ -2243,7 +2243,7 @@
             this.TiepNhanBenhNhan_btn_Xoa.Appearance.Options.UseFont = true;
             this.TiepNhanBenhNhan_btn_Xoa.Enabled = false;
             this.TiepNhanBenhNhan_btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TiepNhanBenhNhan_btn_Xoa.ImageOptions.Image")));
-            this.TiepNhanBenhNhan_btn_Xoa.Location = new System.Drawing.Point(918, 122);
+            this.TiepNhanBenhNhan_btn_Xoa.Location = new System.Drawing.Point(906, 122);
             this.TiepNhanBenhNhan_btn_Xoa.Name = "TiepNhanBenhNhan_btn_Xoa";
             this.TiepNhanBenhNhan_btn_Xoa.Size = new System.Drawing.Size(83, 45);
             this.TiepNhanBenhNhan_btn_Xoa.TabIndex = 12;
@@ -2312,7 +2312,7 @@
             this.TiepNhanBenhNhan_btn_CapNhat.Appearance.Options.UseFont = true;
             this.TiepNhanBenhNhan_btn_CapNhat.Enabled = false;
             this.TiepNhanBenhNhan_btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TiepNhanBenhNhan_btn_CapNhat.ImageOptions.Image")));
-            this.TiepNhanBenhNhan_btn_CapNhat.Location = new System.Drawing.Point(815, 122);
+            this.TiepNhanBenhNhan_btn_CapNhat.Location = new System.Drawing.Point(803, 122);
             this.TiepNhanBenhNhan_btn_CapNhat.Name = "TiepNhanBenhNhan_btn_CapNhat";
             this.TiepNhanBenhNhan_btn_CapNhat.Size = new System.Drawing.Size(88, 45);
             this.TiepNhanBenhNhan_btn_CapNhat.TabIndex = 11;
