@@ -99,5 +99,6 @@ namespace QuanLyPhongKham
         {
             function.ToExcel("Bạn muốn Xuất Danh sách ra File Excel",result,gridControl1_TimKiemBenhNhan);
         }
+        
     }
 }

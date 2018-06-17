@@ -1053,6 +1053,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9B252F9446D14B8CAB9D36A69ABE24D6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A1C3DD52854DB95F82646AF483159DA8"
         "OwnerKey" = "8:_A4BC7471A96A4033ABEB347E593B6004"
         "MsmSig" = "8:_UNDEFINED"
@@ -1066,12 +1072,6 @@
         "Entry"
         {
         "MsmKey" = "8:_A4BC7471A96A4033ABEB347E593B6004"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AFF9F7A257A0425AB26475E1BCF173AF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1523,6 +1523,12 @@
         {
         "MsmKey" = "8:_D7DFFCAF3CDE694AA366AF4E5641579E"
         "OwnerKey" = "8:_A4BC7471A96A4033ABEB347E593B6004"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EA3E4517A83C49B7ABE5CF33DF09ECAD"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2017,7 +2023,7 @@
             "SourcePath" = "8:D:\\Hendy's\\Documents\\scriptNoneData.sql"
             "TargetName" = "8:scriptNoneData.sql"
             "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
+            "Folder" = "8:_EF57A19EDEA340E794DE141D7D8105A9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2378,7 +2384,7 @@
             "SourcePath" = "8:D:\\Hendy's\\Desktop\\scriptwithData.sql"
             "TargetName" = "8:scriptWithData.sql"
             "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
+            "Folder" = "8:_EF57A19EDEA340E794DE141D7D8105A9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2542,7 +2548,7 @@
             "SourcePath" = "8:D:\\Hendy's\\Downloads\\CreateDatabase.zip"
             "TargetName" = "8:CreateDatabase.zip"
             "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
+            "Folder" = "8:_EF57A19EDEA340E794DE141D7D8105A9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2805,6 +2811,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9B252F9446D14B8CAB9D36A69ABE24D6"
+            {
+            "SourcePath" = "8:..\\..\\..\\Readme.txt"
+            "TargetName" = "8:Readme.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1C3DD52854DB95F82646AF483159DA8"
             {
             "AssemblyRegister" = "3:1"
@@ -2834,26 +2860,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AFF9F7A257A0425AB26475E1BCF173AF"
-            {
-            "SourcePath" = "8:D:\\Hendy's\\Downloads\\My Faker.zip"
-            "TargetName" = "8:My Faker.zip"
-            "Tag" = "8:"
-            "Folder" = "8:_67753CB953A94CD6B9BA5EC76859486A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B4187E177C727A0F3DBEEAA6122CE995"
@@ -3206,6 +3212,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EA3E4517A83C49B7ABE5CF33DF09ECAD"
+            {
+            "SourcePath" = "8:..\\..\\..\\myfaker.zip"
+            "TargetName" = "8:myfaker.zip"
+            "Tag" = "8:"
+            "Folder" = "8:_EF57A19EDEA340E794DE141D7D8105A9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EEE380D420D48EA4D87975DA42E71581"
             {
             "AssemblyRegister" = "3:1"
@@ -3399,17 +3425,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_67753CB953A94CD6B9BA5EC76859486A"
-                    {
-                    "Name" = "8:Input"
-                    "AlwaysCreate" = "11:TRUE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_59C74352055C4C91A010EE2365DC1ED7"
-                        "Folders"
-                        {
-                        }
-                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_701A8A3855C84315AD32124BE09A1721"
                     {
                     "Name" = "8:Hinh"
@@ -3465,6 +3480,17 @@
                             }
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_EF57A19EDEA340E794DE141D7D8105A9"
+                    {
+                    "Name" = "8:Input"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_59C74352055C4C91A010EE2365DC1ED7"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_E0FE8069432147EDB8C844D6994D6E3C"
@@ -3495,7 +3521,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QuanLyPhongKham"
         "ProductCode" = "8:{60486ECE-8AA9-49D0-B98A-E35FCD79BECF}"
-        "PackageCode" = "8:{8E5D0B38-4A19-4F7A-BF9A-81AFFFEB5263}"
+        "PackageCode" = "8:{731D8A92-D74C-4C28-9379-6E65B70DDFFF}"
         "UpgradeCode" = "8:{D67E94FD-BC13-4E0F-B0DC-56F4BBFBC42E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -4114,7 +4140,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A4BC7471A96A4033ABEB347E593B6004"
             {
-            "SourcePath" = "8:..\\DXApplication2\\obj\\Debug\\QuanLyPhongKham.exe"
+            "SourcePath" = "8:..\\DXApplication2\\obj\\Release\\QuanLyPhongKham.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8E22C9C30AEA41FCB1EB082698E9FE00"

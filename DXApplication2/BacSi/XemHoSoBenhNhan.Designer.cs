@@ -684,7 +684,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "Xem Hồ Sơ Bệnh Nhân";
+            this.Text = "Xem Hồ Sơ khám bệnh";
             this.Load += new System.EventHandler(this.XemHoSoBenhNhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2_DonThuoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).EndInit();

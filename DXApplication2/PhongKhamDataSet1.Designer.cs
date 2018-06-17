@@ -4262,6 +4262,8 @@ namespace QuanLyPhongKham {
             
             private global::System.Data.DataColumn columnTenNhanVien;
             
+            private global::System.Data.DataColumn columnKetQuaXetNghiem;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public HoSoTaiKhamDataTable() {
@@ -4377,6 +4379,14 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn KetQuaXetNghiemColumn {
+                get {
+                    return this.columnKetQuaXetNghiem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4412,7 +4422,7 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HoSoTaiKhamRow AddHoSoTaiKhamRow(HoSoKhamBenhRow parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham, string NgayGioKham, string NgayTaiKham, string XetNghiem, string ChuanDoan, long TienKham, string GhiChu, string LiDoKham, string TenNhanVien) {
+            public HoSoTaiKhamRow AddHoSoTaiKhamRow(HoSoKhamBenhRow parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham, string NgayGioKham, string NgayTaiKham, string XetNghiem, string ChuanDoan, long TienKham, string GhiChu, string LiDoKham, string TenNhanVien, string KetQuaXetNghiem) {
                 HoSoTaiKhamRow rowHoSoTaiKhamRow = ((HoSoTaiKhamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4424,7 +4434,8 @@ namespace QuanLyPhongKham {
                         TienKham,
                         GhiChu,
                         LiDoKham,
-                        TenNhanVien};
+                        TenNhanVien,
+                        KetQuaXetNghiem};
                 if ((parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham != null)) {
                     columnValuesArray[1] = parentHoSoKhamBenhRowByFK_HoSoKhamBenh_HoSoTaiKham[0];
                 }
@@ -4460,6 +4471,7 @@ namespace QuanLyPhongKham {
                 this.columnGhiChu = base.Columns["GhiChu"];
                 this.columnLiDoKham = base.Columns["LiDoKham"];
                 this.columnTenNhanVien = base.Columns["TenNhanVien"];
+                this.columnKetQuaXetNghiem = base.Columns["KetQuaXetNghiem"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4485,6 +4497,8 @@ namespace QuanLyPhongKham {
                 base.Columns.Add(this.columnLiDoKham);
                 this.columnTenNhanVien = new global::System.Data.DataColumn("TenNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenNhanVien);
+                this.columnKetQuaXetNghiem = new global::System.Data.DataColumn("KetQuaXetNghiem", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKetQuaXetNghiem);
                 this.columnMaSoTaiKham.AutoIncrement = true;
                 this.columnMaSoTaiKham.AutoIncrementSeed = -1;
                 this.columnMaSoTaiKham.AutoIncrementStep = -1;
@@ -4497,6 +4511,7 @@ namespace QuanLyPhongKham {
                 this.columnGhiChu.MaxLength = 2147483647;
                 this.columnLiDoKham.MaxLength = 2147483647;
                 this.columnTenNhanVien.MaxLength = 50;
+                this.columnKetQuaXetNghiem.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7556,6 +7571,22 @@ namespace QuanLyPhongKham {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string KetQuaXetNghiem {
+                get {
+                    try {
+                        return ((string)(this[this.tableHoSoTaiKham.KetQuaXetNghiemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KetQuaXetNghiem\' in table \'HoSoTaiKham\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHoSoTaiKham.KetQuaXetNghiemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public HoSoKhamBenhRow HoSoKhamBenhRow {
                 get {
                     return ((HoSoKhamBenhRow)(this.GetParentRow(this.Table.ParentRelations["FK_HoSoKhamBenh_HoSoTaiKham"])));
@@ -7671,6 +7702,18 @@ namespace QuanLyPhongKham {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTenNhanVienNull() {
                 this[this.tableHoSoTaiKham.TenNhanVienColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsKetQuaXetNghiemNull() {
+                return this.IsNull(this.tableHoSoTaiKham.KetQuaXetNghiemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetKetQuaXetNghiemNull() {
+                this[this.tableHoSoTaiKham.KetQuaXetNghiemColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11090,6 +11133,7 @@ FROM            Thuoc AS T LEFT OUTER JOIN
             tableMapping.ColumnMappings.Add("GhiChu", "GhiChu");
             tableMapping.ColumnMappings.Add("LiDoKham", "LiDoKham");
             tableMapping.ColumnMappings.Add("TenNhanVien", "TenNhanVien");
+            tableMapping.ColumnMappings.Add("KetQuaXetNghiem", "KetQuaXetNghiem");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11106,7 +11150,8 @@ FROM            Thuoc AS T LEFT OUTER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        HSTK.MaSoTaiKham, HSTK.MaSoKhamBenh, HSKB.NgayGioKham, HSKB.NgayTaiKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.GhiChu, HSKB.LiDoKham, NV.TenNhanVien
+            this._commandCollection[0].CommandText = @"SELECT        HSTK.MaSoTaiKham, HSTK.MaSoKhamBenh, HSKB.NgayGioKham, HSKB.NgayTaiKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.GhiChu, HSKB.LiDoKham, NV.TenNhanVien, 
+                         HSKB.KetQuaXetNghiem
 FROM            HoSoTaiKham AS HSTK LEFT OUTER JOIN
                          HoSoKhamBenh AS HSKB ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh LEFT OUTER JOIN
                          NhanVien AS NV ON HSKB.MaSoBacSi = NV.MaSoNhanVien";
