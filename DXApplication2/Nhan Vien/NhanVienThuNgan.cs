@@ -60,7 +60,7 @@ namespace QuanLyPhongKham
             function.Timer_load(timer_tick);
         }
         
-        private void refresh_HoaDon()
+        public void refresh_HoaDon()
         {            
             dataSet.Clear();
             gridControl1_HoaDon.Refresh();
@@ -352,7 +352,7 @@ namespace QuanLyPhongKham
         private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
             
-            function.ToExcel("Bạn có muốn xuất file Danh sách bệnh nhân đã khám?", result, gridControl1_HoaDon);
+            function.ToExcel(result, gridControl1_HoaDon);
         }
 
         private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)

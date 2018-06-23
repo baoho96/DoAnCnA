@@ -231,7 +231,7 @@
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1016, 130);
+            this.ribbonControl.Size = new System.Drawing.Size(1010, 130);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -370,7 +370,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1016, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1010, 31);
             // 
             // xtraTabControl1
             // 
@@ -378,7 +378,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 130);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.admin_tabP_qlyThuoc;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1016, 538);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1010, 538);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.admin_tabP_qlyThuoc,
@@ -391,7 +391,7 @@
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl7);
             this.admin_tabP_qlyThuoc.Controls.Add(this.panelControl1);
             this.admin_tabP_qlyThuoc.Name = "admin_tabP_qlyThuoc";
-            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyThuoc.Size = new System.Drawing.Size(1004, 510);
             this.admin_tabP_qlyThuoc.Text = "Quản lý Thuốc";
             // 
             // panelControl7
@@ -401,7 +401,7 @@
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl7.Location = new System.Drawing.Point(0, 180);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1010, 330);
+            this.panelControl7.Size = new System.Drawing.Size(1004, 330);
             this.panelControl7.TabIndex = 3;
             // 
             // gridControl1
@@ -412,7 +412,7 @@
             this.gridControl1.MainView = this.gridView1_thuoc;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1006, 304);
+            this.gridControl1.Size = new System.Drawing.Size(1000, 304);
             this.gridControl1.TabIndex = 15;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_thuoc});
@@ -455,7 +455,6 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenThuoc, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1_thuoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_thuoc_RowClick);
             this.gridView1_thuoc.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_thuoc_CustomDrawRowIndicator);
-            this.gridView1_thuoc.ColumnFilterChanged += new System.EventHandler(this.gridView1_thuoc_ColumnFilterChanged);
             this.gridView1_thuoc.RowCountChanged += new System.EventHandler(this.gridView1_thuoc_RowCountChanged);
             // 
             // colMaSoThuoc
@@ -605,7 +604,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1010, 174);
+            this.panelControl1.Size = new System.Drawing.Size(1004, 174);
             this.panelControl1.TabIndex = 1;
             // 
             // pictureBox1_Thuoc
@@ -886,7 +885,7 @@
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl3_NhanVien);
             this.admin_tabP_qlyNhanvien.Controls.Add(this.panelControl8);
             this.admin_tabP_qlyNhanvien.Name = "admin_tabP_qlyNhanvien";
-            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyNhanvien.Size = new System.Drawing.Size(1004, 504);
             this.admin_tabP_qlyNhanvien.Text = "Quản lý Nhân viên";
             // 
             // panelControl3_NhanVien
@@ -921,7 +920,7 @@
             this.panelControl3_NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3_NhanVien.Location = new System.Drawing.Point(0, 0);
             this.panelControl3_NhanVien.Name = "panelControl3_NhanVien";
-            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1010, 149);
+            this.panelControl3_NhanVien.Size = new System.Drawing.Size(1004, 149);
             this.panelControl3_NhanVien.TabIndex = 6;
             // 
             // pictureBox1_NhanVien
@@ -1205,9 +1204,9 @@
             this.panelControl8.Controls.Add(this.gridControl2);
             this.panelControl8.Controls.Add(this.label5);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl8.Location = new System.Drawing.Point(0, 155);
+            this.panelControl8.Location = new System.Drawing.Point(0, 149);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1010, 355);
+            this.panelControl8.Size = new System.Drawing.Size(1004, 355);
             this.panelControl8.TabIndex = 5;
             // 
             // gridControl2
@@ -1218,7 +1217,7 @@
             this.gridControl2.MainView = this.gridView1_NhanVien;
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1006, 325);
+            this.gridControl2.Size = new System.Drawing.Size(1000, 325);
             this.gridControl2.TabIndex = 15;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_NhanVien});
@@ -1253,7 +1252,6 @@
             this.gridView1_NhanVien.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1_NhanVien.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_NhanVien_RowClick);
             this.gridView1_NhanVien.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_NhanVien_CustomDrawRowIndicator);
-            this.gridView1_NhanVien.ColumnFilterChanged += new System.EventHandler(this.gridView1_NhanVien_ColumnFilterChanged);
             this.gridView1_NhanVien.RowCountChanged += new System.EventHandler(this.gridView1_NhanVien_RowCountChanged);
             // 
             // colMaSoNhanVien
@@ -1364,7 +1362,7 @@
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl9);
             this.admin_tabP_qlyVatdung.Controls.Add(this.panelControl5_VatDung);
             this.admin_tabP_qlyVatdung.Name = "admin_tabP_qlyVatdung";
-            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1010, 510);
+            this.admin_tabP_qlyVatdung.Size = new System.Drawing.Size(1004, 504);
             this.admin_tabP_qlyVatdung.Text = "Quản lý Vật dụng";
             // 
             // panelControl9
@@ -1372,9 +1370,9 @@
             this.panelControl9.Controls.Add(this.gridControl3);
             this.panelControl9.Controls.Add(this.label8);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl9.Location = new System.Drawing.Point(0, 140);
+            this.panelControl9.Location = new System.Drawing.Point(0, 134);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1010, 370);
+            this.panelControl9.Size = new System.Drawing.Size(1004, 370);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl3
@@ -1385,7 +1383,7 @@
             this.gridControl3.MainView = this.gridView1_VatDung;
             this.gridControl3.MenuManager = this.ribbonControl;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1006, 333);
+            this.gridControl3.Size = new System.Drawing.Size(1000, 333);
             this.gridControl3.TabIndex = 8;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1_VatDung});
@@ -1414,7 +1412,6 @@
             this.gridView1_VatDung.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1_VatDung.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_VatDung_RowClick);
             this.gridView1_VatDung.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_VatDung_CustomDrawRowIndicator);
-            this.gridView1_VatDung.ColumnFilterChanged += new System.EventHandler(this.gridView1_VatDung_ColumnFilterChanged);
             this.gridView1_VatDung.RowCountChanged += new System.EventHandler(this.gridView1_VatDung_RowCountChanged);
             // 
             // colMaSoVatDung
@@ -1500,7 +1497,7 @@
             this.panelControl5_VatDung.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl5_VatDung.Location = new System.Drawing.Point(0, 0);
             this.panelControl5_VatDung.Name = "panelControl5_VatDung";
-            this.panelControl5_VatDung.Size = new System.Drawing.Size(1010, 134);
+            this.panelControl5_VatDung.Size = new System.Drawing.Size(1004, 134);
             this.panelControl5_VatDung.TabIndex = 5;
             // 
             // pictureBox1_VatDung
@@ -1679,7 +1676,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 699);
+            this.ClientSize = new System.Drawing.Size(1010, 699);
             this.Controls.Add(this.txt_capnhat);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar);

@@ -12,18 +12,25 @@ namespace QuanLyPhongKham
 {
     public partial class DanhSachDonThuoc : Form
     {
-        int ID_MSKB = NhanVien.ID_MSKB_DoubleClick;
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         SqlDataAdapter da;
-        DataSet ds;
+        DataSet ds = new DataSet();
         BindingSource bindingSource = new BindingSource();
+        #endregion
+        #region Biến khởi tạo
+        int ID_MSKB = NhanVien.ID_MSKB_DoubleClick;
+        #endregion
         public DanhSachDonThuoc()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+        private void DanhSachDonThuoc_Load(object sender, EventArgs e)
+        {
             Load_DanhSachDonThuoc();
         }
-        
+        #region Chức năng chung
         private void Load_DanhSachDonThuoc()
         {
             string query = @"SELECT DanhSachThuoc.MaSoDonThuoc, DanhSachThuoc.MaSoThuoc, DanhSachThuoc.CachDung, "+
@@ -34,15 +41,13 @@ namespace QuanLyPhongKham
                              " DonThuoc ON DanhSachThuoc.MaSoDonThuoc = DonThuoc.MaSoDonThuoc"+
                              " where DanhSachThuoc.MaSoDonThuoc = "+XemHoSoBenhNhan.MSDT;
             connection.connect();
-
             da = new SqlDataAdapter(query, connection.con);
-            ds = new DataSet();
             ds.Clear();
             da.Fill(ds, "DanhSachThuoc");
-
             bindingSource.DataSource = ds.Tables["DanhSachThuoc"];
             gridControl1_HoSoTaiKham.DataSource = bindingSource;
             connection.disconnect();
         }
+        #endregion
     }
 }

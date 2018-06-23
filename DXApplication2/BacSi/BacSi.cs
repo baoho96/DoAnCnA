@@ -20,17 +20,19 @@ namespace QuanLyPhongKham
 {
     public partial class BacSi : DevExpress.XtraBars.Ribbon.RibbonForm 
     {
+        #region khởi tạo
         connection connection = new connection();
-        SqlDataAdapter da;
-        DataSet ds;
-        BindingSource bindingSource = new BindingSource();
-        SqlCommand cmd;
         DangNhap dangNhap = new DangNhap();
         DonThuoc donThuoc = new DonThuoc();
         function function = new function();
+        SqlDataAdapter da;
+        DataSet ds;
+        BindingSource bindingSource = new BindingSource();
+        SqlCommand cmd;        
         DialogResult result;
+        #endregion
+        #region Biến khởi tạo
         public static bool RowClick = false;
-
         public static string Ho_BenhNhan { get; set; }
         public static string Ten_BenhNhan { get; set; }
         public static string XetNghiem_BenhNhan { get; set; }
@@ -45,56 +47,31 @@ namespace QuanLyPhongKham
         public static int ID_MSBN { get; set; }
         public static string TienThuoc { get; set; }
         public static int ID_MSDT { get; set; }
-
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
+        #endregion
         public BacSi()
         {
-            //phongKhamDataSet1.EnforceConstraints = false;
-            InitializeComponent();
-            //GridLocalizer.Active = new MyGridLocalizer();
+            InitializeComponent();            
+        }
+        private void BacSi_Load(object sender, EventArgs e)
+        {
             KiemTra_HoSoChoXetNghiem_HetHan();
             Load_HoSoKhamBenh();
-
             function.Timer_load(timer_tick);
         }
-        //public class MyGridLocalizer : GridLocalizer
-        //{
-        //    public override string GetLocalizedString(GridStringId id)
-        //    {
-        //        if (id == GridStringId.FindControlFindButton)
-        //            return "Tìm Kiếm";
-        //        if (id == GridStringId.FindControlClearButton)
-        //            return "Nhập lại";
-        //        return base.GetLocalizedString(id);
-        //    }
-        //}
-
+        #region Chức năng chung
         public void timer_tick(object sender, EventArgs e)
         {
             int danhsachBenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.FocusedRowHandle;
             Load_HoSoKhamBenh();
             BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.FocusedRowHandle = danhsachBenhNhan;
-
             txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
-
-        }
-
-        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowCountChanged(object sender, EventArgs e)
-        {
-            function.RowCountChanged(sender, e);
-
-        }
-
-        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            function.CustomDrawRowIndicator(sender, e);
         }
         private void Load_HoSoKhamBenh()
         {
             connection.connect();
-            //quyentruycap = DangNhap.quyentruycap;
             string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan,NV.TenNhanVien, BN.Ho, BN.Ten, BN.GioiTinh," +
                                                     " BN.NamSinh, HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem,HSKB.KetQuaXetNghiem," +
                                                     " HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, " +
@@ -107,70 +84,114 @@ namespace QuanLyPhongKham
             ds = new DataSet();
             ds.Clear();
             da.Fill(ds, "HoSoKhamBenh");
-
             bindingSource.DataSource = ds.Tables["HoSoKhamBenh"];
             BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.DataSource = bindingSource;            
             connection.disconnect();
-
             GanGiaTri();
         }
-
-        private void Refresh_BacSi()
+        private void KiemTra_HoSoChoXetNghiem_HetHan()
         {
-            function.ClearControl(panelControl2);
-            
+
+            string GetDate_Kham = @"declare @NgayGioiHan1 int =10" +//tạo 1 biến int giá trị 10 (10 ngày)
+                                    " delete from HoSoKhamBenh where CheckChoKham = 1 and" +//xóa hồ sơ tại CheckChoKham =1
+                                    " @NgayGioiHan1<DATEDIFF(DAY,CONVERT(datetime, NgayGioKham,103),GETDATE()) ";//Kiểm tra Ngày khám có nhỏ hơn 10 ngày
+                                                                                                                 //convert Ngày khám từ string thày datetime và so sánh với Ngày hiện tại
+                                                                                                                 //lấy kết quả ra số ngày chênh lệch
+            connection.connect();
+            connection.delete(GetDate_Kham);
+            connection.disconnect();
+        }
+        public void Refresh_BacSi()
+        {
+            function.ClearControl(panelControl2);            
             Load_HoSoKhamBenh();
             RowClick = false;
             panelControl2.Enabled = false;
         }
+        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
+        }
 
+        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
         private void GanGiaTri()
         {
-            //txtTienThuoc.Text = TienThuoc;
             BacSiKham_BenhNhan = DangNhap.TenBacSi;
         }
-        //private void load_TienThuoc()
-        //{
-        //    string query = @"select DT.TongTienThuoc "+
-        //                    " from DonThuoc DT Left Join HoSoKhamBenh HSKB on DT.MaSoKhamBenh = HSKB.MaSoKhamBenh"+
-        //                    " where HSKB.MaSoKhamBenh ="+ ID_MSKB;
-        //    //connection.connect();
-        //    DataTable dt = connection.SQL(query);
-        //    if (dt.Rows.Count > 0)//tồn tại
-        //    {
-        //        txtTienThuoc.Text = dt.Rows[0][0].ToString();
-        //    }
-        //    //connection.disconnect();
-        //}
-
-        private void btn_TaoDonThuoc_Click(object sender, EventArgs e)
+        private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(RowClick ==false)
+            function.KoNhapKiTu(sender, e);
+        }
+        private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Admin.IfAdmin == true)
             {
-                function.Notice("Bạn nên chọn bệnh nhân trước!", 1);
+                this.Hide();
             }
-            
             else
             {
-                XetNghiem_BenhNhan = txt_xetnghiem.Text;
-                KetQuaXetNghiem_BenhNhan = txt_KetQuaXetNghiem.Text;
-                ChuanDoan_BenhNhan = txt_chuandoan.Text;
-                GhiChu_BenhNhan = txt_GhiChu.Text;
-                BacSiKham_BenhNhan = DangNhap.TenBacSi;
-
-                DonThuoc donThuoc = new DonThuoc();
-                donThuoc.ShowDialog();
-                
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
-            
+            Admin.IfAdmin = false;
+        }
+        #endregion
+        #region Ribbon Control
+        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Refresh_BacSi();
+            function.ClearFilterText(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay);
         }
 
-        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick(object sender, RowClickEventArgs e)
+        private void bbtn_TaoDonThuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            RowClick = true;
-            panelControl2.Enabled = true;
+            btn_TaoDonThuoc_Click(sender, e);
+        }
+
+        private void bbtn_HoSoKhamBenh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XemHoSoBenhNhan xemHoSoBenhNhan = new XemHoSoBenhNhan();
+            xemHoSoBenhNhan.ShowDialog();
+        }
+
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            BacSiKham_BenhNhan = "";
+        }
+
+        private void barButtonItem1_Xuatfile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ShowRibbonPrintPreview();
+        }
+
+        private void barButtonItem1_KhamTrongNgay_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BenhNhanKhamTrongNgay benhNhanKhamTrongNgay = new BenhNhanKhamTrongNgay();
+            benhNhanKhamTrongNgay.ShowDialog();
+        }
+
+        private void barButtonItem1_Excel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            function.ToExcel(result, BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay);
+        }
+        #endregion
+        #region Chức năng chính
+        private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowClick(object sender, RowClickEventArgs e)//nhất vào hàng trong gridview
+        {
+            RowClick = true;//kiểm tra người dùng có chọn trên grid view hay chưa
+            panelControl2.Enabled = true;//mở chế độ có thể chỉnh sửa
             ID_MSBN = int.Parse(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-            //txt_TenBacSi.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
             txt_ho.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ho").ToString();
             txt_ten.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("Ten").ToString();
             ID_MSKB = int.Parse(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
@@ -179,21 +200,16 @@ namespace QuanLyPhongKham
             NamSinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NamSinh").ToString();
             GioiTinh_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GioiTinh").ToString();
             DiaChi_BenhNhan = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("DiaChi").ToString();
-            //BacSiKham_BenhNhan= BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TenNhanVien").ToString();
             if (txt_xetnghiem.Text=="" && txt_KetQuaXetNghiem.Text == "" && txt_chuandoan.Text == "" && txt_GhiChu.Text == "" && txt_TienKham.Text=="")
-            {
-                
+            {//nếu các text box này trống, thì sẽ được đưa dữ liệu vào                
                 txt_xetnghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("XetNghiem").ToString();
                 txt_KetQuaXetNghiem.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("KetQuaXetNghiem").ToString();
                 txt_chuandoan.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("ChuanDoan").ToString();
                 txt_GhiChu.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("GhiChu").ToString();
-                //dtP_NgayTaiKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("NgayTaiKham").ToString();
                 txt_TienKham.Text = BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay.GetFocusedRowCellValue("TienKham").ToString();                              
             }                     
 
             connection.connect();
-            //load_TienThuoc(); Hàm Load tiền thuốc
-
             string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID_MSBN;
             cmd = new SqlCommand(layhinhanh, connection.con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -220,13 +236,29 @@ namespace QuanLyPhongKham
             dr.Close();
             connection.disconnect();
         }
-
+        private void btn_TaoDonThuoc_Click(object sender, EventArgs e)//nút tạo đơn thuốc
+        {
+            if (RowClick == false)//kiểm tra người dùng có chọn trên grid view hay chưa
+            {
+                function.Notice("Bạn nên chọn bệnh nhân trước!", 1);
+            }
+            else
+            {
+                XetNghiem_BenhNhan = txt_xetnghiem.Text;//gán những giá trị trong Form Bác sĩ tới Đơn thuốc
+                KetQuaXetNghiem_BenhNhan = txt_KetQuaXetNghiem.Text;
+                ChuanDoan_BenhNhan = txt_chuandoan.Text;
+                GhiChu_BenhNhan = txt_GhiChu.Text;
+                BacSiKham_BenhNhan = DangNhap.TenBacSi;
+                DonThuoc donThuoc = new DonThuoc();
+                donThuoc.ShowDialog();
+            }
+        }
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
-            if (txt_chuandoan.Text != "" && txt_GhiChu.Text != "" && txt_TienKham.Text != "")
+            if (txt_chuandoan.Text != "" && txt_GhiChu.Text != "" && txt_TienKham.Text != "")//không cho để trống Chẩn đoán, ghi chú, tiền khám
             {
                 connection.connect();
-                if (dtP_NgayTaiKham.Value <= DateTime.Now)
+                if (dtP_NgayTaiKham.Value <= DateTime.Now)//kiểm tra nếu nhỏ hơn ngày hiện tại thì không có tái khám
                 {
                     if(MessageBox.Show("Bạn nhập Ngày Tái Khám < hơn hoặc = ngày hiện tại!!"+"\n"
                                     + "Bạn có chắc Bệnh nhân không cần tái khám!!"
@@ -262,7 +294,7 @@ namespace QuanLyPhongKham
                         }
                     }                    
                 }
-                else if(dtP_NgayTaiKham.Value > DateTime.Now)
+                else if(dtP_NgayTaiKham.Value > DateTime.Now)//lớn hơn thì insert ngày tái khám
                 {                                      
                     string get_ID_MSDT = @"select MaSoDonThuoc from DonThuoc where MaSoKhamBenh = " + ID_MSKB;
                     DataTable dataTable = connection.SQL(get_ID_MSDT);
@@ -273,7 +305,6 @@ namespace QuanLyPhongKham
                     else
                     {
                         ID_MSDT = int.Parse(dataTable.Rows[0][0].ToString());
-
                         string query = @"update HoSoKhamBenh set " +
                                         " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
                                         " KetQuaXetNghiem = N'" + txt_KetQuaXetNghiem.Text + "'," +
@@ -287,119 +318,57 @@ namespace QuanLyPhongKham
                                         " CheckChoKham = 0" +
                                         " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB + ";" +
                                         " insert into HoaDon(MaSoKhamBenh,MaSoDonThuoc,NgayGioLap) values (" + ID_MSKB + "," + ID_MSDT + ",'" + ngay + "/" + thang + "/" + nam + "')";
-
                         connection.sql(query);
                         connection.disconnect();
                         Refresh_BacSi();
                     }
                 }
             }
-            else { function.Notice("Bạn nên nhập đủ thông tin Chuẩn đoán, Ghi chú, Tiền khám",1); }
+            else { function.Notice("Bạn nên nhập đủ thông tin Chuẩn đoán, Ghi chú, Tiền khám",0); }
         }       
-
-        private void txt_TienKham_KeyPress(object sender, KeyPressEventArgs e)
+        
+        private void btn_ChoKham_Click(object sender, EventArgs e)
         {
-            function.KoNhapKiTu(sender, e);
-        }
-
-        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Refresh_BacSi();
-            function.ClearFilterText(BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay);
-        }
-
-        private void bbtn_TaoDonThuoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            btn_TaoDonThuoc_Click(sender, e);
-        }
-
-        private void bbtn_HoSoKhamBenh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            XemHoSoBenhNhan xemHoSoBenhNhan = new XemHoSoBenhNhan();
-            xemHoSoBenhNhan.ShowDialog();
-        }
-
-        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Close();
-            BacSiKham_BenhNhan = "";            
-                
-        }
-
-        private void BacSi_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(Admin.IfAdmin==true)
+            if (txt_xetnghiem.Text == "" && txt_chuandoan.Text == "" && txt_GhiChu.Text == "")//không cho để trống
             {
-                this.Hide();
-                
+                function.Notice("Bạn nên nhập Yêu cầu xét nghiệm, Chẩn đoán, Ghi chú", 0);
             }
             else
             {
-                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn Đưa thông tin Bệnh Nhân vào Chờ Xét Nghiệm??" + "\n" +//hiện thông báo
+                                    "Lưu ý, Thông tin 'Xét nghiệm, Chẩn đoán, Ghi chú' sẽ được lưu." + "\n" +
+                                    "Thông tin sẽ tự xóa sau 10 ngày", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DangNhap dangNhap = new DangNhap();
-                    dangNhap.Show();
-                }
-                else
-                {
-                    e.Cancel = true;
+                    connection.connect();
+                    string query1 = @"select DST.MaSoDonThuoc
+                                        from DanhSachThuoc DST join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc
+					                                             join HoSoKhamBenh HSKB on DT.MaSoKhamBenh = HSKB.MaSoKhamBenh
+                                        where HSKB.MaSoKhamBenh =  " + ID_MSKB;
+                    DataTable dataTable = connection.SQL(query1);
+                    if (dataTable.Rows.Count > 0)//kiểm tra mã số đơn thuốc có tồn tại
+                    {
+                        function.Notice("Bạn nên xóa thuốc trong Đơn thuốc!", 0);
+                    }
+                    else
+                    {//nếu không thì sẽ insert vào hồ sơ khám bệnh là bệnh nhân chờ khám
+                        string query = @"update HoSoKhamBenh set " +
+                                        " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
+                                        " KetQuaXetNghiem = N'" + txt_KetQuaXetNghiem.Text + "'," +
+                                        " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
+                                        " GhiChu = N'" + txt_GhiChu.Text + "'," +
+                                        " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
+                                        " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
+                                        " CheckChoKham = 1" + "," +
+                                        " KiemTraKham = 0" +
+                                        " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB;
+
+                        connection.sql(query);                        
+                        Refresh_BacSi();
+                    }
+                    connection.disconnect();
                 }
             }
-            Admin.IfAdmin = false;
         }
-        private void KiemTra_HoSoChoXetNghiem_HetHan()
-        {
-            
-            string GetDate_Kham = @"declare @NgayGioiHan1 int =10"+//tạo 1 biến int giá trị 10 (10 ngày)
-                                    " delete from HoSoKhamBenh where CheckChoKham = 1 and" +//xóa hồ sơ tại CheckChoKham =1
-                                    " @NgayGioiHan1<DATEDIFF(DAY,CONVERT(datetime, NgayGioKham,103),GETDATE()) ";//Kiểm tra Ngày khám có nhỏ hơn 10 ngày
-                                                                        //convert Ngày khám từ string thày datetime và so sánh với Ngày hiện tại
-                                                                        //lấy kết quả ra số ngày chênh lệch
-            connection.connect();
-            connection.delete(GetDate_Kham);
-            connection.disconnect();
-        }
-        private void btn_ChoKham_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Bạn có muốn Đưa thông tin Bệnh Nhân vào Chờ Xét Nghiệm??"+"\n"+
-                                " Lưu ý, Thông tin 'Xét nghiệm, Chuẩn đoán, Ghi chú' sẽ được lưu."+"\n"+
-                                " Thông tin sẽ tự xóa sau 10 ngày", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
-            {
-                string query = @"update HoSoKhamBenh set " +
-                                " XetNghiem = N'" + txt_xetnghiem.Text + "'," +
-                                " KetQuaXetNghiem = N'" + txt_KetQuaXetNghiem.Text + "'," +
-                                " ChuanDoan = N'" + txt_chuandoan.Text + "'," +
-                                " GhiChu = N'" + txt_GhiChu.Text + "'," +
-                                " MaSoBacSi = " + DangNhap.MaSoBacSi + "," +
-                                " NgayTaiKham = N'" + dtP_NgayTaiKham.Text + "'," +
-                                " CheckChoKham = 1" +","+
-                                " KiemTraKham = 0" +
-                                " where MaSoBenhNhan =" + ID_MSBN + " and " + " MaSoKhamBenh = " + ID_MSKB;
-
-                                
-                connection.connect();
-                connection.sql(query);
-                connection.disconnect();
-                Refresh_BacSi();
-            }
-            
-        }
-
-        private void barButtonItem1_Xuatfile_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay.ShowRibbonPrintPreview();
-        }
-
-        private void barButtonItem1_KhamTrongNgay_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            BenhNhanKhamTrongNgay benhNhanKhamTrongNgay = new BenhNhanKhamTrongNgay();
-            benhNhanKhamTrongNgay.ShowDialog();
-        }
-
-        private void barButtonItem1_Excel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            function.ToExcel("Bạn có muốn xuất file Excel Bệnh nhân chờ khám??", result, BacSi_gridControl_danhsachBenhNhanDaKhamTrongNgay);
-        }
-
+        #endregion
     }
 }

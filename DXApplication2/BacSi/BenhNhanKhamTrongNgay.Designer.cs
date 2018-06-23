@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Bệnh Nhân khám trong ngày";
+            this.Load += new System.EventHandler(this.BenhNhanKhamTrongNgay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_BenhNhanKhamTrongNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1_BenhNhanKhamTrongNgay)).EndInit();

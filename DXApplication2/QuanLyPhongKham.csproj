@@ -123,6 +123,7 @@
     <Compile Include="BacSi\BenhNhanKhamTrongNgay.Designer.cs">
       <DependentUpon>BenhNhanKhamTrongNgay.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\Winform.cs" />
     <Compile Include="Nhan Vien\Thong Ke\BenhNhan.cs">
       <SubType>Component</SubType>
     </Compile>

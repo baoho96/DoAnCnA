@@ -128,6 +128,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DanhSachDonThuoc";
             this.Text = "Danh Sách Thuốc";
+            this.Load += new System.EventHandler(this.DanhSachDonThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_HoSoTaiKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

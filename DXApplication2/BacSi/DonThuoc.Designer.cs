@@ -371,30 +371,34 @@
             this.colTenThuoc.Name = "colTenThuoc";
             this.colTenThuoc.Visible = true;
             this.colTenThuoc.VisibleIndex = 1;
+            this.colTenThuoc.Width = 253;
             // 
             // colSoLuong
             // 
-            this.colSoLuong.Caption = "Số Lượng nhỏ nhất";
+            this.colSoLuong.Caption = "Số lượng";
             this.colSoLuong.FieldName = "SoLuongNhoNhat";
             this.colSoLuong.Name = "colSoLuong";
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 3;
+            this.colSoLuong.Width = 99;
             // 
             // colDonGia
             // 
-            this.colDonGia.Caption = "Đơn Giá nhỏ nhất";
+            this.colDonGia.Caption = "Đơn giá";
             this.colDonGia.FieldName = "DonGiaNhoNhat";
             this.colDonGia.Name = "colDonGia";
             this.colDonGia.Visible = true;
             this.colDonGia.VisibleIndex = 2;
+            this.colDonGia.Width = 110;
             // 
             // colDonViTinhNhoNhat
             // 
-            this.colDonViTinhNhoNhat.Caption = "Đơn vị nhỏ nhất";
+            this.colDonViTinhNhoNhat.Caption = "Đơn vị";
             this.colDonViTinhNhoNhat.FieldName = "DonViTinhNhoNhat";
             this.colDonViTinhNhoNhat.Name = "colDonViTinhNhoNhat";
             this.colDonViTinhNhoNhat.Visible = true;
             this.colDonViTinhNhoNhat.VisibleIndex = 4;
+            this.colDonViTinhNhoNhat.Width = 61;
             // 
             // colNgayNhap
             // 
@@ -419,6 +423,7 @@
             this.colTenLoaiThuoc.Name = "colTenLoaiThuoc";
             this.colTenLoaiThuoc.Visible = true;
             this.colTenLoaiThuoc.VisibleIndex = 0;
+            this.colTenLoaiThuoc.Width = 234;
             // 
             // label11
             // 

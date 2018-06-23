@@ -13,24 +13,31 @@ namespace QuanLyPhongKham
 {
     public partial class BenhNhanKhamTrongNgay : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
         BindingSource bindingSource = new BindingSource();
         DataSet dataSet = new DataSet();
         DialogResult result;
+        #endregion
+        #region Biến khởi tạo
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
+        #endregion
         public BenhNhanKhamTrongNgay()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+        private void BenhNhanKhamTrongNgay_Load(object sender, EventArgs e)
+        {
             Load_HoSoKhamBenh();
         }
+        #region Chức năng chung
         private void Load_HoSoKhamBenh()
         {
             connection.connect();
-            //quyentruycap = DangNhap.quyentruycap;
             string Load_Data = @"SELECT DISTINCT 
                          HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.XetNghiem,HSKB.KetQuaXetNghiem,
                             HSKB.ChuanDoan, HSKB.NgayTaiKham, HSKB.GhiChu, HSKB.LiDoKham,NV.TenNhanVien
@@ -40,25 +47,20 @@ namespace QuanLyPhongKham
                          LEFT OUTER JOIN NhanVien AS NV on HSKB.MaSoBacSi = NV.MaSoNhanVien
                          where NgayGioKham like N'%" + ngay + "/" + thang + "/" + nam + "%' and KiemTraKham = 1";
             sqlDataAdapter = new SqlDataAdapter(Load_Data, connection.con);
-            dataSet = new DataSet();
             dataSet.Clear();
             sqlDataAdapter.Fill(dataSet, "HoSoKhamBenh");
-
             bindingSource.DataSource = dataSet.Tables["HoSoKhamBenh"];
             gridControl1_BenhNhanKhamTrongNgay.DataSource = bindingSource;
             connection.disconnect();
-
         }
-
         private void barButtonItem1_filekhac_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl1_BenhNhanKhamTrongNgay.Print();
-            
+            gridControl1_BenhNhanKhamTrongNgay.Print();            
         }
 
         private void barButtonItem2_excel_ItemClick(object sender, ItemClickEventArgs e)
         {
-            function.ToExcel("Bạn muốn xuất file Bệnh nhân đã khám trong ngày??", result, gridControl1_BenhNhanKhamTrongNgay);
+            function.ToExcel(result, gridControl1_BenhNhanKhamTrongNgay);
         }
 
         private void gridView1_BenhNhanKhamTrongNgay_RowCountChanged(object sender, EventArgs e)
@@ -70,5 +72,6 @@ namespace QuanLyPhongKham
         {
             function.CustomDrawRowIndicator(sender, e);
         }
+        #endregion
     }
 }

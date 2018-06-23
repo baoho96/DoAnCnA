@@ -13,6 +13,7 @@ namespace QuanLyPhongKham
 {
     public partial class BenhNhanThanhToan : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         SqlDataAdapter sqlDataAdapter;
@@ -21,20 +22,23 @@ namespace QuanLyPhongKham
         DataSet dataSet = new DataSet();
         DangNhap dangNhap = new DangNhap();
         DialogResult result;
+        #endregion
+        #region Biến khởi tạo
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
         public string XemBenhNhan;
         public int checkColumn;
+        #endregion
+
         public BenhNhanThanhToan()
         {
             InitializeComponent();
-            //Load_HoaDon(XemBenhNhan);
         }
-        public BenhNhanThanhToan(string _XemBenhNhan,int _checkColumn) :this()
+        public BenhNhanThanhToan(string _XemBenhNhan,int _checkColumn) :this()//sử dụng constructor để truyền dữ liệu
         {
             XemBenhNhan = _XemBenhNhan;
-            checkColumn = _checkColumn;//0 là thu ngân. 1: dược sĩ
+            checkColumn = _checkColumn;//0 là thu ngân. 1: giao thuốc
             if(checkColumn == 0)
             {                
                 col_KiemTraDaLayThuoc.Visible = false;
@@ -56,7 +60,7 @@ namespace QuanLyPhongKham
                             " join BenhNhan BN on HSKB.MaSoBenhNhan = BN.MaSoBenhNhan" +
                             " join NhanVien NV on HSKB.MaSoBacSi = NV.MaSoNhanVien" +
                             " join DonThuoc DT on DT.MaSoDonThuoc = HD.MaSoDonThuoc" +
-                            " where " + XemBenhNhan;
+                            " where " + XemBenhNhan;//đưa câu truy vấn từ Form thu ngân or giao thuốc
             connection.connect();
             sqlDataAdapter = new SqlDataAdapter(query, connection.con);
             dataSet = new DataSet();
@@ -75,7 +79,7 @@ namespace QuanLyPhongKham
 
         private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
-            function.ToExcel("Bạn có muốn Xuất Danh Sách ra File Excel??",result,gridControl1_HoaDon);
+            function.ToExcel(result,gridControl1_HoaDon);
         }
 
         private void gridView1_HoaDon_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)

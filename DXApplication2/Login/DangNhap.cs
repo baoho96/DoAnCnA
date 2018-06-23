@@ -14,27 +14,26 @@ namespace QuanLyPhongKham
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        Admin admin;
-        NhanVien nhanVien;
-        BacSi bacSi;
-        NhanVienThuNgan nhanVienThuNgan;
-        DuocSi duocSi;
+        #region khởi tạo
         function function = new function();
         connection connection = new connection();
+        #endregion
+        #region Biến khởi tạo
         public static string TenBacSi { get; set; }
         public static int MaSoBacSi { get; set; }
         public string QuyenTruyCap { get; set; }
+        #endregion
         public DangNhap()
         {
             InitializeComponent();           
         }
         private void DangNhap_Load(object sender, EventArgs e)
         {
-            admin = new Admin();
-            nhanVien = new NhanVien();
-            bacSi= new BacSi();
-            nhanVienThuNgan = new NhanVienThuNgan();
-            duocSi = new DuocSi();
+            Winform.admin = new Admin();
+            Winform.bacSi = new BacSi();
+            Winform.nhanVien = new NhanVien();
+            Winform.duocSi = new DuocSi();
+            Winform.nhanVienThuNgan = new NhanVienThuNgan();
         }                     
 
         public void btn_DangNhap_Click(object sender, EventArgs e)
@@ -62,27 +61,27 @@ namespace QuanLyPhongKham
         {
             if (QuyenTruyCap == "1")//Admin
             {
-                admin.Show();
+                Winform.admin.Show();
                 this.Visible = false;
             }
             else if (QuyenTruyCap == "2")//Nhân viên điều dưỡng
             {
-                nhanVien.Show();
+                Winform.nhanVien.Show();
                 this.Visible = false;
             }
             else if (QuyenTruyCap == "3")//Bác sĩ
             {
-                bacSi.Show();
+                Winform.bacSi.Show();
                 this.Visible = false;
             }
             else if (QuyenTruyCap == "4")// Nhân viên giao thuốc
             {
-                duocSi.Show();
+                Winform.duocSi.Show();
                 this.Visible = false;
             }
             else if (QuyenTruyCap == "5")//Nhân viên thu ngân
             {
-                nhanVienThuNgan.Show();
+                Winform.nhanVienThuNgan.Show();
                 this.Visible = false;
             }
         }

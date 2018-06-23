@@ -13,21 +13,22 @@ namespace QuanLyPhongKham
 {
     public partial class printDonThuoc : DevExpress.XtraEditors.XtraForm
     {
+        #region Khởi tạo
         connection connection = new connection();        
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();
         reportDonThuoc reportDonThuoc = new reportDonThuoc();
-        //SqlCommand sqlCommand;
-        DataSet dataSet;
+        DataSet dataSet = new DataSet();
+        #endregion
         public printDonThuoc()
         {
             InitializeComponent();
         }
-
         private void printDonThuoc_Load(object sender, EventArgs e)
         {
             Load_reportDonThuoc();
         }
+        #region Chức năng chung
         private void Load_reportDonThuoc()
         {
             string Load_MSDT = @"select T.TenThuoc,T.DonViTinhNhoNhat,T.DonGiaNhoNhat,DST.SoLuong,DST.CachDung" +
@@ -35,7 +36,6 @@ namespace QuanLyPhongKham
                                             " left join DonThuoc DT on DST.MaSoDonThuoc = DT.MaSoDonThuoc " +
                                 " where DT.MaSoKhamBenh = " + NhanVienThuNgan.ID_MSKB + " And DT.MaSoDonThuoc =" + NhanVienThuNgan.ID_MSDT;
             connection.connect();
-            dataSet = new DataSet();
             dataSet.Clear();
             //đổ dữ liệu vào dataAdapter
             sqlDataAdapter = new SqlDataAdapter(Load_MSDT, connection.con);
@@ -47,12 +47,6 @@ namespace QuanLyPhongKham
             documentViewer1.PrintingSystem = reportDonThuoc.PrintingSystem;
             reportDonThuoc.CreateDocument();
         }
-
-
-        private void printDonThuoc_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //DonThuoc donThuoc = new DonThuoc();
-            //donThuoc.Show();
-        }
+        #endregion
     }
 }

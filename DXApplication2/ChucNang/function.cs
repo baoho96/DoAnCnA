@@ -125,53 +125,45 @@ namespace QuanLyPhongKham
             }
         }
 
-        //vẽ cột số thứ tự cho gridview
         bool indicatorIcon = true;
-        public void CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        public void CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)//vẽ cột số thứ tự cho gridview
         {
-            try
+            GridView view = (GridView)sender;
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
-                GridView view = (GridView)sender;
-                if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+                string sText = (e.RowHandle + 1).ToString();
+                Graphics gr = e.Info.Graphics;
+                gr.PageUnit = GraphicsUnit.Pixel;
+                GridView gridView = ((GridView)sender);
+                SizeF size = gr.MeasureString(sText, e.Info.Appearance.Font);
+                int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                if (gridView.IndicatorWidth < nNewSize)
                 {
-                    string sText = (e.RowHandle + 1).ToString();
-                    Graphics gr = e.Info.Graphics;
-                    gr.PageUnit = GraphicsUnit.Pixel;
-                    GridView gridView = ((GridView)sender);
-                    SizeF size = gr.MeasureString(sText, e.Info.Appearance.Font);
-                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
-                    if (gridView.IndicatorWidth < nNewSize)
-                    {
-                        gridView.IndicatorWidth = nNewSize;
-                    }
-
-                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    e.Info.DisplayText = sText;
+                    gridView.IndicatorWidth = nNewSize;
                 }
-                if (!indicatorIcon)
-                    e.Info.ImageIndex = -1;
 
-                if (e.RowHandle == GridControl.InvalidRowHandle)
-                {
-                    Graphics gr = e.Info.Graphics;
-                    gr.PageUnit = GraphicsUnit.Pixel;
-                    GridView gridView = ((GridView)sender);
-                    SizeF size = gr.MeasureString("STT", e.Info.Appearance.Font);
-                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
-                    if (gridView.IndicatorWidth < nNewSize)
-                    {
-                        gridView.IndicatorWidth = nNewSize;
-                    }
-                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    e.Info.DisplayText = "STT";
-                }
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                e.Info.DisplayText = sText;
             }
-            catch (Exception ex)
+            if (!indicatorIcon)
+                e.Info.ImageIndex = -1;
+
+            if (e.RowHandle == GridControl.InvalidRowHandle)
             {
-                MessageBox.Show(ex.Message);
+                Graphics gr = e.Info.Graphics;
+                gr.PageUnit = GraphicsUnit.Pixel;
+                GridView gridView = ((GridView)sender);
+                SizeF size = gr.MeasureString("STT", e.Info.Appearance.Font);
+                int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                if (gridView.IndicatorWidth < nNewSize)
+                {
+                    gridView.IndicatorWidth = nNewSize;
+                }
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                e.Info.DisplayText = "STT";
             }
         }
-        public void RowCountChanged(object sender, EventArgs e)
+        public void RowCountChanged(object sender, EventArgs e)//đếm số Row cho gridview
         {
             GridView gridview = ((GridView)sender);
             if (!gridview.GridControl.IsHandleCreated) return;
@@ -201,7 +193,7 @@ namespace QuanLyPhongKham
             }
         }
 
-        public void ToExcel(string noidung, DialogResult result, GridControl gridControl)
+        public void ToExcel(DialogResult result, GridControl gridControl)
         {
             SaveFileDialog save = new SaveFileDialog();
             save.InitialDirectory = "D:";
@@ -235,6 +227,7 @@ namespace QuanLyPhongKham
         public void ClearFilterText(GridView gridView)
         {
             gridView.FindFilterText = "";
-        }        
+        }     
+        
     }
 }

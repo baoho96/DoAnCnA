@@ -97,6 +97,7 @@
             this.hoSoTaiKhamTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.HoSoTaiKhamTableAdapter();
             this.donThuocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.donThuocTableAdapter = new QuanLyPhongKham.PhongKhamDataSetTableAdapters.DonThuocTableAdapter();
+            this.colKetQuaXetNghiem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2_DonThuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1_TimKiemBenhNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoSoKhamBenhBindingSource)).BeginInit();
@@ -132,15 +133,13 @@
             this.colMaSoDonThuoc.Name = "colMaSoDonThuoc";
             this.colMaSoDonThuoc.Visible = true;
             this.colMaSoDonThuoc.VisibleIndex = 0;
-            this.colMaSoDonThuoc.Width = 115;
+            this.colMaSoDonThuoc.Width = 41;
             // 
             // colMaSoKhamBenh
             // 
             this.colMaSoKhamBenh.Caption = "MSKB";
             this.colMaSoKhamBenh.FieldName = "MaSoKhamBenh";
             this.colMaSoKhamBenh.Name = "colMaSoKhamBenh";
-            this.colMaSoKhamBenh.Visible = true;
-            this.colMaSoKhamBenh.VisibleIndex = 1;
             this.colMaSoKhamBenh.Width = 115;
             // 
             // colGhiChu
@@ -149,8 +148,8 @@
             this.colGhiChu.FieldName = "GhiChu";
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 4;
-            this.colGhiChu.Width = 168;
+            this.colGhiChu.VisibleIndex = 3;
+            this.colGhiChu.Width = 241;
             // 
             // colTongTienThuoc
             // 
@@ -158,8 +157,8 @@
             this.colTongTienThuoc.FieldName = "TongTienThuoc";
             this.colTongTienThuoc.Name = "colTongTienThuoc";
             this.colTongTienThuoc.Visible = true;
-            this.colTongTienThuoc.VisibleIndex = 3;
-            this.colTongTienThuoc.Width = 115;
+            this.colTongTienThuoc.VisibleIndex = 2;
+            this.colTongTienThuoc.Width = 106;
             // 
             // colKiemTraLayThuoc
             // 
@@ -167,8 +166,8 @@
             this.colKiemTraLayThuoc.FieldName = "KiemTraLayThuoc";
             this.colKiemTraLayThuoc.Name = "colKiemTraLayThuoc";
             this.colKiemTraLayThuoc.Visible = true;
-            this.colKiemTraLayThuoc.VisibleIndex = 5;
-            this.colKiemTraLayThuoc.Width = 64;
+            this.colKiemTraLayThuoc.VisibleIndex = 4;
+            this.colKiemTraLayThuoc.Width = 277;
             // 
             // colNgayKeDon
             // 
@@ -176,8 +175,8 @@
             this.colNgayKeDon.FieldName = "NgayKeDon";
             this.colNgayKeDon.Name = "colNgayKeDon";
             this.colNgayKeDon.Visible = true;
-            this.colNgayKeDon.VisibleIndex = 2;
-            this.colNgayKeDon.Width = 115;
+            this.colNgayKeDon.VisibleIndex = 1;
+            this.colNgayKeDon.Width = 92;
             // 
             // gridControl1_TimKiemBenhNhan
             // 
@@ -232,7 +231,8 @@
             this.clHSTKNgayTaiKham,
             this.clHSTKTienKham,
             this.clHSTKGhiChu,
-            this.clHSTKKiemTraKham});
+            this.clHSTKKiemTraKham,
+            this.colKetQuaXetNghiem});
             this.gridView1_HoSoTaiKham.GridControl = this.gridControl1_TimKiemBenhNhan;
             this.gridView1_HoSoTaiKham.Name = "gridView1_HoSoTaiKham";
             this.gridView1_HoSoTaiKham.OptionsBehavior.Editable = false;
@@ -243,35 +243,36 @@
             // 
             // clHSTKMaSoTaiKham
             // 
-            this.clHSTKMaSoTaiKham.Caption = "MSKB (MSKB mới)";
+            this.clHSTKMaSoTaiKham.Caption = "MSTK";
             this.clHSTKMaSoTaiKham.FieldName = "MaSoTaiKham";
             this.clHSTKMaSoTaiKham.Name = "clHSTKMaSoTaiKham";
             this.clHSTKMaSoTaiKham.Visible = true;
             this.clHSTKMaSoTaiKham.VisibleIndex = 0;
+            this.clHSTKMaSoTaiKham.Width = 44;
             // 
             // clHSTKMaSoKhamBenh
             // 
-            this.clHSTKMaSoKhamBenh.Caption = "MSKB cũ";
+            this.clHSTKMaSoKhamBenh.Caption = "MSKB";
             this.clHSTKMaSoKhamBenh.FieldName = "MaSoKhamBenh";
             this.clHSTKMaSoKhamBenh.Name = "clHSTKMaSoKhamBenh";
             this.clHSTKMaSoKhamBenh.Visible = true;
             this.clHSTKMaSoKhamBenh.VisibleIndex = 1;
+            this.clHSTKMaSoKhamBenh.Width = 41;
             // 
             // clHSTKMaSoBenhNhan
             // 
             this.clHSTKMaSoBenhNhan.Caption = "MSBN";
             this.clHSTKMaSoBenhNhan.FieldName = "MaSoBenhNhan";
             this.clHSTKMaSoBenhNhan.Name = "clHSTKMaSoBenhNhan";
-            this.clHSTKMaSoBenhNhan.Visible = true;
-            this.clHSTKMaSoBenhNhan.VisibleIndex = 2;
             // 
             // clHSTKNgayGioKham
             // 
-            this.clHSTKNgayGioKham.Caption = "Ngày Giờ Khám";
+            this.clHSTKNgayGioKham.Caption = "Ngày Khám";
             this.clHSTKNgayGioKham.FieldName = "NgayGioKham";
             this.clHSTKNgayGioKham.Name = "clHSTKNgayGioKham";
             this.clHSTKNgayGioKham.Visible = true;
-            this.clHSTKNgayGioKham.VisibleIndex = 3;
+            this.clHSTKNgayGioKham.VisibleIndex = 2;
+            this.clHSTKNgayGioKham.Width = 80;
             // 
             // clHSTKXetNghiem
             // 
@@ -280,6 +281,7 @@
             this.clHSTKXetNghiem.Name = "clHSTKXetNghiem";
             this.clHSTKXetNghiem.Visible = true;
             this.clHSTKXetNghiem.VisibleIndex = 4;
+            this.clHSTKXetNghiem.Width = 96;
             // 
             // clHSTKChuanDoan
             // 
@@ -287,7 +289,8 @@
             this.clHSTKChuanDoan.FieldName = "ChuanDoan";
             this.clHSTKChuanDoan.Name = "clHSTKChuanDoan";
             this.clHSTKChuanDoan.Visible = true;
-            this.clHSTKChuanDoan.VisibleIndex = 5;
+            this.clHSTKChuanDoan.VisibleIndex = 6;
+            this.clHSTKChuanDoan.Width = 96;
             // 
             // clHSTKNgayTaiKham
             // 
@@ -295,7 +298,8 @@
             this.clHSTKNgayTaiKham.FieldName = "NgayTaiKham";
             this.clHSTKNgayTaiKham.Name = "clHSTKNgayTaiKham";
             this.clHSTKNgayTaiKham.Visible = true;
-            this.clHSTKNgayTaiKham.VisibleIndex = 6;
+            this.clHSTKNgayTaiKham.VisibleIndex = 3;
+            this.clHSTKNgayTaiKham.Width = 96;
             // 
             // clHSTKTienKham
             // 
@@ -304,6 +308,7 @@
             this.clHSTKTienKham.Name = "clHSTKTienKham";
             this.clHSTKTienKham.Visible = true;
             this.clHSTKTienKham.VisibleIndex = 7;
+            this.clHSTKTienKham.Width = 73;
             // 
             // clHSTKGhiChu
             // 
@@ -312,14 +317,13 @@
             this.clHSTKGhiChu.Name = "clHSTKGhiChu";
             this.clHSTKGhiChu.Visible = true;
             this.clHSTKGhiChu.VisibleIndex = 8;
+            this.clHSTKGhiChu.Width = 135;
             // 
             // clHSTKKiemTraKham
             // 
             this.clHSTKKiemTraKham.Caption = "Check";
             this.clHSTKKiemTraKham.FieldName = "KiemTraKham";
             this.clHSTKKiemTraKham.Name = "clHSTKKiemTraKham";
-            this.clHSTKKiemTraKham.Visible = true;
-            this.clHSTKKiemTraKham.VisibleIndex = 9;
             // 
             // gridView1_TimKiemBenhNhan
             // 
@@ -382,11 +386,12 @@
             // 
             // colNgayGioKham1
             // 
-            this.colNgayGioKham1.Caption = "Ngày giờ khám";
+            this.colNgayGioKham1.Caption = "Ngày khám";
             this.colNgayGioKham1.FieldName = "NgayGioKham";
             this.colNgayGioKham1.Name = "colNgayGioKham1";
             this.colNgayGioKham1.Visible = true;
             this.colNgayGioKham1.VisibleIndex = 2;
+            this.colNgayGioKham1.Width = 56;
             // 
             // colNgayTaiKham1
             // 
@@ -395,7 +400,6 @@
             this.colNgayTaiKham1.Name = "colNgayTaiKham1";
             this.colNgayTaiKham1.Visible = true;
             this.colNgayTaiKham1.VisibleIndex = 3;
-            this.colNgayTaiKham1.Width = 66;
             // 
             // colXetNghiem1
             // 
@@ -404,7 +408,7 @@
             this.colXetNghiem1.Name = "colXetNghiem1";
             this.colXetNghiem1.Visible = true;
             this.colXetNghiem1.VisibleIndex = 8;
-            this.colXetNghiem1.Width = 45;
+            this.colXetNghiem1.Width = 55;
             // 
             // colKetQua
             // 
@@ -413,7 +417,7 @@
             this.colKetQua.Name = "colKetQua";
             this.colKetQua.Visible = true;
             this.colKetQua.VisibleIndex = 9;
-            this.colKetQua.Width = 63;
+            this.colKetQua.Width = 57;
             // 
             // colChuanDoan1
             // 
@@ -422,7 +426,7 @@
             this.colChuanDoan1.Name = "colChuanDoan1";
             this.colChuanDoan1.Visible = true;
             this.colChuanDoan1.VisibleIndex = 10;
-            this.colChuanDoan1.Width = 71;
+            this.colChuanDoan1.Width = 86;
             // 
             // colTienKham1
             // 
@@ -438,7 +442,7 @@
             this.colGhiChu1.Name = "colGhiChu1";
             this.colGhiChu1.Visible = true;
             this.colGhiChu1.VisibleIndex = 11;
-            this.colGhiChu1.Width = 98;
+            this.colGhiChu1.Width = 107;
             // 
             // colHo3
             // 
@@ -447,7 +451,7 @@
             this.colHo3.Name = "colHo3";
             this.colHo3.Visible = true;
             this.colHo3.VisibleIndex = 4;
-            this.colHo3.Width = 52;
+            this.colHo3.Width = 50;
             // 
             // colTen3
             // 
@@ -456,7 +460,7 @@
             this.colTen3.Name = "colTen3";
             this.colTen3.Visible = true;
             this.colTen3.VisibleIndex = 5;
-            this.colTen3.Width = 40;
+            this.colTen3.Width = 37;
             // 
             // colGioiTinh3
             // 
@@ -472,7 +476,7 @@
             this.colNamSinh3.Name = "colNamSinh3";
             this.colNamSinh3.Visible = true;
             this.colNamSinh3.VisibleIndex = 6;
-            this.colNamSinh3.Width = 54;
+            this.colNamSinh3.Width = 52;
             // 
             // colLiDoKham1
             // 
@@ -481,7 +485,7 @@
             this.colLiDoKham1.Name = "colLiDoKham1";
             this.colLiDoKham1.Visible = true;
             this.colLiDoKham1.VisibleIndex = 7;
-            this.colLiDoKham1.Width = 55;
+            this.colLiDoKham1.Width = 53;
             // 
             // colDiaChi3
             // 
@@ -516,7 +520,7 @@
             this.cl_KiemTraTaiKham.Name = "cl_KiemTraTaiKham";
             this.cl_KiemTraTaiKham.Visible = true;
             this.cl_KiemTraTaiKham.VisibleIndex = 12;
-            this.cl_KiemTraTaiKham.Width = 49;
+            this.cl_KiemTraTaiKham.Width = 40;
             // 
             // colTienKham11
             // 
@@ -671,6 +675,15 @@
             // 
             this.donThuocTableAdapter.ClearBeforeFill = true;
             // 
+            // colKetQuaXetNghiem
+            // 
+            this.colKetQuaXetNghiem.Caption = "Kết quả";
+            this.colKetQuaXetNghiem.FieldName = "KetQuaXetNghiem";
+            this.colKetQuaXetNghiem.Name = "colKetQuaXetNghiem";
+            this.colKetQuaXetNghiem.Visible = true;
+            this.colKetQuaXetNghiem.VisibleIndex = 5;
+            this.colKetQuaXetNghiem.Width = 96;
+            // 
             // XemHoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,5 +778,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaSoDonThuoc1;
         private DevExpress.XtraGrid.Columns.GridColumn colTienKham11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_ToExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colKetQuaXetNghiem;
     }
 }

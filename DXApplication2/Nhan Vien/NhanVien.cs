@@ -19,11 +19,8 @@ namespace QuanLyPhongKham
 {
     public partial class NhanVien : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        SqlDataAdapter da;
         SqlCommand cmd;
-        //SqlDataReader rd;
         BindingSource bindingSource = new BindingSource();
-        //DataSet ds;
         OpenFileDialog open;
         string hinhanh = null;
         DialogResult result;
@@ -68,10 +65,7 @@ namespace QuanLyPhongKham
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            refresh_TiepNhanBenhNhan();
-            refresh_DanhSachBenhNhan();//Tiếp nhận bệnh nhân cũ
-            refresh_TimKiemBenhNhan();//Tiếp nhận bệnh nhân tái khám
-            refresh_TimKiemBenhNhanTaiKham();
+            RefreshAll();
 
             gridView1_TimBenhNhan.ClearGrouping();   //Tìm kiếm bệnh nhân         
             gridView4_DanhSachBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân cũ
@@ -92,7 +86,18 @@ namespace QuanLyPhongKham
             gridView1_TimKiemBenhNhan.UnselectRow(int.Parse(gridView1_TimKiemBenhNhan.FocusedRowHandle.ToString()));
             gridView1_TimBenhNhan.UnselectRow(int.Parse(gridView1_TimBenhNhan.FocusedRowHandle.ToString()));
         }
+        public void RefreshAll()
+        {
+            gridControl1_TimBenhNhan.Refresh();
+            gridControl1_TimKiemBenhNhan.Refresh();
+            TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Refresh();
+            DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan.Refresh();
 
+            refresh_TiepNhanBenhNhan();
+            refresh_DanhSachBenhNhan();//Tiếp nhận bệnh nhân cũ
+            refresh_TimKiemBenhNhan();//Tiếp nhận bệnh nhân tái khám
+            refresh_TimKiemBenhNhanTaiKham();            
+        }
         public void timer_tick(object sender, EventArgs e)
         {
             int TiepNhanBenhNhan = gridView1_TiepNhanBenhNhan.FocusedRowHandle;
@@ -147,11 +152,8 @@ namespace QuanLyPhongKham
         private void refresh_TiepNhanBenhNhan()
         {
             function.ClearControl(panelControl2);
-            
-            TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.Refresh();
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             load_TiepNhanBenhNhan_comB_GioiTinh();
-
             hinhanh = null;
             result = new DialogResult();
             TiepNhanBenhNhan_btn_CapNhat.Enabled = false;
@@ -453,19 +455,19 @@ namespace QuanLyPhongKham
         {
             if (NhanVien_tabP_TiepNhanBenhNhan.Focus() == true)
             {
-                function.ToExcel("Bạn muốn xuất file Tiếp nhận Bệnh nhân khám mới trong ngày??", result, TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham);
+                function.ToExcel( result, TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham);
             }
             if (NhanVien_tabP_DanhSachBenhNhan.Focus() == true)
             {
-                function.ToExcel("Bạn muốn xuất file Tiếp nhận bệnh nhân cũ???", result, DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
+                function.ToExcel(result, DanhSachBenhNhanTaiKham_gridC_danhsachBenhNhan);
             }
             if (NhanVien_tabP_DanhSachBenhNhanTaiKham.Focus() == true)
             {
-                function.ToExcel("Bạn muốn xuất file Tiếp nhận Bệnh Nhân tái khám???", result, gridControl1_TimKiemBenhNhan);
+                function.ToExcel( result, gridControl1_TimKiemBenhNhan);
             }
             if (xtra_TimBenhNhan.Focus() == true)
             {
-                function.ToExcel("Bạn muốn xuất file Danh Sách Bệnh Nhân Được tìm theo ngày???", result, gridControl1_TimBenhNhan);
+                function.ToExcel(result, gridControl1_TimBenhNhan);
             }
         }
         private void barButtonItem1_Xuatfilekhac_ItemClick(object sender, ItemClickEventArgs e)
@@ -494,7 +496,7 @@ namespace QuanLyPhongKham
         private void refresh_DanhSachBenhNhan()
         {
             function.ClearControl(panelControl4);
-            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
+            
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
             load_DanhSachBenhNhan_comB_GioiTinh();
@@ -721,7 +723,6 @@ namespace QuanLyPhongKham
         private void refresh_TimKiemBenhNhan()//Tiếp Nhận bệnh nhân tái khám
         {            
             function.ClearControl(panelControl5);            
-            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);
             TimKiemBenhNhanKham_btn_ThemChoTaiKham.Enabled = false;

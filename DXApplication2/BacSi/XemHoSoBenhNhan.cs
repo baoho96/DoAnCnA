@@ -16,40 +16,29 @@ namespace QuanLyPhongKham
 {
     public partial class XemHoSoBenhNhan : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         connection connection = new connection();
-        function function = new function();
-        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-        DataSet dataSet = new DataSet();
-        BindingSource bindingSource = new BindingSource();
-        SqlCommand sqlCommand = new SqlCommand();
+        function function = new function();  
         DialogResult result;
+        #endregion
+        #region Biến khởi tạo
         public static int MSDT { get; set; }
-
+        #endregion
         public XemHoSoBenhNhan()
         {
             InitializeComponent();
-            //load_donthuoc();
         }
-        private void load_donthuoc()
+        #region Ribbon Control
+        private void barButtonItem1_ToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string query = @"SELECT DISTINCT 
-                         HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh, HSKB.NgayGioKham, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, 
-                         HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh, BN.CanNang, HSTK.MaSoTaiKham, HSKB.KiemTraTaiKham,NV.TenNhanVien
-                        FROM            HoSoKhamBenh AS HSKB LEFT OUTER JOIN
-                         BenhNhan AS BN ON BN.MaSoBenhNhan = HSKB.MaSoBenhNhan LEFT OUTER JOIN
-                         HoSoTaiKham AS HSTK ON HSTK.MaSoKhamBenh = HSKB.MaSoKhamBenh
-                        LEFT OUTER JOIN NhanVien AS NV on HSKB.MaSoBacSi = NV.MaSoNhanVien";
-            connection.connect();
-            sqlDataAdapter = new SqlDataAdapter(query, connection.con);
-            dataSet = new DataSet();
-            dataSet.Clear();
-            sqlDataAdapter.Fill(dataSet, "HoSoKhamBenh");
-            bindingSource.DataSource = dataSet.Tables["HoSoKhamBenh"];
-            gridControl1_TimKiemBenhNhan.DataSource = bindingSource;
-            connection.disconnect();
+            function.ToExcel(result, gridControl1_TimKiemBenhNhan);
         }
-
-
+        private void btn_indanhsach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridControl1_TimKiemBenhNhan.ShowRibbonPrintPreview();
+        }
+        #endregion
+        #region Chức năng chung
         private void gridView1_TimKiemBenhNhan_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             function.CustomDrawRowIndicator(sender, e);
@@ -59,7 +48,6 @@ namespace QuanLyPhongKham
         {
             function.RowCountChanged(sender, e);
         }
-
         private void XemHoSoBenhNhan_Load(object sender, EventArgs e)
         {
             phongKhamDataSet.EnforceConstraints = false;
@@ -70,35 +58,18 @@ namespace QuanLyPhongKham
             // TODO: This line of code loads data into the 'phongKhamDataSet.HoSoKhamBenh' table. You can move, or remove it, as needed.
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
         }
-
-        private void btn_indanhsach_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void gridControl1_TimKiemBenhNhan_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
-            gridControl1_TimKiemBenhNhan.ShowRibbonPrintPreview();
-        }
-
+            GridControl gridControl = sender as GridControl;
+            GridView gridView = gridControl.FocusedView as GridView;
+            if (gridView != null)
+                MSDT = int.Parse(gridView.GetFocusedRowCellValue(gridView.Columns[0]).ToString());//chọn cột đầu tiên khi nhấn vào mũi tên
+        }               
         private void gridView2_DonThuoc_DoubleClick(object sender, EventArgs e)
         {            
             DanhSachDonThuoc danhSachDonThuoc = new DanhSachDonThuoc();
             danhSachDonThuoc.ShowDialog();
         }
-
-        private void gridControl1_TimKiemBenhNhan_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
-        {
-            MSDT=FocusedViewChanged(sender,e);
-        }
-        private int FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
-        {
-            GridControl gridControl = sender as GridControl;
-            GridView gridView = gridControl.FocusedView as GridView;
-            if (gridView != null)
-                MSDT =int.Parse( gridView.GetFocusedRowCellValue(gridView.Columns[0]).ToString());
-            return MSDT;
-        }
-
-        private void barButtonItem1_ToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            function.ToExcel("Bạn muốn Xuất Danh sách ra File Excel",result,gridControl1_TimKiemBenhNhan);
-        }
-        
+        #endregion
     }
 }

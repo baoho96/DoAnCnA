@@ -15,16 +15,16 @@ namespace QuanLyPhongKham
 {
     public partial class DuocSi : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         DataSet dataSet = new DataSet();
         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
         BindingSource bindingSource = new BindingSource();
         reportDonThuocFormDuocSi reportDonThuocFormDuocSi = new reportDonThuocFormDuocSi();
-        string ngay = DateTime.Now.Day.ToString("d2");
-        string thang = DateTime.Now.Month.ToString("d2");
-        string nam = DateTime.Now.Year.ToString();
         DialogResult result;
+        #endregion        
+        
         #region Giá trị
         public static int ID_MSDT { get; set; }
         public static int ID_MSKB { get; set; }
@@ -41,9 +41,10 @@ namespace QuanLyPhongKham
         public static string NgayKham { get; set; }
 
         public static string BacSiKham { get; set; }
-
         public static string NguoiLap { get; set; }
-
+        string ngay = DateTime.Now.Day.ToString("d2");
+        string thang = DateTime.Now.Month.ToString("d2");
+        string nam = DateTime.Now.Year.ToString();
         #endregion
 
         public DuocSi()
@@ -52,6 +53,40 @@ namespace QuanLyPhongKham
             load_DanhSachBenhNhan();
             function.Timer_load(timer_tick);
         }
+        
+        #region RibbonControl
+        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            refresh_DuocSi();
+            function.ClearFilterText(gridView_DanhSachBenhNhan);//clear text tìm trong gridview
+        }
+        private void btn_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridControl_DanhSachBenhNhan.ShowRibbonPrintPreview();
+        }
+        private void barButtonItem1_Toexcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            function.ToExcel(result, gridControl_DanhSachBenhNhan);
+        }
+
+        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //đưa câu truy vấn vào Form BenhNhanThanhToan để lọc đúng với xem bệnh nhân đã lấy thuốc
+            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraDaLayThuoc = 1";
+            int checkColumn = 1;//đặt giá trị để nhận biết là dược sĩ
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);//truyền dữ liệu vào Form
+            benhNhanThanhToan.ShowDialog();
+        }
+        #endregion
+        #region Chức năng chung
+        private void gridView_DanhSachBenhNhan_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
+        private void gridView_DanhSachBenhNhan_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
+        }
         public void timer_tick(object sender, EventArgs e)
         {
             int TiepNhanBenhNhan = gridView_DanhSachBenhNhan.FocusedRowHandle;
@@ -59,24 +94,14 @@ namespace QuanLyPhongKham
             gridView_DanhSachBenhNhan.FocusedRowHandle = TiepNhanBenhNhan;
             txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
         }
-        private void refresh_DuocSi()
+        public void refresh_DuocSi()
         {
             dataSet.Clear();
             gridControl_DanhSachBenhNhan.Refresh();
             gridView_DanhSachBenhNhan.RefreshData();
-            documentViewer1.Refresh();
             documentViewer1.PrintingSystem = null;
             load_DanhSachBenhNhan();
             btn_LayThuocXong.Enabled = false;
-        }
-        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            refresh_DuocSi();
-            function.ClearFilterText(gridView_DanhSachBenhNhan);
-        }
-        private void btn_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            gridControl_DanhSachBenhNhan.ShowRibbonPrintPreview();
         }
         private void load_DanhSachBenhNhan()
         {
@@ -117,55 +142,6 @@ namespace QuanLyPhongKham
             documentViewer1.PrintingSystem = reportDonThuocFormDuocSi.PrintingSystem;
             reportDonThuocFormDuocSi.CreateDocument();
         }
-
-        private void gridView_DanhSachBenhNhan_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        {
-            function.CustomDrawRowIndicator(sender, e);
-        }
-        private void gridView_DanhSachBenhNhan_RowCountChanged(object sender, EventArgs e)
-        {
-            function.RowCountChanged(sender, e);
-        }
-        private void gridView_DanhSachBenhNhan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            btn_LayThuocXong.Enabled = true;
-            object ID_MSDT_CheckNull = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoDonThuoc");
-            if (ID_MSDT_CheckNull != null && ID_MSDT_CheckNull != DBNull.Value)
-            {
-                ID_MSDT = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
-                ID_MSKB = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
-                ID_MSHD = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaHoaDon").ToString());
-                Ho = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ho").ToString();
-                Ten = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ten").ToString();
-                NamSinh = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NamSinh").ToString();
-                SDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("SoDienThoai").ToString();
-
-                GhiChuHSDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu").ToString();
-                GhiChuHSKB = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu1").ToString();
-                NgayKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
-
-                BacSiKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TenNhanVien").ToString();
-                Load_reportDonThuoc();
-            }
-        }
-        private void btn_LayThuocXong_Click(object sender, EventArgs e)
-        {
-            string Laythuocxong = @"update HoaDon set"+
-                                    " KiemTraDaLayThuoc = 1" +
-                                    " where MaHoaDon =" + ID_MSHD;
-            connection.connect();
-            connection.sql(Laythuocxong);
-            connection.disconnect();            
-            refresh_DuocSi();
-        }
-
-        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Close();
-            BacSiKham = "";
-            NguoiLap = "";
-        }
-
         private void DuocSi_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Admin.IfAdmin == true)
@@ -186,18 +162,47 @@ namespace QuanLyPhongKham
             }
             Admin.IfAdmin = false;
         }
-
-        private void barButtonItem1_Toexcel_ItemClick(object sender, ItemClickEventArgs e)
+        #endregion
+        #region Chức năng chính
+        private void gridView_DanhSachBenhNhan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            function.ToExcel("Bạn có muốn xuất file Danh sách bệnh nhân lấy thuốc",result,gridControl_DanhSachBenhNhan);
+            btn_LayThuocXong.Enabled = true;
+            object ID_MSDT_CheckNull = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoDonThuoc");
+            if (ID_MSDT_CheckNull != null && ID_MSDT_CheckNull != DBNull.Value)
+            {
+                ID_MSDT = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoDonThuoc").ToString());
+                ID_MSKB = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoKhamBenh").ToString());
+                ID_MSHD = int.Parse(gridView_DanhSachBenhNhan.GetFocusedRowCellValue("MaHoaDon").ToString());
+                Ho = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ho").ToString();
+                Ten = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("Ten").ToString();
+                NamSinh = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NamSinh").ToString();
+                SDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("SoDienThoai").ToString();
+
+                GhiChuHSDT = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu").ToString();
+                GhiChuHSKB = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("GhiChu1").ToString();
+                NgayKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
+
+                BacSiKham = gridView_DanhSachBenhNhan.GetFocusedRowCellValue("TenNhanVien").ToString();
+                Load_reportDonThuoc();//hiện report khi nhấn vào hàng trong gridview
+            }
+        }
+        private void btn_LayThuocXong_Click(object sender, EventArgs e)
+        {
+            string Laythuocxong = @"update HoaDon set"+
+                                    " KiemTraDaLayThuoc = 1" +
+                                    " where MaHoaDon =" + ID_MSHD;
+            connection.connect();
+            connection.sql(Laythuocxong);
+            connection.disconnect();            
+            refresh_DuocSi();
         }
 
-        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraDaLayThuoc = 1";
-            int checkColumn = 1;
-            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);            
-            benhNhanThanhToan.ShowDialog();
+            this.Close();
+            BacSiKham = "";
+            NguoiLap = "";
         }
+        #endregion
     }
 }
