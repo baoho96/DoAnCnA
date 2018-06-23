@@ -13,22 +13,24 @@ namespace QuanLyPhongKham
 {
     public partial class ThongKeBenhNhan : DevExpress.XtraEditors.XtraForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         DataSet dataSet = new DataSet();
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();
         BenhNhan benhNhan = new BenhNhan();
-
+        #endregion
+        #region Biến khởi tạo
         public static string TongSoLuong { get; set; }
         public static string TongTien { get; set; }
         public static string NhapNgay { get; set; }
-
+        #endregion
         public ThongKeBenhNhan()
         {
             InitializeComponent();
         }
-
+        #region Chức năng chung
         private void Load_reportBenhNhan(string NhapNgay)
         {
             string query = @"select  BN.Ho, BN.Ten,BN.NamSinh,BN.DiaChi,HSKB.ChuanDoan,NV.TenNhanVien,"+
@@ -40,13 +42,13 @@ namespace QuanLyPhongKham
             connection.connect();
 
             string Load_TongTien_TongKham = @"select  count(HD.MaHoaDon),sum(HD.TongTien)
-                                                from BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan join NhanVien NV on BN.MaSoBenhNhan = NV.MaSoNhanVien join HoaDon HD on HSKB.MaSoKhamBenh = HD.MaSoKhamBenh
+                                                from BenhNhan BN join HoSoKhamBenh HSKB on BN.MaSoBenhNhan = HSKB.MaSoBenhNhan 
+                                                                    join NhanVien NV on BN.MaSoBenhNhan = NV.MaSoNhanVien 
+                                                                        join HoaDon HD on HSKB.MaSoKhamBenh = HD.MaSoKhamBenh
                                                     where HD.NgayGioLap like N'%" + NhapNgay + "'";
             DataTable dataTable = connection.SQL(Load_TongTien_TongKham);
-            TongSoLuong = dataTable.Rows[0][0].ToString();
-            TongTien = dataTable.Rows[0][1].ToString();
-
-            dataSet = new DataSet();
+            TongSoLuong = dataTable.Rows[0][0].ToString();//tính tổng số lượng hóa đơn
+            TongTien = dataTable.Rows[0][1].ToString();//tính tổng tiền
             dataSet.Clear();
             //đổ dữ liệu vào dataAdapter
             sqlDataAdapter = new SqlDataAdapter(query, connection.con);
@@ -58,7 +60,7 @@ namespace QuanLyPhongKham
             documentViewer1.PrintingSystem = benhNhan.PrintingSystem;
             benhNhan.CreateDocument();
         }
-
+        #endregion
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             if (checkB_TimTheoThang.Checked == true)

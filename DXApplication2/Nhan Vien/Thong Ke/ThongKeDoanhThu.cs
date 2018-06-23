@@ -13,34 +13,24 @@ namespace QuanLyPhongKham
 {
     public partial class ThongKeDoanhThu : DevExpress.XtraEditors.XtraForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
-        DataSet dataSet;
+        DataSet dataSet = new DataSet();
         SqlDataAdapter sqlDataAdapter;
         BindingSource bindingSource = new BindingSource();
         DoanhThu doanhThu = new DoanhThu();
-
+        #endregion
+        #region Biến khởi tạo
         public static string TongSoLuong { get; set; }
         public static string TongTien { get; set; }
         public static string NhapNgay { get; set; }
+        #endregion
         public ThongKeDoanhThu()
         {
             InitializeComponent();
         }
-
-        private void btn_TimKiem_Click(object sender, EventArgs e)
-        {
-            if(checkB_TimTheoThang.Checked ==true)
-            {
-                NhapNgay = dtP_NhapNgay.Value.Month.ToString() + "/" + dtP_NhapNgay.Value.Year.ToString();
-                Load_reportDoanhThu(NhapNgay);
-            }
-            else if(checkB_TimTheoNam.Checked==true)
-            {
-                NhapNgay =  dtP_NhapNgay.Value.Year.ToString();
-                Load_reportDoanhThu(NhapNgay);
-            }
-        }
+        #region Chức năng chung
         private void Load_reportDoanhThu(string NhapNgay)
         {
             string query = @"select NgayGioLap,COUNT(MaHoaDon) as SoLuong, sum(TongTien) as TongTien "+
@@ -54,10 +44,8 @@ namespace QuanLyPhongKham
                                                 from HoaDon
                                                     where NgayGioLap like N'%"+NhapNgay+"'";
             DataTable dataTable = connection.SQL(Load_TongTien_TongKham);
-            TongSoLuong = dataTable.Rows[0][0].ToString();
-            TongTien = dataTable.Rows[0][1].ToString();
-
-            dataSet = new DataSet();
+            TongSoLuong = dataTable.Rows[0][0].ToString();//tính tổng số lượng
+            TongTien = dataTable.Rows[0][1].ToString();//tính tổng tiền của hóa đơn
             dataSet.Clear();
             //đổ dữ liệu vào dataAdapter
             sqlDataAdapter = new SqlDataAdapter(query, connection.con);
@@ -69,7 +57,21 @@ namespace QuanLyPhongKham
             documentViewer1_DoanhThu.PrintingSystem = doanhThu.PrintingSystem;
             doanhThu.CreateDocument();
         }
-
+        #endregion
+        #region Chức năng chính
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            if (checkB_TimTheoThang.Checked == true)
+            {
+                NhapNgay = dtP_NhapNgay.Value.Month.ToString() + "/" + dtP_NhapNgay.Value.Year.ToString();
+                Load_reportDoanhThu(NhapNgay);
+            }
+            else if (checkB_TimTheoNam.Checked == true)
+            {
+                NhapNgay = dtP_NhapNgay.Value.Year.ToString();
+                Load_reportDoanhThu(NhapNgay);
+            }
+        }
         private void checkB_TimTheoThang_Click(object sender, EventArgs e)
         {
             checkB_TimTheoNam.Checked = false;
@@ -79,5 +81,6 @@ namespace QuanLyPhongKham
         {
             checkB_TimTheoThang.Checked = false;
         }
+        #endregion
     }
 }

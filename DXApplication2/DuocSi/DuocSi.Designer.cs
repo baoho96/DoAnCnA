@@ -302,6 +302,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Nhân viên Giao thuốc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DuocSi_FormClosing);
+            this.Load += new System.EventHandler(this.DuocSi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

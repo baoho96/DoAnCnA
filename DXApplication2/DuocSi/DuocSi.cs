@@ -49,11 +49,13 @@ namespace QuanLyPhongKham
 
         public DuocSi()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+        private void DuocSi_Load(object sender, EventArgs e)
+        {
             load_DanhSachBenhNhan();
             function.Timer_load(timer_tick);
         }
-        
         #region RibbonControl
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -78,6 +80,7 @@ namespace QuanLyPhongKham
             benhNhanThanhToan.ShowDialog();
         }
         #endregion
+
         #region Chức năng chung
         private void gridView_DanhSachBenhNhan_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
@@ -163,6 +166,7 @@ namespace QuanLyPhongKham
             Admin.IfAdmin = false;
         }
         #endregion
+
         #region Chức năng chính
         private void gridView_DanhSachBenhNhan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -203,6 +207,6 @@ namespace QuanLyPhongKham
             BacSiKham = "";
             NguoiLap = "";
         }
-        #endregion
+        #endregion        
     }
 }

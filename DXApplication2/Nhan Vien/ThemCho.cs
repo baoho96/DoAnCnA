@@ -12,12 +12,15 @@ namespace QuanLyPhongKham
 {
     public partial class ThemCho : Form
     {
+        #region Biến khởi tạo
+        public string ngaykham;
+        public string lidokham;
+        #endregion
         public ThemCho()
         {
             InitializeComponent();
         }
-        public string ngaykham;
-        public string lidokham;
+        
         public void ThemCho_btn_ThemCho_Click(object sender, EventArgs e)
         {
             ngaykham = ThemCho_dtP_ThoiGianKham.Text;

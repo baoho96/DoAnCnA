@@ -16,6 +16,7 @@ namespace QuanLyPhongKham
 {
     public partial class NhanVienThuNgan : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         connection connection = new connection();
         function function = new function();
         SqlDataAdapter sqlDataAdapter;
@@ -24,6 +25,9 @@ namespace QuanLyPhongKham
         DataSet dataSet =new DataSet();
         DangNhap dangNhap = new DangNhap();
         DialogResult result;
+        #endregion
+
+        #region Biến khởi tạo
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
@@ -51,34 +55,70 @@ namespace QuanLyPhongKham
         public static string TongTien { get; set; }
         public static string BacSiKham { get; set; }
 
-        public static string NguoiLap { get; set; }     
-
+        public static string NguoiLap { get; set; }
+        #endregion
         public NhanVienThuNgan()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+        private void NhanVienThuNgan_Load(object sender, EventArgs e)
+        {
             Load_HoaDon();
             function.Timer_load(timer_tick);
         }
-        
-        public void refresh_HoaDon()
-        {            
-            dataSet.Clear();
-            gridControl1_HoaDon.Refresh();
-            gridView1_HoaDon.RefreshData();
-            documentViewer1.Refresh();
-            documentViewer1.PrintingSystem = null;
-            chBox_LayThuoc.Checked = false;
-            chBox_LayThuoc.Enabled = false;
-            btn_ThanhToan.Enabled = false;
-            Load_HoaDon();
-        }
-        public void timer_tick(object sender, EventArgs e)
+        #region Ribbon Control
+        private void barButtonItem1_ThongKeDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int HoaDon = gridView1_HoaDon.FocusedRowHandle;
-            Load_HoaDon();
-            gridView1_HoaDon.FocusedRowHandle = HoaDon;
-            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
+            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu();
+            thongKeDoanhThu.ShowDialog();
         }
+
+        private void barButtonItem1_ThongKeBenhNhan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ThongKeBenhNhan thongKeBenhNhan = new ThongKeBenhNhan();
+            thongKeBenhNhan.ShowDialog();
+        }
+
+        private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            function.ToExcel(result, gridControl1_HoaDon);
+        }
+
+        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraThanhToan = 1";
+            int checkColumn = 0;
+            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);
+            benhNhanThanhToan.ShowDialog();
+        }
+        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            refresh_HoaDon();
+            function.ClearFilterText(gridView1_HoaDon);
+        }
+        private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridControl1_HoaDon.ShowRibbonPrintPreview();
+        }
+        private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            BacSiKham = "";
+            NguoiLap = "";
+        }
+        #endregion
+
+        #region Chức năng chung
+        private void gridView1_HoaDon_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            function.CustomDrawRowIndicator(sender, e);
+        }
+        private void gridView1_HoaDon_RowCountChanged(object sender, EventArgs e)
+        {
+            function.RowCountChanged(sender, e);
+        }       
+                
         private void Load_HoaDon()
         {
             NguoiLap = DangNhap.TenBacSi;//Tên nhân viên
@@ -124,14 +164,48 @@ namespace QuanLyPhongKham
             reportDonThuoc.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             documentViewer1.PrintingSystem.Document.AutoFitToPagesWidth = 1;
         }
-        private void gridView1_HoaDon_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        public void refresh_HoaDon()
         {
-            function.CustomDrawRowIndicator(sender,e);
+            dataSet.Clear();
+            gridControl1_HoaDon.Refresh();
+            gridView1_HoaDon.RefreshData();
+            documentViewer1.Refresh();
+            documentViewer1.PrintingSystem = null;
+            chBox_LayThuoc.Checked = false;
+            chBox_LayThuoc.Enabled = false;
+            btn_ThanhToan.Enabled = false;
+            Load_HoaDon();
         }
-        private void gridView1_HoaDon_RowCountChanged(object sender, EventArgs e)
+        public void timer_tick(object sender, EventArgs e)
         {
-            function.RowCountChanged(sender, e);
+            int HoaDon = gridView1_HoaDon.FocusedRowHandle;
+            Load_HoaDon();
+            gridView1_HoaDon.FocusedRowHandle = HoaDon;
+            txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
         }
+        private void NhanVienThuNgan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Admin.IfAdmin == true)
+            {
+                this.Hide();
+            }
+            else
+            {
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            Admin.IfAdmin = false;
+        }
+        #endregion
+
+        #region Chức năng chính
         private void gridView1_HoaDon_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             object ID_MSHD_CheckNull = gridView1_HoaDon.GetFocusedRowCellValue("MaHoaDon");
@@ -249,46 +323,8 @@ namespace QuanLyPhongKham
                 
             }
             
-        }
-
-        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            refresh_HoaDon();
-            function.ClearFilterText(gridView1_HoaDon);
-        }
-
-        private void barButtonItem1_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            gridControl1_HoaDon.ShowRibbonPrintPreview();
-        }
-
-        private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Close();
-            BacSiKham = "";
-            NguoiLap = "";
-        }
-
-        private void NhanVienThuNgan_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (Admin.IfAdmin == true)
-            {
-                this.Hide();
-            }
-            else
-            {
-                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
-                {
-                    DangNhap dangNhap = new DangNhap();
-                    dangNhap.Show();
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
-            Admin.IfAdmin = false;
-        }
+        }              
+        
         void BenhNhanKhongLayThuoc()
         {
             int SoLuong;
@@ -332,35 +368,10 @@ namespace QuanLyPhongKham
                                             " where MaSoThuoc = " + MaSo;
                     connection.sql(update_Thuoc);
                 }
-            }
-            
-
+            }            
         }
+        #endregion
 
-        private void barButtonItem1_ThongKeDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu();
-            thongKeDoanhThu.ShowDialog();
-        }
-
-        private void barButtonItem1_ThongKeBenhNhan_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ThongKeBenhNhan thongKeBenhNhan = new ThongKeBenhNhan();
-            thongKeBenhNhan.ShowDialog();
-        }
-
-        private void barButtonItem1_ToExcel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-            function.ToExcel(result, gridControl1_HoaDon);
-        }
-
-        private void barButtonItem1_BenhNhanLayThuoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            string XemBenhNhan = "HD.NgayGioLap like '" + ngay + "/" + thang + "/" + nam + "' And HD.KiemTraThanhToan = 1";
-            int checkColumn = 0;
-            BenhNhanThanhToan benhNhanThanhToan = new BenhNhanThanhToan(XemBenhNhan, checkColumn);            
-            benhNhanThanhToan.ShowDialog();
-        }
+        
     }
 }

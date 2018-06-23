@@ -107,6 +107,7 @@ namespace QuanLyPhongKham
             Load_HoSoKhamBenh();
             RowClick = false;
             panelControl2.Enabled = false;
+            function.ClearFilterText(gridView1);
         }
         private void BacSi_gridView_danhsachBenhNhanDaKhamTrongNgay_RowCountChanged(object sender, EventArgs e)
         {

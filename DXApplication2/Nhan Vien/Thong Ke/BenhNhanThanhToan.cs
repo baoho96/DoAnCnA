@@ -41,15 +41,16 @@ namespace QuanLyPhongKham
             checkColumn = _checkColumn;//0 là thu ngân. 1: giao thuốc
             if(checkColumn == 0)
             {                
-                col_KiemTraDaLayThuoc.Visible = false;
+                col_KiemTraDaLayThuoc.Visible = false;//nếu là nhân viên thu ngân, thì cột Kiểm tra đã lấy thuốc ẩn
             }
-            else if(checkColumn ==1 )
+            else if(checkColumn == 1)
             {
                 col_KiemTraThanhToan.Visible = false;
                 col_KiemTraLayThuoc.Visible = false;
             }
             Load_HoaDon(XemBenhNhan);
         }
+        #region Chức năng chung
         private void Load_HoaDon(string XemBenhNhan)
         {
             string query = @"select BN.MaSoBenhNhan,BN.Ten, BN.Ho, BN.SoDienThoai,BN.DiaChi,BN.NamSinh,HSKB.MaSoKhamBenh," +
@@ -66,7 +67,6 @@ namespace QuanLyPhongKham
             dataSet = new DataSet();
             dataSet.Clear();
             sqlDataAdapter.Fill(dataSet, "HoaDon");
-
             bindingSource.DataSource = dataSet.Tables["HoaDon"];
             gridControl1_HoaDon.DataSource = bindingSource;
             connection.disconnect();
@@ -91,5 +91,6 @@ namespace QuanLyPhongKham
         {
             function.RowCountChanged(sender, e);
         }
+        #endregion
     }
 }

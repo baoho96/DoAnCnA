@@ -19,6 +19,7 @@ namespace QuanLyPhongKham
 {
     public partial class NhanVien : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Khởi tạo
         SqlCommand cmd;
         BindingSource bindingSource = new BindingSource();
         OpenFileDialog open;
@@ -27,20 +28,21 @@ namespace QuanLyPhongKham
         function function = new function();
         connection connection = new connection();
         ThemCho themCho;
+        #endregion
+
+        #region Biến khởi tạo
         string ngay = DateTime.Now.Day.ToString("d2");
         string thang = DateTime.Now.Month.ToString("d2");
         string nam = DateTime.Now.Year.ToString();
-        //bool Rowfocus = false;//Kiểm tra khi chọn row
-
         public static int ID_MSKB_DoubleClick { get; set; }
+        #endregion
 
         public NhanVien()
         {
             InitializeComponent();
         }
-
-
-
+        #region Chức năng chung       
+        
         private void NhanVien_Load(object sender, EventArgs e)
         {
             phongKhamDataSet.EnforceConstraints = false;
@@ -56,20 +58,18 @@ namespace QuanLyPhongKham
 
 
             load_TiepNhanBenhNhan_comB_GioiTinh();
-
             load_DanhSachBenhNhan_comB_GioiTinh();
 
             filterColumn_TiepNhanBenhNhan();
-
             function.Timer_load(timer_tick);
         }
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            RefreshAll();
-
+        { 
             gridView1_TimBenhNhan.ClearGrouping();   //Tìm kiếm bệnh nhân         
             gridView4_DanhSachBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân cũ
             gridView1_TimKiemBenhNhan.ClearGrouping();//Tiếp nhận bệnh nhân tái khám
+
+            RefreshAll();
 
             gridView1_TiepNhanBenhNhan.FocusedRowHandle = 0;
             gridView4_DanhSachBenhNhan.FocusedRowHandle = 0;
@@ -96,7 +96,7 @@ namespace QuanLyPhongKham
             refresh_TiepNhanBenhNhan();
             refresh_DanhSachBenhNhan();//Tiếp nhận bệnh nhân cũ
             refresh_TimKiemBenhNhan();//Tiếp nhận bệnh nhân tái khám
-            refresh_TimKiemBenhNhanTaiKham();            
+            refresh_TimKiemBenhNhanTaiKham();           
         }
         public void timer_tick(object sender, EventArgs e)
         {
@@ -107,7 +107,6 @@ namespace QuanLyPhongKham
 
             this.benhNhanTableAdapter.Fill(this.phongKhamDataSet.BenhNhan);
 
-            //this.hoSoKhamBenhTableAdapter1.Fill(this.phongKhamDataSet.HoSoKhamBenh);//Load Hồ Sơ Khám Bệnh cho tab Tìm kiếm bệnh nhân khám bệnh
             // TODO: This line of code loads data into the 'phongKhamDataSet.HoSoKhamBenh' table. You can move, or remove it, as needed.
             this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
             this.hoSoTaiKhamTableAdapter1.Fill(this.phongKhamDataSet.HoSoTaiKham);//Load Hồ sơ tái khám ở tab Tìm kiếm bệnh nhân khám bênh
@@ -119,36 +118,50 @@ namespace QuanLyPhongKham
             txt_capnhat.Text = "Cập nhật lúc: " + DateTime.Now.Hour.ToString() + " giờ : " + DateTime.Now.Minute.ToString() + " phút";
 
         }
-        #region tab Tiếp nhận bệnh nhân
+        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Admin.IfAdmin == true)
+            {
+                this.Hide();
+            }
+            else
+            {
+                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+                {
+                    DangNhap dangNhap = new DangNhap();
+                    dangNhap.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            Admin.IfAdmin = false;
+        }
+        #endregion
+
+        #region tab Tiếp nhận bệnh nhân
+        private void DanhSachBenhNhan_txt_CanNang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
+
+        private void DanhSachBenhNhan_txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            function.KoNhapKiTu(sender, e);
+        }
         private void filterColumn_TiepNhanBenhNhan()
         {           
             string ngay = DateTime.Now.Day.ToString("d2");
             string thang = DateTime.Now.Month.ToString("d2");
             string nam = DateTime.Now.Year.ToString();            
-            gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '" + ngay + "/" + thang + "/" + nam + "') And [KiemTraKham] Is Null";
-            
+            gridView1_TiepNhanBenhNhan.ActiveFilterString = "Contains([NgayGioKham], '" + ngay + "/" + thang + "/" + nam + "') And [KiemTraKham] Is Null";            
         }
-        
-        //private void Load_TiepNhanBenhNhan()
-        //{
-        //    connection.connect();
-
-        //    string Load_Data = @"SELECT     DISTINCT   HSKB.MaSoKhamBenh, HSKB.MaSoBenhNhan, BN.Ho, BN.Ten, BN.GioiTinh, BN.NamSinh,"+
-        //                 "HSKB.NgayGioKham, HSKB.MaSoBacSi, HSKB.XetNghiem, HSKB.ChuanDoan, HSKB.TienKham, HSKB.NgayTaiKham, HSKB.GhiChu, "+
-        //                 "HSKB.KiemTraKham, HSKB.LiDoKham, BN.DiaChi, BN.SoDienThoai, BN.HinhAnh"+
-        //                        "FROM            HoSoKhamBenh AS HSKB right OUTER JOIN"+
-        //                                                "BenhNhan AS BN ON BN.MaSoBenhNhan = HSKB.MaSoBenhNhan";
-        //    da = new SqlDataAdapter(Load_Data, connection.con);
-        //    ds = new DataSet();
-        //    ds.Clear();
-        //    da.Fill(ds, "HoSoKhamBenh");
-
-        //    bindingSource.DataSource = ds.Tables["HoSoKhamBenh"];
-        //    TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = bindingSource;
-
-        //    connection.disconnect();
-        //}
         private void refresh_TiepNhanBenhNhan()
         {
             function.ClearControl(panelControl2);
@@ -176,15 +189,6 @@ namespace QuanLyPhongKham
         private void gridView1_TiepNhanBenhNhan_RowCountChanged(object sender, EventArgs e)
         {
             function.RowCountChanged(sender, e);
-        }
-        private void TiepNhanBenhNhan_dtP_namsinh_ValueChanged(object sender, EventArgs e)
-        {
-            //DateTime ngaysinh = TiepNhanBenhNhan_dtP_namsinh.Value;
-            //DateTime thoigiankham = TiepNhanBenhNhan_dtP_NgayKham.Value;
-            //if (ngaysinh > thoigiankham)
-            //{
-            //    MessageBox.Show("Vui lòng nhập đúng Ngày sinh và Thời gian Khám");
-            //}
         }
         private void gridView1_TiepNhanBenhNhan_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
@@ -310,68 +314,12 @@ namespace QuanLyPhongKham
                 + "'" + TiepNhanBenhNhan_dtP_NgayKham.Text + "')";
             connection.insert(query);
         }
-        //private void TiepNhanBenhNhan_btn_TimKiem_Click(object sender, EventArgs e)
-        //{
-        //    connection.connect();
-
-        //    string Load_Data = @"select * from BenhNhan where Ho like '" + TiepNhanBenhNhan_txt_Ho.Text + "%'" +
-        //                                              " and Ten like '" + TiepNhanBenhNhan_txt_Ten.Text + "'" +
-        //                                              " and NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
-        //    da = new SqlDataAdapter(Load_Data, connection.con);
-        //    ds = new DataSet();
-        //    ds.Clear();
-        //    da.Fill(ds, "BenhNhan");
-
-        //    bindingSource.DataSource = ds.Tables["BenhNhan"];
-        //    TiepNhanBenhNhan_gridC_danhsachBenhNhanDangKiKham.DataSource = bindingSource;
-        //    this.hoSoKhamBenhTableAdapter.Fill(this.phongKhamDataSet.HoSoKhamBenh);
-        //    //connection.disconnect();
-        //}
         private void gridView1_TiepNhanBenhNhan_RowClick(object sender, RowClickEventArgs e)
         {
             TiepNhanBenhNhan_btn_CapNhat.Enabled = true;
             TiepNhanBenhNhan_btn_Xoa.Enabled = true;
             TiepNhanBenhNhan_txt_LiDoKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("LiDoKham").ToString();
-            TiepNhanBenhNhan_dtP_NgayKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();
-            //string ID = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString();
-            //TiepNhanBenhNhan_txt_Ho.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["Ho"]).ToString();
-            //TiepNhanBenhNhan_txt_Ten.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["Ten"]).ToString();
-            //TiepNhanBenhNhan_dtP_namsinh.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["NamSinh"]).ToString();
-            //TiepNhanBenhNhan_comB_GioiTinh.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["GioiTinh"]).ToString();
-            //TiepNhanBenhNhan_txt_SDT.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["SoDienThoai"]).ToString();
-            //TiepNhanBenhNhan_txt_DiaChi.Text = gridView1_TiepNhanBenhNhan.GetRowCellValue(gridView1_TiepNhanBenhNhan.FocusedRowHandle, gridView1_TiepNhanBenhNhan.Columns["DiaChi"]).ToString();
-
-
-            //connection.connect();
-
-            //string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
-            //cmd = new SqlCommand(layhinhanh, connection.con);
-            //SqlDataReader dr = cmd.ExecuteReader();
-            //while (dr.Read())
-            //{
-            //    if (dr["hinhanh"].ToString() != "")//kiểm tra đường dẫn hình ảnh từ SQL
-            //    {
-            //        if (File.Exists(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString()))//kiểm tra hình ảnh có trong thư mục hay không
-            //        {
-            //            //có thì sẽ load hình ảnh vào pictureBox
-            //            pictureBox1_BenhNhan.Image = new Bitmap(Application.StartupPath + @"\Hinh\BenhNhan\" + dr["hinhanh"].ToString());
-            //        }
-            //        else
-            //        {
-            //            //không thì hiện thông báo
-            //            function.Notice("Không có file " + dr["hinhanh"].ToString() + " trong thư mục", 1);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        //chưa insert hình ảnh thì picturebox sẽ không hiện gì hết
-            //        pictureBox1_BenhNhan.Image = null;
-            //        continue;
-            //    }
-            //}
-            //dr.Close();
-
-            //connection.disconnect();
+            TiepNhanBenhNhan_dtP_NgayKham.Text = gridView1_TiepNhanBenhNhan.GetFocusedRowCellValue("NgayGioKham").ToString();            
         }
 
         private void TiepNhanBenhNhan_btn_CapNhat_Click(object sender, EventArgs e)
@@ -384,37 +332,7 @@ namespace QuanLyPhongKham
                 " where MaSoKhamBenh =" + ID_MSKB;
             connection.sql(query1);
             connection.disconnect();
-            refresh_TiepNhanBenhNhan();
-            //if (pictureBox1_BenhNhan.Image != null)//kiểm tra picturebox có rỗng hay không
-            //{
-            //    if (result == DialogResult.OK)
-            //    {
-            //        string previewPath = Application.StartupPath + @"\Hinh\BenhNhan\" + hinhanh;
-            //        string linkHinhAnh = open.FileName;
-            //        File.Copy(linkHinhAnh, previewPath, true);//copy file ảnh vào thư mục project
-            //    }
-            //    else
-            //    {
-            //        string layhinhanh = @"select hinhanh from BenhNhan where MaSoBenhNhan = " + ID;
-            //        DataTable dt1 = connection.SQL(layhinhanh);
-            //        hinhanh = dt1.Rows[0][0].ToString();
-            //    }
-            //}
-            //else { }
-
-            //string query = @"update BenhNhan set Ho = N'" + TiepNhanBenhNhan_txt_Ho.Text + "'," +
-            //"Ten = N'" + TiepNhanBenhNhan_txt_Ten.Text + "'," +
-            //"SoDienThoai =" + TiepNhanBenhNhan_txt_SDT.Text + "," +
-            //"GioiTinh = N'" + TiepNhanBenhNhan_comB_GioiTinh.Text + "'," +
-            //"NamSinh ='" + TiepNhanBenhNhan_dtP_namsinh.Text + "'," +
-            //"DiaChi = N'" + TiepNhanBenhNhan_txt_DiaChi.Text + "'," +
-            //"HinhAnh = N'" + hinhanh + "'" +
-            //" where MaSoBenhNhan =" + ID;
-            //connection.sql(query);
-
-
-
-
+            refresh_TiepNhanBenhNhan();            
         }
 
         private void TiepNhanBenhNhan_btn_Xoa_Click(object sender, EventArgs e)
@@ -428,28 +346,6 @@ namespace QuanLyPhongKham
             connection.disconnect();
             refresh_TiepNhanBenhNhan();
         }
-        //private void TiepNhanBenhNhan_btn_ThemCho_Click(object sender, EventArgs e)
-        //{
-        //    connection.connect();
-        //    int ID_BenhNhan;
-        //    int CheckKham = 1;
-        //    string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
-        //                    + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
-        //    DataTable dt = connection.SQL(layMSBN);
-        //    ID_BenhNhan = int.Parse(dt.Rows[0][0].ToString());
-
-        //    string query = @"insert into HoSoKhamBenh(MaSoBenhNhan,LiDoKham,NgayGioKham) values ("
-        //        + ID_BenhNhan + ","
-        //        + "N'" + TiepNhanBenhNhan_txt_LiDoKham.Text + "',"
-        //        + "'" + TiepNhanBenhNhan_dtP_NgayKham.Text + "')";
-        //    connection.insert(query);
-
-        //    string query1 = @"update BenhNhan set CheckDaKham = " + CheckKham + " where MaSoBenhNhan = " + ID_BenhNhan;
-        //    connection.insert(query1);
-
-        //    connection.disconnect();
-        //    refresh_TiepNhanBenhNhan();
-        //}
         
         private void barButtonItem2_XuatFile_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -582,10 +478,6 @@ namespace QuanLyPhongKham
                 
                 connection.connect();
                 int ID_BenhNhan = int.Parse(gridView4_DanhSachBenhNhan.GetFocusedRowCellValue("MaSoBenhNhan").ToString());
-                //string layMSBN = @"select MaSoBenhNhan from BenhNhan where Ho like N'" + TiepNhanBenhNhan_txt_Ho.Text + "%' And Ten like N'" + TiepNhanBenhNhan_txt_Ten.Text
-                //                + "' And NamSinh = '" + TiepNhanBenhNhan_dtP_namsinh.Text + "'";
-                //DataTable dt = connection.SQL(layMSBN);
-                //ID_BenhNhan = int.Parse(dt.Rows[0][0].ToString());
                 string ngaykham;
                 string lidokham;
                 themCho = new ThemCho();
@@ -626,7 +518,6 @@ namespace QuanLyPhongKham
                 return a;
             }
             else { a = false; return a; }
-            //return a;
         }
 
         private void gridView4_DanhSachBenhNhan_RowClick(object sender, RowClickEventArgs e)
@@ -677,11 +568,7 @@ namespace QuanLyPhongKham
                 dr.Close();
                 connection.disconnect();
             }
-            else
-            {
-                //function.Notice("Bạn nên chọn cụ thể hơn!", 0);
-            }
-            
+            else { }            
         }
 
         private void gridView4_DanhSachBenhNhan_RowCountChanged(object sender, EventArgs e)
@@ -802,18 +689,9 @@ namespace QuanLyPhongKham
                 }
                 //insert vào Hồ sơ khám bệnh
             }
-            else
-            {
-                //function.Notice("Bạn nên chọn cụ thể hơn", 0);                
-            }
+            else { }
         }
-
-
-
-
-
         #endregion
-
         
         #region Tìm kiếm bệnh nhân khám
         private void gridView1_TimBenhNhan_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
@@ -830,36 +708,48 @@ namespace QuanLyPhongKham
             function.ClearControl(panelControl3);
             function.ClearControl(panelControl1);
             TimKiemBenhNhanKham_btn_XoaHoSo.Enabled = false;
+            clTimBenhNhan_NgayTaiKham.Visible = false;
+            clTimBenhNhan_NgayKham.Visible = false;
         }
         private void TimKiemBenhNhanKham_btn_TimKiemNgayKham_Click(object sender, EventArgs e)//tìm kiếm hồ sơ theo ngày khám
         {
-            gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
-            clTimBenhNhan_NgayKham.GroupIndex = 1;//group column ngày khám
+            gridView1_TimBenhNhan.FindFilterText = "";
             if (TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked)//kiểm tra check tìm theo ngày hay tháng
-            {
+            {                
+                gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+                clTimBenhNhan_NgayTaiKham.Visible = false;
+                clTimBenhNhan_NgayKham.GroupIndex = 1;//group column ngày khám 
                 //đưa text ngày khám vào phần tìm kiếm trong gridview
                 gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Text;
             }
             else if (TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked)
-            {
+            {                
+                gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+                clTimBenhNhan_NgayTaiKham.Visible = false;
+                clTimBenhNhan_NgayKham.GroupIndex = 1;//group column ngày khám 
                 //đưa text tháng + năm khám vào phần tìm kiếm trong gridview
-                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString() 
+                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Month.ToString("d2") 
                                                 + "/" + TimKiemBenhNhanKhamBenh_dtP_NgayKham.Value.Year.ToString();
             }
         }
         private void TimKiemBenhNhanKham_btn_TimKiemTaiKham_Click(object sender, EventArgs e)//tìm kiếm hồ sơ theo ngày tái khám
         {
-            gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
-            clTimBenhNhan_NgayTaiKham.GroupIndex = 1;//group column ngày tái khám
+            gridView1_TimBenhNhan.FindFilterText = "";
             if (TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked)//kiểm tra check tìm theo ngày hay tháng
-            {
+            {                
+                gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+                clTimBenhNhan_NgayKham.Visible = false;
+                clTimBenhNhan_NgayTaiKham.GroupIndex = 1;//group column ngày tái khám
                 //đưa text ngày khám vào phần tìm kiếm trong gridview
                 gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Text;
             }
             else if (TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked)
-            {
+            {                
+                gridView1_TimBenhNhan.ClearGrouping();//clear group column trong gridview
+                clTimBenhNhan_NgayKham.Visible = false;
+                clTimBenhNhan_NgayTaiKham.GroupIndex = 1;//group column ngày tái khám 
                 //đưa text tháng + năm khám vào phần tìm kiếm trong gridview
-                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Month.ToString()
+                gridView1_TimBenhNhan.FindFilterText = TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Month.ToString("d2")
                                                 + "/" + TimKiemBenhNhanKhamBenh_dtP_TaiKham.Value.Year.ToString();
             }
         }
@@ -887,82 +777,34 @@ namespace QuanLyPhongKham
                 refresh_TimKiemBenhNhanTaiKham();
             }
         }
-        #endregion
-
-        private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Close();
-            //DangNhap dangNhap = new DangNhap();
-            //dangNhap.Show();
-            
-            
-        }
-
-        private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (Admin.IfAdmin == true)
-            {
-                this.Hide();
-            }
-            else
-            {
-                if ((MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Thông Báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
-                {
-                    DangNhap dangNhap = new DangNhap();
-                    dangNhap.Show();
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
-            Admin.IfAdmin = false;
-        }
-
         private void TimKiemBenhNhanKhamBenh_checB_NgayKham_Click(object sender, EventArgs e)
         {
             TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked = false;
         }
 
         private void TimKiemBenhNhanKhamBenh_checB_ThangKham_Click(object sender, EventArgs e)
         {
             TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked = false;
         }
 
         private void TimKiemBenhNhanKhamBenh_checB_NgayTaiKham_Click(object sender, EventArgs e)
         {
             TimKiemBenhNhanKhamBenh_checB_ThangTaiKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked = false;
         }
 
         private void TimKiemBenhNhanKhamBenh_checB_ThangTaiKham_Click(object sender, EventArgs e)
         {
             TimKiemBenhNhanKhamBenh_checB_NgayTaiKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_ThangKham.Checked = false;
+            TimKiemBenhNhanKhamBenh_checB_NgayKham.Checked = false;
         }
-
-        private void DanhSachBenhNhan_txt_CanNang_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            function.KoNhapKiTu(sender, e);
-        }
-
-        private void DanhSachBenhNhan_txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            function.KoNhapKiTu(sender, e);
-        }
-
-        private void gridView1_TiepNhanBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
-        {
-            function.FilterText(gridView1_TiepNhanBenhNhan);
-        }
-
-        private void gridView4_DanhSachBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
-        {
-            //function.FilterText(gridView4_DanhSachBenhNhan);
-        }
-
-        private void gridView1_TimKiemBenhNhan_ColumnFilterChanged(object sender, EventArgs e)
-        {
-            /*unction.FilterText(gridView1_TimKiemBenhNhan);*/
-        }
+        #endregion              
     }
 
 }
